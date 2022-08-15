@@ -1,0 +1,15 @@
+.logo {
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 18px;
+  color: #A71876;
+  text-align: center;
+  display: inline-block;
+  @media(min-width:1024px) {
+    font-size: 24px;
+    text-align: left;
+    br {
+      display: none;
+    }
+  }
+}

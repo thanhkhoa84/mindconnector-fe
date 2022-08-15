@@ -1,9 +1,10 @@
 import Container from './Container';
+import { SectionHeading } from './Heading';
 
 const QA = () => {
   return (
     <Container>
-      <h2>Câu hỏi thường gặp</h2>
+      <SectionHeading>Câu hỏi thường gặp</SectionHeading>
       <div>
         <details>
           <summary>

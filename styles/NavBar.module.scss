@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navItem {
+  list-style: none;
+}
+
+.navItem+.navItem {
+  margin-left: 0;
+  @media(min-width: 1024px) {
+    margin-left: 2.4rem;
+  }
+}
+
+.navItem a:hover {
+  color: #A71876;
+}
