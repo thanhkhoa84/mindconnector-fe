@@ -1,9 +1,17 @@
-.container {
-  width: 1200px;
-  margin: 0 auto;
-}
-
 .header {
+  background-color: #A71876;
+  border-radius: 0 0 10px 10px;
   font-weight: bold;
-  /* height: 80px; */
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  @media(min-width: 1024px) {
+    background-color: white;
+    border-radius: 0;
+    height: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }

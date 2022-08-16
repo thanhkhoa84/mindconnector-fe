@@ -1,21 +1,29 @@
 .nav {
-  display: flex;
+  display: none;
   margin: 0;
   padding: 0;
-  align-items: center;
+  position: absolute;
+  top: 100%;
+  background: red;
+  z-index: 100;
+  width: 100%;
+  @media(min-width: 1024px) {
+    background-color: transparent;
+    display: block;
+    position: static;
+  }
 }
 
 .navItem {
   list-style: none;
-}
-
-.navItem+.navItem {
-  margin-left: 0;
-  @media(min-width: 1024px) {
-    margin-left: 2.4rem;
+  a:hover {
+    color: #A71876;
+  }
+  &+.navItem {
+    margin-left: 0;
+    @media(min-width: 1024px) {
+      margin-left: 2.4rem;
+    }
   }
 }
 
-.navItem a:hover {
-  color: #A71876;
-}

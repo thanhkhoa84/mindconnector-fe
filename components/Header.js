@@ -9,10 +9,8 @@ import Logo from './Logo';
 const Header = () => {
   return (
     <header className={styles.header}>
-      <Container>
-        <Logo />
-        <NavBar />
-      </Container>
+      <Logo />
+      <NavBar />
     </header>
   );
 };
