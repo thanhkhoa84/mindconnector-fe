@@ -2,20 +2,21 @@ import React from 'react';
 import Link from 'next/link';
 import styles from '../styles/components/CTA.module.scss';
 
-const Button = React.forwardRef(({ onClick, href }, ref) => {
+const Button = React.forwardRef(({ href, onClick, ...props }, ref) => {
+  console.log(props);
   return (
-    <a href={href} onClick={onClick} ref={ref} className={styles.CTA}>
-      Khám phá ngay
+    <a href={href} onClick={onClick} ref={ref} className={styles.HeaderCTA}>
+      {props.children}
     </a>
   );
 });
 
-const CTA = React.forwardRef(({ href }) => {
+const HeaderCTA = ({ href, children }) => {
   return (
     <Link href={href} passHref>
-      <Button />
+      <Button>{children}</Button>
     </Link>
   );
-});
+};
 
-export default CTA;
+module.exports = { HeaderCTA };

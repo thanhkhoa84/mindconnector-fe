@@ -1,10 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import NavBar from './NavBar';
-import CTA from './CTA';
+import { HeaderCTA } from './CTA';
 
 import styles from '../styles/components/Header.module.scss';
-import Container from './Container';
 import { Logo } from './Logo';
 
 const Header = () => {
@@ -13,7 +12,7 @@ const Header = () => {
       <Logo />
       <div className={styles.headerNav}>
         <NavBar />
-        <CTA href='explore'>Khám phá ngay</CTA>
+        <HeaderCTA href='explore'>Khám phá ngay</HeaderCTA>
       </div>
     </header>
   );

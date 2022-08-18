@@ -19,10 +19,10 @@ const navLinks = [
     name: 'Contact',
     path: 'contact',
   },
-  // {
-  //   name: 'Explore',
-  //   path: 'explore',
-  // },
+  {
+    name: 'Explore',
+    path: 'explore',
+  },
 ];
 
 const NavItems = () => {

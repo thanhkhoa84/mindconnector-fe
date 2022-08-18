@@ -1,17 +1,17 @@
-.CTA {
+.HeaderCTA {
   background-color: #FFAF43;
   border: 2px solid #FFD9C7;
   border-radius: 24px;
   color: #fff;
   display: flex;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
-  padding: 0 0.5em;
-  height: 36px;
+  padding: 0 0.7em;
+  height: 34px;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 12px;
+  top: 13px;
   right: 1em;
   @media(min-width: 1024px) {
     font-size: 16px;
