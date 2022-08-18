@@ -1,4 +1,4 @@
-import styles from '../styles/Heading.module.scss';
+import styles from '../styles/components/Heading.module.scss';
 
 const SectionHeading = ({ align, children }) => {
   return (

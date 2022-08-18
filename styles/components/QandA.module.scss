@@ -1,0 +1,42 @@
+.QandA {
+  background: #fff;
+  padding: 3em 0;
+  .QandAHeading {
+    text-align: center;
+    @media(min-width: 1024px) {
+      text-align: left;
+      float: left;
+      width: 20%;
+      h1 {
+        margin-top: 0.5em;
+      }
+    }
+  }
+  .QandADetails{
+    @media(min-width: 1024px) {
+      float: right;
+      width: 80%;
+    }
+  }
+  .details {
+    background-color: #FFEFDB;
+    border-radius: 0 0 10px 10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-top: 1em;
+    summary {
+      list-style: none;
+      background-color: #fff;
+      border: 1px solid #E75C9D;
+      border-radius: 10px;
+      padding: 1.5em 3em 1.5em 1.5em ;
+    }
+    p {
+      margin: 0;
+      padding: 1.5em;
+    }
+  }
+}
+

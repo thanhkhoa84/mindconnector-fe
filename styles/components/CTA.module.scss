@@ -1,0 +1,22 @@
+.CTA {
+  background-color: #FFAF43;
+  border: 2px solid #FFD9C7;
+  border-radius: 24px;
+  color: #fff;
+  display: flex;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 0 0.5em;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 12px;
+  right: 1em;
+  @media(min-width: 1024px) {
+    font-size: 16px;
+    padding: 0 2em;
+    position: static;
+    height: 50px;
+  }
+}

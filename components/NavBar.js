@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../styles/NavBar.module.scss';
+import styles from '../styles/components/NavBar.module.scss';
 
 const navLinks = [
   {
@@ -19,10 +19,10 @@ const navLinks = [
     name: 'Contact',
     path: 'contact',
   },
-  {
-    name: 'Explore',
-    path: 'explore',
-  },
+  // {
+  //   name: 'Explore',
+  //   path: 'explore',
+  // },
 ];
 
 const NavItems = () => {

@@ -1,6 +1,10 @@
+import Container from '../components/Container';
+
 const Business = () => (
   <div>
-    <h1>Business</h1>
+    <Container>
+      <h1>Business</h1>
+    </Container>
   </div>
 );
 

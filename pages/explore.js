@@ -1,6 +1,10 @@
+import Container from '../components/Container';
+
 const Explore = () => (
   <div>
-    <h1>Explore</h1>
+    <Container>
+      <h1>Explore</h1>
+    </Container>
   </div>
 );
 

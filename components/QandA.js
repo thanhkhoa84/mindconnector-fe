@@ -1,7 +1,7 @@
 import Container from './Container';
 import { SectionHeading } from './Heading';
 
-import styles from '../styles/QandA.module.scss';
+import styles from '../styles/components/QandA.module.scss';
 
 const QandA = [
   {
@@ -32,11 +32,13 @@ const QA = () => {
   return (
     <section className={styles.QandA}>
       <Container>
-        <SectionHeading>Câu hỏi thường gặp</SectionHeading>
-        <div>
+        <header className={styles.QandAHeading}>
+          <SectionHeading>Câu hỏi thường gặp</SectionHeading>
+        </header>
+        <div className={styles.QandADetails}>
           {QandA.map(({ question, answer }, index) => {
             return (
-              <details key={index}>
+              <details key={index} className={styles.details}>
                 <summary className={styles.question}>{question}</summary>
                 <p className={styles.anwser}>{answer}</p>
               </details>

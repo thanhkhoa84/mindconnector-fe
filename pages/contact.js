@@ -1,6 +1,10 @@
+import Container from './../components/Container';
+
 const Contact = () => (
   <div>
-    <h1>Contact</h1>
+    <Container>
+      <h1>Contact</h1>
+    </Container>
   </div>
 );
 

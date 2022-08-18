@@ -1,20 +1,28 @@
+
 .nav {
-  display: none;
   margin: 0;
   padding: 0;
-  position: absolute;
-  top: 100%;
+  position: relative;
   background: red;
   z-index: 100;
   ul {
+    display: none;
     margin: 0;
     padding: 0;
+    position: absolute;
+    top: 100%;
     list-style: none;
   }
   @media(min-width: 1024px) {
     background-color: transparent;
     display: flex;
     position: static;
+    align-items: center;
+    ul {
+      display: flex;
+      position: static;
+      margin: 0 2.4rem 0 0;
+    }
   }
 }
 

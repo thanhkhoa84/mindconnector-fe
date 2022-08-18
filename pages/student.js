@@ -1,6 +1,10 @@
+import Container from './../components/Container';
+
 const Student = () => (
   <div>
-    <h1>Student</h1>
+    <Container>
+      <h1>Student</h1>
+    </Container>
   </div>
 );
 

@@ -1,6 +1,10 @@
+import Container from './../components/Container';
+
 const Partners = () => (
   <div>
-    <h1>Partners</h1>
+    <Container>
+      <h1>Partners</h1>
+    </Container>
   </div>
 );
 

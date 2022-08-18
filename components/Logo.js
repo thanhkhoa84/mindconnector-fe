@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
 
-import styles from '../styles/Logo.module.scss';
+import styles from '../styles/components/Logo.module.scss';
 
 const Title = React.forwardRef(({ onClick, href }, ref) => {
   return (
@@ -21,4 +21,8 @@ const Logo = React.forwardRef(() => {
   );
 });
 
-export default Logo;
+const LogoMobile = React.forwardRef(({ onClick, href }, ref) => {
+  return <h1 className={styles.logoMobile}>Mind Connector</h1>;
+});
+
+module.exports = { Logo, LogoMobile };
