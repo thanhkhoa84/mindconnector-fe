@@ -1,7 +1,11 @@
 import Head from 'next/head';
 import Image from 'next/image';
 
-import QA from '../components/QandA';
+import QandA from '../components/QandA';
+import ValueSection from '../components/home/ValueSection';
+import HeroBanner from '../components/home/HeroBanner';
+import Teachers from '../components/home/Teachers';
+import About from '../components/home/About';
 
 export default function Home() {
   return (
@@ -13,9 +17,11 @@ export default function Home() {
       </Head>
 
       <div>
-        <h1>Home</h1>
-
-        <QA />
+        <HeroBanner />
+        <ValueSection />
+        <About />
+        <Teachers />
+        <QandA />
       </div>
     </>
   );

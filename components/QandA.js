@@ -30,19 +30,21 @@ const QandA = [
 
 const QA = () => {
   return (
-    <Container>
-      <SectionHeading>Câu hỏi thường gặp</SectionHeading>
-      <div>
-        {QandA.map(({ question, answer }, index) => {
-          return (
-            <details key={index}>
-              <summary className={styles.question}>{question}</summary>
-              <p className={styles.anwser}>{answer}</p>
-            </details>
-          );
-        })}
-      </div>
-    </Container>
+    <section className={styles.QandA}>
+      <Container>
+        <SectionHeading>Câu hỏi thường gặp</SectionHeading>
+        <div>
+          {QandA.map(({ question, answer }, index) => {
+            return (
+              <details key={index}>
+                <summary className={styles.question}>{question}</summary>
+                <p className={styles.anwser}>{answer}</p>
+              </details>
+            );
+          })}
+        </div>
+      </Container>
+    </section>
   );
 };
 
