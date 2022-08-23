@@ -3,7 +3,6 @@ import Link from 'next/link';
 import styles from '../styles/components/CTA.module.scss';
 
 const Button = React.forwardRef(({ href, onClick, ...props }, ref) => {
-  console.log(props.name);
   return (
     <a href={href} onClick={onClick} ref={ref} className={styles[props.name]}>
       {props.children}

@@ -1,4 +1,10 @@
-.aboutMi {
+.AboutMi {
   background: #fff;
-  padding: 3em 0;
+  padding: 3em 0 0;
+  p {
+    @media(min-width:1204px) {
+      max-width: 46%;
+      margin: 1em auto;
+    }
+  }
 }

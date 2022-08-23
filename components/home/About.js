@@ -1,10 +1,11 @@
 import Container from '../../components/Container';
 import { SectionHeading } from '../../components/Heading';
 import styles from './About.module.scss';
+import LogoList from './../LogoList';
 
 const About = () => {
   return (
-    <section className={styles.aboutMi}>
+    <section className={styles.AboutMi}>
       <Container>
         <SectionHeading align='center'>Về Mind Connector</SectionHeading>
         <p className='text-center'>
@@ -12,6 +13,10 @@ const About = () => {
           nhân phát triển và tăng trưởng mạnh mẽ trong tương lai.
         </p>
       </Container>
+      <LogoList
+        title='Đối tác'
+        list={['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+      />
     </section>
   );
 };

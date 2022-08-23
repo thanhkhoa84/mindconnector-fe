@@ -38,7 +38,7 @@ const QA = () => {
         <div className={styles.QandADetails}>
           {QandA.map(({ question, answer }, index) => {
             return (
-              <details key={index} className={styles.details}>
+              <details key={`qa-${index}`} className={styles.details}>
                 <summary className={styles.question}>{question}</summary>
                 <p className={styles.anwser}>{answer}</p>
               </details>
