@@ -4,24 +4,24 @@ import styles from '../styles/components/NavBar.module.scss';
 
 const navLinks = [
   {
-    name: 'Student',
+    name: 'Dành cho sinh viên',
     path: 'student',
   },
   {
-    name: 'Business',
+    name: 'Dành cho doanh nghiệp',
     path: 'business',
   },
   {
-    name: 'News',
+    name: 'Đối tác',
+    path: 'partners',
+  },
+  {
+    name: 'Tin tức & Sự kiện',
     path: 'news',
   },
   {
-    name: 'Contact',
+    name: 'Liên hệ',
     path: 'contact',
-  },
-  {
-    name: 'Explore',
-    path: 'explore',
   },
 ];
 
