@@ -6,8 +6,17 @@ import ValueSection from '../components/home/ValueSection';
 import HeroBanner from '../components/home/HeroBanner';
 import Teachers from '../components/home/Teachers';
 import About from '../components/home/About';
+import Layout from './../components/Layout';
+import Seo from './../components/SEO';
 
 export default function Home() {
+  const seo = {
+    metaTitle: 'Mind Connector',
+    metaDescription: 'Mind Connector',
+    // shareImage: article.attributes.image,
+    // article: true,
+  };
+
   return (
     <>
       <Head>
@@ -16,13 +25,17 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div>
-        <HeroBanner />
-        <ValueSection />
-        <About />
-        <Teachers />
-        <QandA />
-      </div>
+      <Layout>
+        {/* <Seo seo={seo} /> */}
+        <div>
+          <HeroBanner />
+          <ValueSection />
+          <About />
+          <Teachers />
+          <QandA />
+        </div>
+      </Layout>
     </>
   );
 }
+

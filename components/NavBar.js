@@ -7,22 +7,22 @@ const navLinks = [
     name: 'Dành cho sinh viên',
     path: 'student',
   },
-  {
-    name: 'Dành cho doanh nghiệp',
-    path: 'business',
-  },
-  {
-    name: 'Đối tác',
-    path: 'partners',
-  },
-  {
-    name: 'Tin tức & Sự kiện',
-    path: 'news',
-  },
-  {
-    name: 'Liên hệ',
-    path: 'contact',
-  },
+  // {
+  //   name: 'Dành cho doanh nghiệp',
+  //   path: 'business',
+  // },
+  // {
+  //   name: 'Đối tác',
+  //   path: 'partners',
+  // },
+  // {
+  //   name: 'Tin tức & Sự kiện',
+  //   path: 'news',
+  // },
+  // {
+  //   name: 'Liên hệ',
+  //   path: 'contact',
+  // },
 ];
 
 const NavItems = () => {

@@ -3,7 +3,7 @@
   padding: 3em 0;
   .QandAHeading {
     text-align: center;
-    @media(min-width: 1024px) {
+    @media(min-width: 992px) {
       text-align: left;
       float: left;
       width: 20%;
@@ -13,7 +13,7 @@
     }
   }
   .QandADetails{
-    @media(min-width: 1024px) {
+    @media(min-width: 992px) {
       float: right;
       width: 77%;
     }

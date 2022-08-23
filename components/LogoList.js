@@ -2,6 +2,7 @@ import styles from '../styles/components/LogoList.module.scss';
 import Container from './Container';
 
 const LogoList = ({ backgroundColor, title, list }) => {
+  let images = ['/img/saatchi.svg', '/img/vlu.svg', '/img/ogilvy.svg'];
   return (
     <section
       className={styles.LogoList}
@@ -16,11 +17,6 @@ const LogoList = ({ backgroundColor, title, list }) => {
           </header>
           <ul>
             {list.map((li, index) => {
-              let images = [
-                '/img/saatchi.svg',
-                '/img/vlu.svg',
-                '/img/ogilvy.svg',
-              ];
               let imgSrc = images[Math.floor(Math.random() * images.length)];
               return (
                 <li key={`logolist-${index}`}>
