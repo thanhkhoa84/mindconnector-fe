@@ -12,6 +12,7 @@ const Title = React.forwardRef(({ onClick, href }, ref) => {
     </a>
   );
 });
+Title.displayName = 'Title';
 
 const Logo = React.forwardRef(() => {
   return (
@@ -20,9 +21,11 @@ const Logo = React.forwardRef(() => {
     </Link>
   );
 });
+Logo.displayName = 'Logo';
 
 const LogoMobile = React.forwardRef(({ onClick, href }, ref) => {
   return <h1 className={styles.logoMobile}>Mind Connector</h1>;
 });
+LogoMobile.displayName = 'LogoMobile';
 
 module.exports = { Logo, LogoMobile };

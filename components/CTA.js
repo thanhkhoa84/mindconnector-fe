@@ -9,6 +9,7 @@ const Button = React.forwardRef(({ href, onClick, ...props }, ref) => {
     </a>
   );
 });
+Button.displayName = 'Button';
 
 const CTA = ({ href, name, children }) => {
   return (

@@ -20,7 +20,7 @@ const LogoList = ({ backgroundColor, title, list }) => {
               let imgSrc = images[Math.floor(Math.random() * images.length)];
               return (
                 <li key={`logolist-${index}`}>
-                  <img src={imgSrc} />
+                  <img src={imgSrc} alt='' />
                 </li>
               );
             })}
