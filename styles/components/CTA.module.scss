@@ -1,22 +1,75 @@
-.HeaderCTA {
-  background-color: #FFAF43;
+.CTA {
+  background: rgb(255,175,67);
+  background: -moz-linear-gradient(180deg, rgba(255,175,67,1) 100%, rgba(255,104,35,1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(255,175,67,1) 100%, rgba(255,104,35,1) 100%);
+  background: linear-gradient(180deg, rgba(255,175,67,1) 100%, rgba(255,104,35,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffaf43",endColorstr="#ff6823",GradientType=1);
   border: 2px solid #FFD9C7;
   border-radius: 24px;
   color: #fff;
-  display: flex;
+  display: block;
   font-size: 12px;
   font-weight: bold;
   padding: 0 0.7em;
   height: 34px;
-  align-items: center;
-  justify-content: center;
+  line-height: 34px;
+  text-align: center;
+  @media(min-width: 1024px) {
+    font-size: 16px;
+    padding: 0 2em;
+    height: 50px;
+    line-height: 45px;
+  }
+}
+
+.HeaderCTA {
+  background: rgb(255,175,67);
+  background: -moz-linear-gradient(180deg, rgba(255,175,67,1) 100%, rgba(255,104,35,1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(255,175,67,1) 100%, rgba(255,104,35,1) 100%);
+  background: linear-gradient(180deg, rgba(255,175,67,1) 100%, rgba(255,104,35,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffaf43",endColorstr="#ff6823",GradientType=1);
+  border: 2px solid #FFD9C7;
+  border-radius: 24px;
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 0.7em;
+  height: 34px;
+  line-height: 34px;
   position: absolute;
   top: 13px;
   right: 1em;
+  text-align: center;
   @media(min-width: 1024px) {
     font-size: 16px;
     padding: 0 2em;
     position: static;
     height: 50px;
+    line-height: 45px;
+  }
+}
+
+.InvertCTA {
+  background: rgb(255,252,248);
+  background: -moz-linear-gradient(180deg, rgba(255,252,248,1) 100%, rgba(255,239,219,1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(255,252,248,1) 100%, rgba(255,239,219,1) 100%);
+  background: linear-gradient(180deg, rgba(255,252,248,1) 100%, rgba(255,239,219,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fffcf8",endColorstr="#ffefdb",GradientType=1);
+  border: 2px solid #FDE4AD;
+  border-radius: 24px;
+  color: #FF6823;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 0.7em;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  @media(min-width: 1024px) {
+    font-size: 16px;
+    padding: 0 2em;
+    height: 50px;
+    line-height: 45px;
   }
 }
