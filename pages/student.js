@@ -2,6 +2,9 @@ import Head from 'next/head';
 import Layout from './../components/Layout';
 import Container from './../components/Container';
 import QandA from './../components/QandA';
+import Seo from './../components/SEO';
+
+const seo = {};
 
 const Student = ({ questions }) => (
   <>
@@ -11,7 +14,7 @@ const Student = ({ questions }) => (
       <link rel='icon' href='/favicon.ico' />
     </Head>
     <Layout>
-      {/* <Seo seo={seo} /> */}
+      <Seo seo={seo} />
       <h1>Students</h1>
       <div>
         <QandA questions={questions} />
