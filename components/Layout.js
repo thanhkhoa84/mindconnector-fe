@@ -1,10 +1,10 @@
 import Header from './Header';
 import Footer from './Footer';
 
-export default function Layout({ children }) {
+export default function Layout({ navlinks, children }) {
   return (
     <>
-      <Header />
+      <Header navlinks={navlinks} />
       <main>{children}</main>
       <Footer />
     </>

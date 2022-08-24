@@ -8,7 +8,9 @@ const Footer = () => {
       <Container>
         <div className={styles.footerInfo}>
           <LogoMobile />
-          <div className={styles.footerNav}></div>
+          <div className={styles.footerNav}>
+            <ul></ul>
+          </div>
         </div>
       </Container>
       <div className={styles.copyright}>

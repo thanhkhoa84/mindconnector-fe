@@ -10,16 +10,24 @@ const Student = ({ questions }) => (
   <>
     <Head>
       <title>Mind Connector</title>
-      <meta name='description' content='Mind Connector' />
+      <meta
+        name='description'
+        content='Mind Connector là một mạng lưới của các nhà tư vấn kinh doanh cùng các giảng viên vốn là các lãnh đạo và chuyên gia hàng đầu trong nhiều lĩnh vực khác nhau. Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá nhân phát triển và tăng trưởng mạnh mẽ trong tương lai'
+      />
       <link rel='icon' href='/favicon.ico' />
     </Head>
-    <Layout>
+    <>
       <Seo seo={seo} />
-      <h1>Students</h1>
-      <div>
-        <QandA questions={questions} />
-      </div>
-    </Layout>
+      <Container>
+        <h1>Students</h1>
+        <div>
+          <div id='thanh-cong-trong-hoc-tap'>thanh cong trong hoc tap</div>
+          <div id='thanh-cong-trong-ung-tuyen'>ung tuyen</div>
+          <div id='thanh-cong-trong-khoi-su-kinh-doanh'>startup</div>
+          <QandA questions={questions} />
+        </div>
+      </Container>
+    </>
   </>
 );
 
@@ -29,12 +37,13 @@ export async function getStaticProps() {
   /** TODO: get real QaA from backend */
   const questions = [
     {
-      question: 'Làm thế nào để tôi có thể trở thành sinh viên ưu tú?',
+      question: 'Các chương trình học có cần yêu cầu đầu vào hay không?',
       answer:
         'Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.',
     },
     {
-      question: 'Tôi cần chuẩn bị hành trang gì cho một kỳ thực tập hoàn hảo?',
+      question:
+        'Làm cách nào tôi có thể trao đổi với giảng viên khi có những thắc mắc về bài học?',
       answer:
         'Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.',
     },
@@ -46,7 +55,7 @@ export async function getStaticProps() {
     },
     {
       question:
-        'Doanh nghiệp tôi muốn đào tạo một đội ngũ nhân viên chất lượng, Mind Connector có chương trình nào phù hợp hay không?',
+        'Ngoài video bài giảng, tôi có nhận được tài liệu khác hay không?',
       answer:
         'Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.',
     },

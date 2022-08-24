@@ -6,12 +6,12 @@ import { CTA } from './CTA';
 import styles from '../styles/components/Header.module.scss';
 import { Logo } from './Logo';
 
-const Header = () => {
+const Header = ({ ...navlinks }) => {
   return (
     <header className={styles.header}>
       <Logo />
       <div className={styles.headerNav}>
-        <NavBar />
+        <NavBar {...navlinks} />
         <CTA href='explore' name='HeaderCTA'>
           Khám phá ngay
         </CTA>

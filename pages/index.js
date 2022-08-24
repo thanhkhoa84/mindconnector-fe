@@ -21,20 +21,21 @@ export default function Home({ questions }) {
     <>
       <Head>
         <title>Mind Connector</title>
-        <meta name='description' content='Mind Connector' />
+        <meta
+          name='description'
+          content='Mind Connector là một mạng lưới của các nhà tư vấn kinh doanh cùng các giảng viên vốn là các lãnh đạo và chuyên gia hàng đầu trong nhiều lĩnh vực khác nhau. Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá nhân phát triển và tăng trưởng mạnh mẽ trong tương lai'
+        />
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Layout>
-        {/* <Seo seo={seo} /> */}
-        <div>
-          <HeroBanner />
-          <ValueSection />
-          <About />
-          <Teachers />
-          <QandA questions={questions}></QandA>
-        </div>
-      </Layout>
+      {/* <Seo seo={seo} /> */}
+      <>
+        <HeroBanner />
+        <ValueSection />
+        <About />
+        <Teachers />
+        <QandA questions={questions}></QandA>
+      </>
     </>
   );
 }
