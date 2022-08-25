@@ -26,9 +26,9 @@ const About = () => {
           Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá
           nhân phát triển và tăng trưởng mạnh mẽ trong tương lai.
         </p>
-        {/* <div className={styles.videoEmbed}>
+        <div className={styles.videoEmbed}>
           <YouTube videoId='8dJyRm2jJ-U' opts={opts} onReady={_onReady} />
-        </div> */}
+        </div>
       </Container>
       <LogoList
         title='Đối tác'
