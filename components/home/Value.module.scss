@@ -2,3 +2,122 @@
   background: #FFF7ED;
   padding: 3em 0 0;
 }
+
+.valueCard {
+  display: flex;
+  flex-direction: row;
+  padding-top: 3em;
+  width: 49%;
+  position: relative;
+  @media(min-width:768px) {
+    width: 48%;
+  }
+}
+
+.valueCardContainer {
+  display: flex;
+  align-self: stretch;
+  justify-content: space-between;
+  @media(min-width:1100px) {
+    align-items: center;
+    align-self: auto;
+  }
+}
+
+.valueInfo {
+  background: rgb(245,203,204);
+  background: -moz-linear-gradient(180deg, rgba(245,203,204,1) 0%, rgba(255,175,67,1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(245,203,204,1) 0%, rgba(255,175,67,1) 100%);
+  background: linear-gradient(180deg, rgba(245,203,204,1) 0%, rgba(255,175,67,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f5cbcc",endColorstr="#ffaf43",GradientType=1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 16px;
+  border: 4px solid #fff;
+  padding: 2.5em 10% 1em 1.5em;
+  box-shadow: 0 0 10px rgb(0 0 0 / 3%);
+  @media(min-width:1100px) {
+    width: 55%;
+    margin: 1.5em -2em 1.5em 0;
+  }
+  h2 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 900;
+    br {
+      display: none;
+    }
+    @media(min-width:440px) {
+      font-size: 22px;
+      br {
+        display: inline;
+      }
+    }
+    @media(min-width:768px) {
+      br {
+        display: none;
+      }
+    }
+    @media(min-width:1100px) {
+      br {
+        display: inline;
+      }
+    }
+  }
+  p {
+    margin-top: 0.5em;
+  }
+  a {
+    color: #FF6823;
+    display: block;
+    font-weight: 900;
+    margin-top: 1em;
+    &:after {
+      background: url('/img/icon-arrow-discover.svg') top left no-repeat;
+      background-size: cover;
+      content: '';
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      margin-left: 0.5em;
+    }
+  }
+}
+
+.valueIcon {
+  content: '';
+  display: block;
+  width: 66px;
+  height: 66px;
+  position: absolute;
+  top: -30px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 3%);
+}
+
+.valueIcon__Student {
+  background: url('/img/icon-value-for-student.png') no-repeat top left;
+  background-size: cover;
+}
+
+.valueIcon__Business {
+  background: url('/img/icon-value-for-business.png') no-repeat top left;
+  background-size: cover;
+}
+
+.valueImage {
+  position: relative;
+  z-index: 10;
+  display: none;
+  border-radius: 26px;
+  box-shadow: 0 5px 20px rgb(0 0 0 / 20%);
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  @media(min-width:1100px) {
+    display: flex;
+    width: 300px;
+  }
+}

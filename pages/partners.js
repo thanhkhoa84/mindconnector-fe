@@ -1,6 +1,14 @@
 import Head from 'next/head';
 import Container from '../components/Container';
 import Layout from './../components/Layout';
+import Seo from './../components/SEO';
+
+const seo = {
+  metaTitle: 'Mind Connector',
+  metaDescription: 'Mind Connector',
+  // shareImage: article.attributes.image,
+  // article: true,
+};
 
 const Partners = () => (
   <>
@@ -10,11 +18,11 @@ const Partners = () => (
       <link rel='icon' href='/favicon.ico' />
     </Head>
 
-    <Layout>
-      {/* <Seo seo={seo} /> */}
+    <>
+      <Seo seo={seo} />
       <h1>Partners</h1>
       <div></div>
-    </Layout>
+    </>
   </>
 );
 

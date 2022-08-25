@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../styles/components/NavBar.module.scss';
 import { forwardRef, useEffect, useState } from 'react';
 
-const DropdownMenu = ({ children }) => {
+import styles from '../styles/components/NavBar.module.scss';
+
+const DropdownMenu = ({ child }) => {
   return (
     <ul className={styles.dropdownMenu}>
-      {children.map((l, index) => {
+      {child.map((l, index) => {
         return (
           <li key={index}>
             <Link href={l.path} className={styles.navLink} scroll={false}>
@@ -36,17 +37,15 @@ const NavItems = forwardRef(({ navlinks }, ref) => {
         return (
           <li
             className={`${isOpen ? styles.active : ''} ${
-              link.children ? styles.navItemDropdown : ''
+              link.child ? styles.navItemDropdown : ''
             } ${styles.navItem}`}
             key={index}
-            onClick={link.children ? onClickHandler : null}
+            onClick={link.child ? onClickHandler : null}
           >
             <Link href={link.path} className={styles.navLink}>
               {link.name}
             </Link>
-            {link.children && isOpen && (
-              <DropdownMenu children={link.children} />
-            )}
+            {link.child && isOpen && <DropdownMenu child={link.child} />}
           </li>
         );
       })}

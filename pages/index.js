@@ -6,7 +6,6 @@ import ValueSection from '../components/home/ValueSection';
 import HeroBanner from '../components/home/HeroBanner';
 import Teachers from '../components/home/Teachers';
 import About from '../components/home/About';
-import Layout from './../components/Layout';
 import Seo from './../components/SEO';
 
 export default function Home({ questions }) {
@@ -28,8 +27,8 @@ export default function Home({ questions }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      {/* <Seo seo={seo} /> */}
       <>
+        {/* <Seo seo={seo} /> */}
         <HeroBanner />
         <ValueSection />
         <About />

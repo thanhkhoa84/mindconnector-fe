@@ -28,7 +28,7 @@ MyApp.getInitialProps = async (ctx) => {
     {
       name: 'Dành cho sinh viên',
       path: '#',
-      children: [
+      child: [
         {
           name: 'Thành Công Trong Học Tập',
           path: '/student#thanh-cong-trong-hoc-tap',
@@ -39,7 +39,7 @@ MyApp.getInitialProps = async (ctx) => {
         },
         {
           name: 'Thành Công Trong Khởi Sự Kinh Doanh',
-          path: '/#thanh-cong-trong-khoi-su-kinh-doanh',
+          path: '/student#thanh-cong-trong-khoi-su-kinh-doanh',
         },
         {
           name: 'Experience Tour',
