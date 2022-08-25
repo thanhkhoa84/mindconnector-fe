@@ -1,5 +1,6 @@
 import styles from '../styles/components/LogoList.module.scss';
 import Container from './Container';
+import Image from 'next/image';
 
 const LogoList = ({ backgroundColor, title, list }) => {
   let images = ['/img/saatchi.svg', '/img/vlu.svg', '/img/ogilvy.svg'];
