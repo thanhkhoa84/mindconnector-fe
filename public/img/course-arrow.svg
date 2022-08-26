@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55" height="55" viewBox="0 0 55 55">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffaf43"/>
+      <stop offset="1" stop-color="#ff6823"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_3104" data-name="Group 3104" transform="translate(-135 -271)">
+    <path id="Asset_1_4x_copy" data-name="Asset 1@4x copy" d="M55,0V39A16,16,0,0,1,39,55H0Z" transform="translate(135 271)" fill="url(#linear-gradient)"/>
+    <g id="Group_22" data-name="Group 22" transform="translate(168.703 304)">
+      <path id="Path_27" data-name="Path 27" d="M0,0H8V8" transform="translate(8) rotate(90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+      <path id="Path_28" data-name="Path 28" d="M147.436,1422.129l7.765,7.765" transform="translate(-147.436 -1422.012)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

@@ -5,7 +5,7 @@ import Image from 'next/image';
 const LogoList = ({ backgroundColor, title, list }) => {
   let images = ['/img/saatchi.svg', '/img/vlu.svg', '/img/ogilvy.svg'];
   return (
-    <section
+    <div
       className={styles.LogoList}
       style={{
         backgroundColor: backgroundColor ? backgroundColor : 'transparent',
@@ -28,7 +28,7 @@ const LogoList = ({ backgroundColor, title, list }) => {
           </ul>
         </div>
       </Container>
-    </section>
+    </div>
   );
 };
 

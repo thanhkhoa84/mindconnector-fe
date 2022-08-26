@@ -27,7 +27,7 @@ const About = () => {
           nhân phát triển và tăng trưởng mạnh mẽ trong tương lai.
         </p>
         <div className={styles.videoEmbed}>
-          <YouTube videoId='8dJyRm2jJ-U' opts={opts} onReady={_onReady} />
+          {/* <YouTube videoId='8dJyRm2jJ-U' opts={opts} onReady={_onReady} /> */}
         </div>
       </Container>
       <LogoList

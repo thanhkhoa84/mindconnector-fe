@@ -4,9 +4,12 @@ import Image from 'next/image';
 import QandA from '../components/QandA';
 import ValueSection from '../components/home/ValueSection';
 import HeroBanner from '../components/home/HeroBanner';
-import Teachers from '../components/home/Teachers';
+import Teachers from '../components/common/teachers/Teachers';
 import About from '../components/home/About';
 import Seo from './../components/SEO';
+import Container from './../components/Container';
+
+import styles from '../styles/pages/Home.module.scss';
 
 export default function Home({ questions }) {
   const seo = {
@@ -32,8 +35,12 @@ export default function Home({ questions }) {
         <HeroBanner />
         <ValueSection />
         <About />
-        <Teachers />
-        <QandA questions={questions}></QandA>
+        <section className={styles.homeTeachers}>
+          <Teachers />
+        </section>
+        <Container>
+          <QandA questions={questions}></QandA>
+        </Container>
       </>
     </>
   );
