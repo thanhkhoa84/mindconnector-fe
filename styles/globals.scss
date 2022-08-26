@@ -140,3 +140,11 @@ p {
 .text-center {
   text-align: center;
 }
+
+.teachers, .slider-less-than-five {
+  .flickity-button {
+    @media(min-width: 992px) {
+      display: none !important;
+    }
+  }
+}

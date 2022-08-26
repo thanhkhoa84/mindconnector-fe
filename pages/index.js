@@ -36,7 +36,9 @@ export default function Home({ questions }) {
         <ValueSection />
         <About />
         <section className={styles.homeTeachers}>
-          <Teachers />
+          <Container>
+            <Teachers />
+          </Container>
         </section>
         <Container>
           <QandA questions={questions}></QandA>
