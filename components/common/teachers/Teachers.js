@@ -1,3 +1,4 @@
+import { useState, useEffect, memo } from 'react';
 import Flickity from 'react-flickity-component';
 import 'flickity/css/flickity.css';
 
@@ -131,22 +132,69 @@ const TeacherList = () => (
   </div>
 );
 
-const flickityOptions = {
-  initialIndex: 0,
-  contain: true,
-  percentPosition: true,
-  prevNextButtons: true,
-  pageDots: false,
+const useMedia = (query) => {
+  let [matches, setMatches] = useState(null);
+
+  useEffect(() => {
+    let media = window.matchMedia(query);
+
+    if (media.matches != matches) {
+      setMatches(media.matches);
+    }
+    let listener = (e) => {
+      console.log(matches);
+      setMatches(media.matches);
+    };
+    media.addEventListener('change', listener);
+
+    return () => media.removeEventListener('change', listener);
+  }, []);
+
+  return matches;
 };
 
 function Carousel() {
+  const totalSlide = 4;
+  let [options, setOptions] = useState({
+    initialIndex: 0,
+    contain: true,
+    percentPosition: true,
+    prevNextButtons: true,
+    pageDots: true,
+    draggable: true,
+  });
+
+  let small = false;
+  let medium = false;
+  let large = false;
+
+  useEffect(() => {
+    // let media = window.matchMedia(`min-width: ${window.innerWidth}px`);
+
+    // if (media.matches != matches) {
+    //   setMatches(media.matches);
+    // }
+    let listener = (e) => {
+      small = window.matchMedia('(max-width:767px').matches;
+      medium = window.matchMedia('(min-width: 768px)').matches;
+      large = window.matchMedia('(min-width:992px)').matches;
+      if (totalSlide <= 5 && large) {
+        setOptions({ pageDots: false });
+      }
+    };
+    listener();
+    window.addEventListener('resize', listener);
+
+    return () => window.removeEventListener('resize', listener);
+  }, []);
+
   return (
     <Flickity
       className={'carousel'} // default ''
       elementType={'div'} // default 'div'
-      options={flickityOptions} // takes flickity options {}
+      options={options} // takes flickity options {}
       disableImagesLoaded={false} // default false
-      reloadOnUpdate // default false
+      reloadOnUpdate={true} // default false
       static // default false
     >
       <div className={cardStyles.teacherCard}>
@@ -245,30 +293,6 @@ function Carousel() {
           </div>
         </div>
       </div>
-      {/* <div className={cardStyles.teacherCard}>
-        <div className={cardStyles.teacherImageContainer}>
-          <img
-            src='/img/bg-teacher-card.svg'
-            alt=''
-            className={cardStyles.teacherCardBg}
-          />
-          <div className={cardStyles.teacherImage}>
-            <img src='/img/mentors/dao-minh-huyen.png' alt='' />
-          </div>
-        </div>
-        <div className={cardStyles.teacherInfo}>
-          <h3>Đào Minh Huyền</h3>
-          <p>
-            Owner of Ask2Go App, <br />
-            Mihoo Cosmetics,…
-          </p>
-          <div className={cardStyles.socialInfo}>
-            <a href='#' target='_blank'>
-              <img src='/img/mentor-linkedin.svg' alt='' />
-            </a>
-          </div>
-        </div>
-      </div> */}
     </Flickity>
   );
 }
@@ -289,4 +313,4 @@ const Teachers = () => {
   );
 };
 
-export default Teachers;
+export default memo(Teachers);

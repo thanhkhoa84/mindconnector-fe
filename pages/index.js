@@ -11,7 +11,7 @@ import Container from './../components/Container';
 
 import styles from '../styles/pages/Home.module.scss';
 
-export default function Home({ questions }) {
+export default function Home({ slides, questions }) {
   const seo = {
     metaTitle: 'Mind Connector',
     metaDescription: 'Mind Connector',
@@ -32,7 +32,7 @@ export default function Home({ questions }) {
 
       <>
         {/* <Seo seo={seo} /> */}
-        <HeroBanner />
+        <HeroBanner slides={slides} />
         <ValueSection />
         <About />
         <section className={styles.homeTeachers}>
@@ -75,8 +75,18 @@ export async function getStaticProps() {
     },
   ];
 
+  let slides = [
+    {
+      headline: 'Workshop với Valoma và 8 trường Đại Học Phía Nam',
+      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean laoreet in elit vestibulum. Aenean hendrerit arcu vitae commodo sem consequat phasellus',
+      image: '/img/home-banner.png',
+      link: '#',
+    },
+  ];
+
   return {
     props: {
+      slides,
       questions,
     },
   };
