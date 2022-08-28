@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+
 import Container from './../components/Container';
 import QandA from './../components/QandA';
 import Seo from './../components/SEO';
@@ -8,10 +10,15 @@ import {
   SectionSubHeading,
   BannerHeading,
 } from '../components/Heading';
-import LogoList from '../components/LogoList';
 import Teachers from './../components/common/teachers/Teachers';
 import Courses from '../components/common/courses/Courses';
 import styles from '../styles/pages/Student.module.scss';
+
+
+const LogoList = dynamic(() => import('./../components/LogoList'), {
+  ssr: false
+})
+
 
 const Student = ({ questions, logoslist }) => {
   const seo = {

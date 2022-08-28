@@ -1,9 +1,13 @@
+import dynamic from 'next/dynamic';
 import YouTube from 'react-youtube';
 
 import Container from '../../components/Container';
 import { SectionHeading } from '../../components/Heading';
 import styles from './About.module.scss';
-import LogoList from './../LogoList';
+
+const LogoList = dynamic(() => import('./../LogoList'), {
+  ssr: false
+})
 
 const About = () => {
   const opts = {

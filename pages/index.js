@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import dynamic from 'next/dynamic'
 
 import QandA from '../components/QandA';
 import ValueSection from '../components/home/ValueSection';

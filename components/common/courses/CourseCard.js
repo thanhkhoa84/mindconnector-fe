@@ -1,5 +1,4 @@
 import Rating from '../../Rating';
-
 import styles from '../../../styles/components/common/courses/CourseCard.module.scss';
 
 const CourseCard = () => (

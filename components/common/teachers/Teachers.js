@@ -142,7 +142,6 @@ const useMedia = (query) => {
       setMatches(media.matches);
     }
     let listener = (e) => {
-      console.log(matches);
       setMatches(media.matches);
     };
     media.addEventListener('change', listener);
@@ -164,29 +163,16 @@ function Carousel() {
     draggable: true,
   });
 
-  let small = false;
-  let medium = false;
-  let large = false;
+  // let small = useMedia('(max-width:767px');
+  // let medium = useMedia('(min-width: 768px)');
+  // let large = useMedia('(min-width: 992px)');
 
-  useEffect(() => {
-    // let media = window.matchMedia(`min-width: ${window.innerWidth}px`);
 
-    // if (media.matches != matches) {
-    //   setMatches(media.matches);
-    // }
-    let listener = (e) => {
-      small = window.matchMedia('(max-width:767px').matches;
-      medium = window.matchMedia('(min-width: 768px)').matches;
-      large = window.matchMedia('(min-width:992px)').matches;
-      if (totalSlide <= 5 && large) {
-        setOptions({ pageDots: false });
-      }
-    };
-    listener();
-    window.addEventListener('resize', listener);
-
-    return () => window.removeEventListener('resize', listener);
-  }, []);
+  if (totalSlide <= 5 ) {
+    // setOptions((options) => {
+    //   return { pageDots: false };
+    // })
+  }
 
   return (
     <Flickity

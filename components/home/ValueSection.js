@@ -1,9 +1,14 @@
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 
 import Container from '../../components/Container';
 import { SectionHeading } from '../../components/Heading';
 import styles from './Value.module.scss';
-import LogoList from './../LogoList';
+// import LogoList from './../LogoList';
+
+const LogoList = dynamic(() => import('./../LogoList'), {
+  ssr: false
+})
 
 const ValueSection = () => {
   const list = ['1', '2', '3', '4', '5', '6'];

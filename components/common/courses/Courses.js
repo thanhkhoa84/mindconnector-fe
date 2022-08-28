@@ -1,41 +1,11 @@
-import Flickity from 'react-flickity-component';
-import 'flickity/css/flickity.css';
+import dynamic from 'next/dynamic';
 
-import CourseCard from './CourseCard';
 import styles from '../../../styles/components/common/courses/Courses.module.scss';
 import Container from './../../Container';
 
-const flickityOptions = {
-  initialIndex: 0,
-  contain: true,
-  percentPosition: true,
-  prevNextButtons: true,
-  pageDots: false,
-  cellAlign: 'left',
-};
-
-function Carousel() {
-  return (
-    <Flickity
-      className={'carousel'} // default ''
-      elementType={'div'} // default 'div'
-      options={flickityOptions} // takes flickity options {}
-      disableImagesLoaded={false} // default false
-      reloadOnUpdate // default false
-      static // default false
-    >
-      <CourseCard />
-      <CourseCard />
-      <CourseCard />
-      <CourseCard />
-      <CourseCard />
-      <CourseCard />
-      <CourseCard />
-      <CourseCard />
-      <CourseCard />
-    </Flickity>
-  );
-}
+const CourseCard = dynamic(() => import('./CourseCard'), {
+  ssr: false
+})
 
 const Courses = () => {
   let total = 8;
@@ -45,7 +15,11 @@ const Courses = () => {
         styles.coursesList
       }`}
     >
-      <Carousel />
+      <CourseCard />
+      <CourseCard />
+      <CourseCard />
+      <CourseCard />
+      <CourseCard />
     </div>
   );
 };
