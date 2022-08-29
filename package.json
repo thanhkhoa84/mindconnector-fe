@@ -9,10 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "flickity": "2.3.0",
     "next": "12.2.5",
+    "qs": "^6.11.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sass": "^1.54.4"
+    "react-flickity-component": "^3.6.3",
+    "react-youtube": "^9.0.3",
+    "sass": "^1.54.5"
   },
   "devDependencies": {
     "eslint": "8.21.0",

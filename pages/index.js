@@ -4,13 +4,17 @@ import dynamic from 'next/dynamic'
 
 import QandA from '../components/QandA';
 import ValueSection from '../components/home/ValueSection';
-import HeroBanner from '../components/home/HeroBanner';
 import Teachers from '../components/common/teachers/Teachers';
 import About from '../components/home/About';
 import Seo from './../components/SEO';
 import Container from './../components/Container';
 
 import styles from '../styles/pages/Home.module.scss';
+
+
+const HeroBanner = dynamic(() => import('../components/home/HeroBanner'), {
+  ssr: false
+})
 
 export default function Home({ slides, questions }) {
   const seo = {
