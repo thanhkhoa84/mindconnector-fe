@@ -87,6 +87,24 @@ export async function getStaticProps() {
       image: '/img/home-banner.png',
       link: '#',
     },
+    {
+      headline: 'Workshop với Valoma và 8 trường Đại Học Phía Nam',
+      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean laoreet in elit vestibulum. Aenean hendrerit arcu vitae commodo sem consequat phasellus',
+      image: '/img/home-banner.png',
+      link: '#',
+    },
+    {
+      headline: 'Workshop với Valoma và 8 trường Đại Học Phía Nam',
+      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean laoreet in elit vestibulum. Aenean hendrerit arcu vitae commodo sem consequat phasellus',
+      image: '/img/home-banner.png',
+      link: '#',
+    },
+    {
+      headline: 'Workshop với Valoma và 8 trường Đại Học Phía Nam',
+      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean laoreet in elit vestibulum. Aenean hendrerit arcu vitae commodo sem consequat phasellus',
+      image: '/img/home-banner.png',
+      link: '#',
+    },    
   ];
 
   return {
