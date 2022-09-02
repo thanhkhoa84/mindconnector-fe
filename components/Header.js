@@ -12,7 +12,7 @@ const Header = ({ ...navlinks }) => {
       <Logo />
       <div className={styles.headerNav}>
         <NavBar {...navlinks} />
-        <CTA href='explore' name='HeaderCTA'>
+        <CTA href='explore' name='header-cta'>
           Khám phá ngay
         </CTA>
       </div>

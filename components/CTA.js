@@ -4,7 +4,7 @@ import styles from '../styles/components/CTA.module.scss';
 
 const Button = React.forwardRef(({ href, onClick, ...props }, ref) => {
   return (
-    <a href={href} onClick={onClick} ref={ref} className={styles[props.name]}>
+    <a href={href} onClick={onClick} ref={ref} className={props.name}>
       {props.children}
     </a>
   );

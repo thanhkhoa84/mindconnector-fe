@@ -1,8 +1,5 @@
 import dynamic from 'next/dynamic';
 
-import styles from '../../../styles/components/common/courses/Courses.module.scss';
-import Container from './../../Container';
-
 const CourseCard = dynamic(() => import('./CourseCard'), {
   ssr: false
 })
@@ -11,9 +8,9 @@ const Courses = () => {
   let total = 8;
   return (
     <div
-      className={`${total <= 5 ? 'slider-less-than-five' : ''} ${
-        styles.coursesList
-      }`}
+      className={`
+        text-justify my-[2em] mx-0 bg-transparent grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-2 sm:gap-6 md:gap-5 content-start  
+        ${total <= 5 ? 'slider-less-than-five' : ''}`}
     >
       <CourseCard />
       <CourseCard />

@@ -6,14 +6,14 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <Container>
-        <div className={styles.footerInfo}>
+        <div className="py-8 px-0">
           <LogoMobile />
           <div className={styles.footerNav}>
             <ul></ul>
           </div>
         </div>
       </Container>
-      <div className={styles.copyright}>
+      <div className="bg-purple text-center text-white h-16 leading-[4rem]">
         <Container>&copy; Mind Connector, Inc. 2022</Container>
       </div>
     </footer>

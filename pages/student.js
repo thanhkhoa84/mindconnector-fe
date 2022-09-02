@@ -43,7 +43,7 @@ const Student = ({ questions, logoslist }) => {
         <header className={`header-with-bg ${styles.studentHeader}`}>
           <Container>
             <BannerHeading>
-              Học hỏi <br />
+              Học hỏi <br className='hidden md:inline'/>
               để thành công
             </BannerHeading>
             <p>

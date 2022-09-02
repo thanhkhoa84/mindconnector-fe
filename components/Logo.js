@@ -6,9 +6,8 @@ import styles from '../styles/components/Logo.module.scss';
 
 const Title = React.forwardRef(({ onClick, href }, ref) => {
   return (
-    <a href={href} onClick={onClick} ref={ref} className={styles.logo}>
-      Mind <br />
-      Connector
+    <a href={href} onClick={onClick} ref={ref} className='font-black inline-block text-white select-none text-sm leading-[1] lg:text-2xl lg:text-purple'>
+      Mind Connector
     </a>
   );
 });

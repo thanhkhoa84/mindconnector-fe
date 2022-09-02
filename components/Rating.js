@@ -1,5 +1,3 @@
-import styles from '../styles/components/Rating.module.scss';
-
 const Rating = ({ value, total }) => {
   const rating = () => {
     return Math.floor(Math.random() * (5 + 1));
@@ -16,6 +14,7 @@ const Rating = ({ value, total }) => {
             height='10'
             viewBox='0 0 10 10'
             key={idx}
+            className="inline-block align-baseline"
           >
             <path
               id='Path_4333'
@@ -32,6 +31,7 @@ const Rating = ({ value, total }) => {
             height='10'
             viewBox='0 0 10 10'
             key={idx}
+            className="inline-block align-baseline"
           >
             <path
               id='Path_4337'
@@ -46,7 +46,7 @@ const Rating = ({ value, total }) => {
   };
 
   return (
-    <div className={styles.rating}>
+    <div className="text-xs text-bold mt-1">
       {value} <Star value={rating()} /> ({total})
     </div>
   );

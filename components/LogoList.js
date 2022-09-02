@@ -6,7 +6,7 @@ const LogoList = ({ backgroundColor, title, list }) => {
   let images = ['/img/saatchi.svg', '/img/vlu.svg', '/img/ogilvy.svg'];
   return (
     <div
-      className={styles.LogoList}
+      className='p-4'
       style={{
         backgroundColor: backgroundColor ? backgroundColor : 'transparent',
       }}
@@ -14,7 +14,7 @@ const LogoList = ({ backgroundColor, title, list }) => {
       <Container>
         <div className={styles.LogoListContainer}>
           <header>
-            <h2>{title}</h2>
+            <h2 className='font-bold text-base text-center leading-4 my-4 mx-0'>{title}</h2>
           </header>
           <ul>
             {list.map((li, index) => {

@@ -1,15 +1,13 @@
-import styles from '../styles/components/Heading.module.scss';
-
 const SectionHeading = ({ align, children }) => {
   return (
-    <h1 className={`${styles.sectionHeading} ${align ? 'text-center' : ''}`}>
+    <h1 className={`leading-[1.3] text-4xl font-black mt-0 mb-4 mx-auto  ${align ? 'text-center' : ''}`}>
       {children}
     </h1>
   );
 };
 const SectionSubHeading = ({ align, children }) => {
   return (
-    <h2 className={`${styles.sectionSubHeading} ${align ? 'text-center' : ''}`}>
+    <h2 className={`leading-[1] text-base text-gray font-bold my-0 mx-auto ${align ? 'text-center' : ''}`}>
       {children}
     </h2>
   );
@@ -17,7 +15,7 @@ const SectionSubHeading = ({ align, children }) => {
 
 const BannerHeading = ({ align, children }) => {
   return (
-    <h1 className={`${styles.bannerHeading} ${align ? 'text-center' : ''}`}>
+    <h1 className={`md:leading-[1.2] text-3xl text-center md:text-left md:text-6xl font-black mt-0 mb-4 mx-auto`}>
       {children}
     </h1>
   );

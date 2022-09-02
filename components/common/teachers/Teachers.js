@@ -5,124 +5,152 @@ import 'flickity/css/flickity.css';
 import { SectionHeading } from '../../Heading';
 
 import styles from '../../../styles/components/common/teachers/Teachers.module.scss';
-import cardStyles from '../../../styles/components/common/teachers/TeacherCard.module.scss';
 
-const TeacherList = () => (
-  <div className={styles.teachersList}>
-    <div className={cardStyles.teacherCard}>
-      <div className={cardStyles.teacherImageContainer}>
+const TeacherCard = () => {
+  return (
+    <div className={styles.teacherCard}>
+      <div className={styles.teacherImageContainer}>
         <img
           src='/img/bg-teacher-card.svg'
           alt=''
-          className={cardStyles.teacherCardBg}
+          className={styles.teacherCardBg}
         />
-        <div className={cardStyles.teacherImage}>
+        <div className={styles.teacherImage}>
           <img src='/img/mentors/hieu-nguyen.png' alt='' />
         </div>
       </div>
-      <div className={cardStyles.teacherInfo}>
+      <div className={styles.teacherInfo}>
         <h3>Hiếu Nguyễn</h3>
         <p>
           Phụ trách nghiên cứu <br />
           phát triển thị trường
         </p>
-        <div className={cardStyles.socialInfo}>
+        <div className={styles.socialInfo}>
           <a href='#' target='_blank'>
             <img src='/img/mentor-linkedin.svg' alt='' />
           </a>
         </div>
       </div>
     </div>
-    <div className={cardStyles.teacherCard}>
-      <div className={cardStyles.teacherImageContainer}>
+  );
+};
+
+const TeacherList = () => (
+  <div className={styles.teachersList}>
+    <div className={styles.teacherCard}>
+      <div className={styles.teacherImageContainer}>
         <img
           src='/img/bg-teacher-card.svg'
           alt=''
-          className={cardStyles.teacherCardBg}
+          className={styles.teacherCardBg}
         />
-        <div className={cardStyles.teacherImage}>
+        <div className={styles.teacherImage}>
+          <img src='/img/mentors/hieu-nguyen.png' alt='' />
+        </div>
+      </div>
+      <div className={styles.teacherInfo}>
+        <h3>Hiếu Nguyễn</h3>
+        <p>
+          Phụ trách nghiên cứu <br />
+          phát triển thị trường
+        </p>
+        <div className={styles.socialInfo}>
+          <a href='#' target='_blank'>
+            <img src='/img/mentor-linkedin.svg' alt='' />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div className={styles.teacherCard}>
+      <div className={styles.teacherImageContainer}>
+        <img
+          src='/img/bg-teacher-card.svg'
+          alt=''
+          className={styles.teacherCardBg}
+        />
+        <div className={styles.teacherImage}>
           <img src='/img/mentors/nina-tran.png' alt='' />
         </div>
       </div>
-      <div className={cardStyles.teacherInfo}>
+      <div className={styles.teacherInfo}>
         <h3>Nina Trần</h3>
         <p>
           Phụ trách <br />
           thiết kế chương trình
         </p>
-        <div className={cardStyles.socialInfo}>
+        <div className={styles.socialInfo}>
           <a href='#' target='_blank'>
             <img src='/img/mentor-linkedin.svg' alt='' />
           </a>
         </div>
       </div>
     </div>
-    <div className={cardStyles.teacherCard}>
-      <div className={cardStyles.teacherImageContainer}>
+    <div className={styles.teacherCard}>
+      <div className={styles.teacherImageContainer}>
         <img
           src='/img/bg-teacher-card.svg'
           alt=''
-          className={cardStyles.teacherCardBg}
+          className={styles.teacherCardBg}
         />
-        <div className={cardStyles.teacherImage}>
+        <div className={styles.teacherImage}>
           <img src='/img/mentors/mandy-nguyen.png' alt='' />
         </div>
       </div>
-      <div className={cardStyles.teacherInfo}>
+      <div className={styles.teacherInfo}>
         <h3>Mandy Nguyễn</h3>
         <p>
           Chuyên gia <br />
           Kinh doanh - Marketing
         </p>
-        <div className={cardStyles.socialInfo}>
+        <div className={styles.socialInfo}>
           <a href='#' target='_blank'>
             <img src='/img/mentor-linkedin.svg' alt='' />
           </a>
         </div>
       </div>
     </div>
-    <div className={cardStyles.teacherCard}>
-      <div className={cardStyles.teacherImageContainer}>
+    <div className={styles.teacherCard}>
+      <div className={styles.teacherImageContainer}>
         <img
           src='/img/bg-teacher-card.svg'
           alt=''
-          className={cardStyles.teacherCardBg}
+          className={styles.teacherCardBg}
         />
-        <div className={cardStyles.teacherImage}>
+        <div className={styles.teacherImage}>
           <img src='/img/mentors/dao-minh-huyen.png' alt='' />
         </div>
       </div>
-      <div className={cardStyles.teacherInfo}>
+      <div className={styles.teacherInfo}>
         <h3>Đào Minh Huyền</h3>
         <p>
           Owner of Ask2Go App, <br />
           Mihoo Cosmetics,…
         </p>
-        <div className={cardStyles.socialInfo}>
+        <div className={styles.socialInfo}>
           <a href='#' target='_blank'>
             <img src='/img/mentor-linkedin.svg' alt='' />
           </a>
         </div>
       </div>
     </div>
-    <div className={cardStyles.teacherCard}>
-      <div className={cardStyles.teacherImageContainer}>
+    <div className={styles.teacherCard}>
+      <div className={styles.teacherImageContainer}>
         <img
           src='/img/bg-teacher-card.svg'
           alt=''
-          className={cardStyles.teacherCardBg}
+          className={styles.teacherCardBg}
         />
-        <div className={cardStyles.teacherImage}>
+        <div className={styles.teacherImage}>
           <img src='/img/mentors/dao-minh-huyen.png' alt='' />
         </div>
       </div>
-      <div className={cardStyles.teacherInfo}>
+      <div className={styles.teacherInfo}>
         <h3>Đào Minh Huyền</h3>
         <p>
           Owner of Ask2Go App, <br />
           Mihoo Cosmetics,…
         </p>
-        <div className={cardStyles.socialInfo}>
+        <div className={styles.socialInfo}>
           <a href='#' target='_blank'>
             <img src='/img/mentor-linkedin.svg' alt='' />
           </a>
@@ -183,96 +211,96 @@ function Carousel() {
       reloadOnUpdate={true} // default false
       static // default false
     >
-      <div className={cardStyles.teacherCard}>
-        <div className={cardStyles.teacherImageContainer}>
+      <div className={styles.teacherCard}>
+        <div className={styles.teacherImageContainer}>
           <img
             src='/img/bg-teacher-card.svg'
             alt=''
-            className={cardStyles.teacherCardBg}
+            className={styles.teacherCardBg}
           />
-          <div className={cardStyles.teacherImage}>
+          <div className={styles.teacherImage}>
             <img src='/img/mentors/hieu-nguyen.png' alt='' />
           </div>
         </div>
-        <div className={cardStyles.teacherInfo}>
+        <div className={styles.teacherInfo}>
           <h3>Hiếu Nguyễn</h3>
           <p>
             Phụ trách nghiên cứu <br />
             phát triển thị trường
           </p>
-          <div className={cardStyles.socialInfo}>
+          <div className={styles.socialInfo}>
             <a href='#' target='_blank'>
               <img src='/img/mentor-linkedin.svg' alt='' />
             </a>
           </div>
         </div>
       </div>
-      <div className={cardStyles.teacherCard}>
-        <div className={cardStyles.teacherImageContainer}>
+      <div className={styles.teacherCard}>
+        <div className={styles.teacherImageContainer}>
           <img
             src='/img/bg-teacher-card.svg'
             alt=''
-            className={cardStyles.teacherCardBg}
+            className={styles.teacherCardBg}
           />
-          <div className={cardStyles.teacherImage}>
+          <div className={styles.teacherImage}>
             <img src='/img/mentors/nina-tran.png' alt='' />
           </div>
         </div>
-        <div className={cardStyles.teacherInfo}>
+        <div className={styles.teacherInfo}>
           <h3>Nina Trần</h3>
           <p>
             Phụ trách <br />
             thiết kế chương trình
           </p>
-          <div className={cardStyles.socialInfo}>
+          <div className={styles.socialInfo}>
             <a href='#' target='_blank'>
               <img src='/img/mentor-linkedin.svg' alt='' />
             </a>
           </div>
         </div>
       </div>
-      <div className={cardStyles.teacherCard}>
-        <div className={cardStyles.teacherImageContainer}>
+      <div className={styles.teacherCard}>
+        <div className={styles.teacherImageContainer}>
           <img
             src='/img/bg-teacher-card.svg'
             alt=''
-            className={cardStyles.teacherCardBg}
+            className={styles.teacherCardBg}
           />
-          <div className={cardStyles.teacherImage}>
+          <div className={styles.teacherImage}>
             <img src='/img/mentors/mandy-nguyen.png' alt='' />
           </div>
         </div>
-        <div className={cardStyles.teacherInfo}>
+        <div className={styles.teacherInfo}>
           <h3>Mandy Nguyễn</h3>
           <p>
             Chuyên gia <br />
             Kinh doanh - Marketing
           </p>
-          <div className={cardStyles.socialInfo}>
+          <div className={styles.socialInfo}>
             <a href='#' target='_blank'>
               <img src='/img/mentor-linkedin.svg' alt='' />
             </a>
           </div>
         </div>
       </div>
-      <div className={cardStyles.teacherCard}>
-        <div className={cardStyles.teacherImageContainer}>
+      <div className={styles.teacherCard}>
+        <div className={styles.teacherImageContainer}>
           <img
             src='/img/bg-teacher-card.svg'
             alt=''
-            className={cardStyles.teacherCardBg}
+            className={styles.teacherCardBg}
           />
-          <div className={cardStyles.teacherImage}>
+          <div className={styles.teacherImage}>
             <img src='/img/mentors/dao-minh-huyen.png' alt='' />
           </div>
         </div>
-        <div className={cardStyles.teacherInfo}>
+        <div className={styles.teacherInfo}>
           <h3>Đào Minh Huyền</h3>
           <p>
             Owner of Ask2Go App, <br />
             Mihoo Cosmetics,…
           </p>
-          <div className={cardStyles.socialInfo}>
+          <div className={styles.socialInfo}>
             <a href='#' target='_blank'>
               <img src='/img/mentor-linkedin.svg' alt='' />
             </a>
