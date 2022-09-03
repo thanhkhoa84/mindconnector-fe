@@ -13,6 +13,9 @@ module.exports = {
       ...defaultTheme.screens,
     },
     extend: {
+      backgroundImages: {
+        'qaArrow': "url('/img/detail-arrow.png')",
+      },
       colors: {
         'black': '#2B2B2B',
         'orange': {

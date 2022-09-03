@@ -126,14 +126,23 @@ a {
 
 .btn {
   @apply rounded-full border-2 border-orange-medium transition h-12 leading-10 px-6 text-base font-bold inline-block;
+  text-shadow: 0 1px 0px rgba(0,0,0,0.65);
 }
 
 .btn-primary {
   @apply btn bg-gradient;
+  text-shadow: 0 1px 0px rgba(0,0,0,0.65);
+  &:hover {
+    text-shadow: 0 1px 0px rgba(225, 225, 225, 0.65);
+  }
 }
 
 .btn-invert {
   @apply btn bg-gradient-invert;
+  text-shadow: 0 1px 0px rgba(0,0,0,0.65);
+  &:hover {
+    text-shadow: 0 1px 0px rgba(0,0,0,0.65);
+  }
 }
 
 .header-cta {

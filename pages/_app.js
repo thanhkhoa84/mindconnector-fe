@@ -27,8 +27,8 @@ MyApp.getInitialProps = async (ctx) => {
   const navlinks = [
     {
       name: 'Dành cho sinh viên',
-      path: '#',
-      child: [
+      path: 'student',
+      submenus: [
         {
           name: 'Thành Công Trong Học Tập',
           path: '/student#thanh-cong-trong-hoc-tap',
@@ -43,14 +43,32 @@ MyApp.getInitialProps = async (ctx) => {
         },
         {
           name: 'Experience Tour',
-          path: '/student',
+          path: 'student',
         },
       ],
     },
-    // {
-    //   name: 'Dành cho doanh nghiệp',
-    //   path: 'business',
-    // },
+    {
+      name: 'Dành cho doanh nghiệp',
+      path: 'business',
+      // submenus: [
+      //   {
+      //     name: 'Thành Công Trong Học Tập',
+      //     path: '/student#thanh-cong-trong-hoc-tap',
+      //   },
+      //   {
+      //     name: 'Thành Công Trong Ứng Tuyển',
+      //     path: '/student#thanh-cong-trong-ung-tuyen',
+      //   },
+      //   {
+      //     name: 'Thành Công Trong Khởi Sự Kinh Doanh',
+      //     path: '/student#thanh-cong-trong-khoi-su-kinh-doanh',
+      //   },
+      //   {
+      //     name: 'Experience Tour',
+      //     path: '/student',
+      //   },
+      // ],
+    },
     // {
     //   name: 'Đối tác',
     //   path: 'partners',
@@ -78,7 +96,6 @@ MyApp.getInitialProps = async (ctx) => {
 
   // Pass the data to our page via props
   // return { ...appProps, pageProps: { global: globalRes.data } };
-
   return {
     ...appProps,
     pageProps: {

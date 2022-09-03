@@ -8,7 +8,7 @@ const LogoList = ({ backgroundColor, title, list }) => {
     <div
       className='p-4'
       style={{
-        backgroundColor: backgroundColor ? backgroundColor : 'transparent',
+        backgroundColor: backgroundColor ? backgroundColor : '',
       }}
     >
       <Container>

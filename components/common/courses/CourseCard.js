@@ -8,7 +8,7 @@ const CourseCard = () => (
           <img src='/img/course-1.png' alt='' className='w-full block'/>
         </div>
       <Link href='/'>
-        <div className={`text-sm px-5 pb-4 pb-8 md:p-4 md:pb-8 text-white flex flex-col justify-end absolute top-0 left-0 right-0 bottom-0 after:content-none after:bg-gradient-overlay cursor-pointer`}>
+        <div className={`text-sm px-5 pb-9 md:p-4 md:pb-8 text-white flex flex-col justify-end absolute top-0 left-0 right-0 bottom-0 after:content-none after:bg-gradient-overlay cursor-pointer`}>
           <div className="overflow-hidden">
             <h5 className='bg-purple rounded-sm inline-block float-left font-bold text-[10px] leading-6 h-6 px-2'>Khoá học bán chạy</h5>
           </div>
