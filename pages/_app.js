@@ -50,37 +50,37 @@ MyApp.getInitialProps = async (ctx) => {
     {
       name: 'Dành cho doanh nghiệp',
       path: 'business',
-      // submenus: [
-      //   {
-      //     name: 'Thành Công Trong Học Tập',
-      //     path: '/student#thanh-cong-trong-hoc-tap',
-      //   },
-      //   {
-      //     name: 'Thành Công Trong Ứng Tuyển',
-      //     path: '/student#thanh-cong-trong-ung-tuyen',
-      //   },
-      //   {
-      //     name: 'Thành Công Trong Khởi Sự Kinh Doanh',
-      //     path: '/student#thanh-cong-trong-khoi-su-kinh-doanh',
-      //   },
-      //   {
-      //     name: 'Experience Tour',
-      //     path: '/student',
-      //   },
-      // ],
+      submenus: [
+        {
+          name: 'Thành Công Trong Học Tập',
+          path: '/student#thanh-cong-trong-hoc-tap',
+        },
+        {
+          name: 'Thành Công Trong Ứng Tuyển',
+          path: '/student#thanh-cong-trong-ung-tuyen',
+        },
+        {
+          name: 'Thành Công Trong Khởi Sự Kinh Doanh',
+          path: '/student#thanh-cong-trong-khoi-su-kinh-doanh',
+        },
+        {
+          name: 'Experience Tour',
+          path: '/student',
+        },
+      ],
     },
-    // {
-    //   name: 'Đối tác',
-    //   path: 'partners',
-    // },
-    // {
-    //   name: 'Tin tức & Sự kiện',
-    //   path: 'news',
-    // },
-    // {
-    //   name: 'Liên hệ',
-    //   path: 'contact',
-    // },
+    {
+      name: 'Đối tác',
+      path: 'partners',
+    },
+    {
+      name: 'Tin tức & Sự kiện',
+      path: 'news',
+    },
+    {
+      name: 'Liên hệ',
+      path: 'contact',
+    },
   ];
 
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
