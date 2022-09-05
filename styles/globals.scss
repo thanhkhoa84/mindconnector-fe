@@ -120,7 +120,7 @@ a {
 }
 
 .btn {
-  @apply rounded-full border-2 border-orange-medium transition h-12 leading-10 px-4 lg:px-6 text-base font-bold inline-block;
+  @apply rounded-full text-center border-2 border-orange-medium transition h-12 leading-10 px-4 lg:px-6 text-base font-bold inline-block;
   text-shadow: 0 1px 0px rgba(0,0,0,0.65);
 }
 
@@ -142,7 +142,7 @@ a {
 
 .header-cta {
   @apply btn-primary;
-  @apply rounded-3xl block text-xs py-0 px-[0.7em] h-9 leading-[30px] top-[13px]  right-[1em] lg:text-base lg:px-[0.15em] lg:static lg:h-12 lg:leading-[40px] lg:px-6 ;
+  @apply rounded-3xl block text-xs py-0 px-[0.7em] h-9 leading-[30px] top-[13px]  right-[1em] lg:text-base lg:px-[0.15em] lg:static lg:h-12 lg:leading-[40px] lg:px-6 lg:min-w-[180px] ;
 }
 
 .bg-overlay {
