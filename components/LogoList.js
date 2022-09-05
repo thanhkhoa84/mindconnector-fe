@@ -1,27 +1,31 @@
-import styles from '../styles/components/LogoList.module.scss';
-import Container from './Container';
-import Image from 'next/image';
+import Container from "./Container";
+import Image from "next/image";
 
 const LogoList = ({ backgroundColor, title, list }) => {
-  let images = ['/img/saatchi.svg', '/img/vlu.svg', '/img/ogilvy.svg'];
+  let images = ["/img/saatchi.svg", "/img/vlu.svg", "/img/ogilvy.svg"];
   return (
     <div
-      className='p-4'
+      className="p-4"
       style={{
-        backgroundColor: backgroundColor ? backgroundColor : '',
+        backgroundColor: backgroundColor ? backgroundColor : "",
       }}
     >
       <Container>
-        <div className={styles.LogoListContainer}>
+        <div className="flex flex-col">
           <header>
-            <h2 className='font-bold text-base text-center leading-4 my-4 mx-0'>{title}</h2>
+            <h2 className="my-4 mx-0 text-center text-base font-bold leading-4">
+              {title}
+            </h2>
           </header>
-          <ul>
+          <ul className="flex flex-row flex-wrap justify-center">
             {list.map((li, index) => {
               let imgSrc = images[Math.floor(Math.random() * images.length)];
               return (
-                <li key={`logolist-${index}`}>
-                  <img src={imgSrc} alt='' />
+                <li
+                  key={`logolist-${index}`}
+                  className="flex w-1/3 items-center justify-center px-4 py-4 md:w-1/4  lg:w-1/5"
+                >
+                  <img src={imgSrc} alt="" />
                 </li>
               );
             })}
