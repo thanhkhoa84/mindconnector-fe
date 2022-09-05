@@ -16,43 +16,58 @@ import { useReducer, useRef, useState, useEffect } from 'react';
 */
 const Carousel = ({ ...props }) => {
   let ref = useRef(null);
-  let translate = `translate3d(${-props.current*995}px, 0, 0)`;
-  console.log(translate)
+  let translate = `translate3d(${-props.current * 995}px, 0, 0)`;
 
   return (
-    <div role='group' className={styles.HeroItemContainer} {...props} ref={ref} style={{
-      transform: translate
-    }}/>
-  )
-}
+    <div
+      role="group"
+      className={styles.HeroItemContainer}
+      {...props}
+      ref={ref}
+      style={{
+        transform: translate,
+      }}
+    />
+  );
+};
 
 const CarouselItem = ({ headline, body, image, link, index }) => {
   const width = 1005;
-  let translate = 'translate3d(0,0,0)';
-  translate = `translate3d(${index*width}px, 0, 0)`;
+  let translate = "translate3d(0,0,0)";
+  translate = `translate3d(${index * width}px, 0, 0)`;
 
   /* 
     TODO: make next slide available at last 
   */
 
-
   return (
-    <div role='tabpanel' className={`hero-slide ${styles.HeroItem }`}  style={{ transform: translate }}>
-      <a href={link} style={{ 
-        backgroundImage: `url(${image})`, 
-        backgroundSize: 'cover',
-      }}>
-        <div className={`w-[40%] absolute bottom-[2em] left-[2em]`}>
-          <div className={`bg-white bg-opacity-80 py-12 px-8 rounded-xl shadow-xl pt-[2em] pb-[1em] px[1em]`}>
-            <h2 className='text-4xl font-black leading-9 mb-[0.5em]'>{headline} {index}</h2>
-            <p className='leading-6'>{body}</p>
-            <p className={`btn-primary inline-block mt-4`}>Xem thêm</p>
+    <div
+      role="tabpanel"
+      className={`hero-slide ${styles.HeroItem}`}
+      style={{ transform: translate }}
+    >
+      <a
+        href={link}
+        style={{
+          backgroundImage: `url(${image})`,
+          backgroundSize: "cover",
+        }}
+      >
+        <div className={`absolute bottom-[2em] left-[2em] w-[40%]`}>
+          <div
+            className={`px[1em] rounded-xl bg-white bg-opacity-80 py-12 px-8 pt-[2em] pb-[1em] shadow-xl`}
+          >
+            <h2 className="mb-[0.5em] text-4xl font-black leading-9">
+              {headline} {index}
+            </h2>
+            <p className="leading-6">{body}</p>
+            <p className={`btn-primary mt-4 inline-block`}>Xem thêm</p>
           </div>
         </div>
       </a>
     </div>
-  )
-}
+  );
+};
 
 const HeroBanner = ({ slides }) => {
   let [state, dispatch] = useReducer(
@@ -61,23 +76,18 @@ const HeroBanner = ({ slides }) => {
         case "NEXT":
           return {
             ...state,
-            currentIndex:
-              (state.currentIndex + 1) %
-              slides.length
+            currentIndex: (state.currentIndex + 1) % slides.length,
           };
         case "PREV":
           return {
             ...state,
             currentIndex:
-              (state.currentIndex -
-                1 +
-                slides.length) %
-              slides.length,
+              (state.currentIndex - 1 + slides.length) % slides.length,
           };
         case "GOTO":
           return {
             ...state,
-            currentIndex: action.index
+            currentIndex: action.index,
           };
         default:
           return state;
@@ -88,49 +98,48 @@ const HeroBanner = ({ slides }) => {
     }
   );
 
-  
-
   useEffect(() => {
-    console.log('rendered')
-    let width = document.querySelectorAll('.hero-slide')[0].offsetWidth
-    console.log(state.currentIndex)
-  }, [state.currentIndex])
+    let width = document.querySelectorAll(".hero-slide")[0].offsetWidth;
+  }, [state.currentIndex]);
 
   return (
     <section className={styles.HeroBanner}>
-      <h4 className='sr-only'>Tin tức mới nhất</h4>
+      <h4 className="sr-only">Tin tức mới nhất</h4>
       <Carousel slides={slides} current={state.currentIndex}>
         {slides.map(({ ...props }, i) => {
           return (
-            <CarouselItem 
-              {...props} 
-              key={`hero-item-${i}`} 
-              index={i} 
-              isCurrent={i===state.currentIndex}
+            <CarouselItem
+              {...props}
+              key={`hero-item-${i}`}
+              index={i}
+              isCurrent={i === state.currentIndex}
               onClick={() => {
-                dispatch({ type: "GOTO", i });}
-              }
+                dispatch({ type: "GOTO", i });
+              }}
             />
-          )
+          );
         })}
       </Carousel>
 
       <div className={styles.HeroDots}>
         <ul>
-        {slides.map((slide, index) => {
-          return (
-            <li key={index}>
-              <button key={index}
-                aria-label={`Slide ${index + 1}`}
-                onClick={() => {
-                  console.log(index)
-                  dispatch({ type: "GOTO", index });}
-                }>
-                {index}
-              </button>
-            </li>)
-        })}
-      </ul>
+          {slides.map((slide, index) => {
+            return (
+              <li key={index}>
+                <button
+                  key={index}
+                  aria-label={`Slide ${index + 1}`}
+                  onClick={() => {
+                    console.log(index);
+                    dispatch({ type: "GOTO", index });
+                  }}
+                >
+                  {index}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </section>
   );

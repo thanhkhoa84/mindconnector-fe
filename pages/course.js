@@ -1,7 +1,7 @@
-import Head from 'next/head';
-import Container from '../components/Container';
-import Layout from './../components/Layout';
-import Seo from './../components/SEO';
+import Head from "next/head";
+import Container from "../components/Container";
+import Layout from "../components/Layout";
+import Seo from "../components/SEO";
 import { BannerHeading } from "../components/Heading";
 
 const seo = {
@@ -11,7 +11,7 @@ const seo = {
   // article: true,
 };
 
-const News = () => (
+const Course = () => (
   <>
     <Head>
       <title>Mind Connector</title>
@@ -23,11 +23,11 @@ const News = () => (
       <Seo seo={seo} />
       <div>
         <Container>
-          <BannerHeading>News</BannerHeading>
+          <BannerHeading>Course</BannerHeading>
         </Container>
       </div>
     </>
   </>
 );
 
-export default News;
+export default Course;

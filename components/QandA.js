@@ -1,27 +1,33 @@
 import Container from './Container';
 import { SectionHeading } from './Heading';
 
-const QA = ({ questions }) => {
+const QandA = ({ questions }) => {
   return (
-    <section className='bg-white py-14 px-0 overflow-hidden'>
-      <Container>
-        <header className='text-center lg:text-left lg:float-left lg:w-3/12 lg:pt-4'>
-          <SectionHeading>Câu hỏi <br className='hidden lg:inline'/>thường gặp</SectionHeading>
-        </header>
-        <div className='lg:float-right lg:w-8/12'>
-          {questions &&
-            questions.map(({ question, answer }, index) => {
-              return (
-                <details key={`qa-${index}`} className='bg-orange-light rounded-2xl mt-4 group'>
-                  <summary className='list-none bg-white rounded-2xl border-[2px] border-purple py-4 pl-4 pr-8 cursor-pointer relative after:bg-[url("/img/detail-arrow.png")] after:bg-cover after:inline-block after:w-[30px] after:h-[30px] after:absolute after:top-[50%] after:translate-y-[-50%] after:right-4 group-open:after:rotate-180 transition-all duration-300'>{question}</summary>
-                  <p className='p-4 hidden group-open:block'>{answer}</p>
-                </details>
-              );
-            })}
-        </div>
-      </Container>
+    <section className="overflow-hidden bg-white py-14 px-0">
+      <header className="text-center lg:float-left lg:w-3/12 lg:pt-4 lg:text-left">
+        <SectionHeading>
+          Câu hỏi <br className="hidden lg:inline" />
+          thường gặp
+        </SectionHeading>
+      </header>
+      <div className="lg:float-right lg:w-8/12">
+        {questions &&
+          questions.map(({ question, answer }, index) => {
+            return (
+              <details
+                key={`qa-${index}`}
+                className="group mt-4 rounded-2xl bg-orange-light"
+              >
+                <summary className='relative cursor-pointer list-none rounded-2xl border-[2px] border-purple bg-white py-4 pl-4 pr-10 transition-all duration-300 after:absolute after:top-[50%] after:right-4 after:inline-block after:h-[30px] after:w-[30px] after:translate-y-[-50%] after:bg-[url("/img/detail-arrow.png")] after:bg-cover group-open:after:rotate-180'>
+                  {question}
+                </summary>
+                <p className="hidden p-4 group-open:block">{answer}</p>
+              </details>
+            );
+          })}
+      </div>
     </section>
   );
 };
 
-export default QA;
+export default QandA;

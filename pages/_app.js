@@ -1,11 +1,11 @@
 import App from 'next/app';
 import Head from 'next/head';
-import { createContext } from 'react';
-import { fetchAPI } from '../lib/api';
-import { getStrapiMedia } from '../lib/media';
+import { createContext } from "react";
+import { fetchAPI } from "../lib/api";
+import { getStrapiMedia } from "../lib/media";
 
-import '../styles/globals.scss';
-import Layout from './../components/Layout';
+import "../styles/globals.scss";
+import Layout from "./../components/Layout";
 
 export const GlobalContext = createContext({});
 
@@ -26,61 +26,69 @@ MyApp.getInitialProps = async (ctx) => {
 
   const navlinks = [
     {
-      name: 'Dành cho sinh viên',
-      path: 'student',
+      name: "Dành cho sinh viên",
+      path: "student",
       submenus: [
         {
-          name: 'Thành Công Trong Học Tập',
-          path: '/student#thanh-cong-trong-hoc-tap',
+          name: "Thành Công Trong Học Tập",
+          path: "/student#thanh-cong-trong-hoc-tap",
         },
         {
-          name: 'Thành Công Trong Ứng Tuyển',
-          path: '/student#thanh-cong-trong-ung-tuyen',
+          name: "Thành Công Trong Ứng Tuyển",
+          path: "/student#thanh-cong-trong-ung-tuyen",
         },
         {
-          name: 'Thành Công Trong Khởi Sự Kinh Doanh',
-          path: '/student#thanh-cong-trong-khoi-su-kinh-doanh',
+          name: "Thành Công Trong Khởi Sự Kinh Doanh",
+          path: "/student#thanh-cong-trong-khoi-su-kinh-doanh",
         },
         {
-          name: 'Experience Tour',
-          path: 'student',
+          name: "Experience Tour",
+          path: "student",
         },
       ],
     },
     {
-      name: 'Dành cho doanh nghiệp',
-      path: 'business',
-      submenus: [
-        {
-          name: 'Thành Công Trong Học Tập',
-          path: '/student#thanh-cong-trong-hoc-tap',
-        },
-        {
-          name: 'Thành Công Trong Ứng Tuyển',
-          path: '/student#thanh-cong-trong-ung-tuyen',
-        },
-        {
-          name: 'Thành Công Trong Khởi Sự Kinh Doanh',
-          path: '/student#thanh-cong-trong-khoi-su-kinh-doanh',
-        },
-        {
-          name: 'Experience Tour',
-          path: '/student',
-        },
-      ],
+      name: "Program",
+      path: "program",
     },
     {
-      name: 'Đối tác',
-      path: 'partners',
+      name: "Course",
+      path: "course",
     },
-    {
-      name: 'Tin tức & Sự kiện',
-      path: 'news',
-    },
-    {
-      name: 'Liên hệ',
-      path: 'contact',
-    },
+    // {
+    //   name: "Dành cho doanh nghiệp",
+    //   path: "business",
+    //   submenus: [
+    //     {
+    //       name: "Thành Công Trong Học Tập",
+    //       path: "/student#thanh-cong-trong-hoc-tap",
+    //     },
+    //     {
+    //       name: "Thành Công Trong Ứng Tuyển",
+    //       path: "/student#thanh-cong-trong-ung-tuyen",
+    //     },
+    //     {
+    //       name: "Thành Công Trong Khởi Sự Kinh Doanh",
+    //       path: "/student#thanh-cong-trong-khoi-su-kinh-doanh",
+    //     },
+    //     {
+    //       name: "Experience Tour",
+    //       path: "/business",
+    //     },
+    //   ],
+    // },
+    // {
+    //   name: "Đối tác",
+    //   path: "partners",
+    // },
+    // {
+    //   name: "Tin tức & Sự kiện",
+    //   path: "news",
+    // },
+    // {
+    //   name: "Liên hệ",
+    //   path: "contact",
+    // },
   ];
 
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
@@ -100,8 +108,9 @@ MyApp.getInitialProps = async (ctx) => {
     ...appProps,
     pageProps: {
       global: {
+        screensize: 0,
         navlinks: navlinks,
-        siteName: 'Mind Connector',
+        siteName: "Mind Connector",
       },
     },
   };
