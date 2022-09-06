@@ -3,22 +3,21 @@ import dynamic from 'next/dynamic';
 
 import Container from '../../components/Container';
 import { SectionHeading } from '../../components/Heading';
-import styles from './Value.module.scss';
-// import LogoList from './../LogoList';
+import styles from "./Value.module.scss";
 
-const LogoList = dynamic(() => import('./../LogoList'), {
-  ssr: false
-})
+const LogoList = dynamic(() => import("./../LogoList"), {
+  ssr: false,
+});
 
 const ValueSection = () => {
-  const list = ['1', '2', '3', '4', '5', '6'];
+  const list = ["1", "2", "3", "4", "5", "6"];
   return (
     <section className={styles.value}>
       <Container>
         <SectionHeading align="center">
           Cùng Mind Connector tạo ra những giá trị đích thực
         </SectionHeading>
-        <div className={styles.valueCardContainer}>
+        <div className={`mt-[3em] ${styles.valueCardContainer}`}>
           <div className={styles.valueCard}>
             <div className={`${styles.valueInfo} value-for-student`}>
               <span

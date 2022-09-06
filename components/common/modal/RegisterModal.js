@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useGlobalModalContext } from "./GlobalModal";
+import axios from "axios";
 
 const RegisterModal = () => {
   const { hideModal, store } = useGlobalModalContext();
@@ -22,9 +23,28 @@ const RegisterModal = () => {
     event.preventDefault();
   };
 
-  const handleSubmit = (e) => {
-    console.log(e.target);
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    let data = {
+      name: e.target.name.value,
+      phone: e.target.phone.value,
+      dob: e.target.dob.value,
+      course: {
+        title,
+        price: "",
+      },
+    };
+    console.log(data);
+    const config = {
+      method: "get",
+      url: "/api/register",
+      responseType: "json",
+      data,
+    };
+    let response = await axios(config);
+    if (response.status === 200) {
+      hideModal();
+    }
   };
 
   useEffect(() => {
@@ -46,7 +66,7 @@ const RegisterModal = () => {
         <p className="mt-4 text-[14px] leading-[18px]">
           Rất mong chờ được đón chào bạn ở lớp học lần này nhé
         </p>
-        <form action="" onSubmit={handleSubmit} className="mt-8">
+        <form action="/api/register" onSubmit={handleSubmit} className="mt-8">
           <div className="mt-4">
             <label className="block hidden" htmlFor="name">
               Họ và tên
@@ -68,9 +88,9 @@ const RegisterModal = () => {
               type="text"
               required
               className="h-[50px] w-full rounded-full p-4"
-              id="tel"
+              id="phone"
               placeholder="Số điện thoại"
-              name="tel"
+              name="phone"
             />
           </div>
           <div className="mt-4">
@@ -82,7 +102,7 @@ const RegisterModal = () => {
               required
               className="h-[50px] w-full rounded-full p-4"
               id="dob"
-              placeholder="Ngày sinh"
+              placeholder="dd-mm-yyyy"
             />
           </div>
           <div className="mt-4">
