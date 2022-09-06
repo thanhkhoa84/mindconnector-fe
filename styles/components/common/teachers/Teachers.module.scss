@@ -1,9 +1,7 @@
 .teachers {
-  padding: 4em 0;
+  // padding: 4em 0;
 }
 .teachersList {
-  margin-top: 2em;
-  padding-bottom: 2em;
   text-align: center;
 }
 
@@ -15,22 +13,24 @@
   padding-bottom: calc(457/248*100%);
   text-align: center;
   position: relative;
-  margin: 0 1%;
+  margin: 1em 1%;
   margin-bottom: 2em;
   margin-top: 2em;
   overflow: hidden;
   @media(min-width: 375px) {
     width: 48%;
     padding-bottom: calc(457/248*48%);
-    margin: 0 1%;
   }
   @media(min-width: 768px) {
     width: 31%;
     padding-bottom: calc(457/248*31%);
+    &:nth-last-child(n+4), &:nth-last-child(n+4) ~ .teacherCard {
+      width: 23%;
+      padding-bottom: calc(457/248*23%);
+    }
   }
 
   @media(min-width: 992px) {
-    margin-bottom: 0;
     width: 23%;
     padding-bottom: calc(457/248*23%);
     &:nth-last-child(n+5), &:nth-last-child(n+5) ~ .teacherCard {

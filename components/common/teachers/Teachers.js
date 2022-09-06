@@ -8,15 +8,15 @@ import styles from '../../../styles/components/common/teachers/Teachers.module.s
 
 const TeacherCard = () => {
   return (
-    <div className={styles.teacherCard}>
+    <div className={`${styles.teacherCard}`}>
       <div className={styles.teacherImageContainer}>
         <img
-          src='/img/bg-teacher-card.svg'
-          alt=''
+          src="/img/bg-teacher-card.svg"
+          alt=""
           className={styles.teacherCardBg}
         />
         <div className={styles.teacherImage}>
-          <img src='/img/mentors/hieu-nguyen.png' alt='' />
+          <img src="/img/mentors/hieu-nguyen.png" alt="" />
         </div>
       </div>
       <div className={styles.teacherInfo}>
@@ -26,8 +26,8 @@ const TeacherCard = () => {
           phát triển thị trường
         </p>
         <div className={styles.socialInfo}>
-          <a href='#' target='_blank'>
-            <img src='/img/mentor-linkedin.svg' alt='' />
+          <a href="#" target="_blank">
+            <img src="/img/mentor-linkedin.svg" alt="" />
           </a>
         </div>
       </div>
@@ -40,12 +40,12 @@ const TeacherList = () => (
     <div className={styles.teacherCard}>
       <div className={styles.teacherImageContainer}>
         <img
-          src='/img/bg-teacher-card.svg'
-          alt=''
+          src="/img/bg-teacher-card.svg"
+          alt=""
           className={styles.teacherCardBg}
         />
         <div className={styles.teacherImage}>
-          <img src='/img/mentors/hieu-nguyen.png' alt='' />
+          <img src="/img/mentors/hieu-nguyen.png" alt="" />
         </div>
       </div>
       <div className={styles.teacherInfo}>
@@ -55,8 +55,8 @@ const TeacherList = () => (
           phát triển thị trường
         </p>
         <div className={styles.socialInfo}>
-          <a href='#' target='_blank'>
-            <img src='/img/mentor-linkedin.svg' alt='' />
+          <a href="#" target="_blank">
+            <img src="/img/mentor-linkedin.svg" alt="" />
           </a>
         </div>
       </div>
@@ -64,12 +64,12 @@ const TeacherList = () => (
     <div className={styles.teacherCard}>
       <div className={styles.teacherImageContainer}>
         <img
-          src='/img/bg-teacher-card.svg'
-          alt=''
+          src="/img/bg-teacher-card.svg"
+          alt=""
           className={styles.teacherCardBg}
         />
         <div className={styles.teacherImage}>
-          <img src='/img/mentors/nina-tran.png' alt='' />
+          <img src="/img/mentors/nina-tran.png" alt="" />
         </div>
       </div>
       <div className={styles.teacherInfo}>
@@ -79,8 +79,8 @@ const TeacherList = () => (
           thiết kế chương trình
         </p>
         <div className={styles.socialInfo}>
-          <a href='#' target='_blank'>
-            <img src='/img/mentor-linkedin.svg' alt='' />
+          <a href="#" target="_blank">
+            <img src="/img/mentor-linkedin.svg" alt="" />
           </a>
         </div>
       </div>
@@ -88,12 +88,12 @@ const TeacherList = () => (
     <div className={styles.teacherCard}>
       <div className={styles.teacherImageContainer}>
         <img
-          src='/img/bg-teacher-card.svg'
-          alt=''
+          src="/img/bg-teacher-card.svg"
+          alt=""
           className={styles.teacherCardBg}
         />
         <div className={styles.teacherImage}>
-          <img src='/img/mentors/mandy-nguyen.png' alt='' />
+          <img src="/img/mentors/mandy-nguyen.png" alt="" />
         </div>
       </div>
       <div className={styles.teacherInfo}>
@@ -103,8 +103,8 @@ const TeacherList = () => (
           Kinh doanh - Marketing
         </p>
         <div className={styles.socialInfo}>
-          <a href='#' target='_blank'>
-            <img src='/img/mentor-linkedin.svg' alt='' />
+          <a href="#" target="_blank">
+            <img src="/img/mentor-linkedin.svg" alt="" />
           </a>
         </div>
       </div>
@@ -112,12 +112,12 @@ const TeacherList = () => (
     <div className={styles.teacherCard}>
       <div className={styles.teacherImageContainer}>
         <img
-          src='/img/bg-teacher-card.svg'
-          alt=''
+          src="/img/bg-teacher-card.svg"
+          alt=""
           className={styles.teacherCardBg}
         />
         <div className={styles.teacherImage}>
-          <img src='/img/mentors/dao-minh-huyen.png' alt='' />
+          <img src="/img/mentors/dao-minh-huyen.png" alt="" />
         </div>
       </div>
       <div className={styles.teacherInfo}>
@@ -127,32 +127,8 @@ const TeacherList = () => (
           Mihoo Cosmetics,…
         </p>
         <div className={styles.socialInfo}>
-          <a href='#' target='_blank'>
-            <img src='/img/mentor-linkedin.svg' alt='' />
-          </a>
-        </div>
-      </div>
-    </div>
-    <div className={styles.teacherCard}>
-      <div className={styles.teacherImageContainer}>
-        <img
-          src='/img/bg-teacher-card.svg'
-          alt=''
-          className={styles.teacherCardBg}
-        />
-        <div className={styles.teacherImage}>
-          <img src='/img/mentors/dao-minh-huyen.png' alt='' />
-        </div>
-      </div>
-      <div className={styles.teacherInfo}>
-        <h3>Đào Minh Huyền</h3>
-        <p>
-          Owner of Ask2Go App, <br />
-          Mihoo Cosmetics,…
-        </p>
-        <div className={styles.socialInfo}>
-          <a href='#' target='_blank'>
-            <img src='/img/mentor-linkedin.svg' alt='' />
+          <a href="#" target="_blank">
+            <img src="/img/mentor-linkedin.svg" alt="" />
           </a>
         </div>
       </div>
@@ -172,9 +148,9 @@ const useMedia = (query) => {
     let listener = (e) => {
       setMatches(media.matches);
     };
-    media.addEventListener('change', listener);
+    media.addEventListener("change", listener);
 
-    return () => media.removeEventListener('change', listener);
+    return () => media.removeEventListener("change", listener);
   }, []);
 
   return matches;
@@ -195,8 +171,7 @@ function Carousel() {
   // let medium = useMedia('(min-width: 768px)');
   // let large = useMedia('(min-width: 992px)');
 
-
-  if (totalSlide <= 5 ) {
+  if (totalSlide <= 5) {
     // setOptions((options) => {
     //   return { pageDots: false };
     // })
@@ -204,8 +179,8 @@ function Carousel() {
 
   return (
     <Flickity
-      className={'carousel'} // default ''
-      elementType={'div'} // default 'div'
+      className={"carousel"} // default ''
+      elementType={"div"} // default 'div'
       options={options} // takes flickity options {}
       disableImagesLoaded={false} // default false
       reloadOnUpdate={true} // default false
@@ -214,12 +189,12 @@ function Carousel() {
       <div className={styles.teacherCard}>
         <div className={styles.teacherImageContainer}>
           <img
-            src='/img/bg-teacher-card.svg'
-            alt=''
+            src="/img/bg-teacher-card.svg"
+            alt=""
             className={styles.teacherCardBg}
           />
           <div className={styles.teacherImage}>
-            <img src='/img/mentors/hieu-nguyen.png' alt='' />
+            <img src="/img/mentors/hieu-nguyen.png" alt="" />
           </div>
         </div>
         <div className={styles.teacherInfo}>
@@ -229,8 +204,8 @@ function Carousel() {
             phát triển thị trường
           </p>
           <div className={styles.socialInfo}>
-            <a href='#' target='_blank'>
-              <img src='/img/mentor-linkedin.svg' alt='' />
+            <a href="#" target="_blank">
+              <img src="/img/mentor-linkedin.svg" alt="" />
             </a>
           </div>
         </div>
@@ -238,12 +213,12 @@ function Carousel() {
       <div className={styles.teacherCard}>
         <div className={styles.teacherImageContainer}>
           <img
-            src='/img/bg-teacher-card.svg'
-            alt=''
+            src="/img/bg-teacher-card.svg"
+            alt=""
             className={styles.teacherCardBg}
           />
           <div className={styles.teacherImage}>
-            <img src='/img/mentors/nina-tran.png' alt='' />
+            <img src="/img/mentors/nina-tran.png" alt="" />
           </div>
         </div>
         <div className={styles.teacherInfo}>
@@ -253,8 +228,8 @@ function Carousel() {
             thiết kế chương trình
           </p>
           <div className={styles.socialInfo}>
-            <a href='#' target='_blank'>
-              <img src='/img/mentor-linkedin.svg' alt='' />
+            <a href="#" target="_blank">
+              <img src="/img/mentor-linkedin.svg" alt="" />
             </a>
           </div>
         </div>
@@ -262,12 +237,12 @@ function Carousel() {
       <div className={styles.teacherCard}>
         <div className={styles.teacherImageContainer}>
           <img
-            src='/img/bg-teacher-card.svg'
-            alt=''
+            src="/img/bg-teacher-card.svg"
+            alt=""
             className={styles.teacherCardBg}
           />
           <div className={styles.teacherImage}>
-            <img src='/img/mentors/mandy-nguyen.png' alt='' />
+            <img src="/img/mentors/mandy-nguyen.png" alt="" />
           </div>
         </div>
         <div className={styles.teacherInfo}>
@@ -277,8 +252,8 @@ function Carousel() {
             Kinh doanh - Marketing
           </p>
           <div className={styles.socialInfo}>
-            <a href='#' target='_blank'>
-              <img src='/img/mentor-linkedin.svg' alt='' />
+            <a href="#" target="_blank">
+              <img src="/img/mentor-linkedin.svg" alt="" />
             </a>
           </div>
         </div>
@@ -286,12 +261,12 @@ function Carousel() {
       <div className={styles.teacherCard}>
         <div className={styles.teacherImageContainer}>
           <img
-            src='/img/bg-teacher-card.svg'
-            alt=''
+            src="/img/bg-teacher-card.svg"
+            alt=""
             className={styles.teacherCardBg}
           />
           <div className={styles.teacherImage}>
-            <img src='/img/mentors/dao-minh-huyen.png' alt='' />
+            <img src="/img/mentors/dao-minh-huyen.png" alt="" />
           </div>
         </div>
         <div className={styles.teacherInfo}>
@@ -301,8 +276,8 @@ function Carousel() {
             Mihoo Cosmetics,…
           </p>
           <div className={styles.socialInfo}>
-            <a href='#' target='_blank'>
-              <img src='/img/mentor-linkedin.svg' alt='' />
+            <a href="#" target="_blank">
+              <img src="/img/mentor-linkedin.svg" alt="" />
             </a>
           </div>
         </div>
@@ -315,13 +290,13 @@ const Teachers = () => {
   const total = 5;
   return (
     <div
-      className={`${total <= 5 ? 'slider-less-than-five' : ''} ${
+      className={`${total <= 5 ? "slider-less-than-five" : ""} ${
         styles.teachers
       }`}
     >
-      <SectionHeading align='center'>Đội ngũ giảng viên</SectionHeading>
+      <SectionHeading align="center">Đội ngũ giảng viên</SectionHeading>
       <div className={styles.teachersList}>
-        <Carousel />
+        <TeacherList />
       </div>
     </div>
   );

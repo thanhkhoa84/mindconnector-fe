@@ -1,11 +1,16 @@
 import Head from "next/head";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import Container from "../components/Container";
 import Layout from "../components/Layout";
 import Seo from "../components/SEO";
 import { BannerHeading, SectionSubHeading } from "../components/Heading";
-import LogoList from "../components/LogoList";
 import { QandAProgram } from "../components/QandA";
+import { useContext } from "react";
+import {
+  useGlobalModalContext,
+  MODAL_TYPES,
+} from "../components/common/modal/GlobalModal";
 
 const seo = {
   metaTitle: "Mind Connector",
@@ -14,7 +19,19 @@ const seo = {
   // article: true,
 };
 
-const Program = ({ questions, logoslist }) => {
+const LogoList = dynamic(() => import("./../components/LogoList"), {
+  ssr: false,
+});
+
+const Program = ({ questions, logoslist, programInfo }) => {
+  const { showModal } = useGlobalModalContext();
+  const createModal = () => {
+    showModal(MODAL_TYPES.REGISTER_MODAL, {
+      title: "Điền thông tin liên lạc, Mind Connector sẽ liên hệ bạn sau",
+      confirmBtn: "Save",
+    });
+  };
+
   return (
     <>
       <Head>
@@ -71,9 +88,9 @@ const Program = ({ questions, logoslist }) => {
                   <sup className="text-[18px] font-bold">99</sup>
                 </p>
                 <p>
-                  <a href="program" className="btn-primary">
+                  <button onClick={createModal} className="btn-primary">
                     Đăng ký học ngay
-                  </a>
+                  </button>
                 </p>
               </div>
             </div>
@@ -344,11 +361,15 @@ export async function getStaticProps() {
   ];
 
   const logoslist = ["1", "2", "3", "4"];
-
+  const programInfo = {
+    title: "Khoá học nghiên cứu và phân tích",
+    price: "89.99",
+  };
   return {
     props: {
       questions,
       logoslist,
+      programInfo,
     },
   };
 }
