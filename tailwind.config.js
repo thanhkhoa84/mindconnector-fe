@@ -14,6 +14,10 @@ module.exports = {
       ...defaultTheme.screens,
     },
     extend: {
+      boxShadow: {
+        asidebox: "0 3px 30px rgba(0, 0, 0, 0.5)",
+        asideboxLight: "0 2px 10px rgba(0, 0, 0, 0.15)",
+      },
       backgroundImages: {
         qaArrow: "url('/img/detail-arrow.png')",
       },

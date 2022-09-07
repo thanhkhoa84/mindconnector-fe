@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import Seo from "../components/SEO";
 import { BannerHeading, SectionSubHeading } from "../components/Heading";
 import { QandAProgram } from "../components/QandA";
-import { useContext } from "react";
+import { useEffect, useState, useRef } from "react";
 import {
   useGlobalModalContext,
   MODAL_TYPES,
@@ -22,6 +22,71 @@ const seo = {
 const LogoList = dynamic(() => import("./../components/LogoList"), {
   ssr: false,
 });
+
+const tabs = [
+  {
+    title: "Về chương trình",
+    href: "#about",
+  },
+  {
+    title: "Lịch học",
+    href: "#schedule",
+  },
+  {
+    title: "Đánh giá",
+    href: "#rating",
+  },
+  {
+    title: "Hỏi đáp",
+    href: "#qa",
+  },
+  {
+    title: "Cách đăng ký",
+    href: "#register",
+  },
+];
+
+const Tab = ({ tab, index, active, onClick }) => {
+  return (
+    <li
+      className={`
+      ${active ? "font-bold" : ""}
+      inline-block py-0 px-4 pl-0 align-middle md:pl-6 
+      `}
+      key={index}
+      onClick={() => onClick(index)}
+    >
+      <a href={tab.href} className="block" type="button">
+        {tab.title}
+      </a>
+    </li>
+  );
+};
+
+const TabPanels = () => {
+  const [current, setCurrent] = useState(0);
+  let clickHandler = (index) => {
+    setCurrent(index);
+  };
+
+  return (
+    <ul className="block overflow-x-auto overflow-y-hidden whitespace-nowrap ">
+      {tabs.map((tab, index) => {
+        return (
+          <Tab
+            onClick={() => {
+              clickHandler(index);
+            }}
+            key={tab.title}
+            tab={tab}
+            index={index}
+            active={current == index}
+          />
+        );
+      })}
+    </ul>
+  );
+};
 
 const Course = ({ questions, logoslist, programInfo }) => {
   const { showModal } = useGlobalModalContext();
@@ -101,38 +166,8 @@ const Course = ({ questions, logoslist, programInfo }) => {
             <div className="flex flex-col md:py-[4em]">
               <div className="flex flex-col justify-between md:flex-row md:gap-4">
                 <div className="w-full md:w-3/5 lg:w-[688px]">
-                  <div className="flex items-center md:h-[60px] md:rounded-xl lg:shadow-md ">
-                    <ul className="block overflow-x-auto overflow-y-hidden whitespace-nowrap ">
-                      <li className="inline-block py-0 px-4 pl-0 align-middle md:pl-6">
-                        <a
-                          className="block"
-                          href="#about"
-                          className="font-bold"
-                        >
-                          Về chương trình
-                        </a>
-                      </li>
-                      <li className="inline-block py-4 px-4 align-middle">
-                        <a className="block" href="#schedule">
-                          Lịch học
-                        </a>
-                      </li>
-                      <li className="inline-block py-4 px-4 align-middle">
-                        <a className="block" href="#rating">
-                          Đánh giá
-                        </a>
-                      </li>
-                      <li className="inline-block py-4 px-4 align-middle">
-                        <a className="block" href="#qa">
-                          Hỏi đáp
-                        </a>
-                      </li>
-                      <li className="inline-block py-4 px-8 align-middle">
-                        <a className="block" href="#register">
-                          Cách đăng ký
-                        </a>
-                      </li>
-                    </ul>
+                  <div className="flex items-center md:h-[60px] md:rounded-xl lg:shadow-asideboxLight">
+                    <TabPanels />
                   </div>
                   <div className="mt-12" id="about">
                     <h2 className="mb-3 text-[34px] font-black leading-[1] leading-[1.2]">
@@ -239,7 +274,7 @@ const Course = ({ questions, logoslist, programInfo }) => {
                   </div>
                 </div>
                 <aside className="hidden w-full md:block md:w-2/5 lg:w-[336px]">
-                  <div className="divide-y rounded-2xl border-2 border-gray-100/50 p-8 px-6 shadow-xl">
+                  <div className="divide-y rounded-2xl p-8 px-6 shadow-asideboxLight">
                     <div className="pb-8">
                       <SectionSubHeading>
                         Chương trình Thành công trong học tập
