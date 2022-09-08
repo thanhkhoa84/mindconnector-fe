@@ -116,11 +116,13 @@ const Course = ({ questions, logoslist, programInfo }) => {
             </h1>
             <p className="mt-4">“Khởi đầu vững chắc, tương lai khởi sắc”</p>
             <div className="mt-8">
-              <img
-                src="/img/avatar.png"
-                className="inline-block w-[100px] rounded-full"
-                alt="Avatar"
-              />
+              <div className="inline-block w-[100px] overflow-hidden rounded-full">
+                <img
+                  src="/img/avatar.png"
+                  alt="Avatar"
+                  className="w-full object-cover transition-all hover:scale-[1.2]"
+                />
+              </div>
               <p className="mt-1 text-[18px] font-black text-purple">
                 Stephanie J
               </p>

@@ -40,7 +40,7 @@ export default function Home({ slides, questions }) {
         <HeroBanner slides={slides} />
         <ValueSection />
         <About />
-        <section className={`py-12 ${styles.homeTeachers}`}>
+        <section className={`relative py-12 ${styles.homeTeachers}`}>
           <Container>
             <Teachers />
           </Container>

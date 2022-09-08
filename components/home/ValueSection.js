@@ -18,7 +18,7 @@ const ValueSection = () => {
           Cùng Mind Connector tạo ra những giá trị đích thực
         </SectionHeading>
         <div className={`mt-[3em] ${styles.valueCardContainer}`}>
-          <div className={styles.valueCard}>
+          <div className={`${styles.valueCard}`}>
             <div className={`${styles.valueInfo} value-for-student`}>
               <span
                 className={`${styles.valueIcon} ${styles.valueIcon__Student}`}
@@ -36,7 +36,7 @@ const ValueSection = () => {
               </p>
               <Link href="student">Discover more</Link>
             </div>
-            <div className={styles.valueImage}>
+            <div className={`${styles.valueImage} shadow-asideboxLight`}>
               <img src="/img/value-student.png" alt="" />
             </div>
           </div>

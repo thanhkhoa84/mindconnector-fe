@@ -35,7 +35,7 @@ const DropdownMenu = ({ items, dropdown, dropdId }) => {
 const NavItem = ({ link, index }) => {
   const [dropdown, setDropdown] = useState(false);
   const router = useRouter();
-  let ref = useRef();
+  let navItem = useRef();
 
   const handleRouteChange = (url, { shallow }) => {
     setDropdown(false);
@@ -48,7 +48,7 @@ const NavItem = ({ link, index }) => {
 
   const handleClickOutside = (event) => {
     if (dropdown) return;
-    if (ref.current && !ref.current.contains(event.target)) {
+    if (navItem.current && !navItem.current.contains(event.target)) {
       setDropdown(false);
     }
   };
@@ -62,14 +62,14 @@ const NavItem = ({ link, index }) => {
   };
 
   useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
+    // document.addEventListener("mousedown", handleClickOutside);
     router.events.on("hashChangeStart", handleRouteChange);
     router.events.on("routeChangeStart", handleRouteChange);
 
     return () => {
       router.events.off("routeChangeStart", handleRouteChange);
       router.events.off("hashChangeStart", handleRouteChange);
-      document.removeEventListener("mousedown", handleClickOutside);
+      // document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [dropdown]);
 
@@ -79,7 +79,7 @@ const NavItem = ({ link, index }) => {
         lg:flex lg:h-[80px] lg:items-center lg:justify-center
         ${link.submenus ? "group relative" : ""} 
       `}
-      ref={ref}
+      ref={navItem}
       key={index}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
@@ -91,7 +91,6 @@ const NavItem = ({ link, index }) => {
             data-dropdown-toggle={`dropdown-${index}`}
             aria-expanded={dropdown ? "true" : "false"}
             className="hover:color-purple"
-            onClick={onClickHandler}
           >
             {link.name}{" "}
             {dropdown ? (
@@ -136,5 +135,6 @@ const NavItems = ({ navlinks }) => {
 const NavBar = ({ ...navlinks }) => {
   return <NavItems {...navlinks} />;
 };
+
 
 export default NavBar;
