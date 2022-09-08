@@ -34,7 +34,7 @@ const Header = ({ ...navlinks }) => {
         <div className="flex flex-wrap items-center">
           <Logo />
         </div>
-        <div className="flex flex-row items-center">
+        <div className="flex flex-row items-center gap-4">
           <div className="hidden w-full bg-[#DDDEDE] lg:block lg:bg-transparent">
             <NavBar {...navlinks} />
           </div>
@@ -45,24 +45,43 @@ const Header = ({ ...navlinks }) => {
 
           <button
             type="button"
-            className="h-[40px] w-[30px] text-right lg:hidden"
+            className="h-[40px] w-[30px] text-right text-white lg:hidden"
             onClick={toggleMenu}
           >
-            <span className="inline-block text-center">
-              <img
-                src="/img/menu.svg"
-                alt=""
-                className={`${toggle ? "hidden" : ""}`}
-                width={14}
-                height={14}
-              />
-              <img
-                src="/img/menu-close.svg"
-                alt=""
-                className={`${!toggle ? "hidden" : ""}`}
-                width={12}
-                height={12}
-              />
+            <span className="inline text-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className={`
+                  ${toggle ? "hidden" : ""}
+                  h-6 w-6
+                `}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"
+                />
+              </svg>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className={`
+                  ${toggle ? "" : "hidden"}
+                  h-6 w-6
+                `}
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                  clipRule="evenodd"
+                />
+              </svg>
             </span>
           </button>
         </div>

@@ -44,7 +44,6 @@ const NavItem = ({ link, index }) => {
 
   const onClickHandler = (e) => {
     setDropdown((dropdown) => !dropdown);
-    // e.preventDefault();
   };
 
   const handleClickOutside = (event) => {
@@ -63,16 +62,16 @@ const NavItem = ({ link, index }) => {
   };
 
   useEffect(() => {
-    // document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     router.events.on("hashChangeStart", handleRouteChange);
     router.events.on("routeChangeStart", handleRouteChange);
 
     return () => {
       router.events.off("routeChangeStart", handleRouteChange);
       router.events.off("hashChangeStart", handleRouteChange);
-      // document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [dropdown]);
+  }, []);
 
   return (
     <li
@@ -94,15 +93,13 @@ const NavItem = ({ link, index }) => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth={1.5}
                 stroke="currentColor"
-                class={`
-                inline h-4 w-4 align-sub transition-all
-              `}
+                className="inline h-4 w-4 align-sub transition-all"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M19.5 8.25l-7.5 7.5-7.5-7.5"
                 />
               </svg>
