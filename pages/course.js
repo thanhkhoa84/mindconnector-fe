@@ -50,9 +50,9 @@ const Tab = ({ tab, index, active, onClick }) => {
   return (
     <li
       className={`
-      ${active ? "font-bold" : ""}
-      inline-block py-0 px-4 pl-0 align-middle md:pl-6 
-      `}
+    ${active ? "font-bold text-black" : "text-[#9A9A9A]"}
+    inline-block py-0 px-4 pl-0 align-middle hover:font-bold hover:text-black md:pl-6
+    `}
       key={index}
       onClick={() => onClick(index)}
     >

@@ -64,7 +64,7 @@ const MobileNavItem = ({ link, index }) => {
       className={`
         rounded-xl font-bold
         ${index == 0 ? "" : "mt-4"}
-        ${link.submenus ? "p-0" : "w-full border-2 border-purple bg-white p-4"}
+        ${link.submenus ? "p-0" : "w-full border border-purple bg-white p-4"}
         ${link.submenus ? "group relative" : ""} 
         ${link.submenus ? "bg-[#EAE5DF]" : ""} 
       `}
@@ -77,7 +77,7 @@ const MobileNavItem = ({ link, index }) => {
             data-dropdown-toggle={`mobile-dropdown-${index}`}
             aria-expanded={dropdown ? "true" : "false"}
             onClick={onClickHandler}
-            className="flex w-full flex-row items-center justify-between rounded-xl border-2 border-purple bg-white px-4 py-3 text-left leading-none"
+            className="flex w-full flex-row items-center justify-between rounded-xl border border-purple bg-white px-4 py-3 text-left leading-none"
           >
             {link.name}
             <span>

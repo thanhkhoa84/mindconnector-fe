@@ -1,8 +1,18 @@
 import Head from "next/head";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+import { useEffect, useState, useRef } from "react";
+import YouTube from "react-youtube";
 import Container from "../components/Container";
-import Layout from "./../components/Layout";
-import Seo from "./../components/SEO";
-import { BannerHeading } from "../components/Heading";
+import Layout from "../components/Layout";
+import Seo from "../components/SEO";
+import { BannerHeading, SectionSubHeading } from "../components/Heading";
+import QandA from "../components/QandA";
+import CourseCard from "../components/common/courses/CourseCard";
+import {
+  useGlobalModalContext,
+  MODAL_TYPES,
+} from "../components/common/modal/GlobalModal";
 
 const seo = {
   metaTitle: "Mind Connector",
@@ -11,23 +21,364 @@ const seo = {
   // article: true,
 };
 
-const Program = () => (
-  <>
-    <Head>
-      <title>Mind Connector</title>
-      <meta name="description" content="Mind Connector" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+const LogoList = dynamic(() => import("./../components/LogoList"), {
+  ssr: false,
+});
 
+const tabs = [
+  {
+    title: "Về chương trình",
+    href: "#about",
+  },
+  {
+    title: "Lịch học",
+    href: "#schedule",
+  },
+  {
+    title: "Đánh giá",
+    href: "#rating",
+  },
+  {
+    title: "Hỏi đáp",
+    href: "#qa",
+  },
+  {
+    title: "Cách đăng ký",
+    href: "#register",
+  },
+];
+
+const Tab = ({ tab, index, active, onClick }) => {
+  return (
+    <li
+      className={`
+      ${active ? "font-bold text-black" : "text-[#9A9A9A]"}
+      inline-block py-0 px-4 pl-0 align-middle hover:font-bold hover:text-black md:pl-6
+      `}
+      key={index}
+      onClick={() => onClick(index)}
+    >
+      <a href={tab.href} className="block" type="button">
+        {tab.title}
+      </a>
+    </li>
+  );
+};
+
+const TabPanels = () => {
+  const [current, setCurrent] = useState(0);
+  let clickHandler = (index) => {
+    setCurrent(index);
+  };
+
+  return (
+    <ul className="block flex w-full overflow-x-auto overflow-y-hidden whitespace-nowrap py-6 pr-4 md:justify-evenly">
+      {tabs.map((tab, index) => {
+        return (
+          <Tab
+            onClick={() => {
+              clickHandler(index);
+            }}
+            key={tab.title}
+            tab={tab}
+            index={index}
+            active={current == index}
+          />
+        );
+      })}
+    </ul>
+  );
+};
+
+const Program = ({ questions, logoslist, programInfo }) => {
+  const { showModal } = useGlobalModalContext();
+  const createModal = () => {
+    showModal(MODAL_TYPES.REGISTER_MODAL, {
+      title: "Điền thông tin liên lạc, Mind Connector sẽ liên hệ bạn sau",
+      confirmBtn: "Save",
+    });
+  };
+  const opts = {
+    height: "auto",
+    width: "100%",
+    playerVars: {
+      autoplay: 0,
+    },
+  };
+
+  const _onReady = (event) => {
+    event.target.pauseVideo();
+  };
+
+  return (
     <>
+      <Head>
+        <title>Mind Connector</title>
+        <meta name="description" content="Mind Connector" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Seo seo={seo} />
-      <div>
-        <Container>
-          <BannerHeading>Program</BannerHeading>
-        </Container>
-      </div>
+      <>
+        <div className="bg-[url(/img/bg-head-section.png)] bg-cover py-[3em] text-center md:py-[4em] md:pb-[0]">
+          <Container>
+            <SectionSubHeading>
+              Chương trình Thành công trong học tập
+            </SectionSubHeading>
+            <h1 className="leading-0 text-3xl font-black md:text-6xl">
+              Thành công trong học tập
+            </h1>
+            <p className="mt-4">“Khởi đầu vững chắc, tương lai khởi sắc”</p>
+            <div className="mt-8 flex flex-row flex-wrap justify-between gap-2 sm:justify-center md:gap-6">
+              <div>
+                <div className="inline-block w-[90px] overflow-hidden rounded-full md:w-[100px]">
+                  <img
+                    src="/img/avatar.png"
+                    alt="Avatar"
+                    className="w-full object-cover transition-all hover:scale-[1.]"
+                  />
+                </div>
+                <p className="mt-1 text-[18px] font-black text-purple">
+                  Stephanie J
+                </p>
+                <p className="text-xs">CEO Alphabet</p>
+              </div>
+              <div>
+                <div className="inline-block w-[90px] overflow-hidden rounded-full md:w-[100px]">
+                  <img
+                    src="/img/avatar.png"
+                    alt="Avatar"
+                    className="w-full object-cover transition-all hover:scale-[1.]"
+                  />
+                </div>
+                <p className="mt-1 text-[18px] font-black text-purple">
+                  Stephanie J
+                </p>
+                <p className="text-xs">CEO Alphabet</p>
+              </div>
+              <div>
+                <div className="inline-block w-[90px] overflow-hidden rounded-full md:w-[100px]">
+                  <img
+                    src="/img/avatar.png"
+                    alt="Avatar"
+                    className="w-full object-cover transition-all hover:scale-[1.]"
+                  />
+                </div>
+                <p className="mt-1 text-[18px] font-black text-purple">
+                  Stephanie J
+                </p>
+                <p className="text-xs">CEO Alphabet</p>
+              </div>
+            </div>
+            <div className="mt-8 flex flex-col rounded-xl text-left md:relative md:top-[35px] md:mt-0 md:h-[70px] md:flex-row md:justify-between md:bg-white md:shadow-lg">
+              <div className=" flex flex-row flex-nowrap items-start justify-start gap-4 rounded-2xl border-solid border-[#d2d2d2] bg-[#FFF2EB] bg-opacity-75 py-[1em] px-6 xs:flex-row sm:flex-row sm:gap-8 md:items-center md:bg-transparent">
+                <div className="text-gray">
+                  <p className="text-[20px] font-bold">
+                    4.9{" "}
+                    <span className="mt-0 inline-block text-[12px]">
+                      <img src="/img/star-rating-fill.svg" alt="" width={15} />
+                    </span>
+                  </p>
+                  <p className="text-[14px]">1988 Đánh giá</p>
+                </div>
+                <div className="text-gray">
+                  <p className="text-[20px] font-bold">2000</p>
+                  <p className="text-[14px]">Học viên</p>
+                </div>
+                <div className="text-gray">
+                  <p className="text-[20px] font-bold">60</p>
+                  <p className="text-[14px]">Giờ học</p>
+                </div>
+              </div>
+              <div className="mt-6 flex flex-row flex-wrap items-center justify-between md:mt-0 md:gap-5 md:px-6">
+                <p>
+                  Học phí <span className="text-[14px] font-bold">USD$</span>{" "}
+                  <span className="text-[32px] font-bold">84</span>
+                  <sup className="text-[18px] font-bold">99</sup>
+                </p>
+                <p>
+                  <button onClick={createModal} className="btn-primary">
+                    Đăng ký học ngay
+                  </button>
+                </p>
+              </div>
+            </div>
+          </Container>
+        </div>
+        <div className="bg-[#FFFEFD]">
+          <Container>
+            <div className="flex flex-col md:py-[4em]">
+              <div className="flex flex-col justify-between md:flex-row">
+                <div className="w-full">
+                  <div className="flex flex-col justify-evenly pt-16 md:flex-row">
+                    <div className="relative flex-shrink flex-grow basis-full border-l border-[#F5CBCC] pl-8 pb-12 md:border-l-0 md:border-t md:pl-0 md:pt-12 md:pr-6">
+                      <img
+                        src="/img/icon-steps.svg"
+                        alt=""
+                        className="absolute top-[-5px] left-[-12px] w-[24px] md:top-[-12px] md:left-[-5px]"
+                      />
+                      <h4 className="mb-4 inline-block rounded-lg bg-purple p-3 py-1 text-sm font-bold text-white">
+                        Mục tiêu
+                      </h4>
+                      <h3 className="mb-4 text-xl font-black leading-none md:text-2xl md:leading-none">
+                        Xây dựng nền tảng vững chắc
+                      </h3>
+                      <p className="pr-8 leading-5">
+                        Chương trình học này sẽ giúp bạn có một khởi đầu vững
+                        vàng trong hành trình chạm đến thành công.
+                      </p>
+                    </div>
+                    <div className="relative flex-shrink flex-grow basis-full border-l border-[#F5CBCC] pl-8 pb-12 md:border-l-0 md:border-t md:pl-0 md:pt-12 md:pr-6">
+                      <img
+                        src="/img/icon-steps.svg"
+                        alt=""
+                        className="absolute top-[-5px] left-[-12px] w-[24px] md:top-[-12px] md:left-[-5px]"
+                      />
+                      <h4 className="mb-4 inline-block rounded-lg bg-purple p-3 py-1 text-sm font-bold text-white">
+                        Cấu trúc
+                      </h4>
+                      <h3 className="mb-4 text-xl font-black leading-none md:text-2xl md:leading-none">
+                        30 ngày học linh hoạt
+                      </h3>
+                      <p className="pr-8 leading-5">
+                        Chương trình được thiết kế để bạn học trong vòng 30
+                        ngày. Bạn có thể rút ngắn hoặc kéo dài tuỳ theo thời
+                        gian của mình.
+                      </p>
+                    </div>
+                    <div className="relative flex-shrink flex-grow basis-full pl-8 pb-12 md:pl-0 md:pt-12 md:pr-6">
+                      <img
+                        src="/img/icon-steps.svg"
+                        alt=""
+                        className="absolute top-[-5px] left-[-12px] w-[24px] md:top-[-12px] md:left-[-5px]"
+                      />
+                      <h4 className="mb-4 inline-block rounded-lg bg-purple p-3 py-1 text-sm font-bold text-white">
+                        Chứng nhận
+                      </h4>
+                      <h3 className="mb-4 text-xl font-black leading-none md:text-2xl md:leading-none">
+                        Chứng nhận hoàn thành chương trình
+                      </h3>
+                      <p className="pr-8 leading-5">
+                        Bạn sẽ nhận chứng nhận sau khi hoàn thành chương trình
+                        học.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mx-[-1em] flex items-center px-[1em] shadow-asideboxLight md:mx-0 md:h-[60px] md:rounded-xl">
+                    <TabPanels />
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-12" id="about">
+                <div
+                  className="
+                        aspect-w-16 aspect-h-9 relative mx-[-1em] overflow-hidden rounded-3xl
+                        bg-gray-default md:mx-0 [&>div>iframe]:h-full [&>div>iframe]:w-full
+                      "
+                >
+                  <YouTube
+                    videoId="8dJyRm2jJ-U"
+                    opts={opts}
+                    onReady={_onReady}
+                  />
+                </div>
+              </div>
+
+              <div className="mt-12" id="rating">
+                <h2 className="mb-3 text-[34px] font-black leading-[1] leading-[1.2]">
+                  Chia sẻ từ học viên Mind Connector
+                </h2>
+                <p>
+                  645 học viên đã tham gia khoá học{" "}
+                  <b>Ngiên Cứu và Phân Tích</b>. Cùng lắng nghe những chia sẻ từ
+                  họ nhé!
+                </p>
+                <p>
+                  <br />
+                </p>
+                <p>
+                  <Link href="/">Xem tất cả chia sẻ</Link>
+                </p>
+              </div>
+              <div id="qa">
+                <QandA questions={questions} />
+              </div>
+              <div id="register">
+                <div className="mt-8 mb-4 flex flex-col overflow-hidden rounded-3xl bg-[#941C50] text-white md:flex-row md:p-0">
+                  <header className="bg-[#B22F66] p-8">
+                    <h3 className="text-[30px] font-black leading-none md:text-[34px] md:leading-none">
+                      Đăng ký toàn bộ chương trình, nhận ngay ưu đãi
+                    </h3>
+                    <p className="mt-4">
+                      Nhập email để thử trải nghiệm miễn phí các khoá học của
+                      Mind Connector.
+                    </p>
+                  </header>
+                  <div className="flex flex-col items-center justify-center gap-2 p-6 md:w-2/5">
+                    <p className="text-[14px] font-bold">
+                      <span>Học phí USD$</span>{" "}
+                      <span className="text-[32px]">
+                        89<sup className="text-[18px]">99</sup>
+                      </span>
+                    </p>
+                    <p className="flex items-center">
+                      <button
+                        onClick={createModal}
+                        className="btn-primary block w-full overflow-hidden text-[13px] sm:text-[16px] lg:min-w-[296px]"
+                      >
+                        Đừng bỏ lỡ, đăng ký học ngay!
+                      </button>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </div>
+      </>
     </>
-  </>
-);
+  );
+};
+
+export async function getStaticProps() {
+  /** TODO: get real QaA from backend */
+  const questions = [
+    {
+      question: "Làm thế nào để tôi có thể trở thành sinh viên ưu tú?",
+      answer:
+        "Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.",
+    },
+    {
+      question: "Tôi cần chuẩn bị hành trang gì cho một kỳ thực tập hoàn hảo?",
+      answer:
+        "Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.",
+    },
+    {
+      question:
+        "Liệu tôi có thể khởi nghiệp ngay từ khi còn ngồi trên ghế nhà trường?",
+      answer:
+        "Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.",
+    },
+    {
+      question:
+        "Doanh nghiệp tôi muốn đào tạo một đội ngũ nhân viên chất lượng, Mind Connector có chương trình nào phù hợp hay không?",
+      answer:
+        "Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.",
+    },
+  ];
+
+  const logoslist = ["1", "2", "3", "4"];
+  const programInfo = {
+    title: "Khoá học nghiên cứu và phân tích",
+    price: "89.99",
+  };
+  return {
+    props: {
+      questions,
+      logoslist,
+      programInfo,
+    },
+  };
+}
 
 export default Program;
