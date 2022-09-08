@@ -10,13 +10,19 @@ const MobileDropdown = ({ items, dropdown, dropdId }) => {
     <ul
       id={`mobile-${dropdId}`}
       className={`
-      rounded-xl bg-[#EAE5DF] p-4 font-normal
+      rounded-xl bg-[#EAE5DF] p-4 py-6 font-normal
         ${dropdown ? "block" : "hidden"}
       `}
     >
       {items.map((item, index) => {
         return (
-          <li key={index} className="w-full text-[14px] font-normal leading-8">
+          <li
+            key={index}
+            className={`
+            w-full text-[14px] font-normal leading-none
+            ${index == 0 ? "" : "mt-6"}
+          `}
+          >
             <Link href={item.path} className={``} scroll={false}>
               {item.name}
             </Link>

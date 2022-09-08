@@ -70,7 +70,7 @@ const TabPanels = () => {
   };
 
   return (
-    <ul className="block overflow-x-auto overflow-y-hidden whitespace-nowrap ">
+    <ul className="block overflow-x-auto overflow-y-hidden whitespace-nowrap py-6 pr-4">
       {tabs.map((tab, index) => {
         return (
           <Tab
@@ -120,7 +120,7 @@ const Course = ({ questions, logoslist, programInfo }) => {
                 <img
                   src="/img/avatar.png"
                   alt="Avatar"
-                  className="w-full object-cover transition-all hover:scale-[1.2]"
+                  className="w-full object-cover transition-all hover:scale-[1.]"
                 />
               </div>
               <p className="mt-1 text-[18px] font-black text-purple">
@@ -350,7 +350,7 @@ const Course = ({ questions, logoslist, programInfo }) => {
                       <p className="flex items-center sm:basis-[300px]">
                         <button
                           onClick={createModal}
-                          className="btn-primary block w-full min-w-[296px]"
+                          className="btn-primary block w-full md:min-w-[296px]"
                         >
                           Đăng ký học ngay!
                         </button>
@@ -378,7 +378,7 @@ const Course = ({ questions, logoslist, programInfo }) => {
                       <p className="sm:basis-[300px]">
                         <button
                           onClick={createModal}
-                          className="btn-invert block w-full min-w-[296px]"
+                          className="btn-invert block w-full md:min-w-[296px]"
                         >
                           {/* Đừng Bỏ Lỡ, Đăng Ký Học Ngay! */}
                           Khám Phá Tất Cả Các Khoá Học

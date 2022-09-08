@@ -31,29 +31,29 @@ const Student = ({ questions, logoslist }) => {
   return (
     <>
       <Head>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
         <Seo seo={seo} />
         <header className={`header-with-bg ${styles.studentHeader}`}>
           <Container>
             <BannerHeading>
-              Học hỏi <br className='hidden md:inline'/>
+              Học hỏi <br className="hidden md:inline" />
               để thành công
             </BannerHeading>
-            <p>
+            <p className="text-center lg:text-left">
               Cùng Mind Connector xây dựng nền tảng vững chắc để thành công.
             </p>
           </Container>
         </header>
         <Container>
           <LogoList
-            title='Mind Connector hợp tác với trường đại học và công ty hàng đầu'
+            title="Mind Connector hợp tác với trường đại học và công ty hàng đầu"
             list={logoslist}
           />
         </Container>
         <section
-          id='thanh-cong-trong-hoc-tap'
+          id="thanh-cong-trong-hoc-tap"
           className={`${styles.studentSuccess} ${styles.studentSuccess__Learning}`}
         >
           <Container>
@@ -65,7 +65,7 @@ const Student = ({ questions, logoslist }) => {
               để bạn có một hành trang vững chắc cho tương lai.
             </p>
             <p>
-              <Link href='#'>Tìm hiểu thêm</Link>
+              <Link href="#">Tìm hiểu thêm</Link>
             </p>
           </Container>
           <div>
@@ -75,7 +75,7 @@ const Student = ({ questions, logoslist }) => {
           </div>
         </section>
         <section
-          id='thanh-cong-trong-ung-tuyen'
+          id="thanh-cong-trong-ung-tuyen"
           className={`${styles.studentSuccess} ${styles.studentSuccess__Jobs}`}
         >
           <Container>
@@ -87,7 +87,7 @@ const Student = ({ questions, logoslist }) => {
               năng quan trọng chính là chìa khoá để thành công.
             </p>
             <p>
-              <Link href='#'>Tìm hiểu thêm</Link>
+              <Link href="#">Tìm hiểu thêm</Link>
             </p>
           </Container>
           <div>
@@ -97,7 +97,7 @@ const Student = ({ questions, logoslist }) => {
           </div>
         </section>
         <section
-          id='thanh-cong-trong-khoi-su-kinh-doanh'
+          id="thanh-cong-trong-khoi-su-kinh-doanh"
           className={`${styles.studentSuccess} ${styles.studentSuccess__Startup}`}
         >
           <Container>
@@ -108,7 +108,7 @@ const Student = ({ questions, logoslist }) => {
               Vững vàng kiến thức và kỹ năng để khởi sự kinh doanh thuận lợi.
             </p>
             <p>
-              <Link href='#'>Tìm hiểu thêm</Link>
+              <Link href="#">Tìm hiểu thêm</Link>
             </p>
           </Container>
           <div>
