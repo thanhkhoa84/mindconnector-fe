@@ -60,7 +60,7 @@ const CarouselItem = ({ headline, body, image, link, index }) => {
             <h2 className="mb-[0.5em] text-4xl font-black leading-9">
               {headline} {index}
             </h2>
-            <p className="leading-6">{body}</p>
+            <p className="leading-6 line-clamp-3">{body}</p>
             <p className={`btn-primary mt-4 inline-block`}>Xem thêm</p>
           </div>
         </div>

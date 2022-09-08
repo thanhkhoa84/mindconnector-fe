@@ -276,11 +276,7 @@ const Program = ({ questions, logoslist, programInfo }) => {
                         bg-gray-default md:mx-0 [&>div>iframe]:h-full [&>div>iframe]:w-full
                       "
                 >
-                  <YouTube
-                    videoId="8dJyRm2jJ-U"
-                    opts={opts}
-                    onReady={_onReady}
-                  />
+                  {/* <YouTube videoId="8dJyRm2jJ-U" opts={opts} onReady={_onReady}/> */}
                 </div>
               </div>
 
