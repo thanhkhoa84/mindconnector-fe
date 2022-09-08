@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from "react";
+import ActiveLink from "./ActiveLink";
 
 import styles from "../styles/components/NavBar.module.scss";
 
@@ -17,13 +18,14 @@ const DropdownMenu = ({ items, dropdown, dropdId }) => {
       {items.map((item, index) => {
         return (
           <li key={index} className="w-full font-normal leading-8">
-            <Link
+            <ActiveLink
               href={item.path}
+              activeClassName=""
               className={`${styles.navLink}`}
               scroll={false}
             >
-              {item.name}
-            </Link>
+              <a className="hover:text-purple">{item.name}</a>
+            </ActiveLink>
           </li>
         );
       })}
@@ -42,7 +44,7 @@ const NavItem = ({ link, index }) => {
 
   const onClickHandler = (e) => {
     setDropdown((dropdown) => !dropdown);
-    e.preventDefault();
+    // e.preventDefault();
   };
 
   const handleClickOutside = (event) => {
@@ -75,7 +77,7 @@ const NavItem = ({ link, index }) => {
   return (
     <li
       className={`
-        lg:flex lg:h-[80px] lg:items-center lg:justify-center
+        lg:flex lg:h-[80px] lg:items-center lg:justify-center hover:[&>a]:text-purple
         ${link.submenus ? "group relative" : ""} 
       `}
       ref={navItem}
@@ -85,31 +87,27 @@ const NavItem = ({ link, index }) => {
     >
       {link.submenus ? (
         <>
-          <button
-            onClick={onClickHandler}
-            data-dropdown-toggle={`dropdown-${index}`}
-            aria-expanded={dropdown ? "true" : "false"}
-            className="hover:color-purple"
-          >
-            {link.name}{" "}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class={`
-                ${dropdown ? "rotate-180" : ""}
+          <ActiveLink href={link.path} activeClassName="text-purple">
+            <a onClick={onClickHandler} className="hover:text-purple">
+              {link.name}{" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class={`
                 inline h-4 w-4 align-sub transition-all
               `}
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-              />
-            </svg>
-          </button>
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </a>
+          </ActiveLink>
           <DropdownMenu
             dropdId={`dropdown-${index}`}
             items={link.submenus}
@@ -117,9 +115,13 @@ const NavItem = ({ link, index }) => {
           />
         </>
       ) : (
-        <Link href={link.path} className="hover:text-purple">
-          {link.name}
-        </Link>
+        <ActiveLink
+          href={link.path}
+          activeClassName="text-purple"
+          className="hover:text-purple"
+        >
+          <a className="hover:text-purple">{link.name}</a>
+        </ActiveLink>
       )}
     </li>
   );
