@@ -204,9 +204,10 @@ const Program = ({ questions, logoslist, programInfo }) => {
             </div>
           </Container>
         </div>
-        <div className="bg-[#FFFEFD]">
+
+        <div className="">
           <Container>
-            <div className="flex flex-col md:py-[4em]">
+            <div className="md:pt-[4em]">
               <div className="flex flex-col justify-between md:flex-row">
                 <div className="w-full">
                   <div className="flex flex-col justify-evenly pt-16 md:flex-row">
@@ -279,9 +280,15 @@ const Program = ({ questions, logoslist, programInfo }) => {
                   {/* <YouTube videoId="8dJyRm2jJ-U" opts={opts} onReady={_onReady}/> */}
                 </div>
               </div>
+            </div>
+          </Container>
+        </div>
 
-              <div className="mt-12" id="rating">
-                <h2 className="mb-3 text-[34px] font-black leading-[1] leading-[1.2]">
+        <div className="mt-12 bg-[#FFEFDB] py-14" id="rating">
+          <Container>
+            <div className="flex flex-col lg:flex-row">
+              <div className="flex-shrink text-center lg:text-left">
+                <h2 className="mb-3 text-center text-[34px] font-black leading-[1] leading-[1.2] lg:text-left">
                   Chia sẻ từ học viên Mind Connector
                 </h2>
                 <p>
@@ -289,44 +296,77 @@ const Program = ({ questions, logoslist, programInfo }) => {
                   <b>Ngiên Cứu và Phân Tích</b>. Cùng lắng nghe những chia sẻ từ
                   họ nhé!
                 </p>
-                <p>
-                  <br />
-                </p>
-                <p>
-                  <Link href="/">Xem tất cả chia sẻ</Link>
+                <p className="mt-4 hidden md:block">
+                  <Link href="/">
+                    <span className="cursor-pointer font-bold text-orange-500">
+                      Xem tất cả chia sẻ{" "}
+                    </span>
+                  </Link>
                 </p>
               </div>
-              <div id="qa">
-                <QandA questions={questions} />
-              </div>
-              <div id="register">
-                <div className="mt-8 mb-4 flex flex-col overflow-hidden rounded-3xl bg-[#941C50] text-white md:flex-row md:p-0">
-                  <header className="bg-[#B22F66] p-8">
-                    <h3 className="text-[30px] font-black leading-none md:text-[34px] md:leading-none">
-                      Đăng ký toàn bộ chương trình, nhận ngay ưu đãi
-                    </h3>
-                    <p className="mt-4">
-                      Nhập email để thử trải nghiệm miễn phí các khoá học của
-                      Mind Connector.
-                    </p>
-                  </header>
-                  <div className="flex flex-col items-center justify-center gap-2 p-6 md:w-2/5">
-                    <p className="text-[14px] font-bold">
-                      <span>Học phí USD$</span>{" "}
-                      <span className="text-[32px]">
-                        89<sup className="text-[18px]">99</sup>
-                      </span>
-                    </p>
-                    <p className="flex items-center">
-                      <button
-                        onClick={createModal}
-                        className="btn-primary block w-full overflow-hidden text-[13px] sm:text-[16px] lg:min-w-[296px]"
-                      >
-                        Đừng bỏ lỡ, đăng ký học ngay!
-                      </button>
-                    </p>
+              <div className="flex-shrink">
+                <div className="align-center flex flex flex-col justify-center lg:flex-row">
+                  <div className="relative flex-shrink flex-grow self-center lg:w-1/2">
+                    <img src="/img/testimonial.png" alt="" />
+                    <div className="absolute inset-x-0 bottom-[5em] text-center">
+                      <div className="font-black text-purple">Ngân Huỳnh</div>
+                      <div className="text-xs text-[#6C6C6C] lg:text-sm">
+                        <p>Học viên Chương trình nâng cao</p>
+                        <p className="font-black">
+                          “Thành công trong khởi sự kinh doanh”
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex-shrink flex-grow self-center pb-14 lg:w-1/2 lg:self-end">
+                    <blockquote className='before:content-["] top-0 left-0 rounded-2xl bg-white/70 p-6 py-8 italic  shadow-asideboxLight after:absolute after:text-purple'>
+                      Mauris ut dapibus lacus, sodales tempus ante. Donec
+                      faucibus sem vestibulum, gravida quam at, ultricies
+                      tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit
+                      amet, consectetur adipiscing elit. Sed accumsan erat quam,
+                      ac iaculis neque tempus non. Cras mattis auctor gravida.
+                      Donec rutrum lobortis est, et faucibus arcu sagittis eu.
+                    </blockquote>
                   </div>
                 </div>
+              </div>
+            </div>
+          </Container>
+        </div>
+
+        <div id="qa">
+          <Container>
+            <QandA questions={questions} />
+          </Container>
+        </div>
+
+        <div id="register" className="pb-12">
+          <Container>
+            <div className="mt-8 mb-4 flex flex-col overflow-hidden rounded-3xl bg-[#941C50] text-white md:flex-row md:p-0">
+              <header className="bg-[#B22F66] p-8">
+                <h3 className="text-[30px] font-black leading-none md:text-[34px] md:leading-none">
+                  Đăng ký toàn bộ chương trình, nhận ngay ưu đãi
+                </h3>
+                <p className="mt-4">
+                  Nhập email để thử trải nghiệm miễn phí các khoá học của Mind
+                  Connector.
+                </p>
+              </header>
+              <div className="flex flex-col items-center justify-center gap-2 p-6 md:w-2/5">
+                <p className="text-[14px] font-bold">
+                  <span>Học phí USD$</span>{" "}
+                  <span className="text-[32px]">
+                    89<sup className="text-[18px]">99</sup>
+                  </span>
+                </p>
+                <p className="flex items-center">
+                  <button
+                    onClick={createModal}
+                    className="btn-primary block w-full overflow-hidden text-[13px] sm:text-[16px] lg:min-w-[296px]"
+                  >
+                    Đừng bỏ lỡ, đăng ký học ngay!
+                  </button>
+                </p>
               </div>
             </div>
           </Container>

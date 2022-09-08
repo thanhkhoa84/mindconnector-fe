@@ -85,16 +85,8 @@ const MobileNavItem = ({ link, index }) => {
                 src="/img/detail-arrow.png"
                 alt=""
                 className={`
-                  w-[30px]
-                  ${dropdown ? "hidden" : ""}
-                `}
-              />
-              <img
-                src="/img/detail-arrow-close.png"
-                alt=""
-                className={`
-                  w-[30px]
-                  ${dropdown ? "" : "hidden"}
+                  w-[30px] transition-all
+                  ${dropdown ? "-rotate-180" : ""}
                 `}
               />
             </span>
