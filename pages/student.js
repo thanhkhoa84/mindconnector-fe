@@ -19,7 +19,6 @@ const LogoList = dynamic(() => import('./../components/LogoList'), {
   ssr: false
 })
 
-
 const Student = ({ questions, logoslist }) => {
   const seo = {
     metaTitle: 'Mind Connector | Dành cho sinh viên',

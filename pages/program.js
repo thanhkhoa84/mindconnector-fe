@@ -1,10 +1,10 @@
+import { useEffect, useState, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 import YouTube from "react-youtube";
 import Container from "../components/Container";
-import Layout from "../components/Layout";
 import Seo from "../components/SEO";
 import { BannerHeading, SectionSubHeading } from "../components/Heading";
 import QandA from "../components/QandA";
@@ -22,6 +22,10 @@ const seo = {
 };
 
 const LogoList = dynamic(() => import("./../components/LogoList"), {
+  ssr: false,
+});
+
+const Deco1 = dynamic(() => import("../components/Deco1"), {
   ssr: false,
 });
 
@@ -90,7 +94,7 @@ const TabPanels = () => {
   );
 };
 
-const Program = ({ questions, logoslist, programInfo }) => {
+const Program = ({ questions, logoslist, programInfo, courses }) => {
   const { showModal } = useGlobalModalContext();
   const createModal = () => {
     showModal(MODAL_TYPES.REGISTER_MODAL, {
@@ -121,9 +125,9 @@ const Program = ({ questions, logoslist, programInfo }) => {
       <>
         <div className="bg-[url(/img/bg-head-section.png)] bg-cover py-[3em] text-center md:py-[4em] md:pb-[0]">
           <Container>
-            <SectionSubHeading>
+            <h4 className="font-bold text-gray">
               Chương trình Thành công trong học tập
-            </SectionSubHeading>
+            </h4>
             <h1 className="leading-0 text-3xl font-black md:text-6xl">
               Thành công trong học tập
             </h1>
@@ -271,11 +275,74 @@ const Program = ({ questions, logoslist, programInfo }) => {
               </div>
 
               <div className="mt-12" id="about">
-                <div className="aspect-w-16 aspect-h-9 relative -mx-[1em] mt-[3em] overflow-hidden bg-gray-default md:mx-0 md:rounded-3xl [&>div>iframe]:h-full [&>div>iframe]:w-full">
+                <div className="aspect-w-16 aspect-h-9 relative -mx-[1em] mt-[3em] overflow-hidden bg-gray md:mx-0 md:rounded-3xl [&>div>iframe]:h-full [&>div>iframe]:w-full">
                   {/* <YouTube videoId="8dJyRm2jJ-U" opts={opts} onReady={_onReady}/> */}
                 </div>
               </div>
             </div>
+          </Container>
+        </div>
+        <div className="relative mt-[4em]">
+          <Deco1 />
+          <Container>
+            <h2 className="hidden text-center text-[22px] font-black leading-none lg:block">
+              Phát triển mọi kỹ năng với cấu trúc chương trình học chặt chẽ
+            </h2>
+            <ul className="mt-8 overflow-hidden md:text-center">
+              {courses.map((course, index) => {
+                return (
+                  <li
+                    key={index}
+                    className={`
+                      relative my-0 mx-auto max-w-[320px] overflow-hidden 
+                      sm:max-w-[380px] md:mx-[1%] md:inline-block md:max-w-[18%] md:align-top
+                      ${index % 2 ? "text-right md:mt-8" : "md:mt-8"}
+                    `}
+                  >
+                    <div
+                      className={`
+                        md:inline-block md:align-top
+                        ${index % 2 ? "text-right md:mt-[4em]" : ""}
+                      `}
+                    >
+                      <div
+                        className={`
+                          absolute top-1/2
+                          -translate-y-1/2 after:absolute after:right-0 after:top-[50%] after:h-[24px] after:w-[24px] after:-translate-y-[8px] after:bg-[url(/img/indicator.png)] after:content-['']  md:static md:translate-y-0 after:md:top-full after:md:left-1/2 after:md:-translate-y-[22px] after:md:-translate-x-[10px]
+                          ${
+                            index % 2
+                              ? "left-0 after:-right-[12px]"
+                              : "right-0 after:-left-[12px]"
+                          }
+                        `}
+                      >
+                        <div className="flex flex-col items-center justify-center">
+                          <p className="relative z-10 inline-block rounded-xl bg-purple px-4 py-2 text-sm font-bold leading-none text-white">
+                            Khoá
+                          </p>
+                          <p
+                            className={`
+                              relative -top-[10px] inline-flex h-[78px] w-[78px] items-center justify-center rounded-xl bg-[#FDF2F2] text-[54px] font-black text-[#F5B0C5] shadow-lg
+                            `}
+                          >
+                            {index + 1}
+                          </p>
+                        </div>
+                        <div
+                          className={`
+                            absolute top-1/2 w-[100vw] translate-y-[3px] border-t-2 border-dotted md:top-full md:left-1/2 md:h-[200px] md:w-0 md:w-[1px] md:border-t-0 md:border-r-2
+                            ${index % 2 ? "left-full" : "right-full"}
+                          `}
+                        ></div>
+                      </div>
+                      <div className="inline-block md:pt-[4em]">
+                        <CourseCard course={course} />
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
           </Container>
         </div>
 
@@ -397,17 +464,59 @@ export async function getStaticProps() {
         "Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.",
     },
   ];
-
   const logoslist = ["1", "2", "3", "4"];
   const programInfo = {
     title: "Khoá học nghiên cứu và phân tích",
     price: "89.99",
   };
+  const courses = [
+    {
+      title: "Khoá học nghiên cứu và phân tích",
+      currency: "USD$",
+      price: "84.99",
+      lessons: "4",
+      time: "3 hours",
+      feature: false,
+    },
+    {
+      title: "Khoá học nghiên cứu và phân tích",
+      currency: "USD$",
+      price: "84.99",
+      lessons: "4",
+      time: "3 hours",
+      feature: false,
+    },
+    {
+      title: "Khoá học nghiên cứu và phân tích",
+      currency: "USD$",
+      price: "84.99",
+      lessons: "4",
+      time: "3 hours",
+      feature: false,
+    },
+    {
+      title: "Khoá học nghiên cứu và phân tích",
+      currency: "USD$",
+      price: "84.99",
+      lessons: "4",
+      time: "3 hours",
+      feature: false,
+    },
+    {
+      title: "Khoá học nghiên cứu và phân tích",
+      currency: "USD$",
+      price: "84.99",
+      lessons: "4",
+      time: "3 hours",
+      feature: false,
+    },
+  ];
   return {
     props: {
       questions,
       logoslist,
       programInfo,
+      courses,
     },
   };
 }

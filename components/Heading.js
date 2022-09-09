@@ -7,7 +7,11 @@ const SectionHeading = ({ align, children }) => {
 };
 const SectionSubHeading = ({ align, children }) => {
   return (
-    <h2 className={`leading-[1] text-base text-gray-default font-bold my-0 mx-auto ${align ? 'text-center' : ''}`}>
+    <h2
+      className={`my-0 mx-auto text-base font-bold leading-[1] text-gray ${
+        align ? "text-center" : ""
+      }`}
+    >
       {children}
     </h2>
   );

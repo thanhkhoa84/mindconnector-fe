@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
 @font-face {
   font-family: 'SVN-Gilroy';
   src: url('/fonts/SVN-Gilroy.eot');
@@ -92,8 +91,6 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
 }
 
 @media (prefers-color-scheme: dark) {

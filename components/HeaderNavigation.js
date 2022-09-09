@@ -169,7 +169,7 @@ const MobileNavItem = ({ link, index }) => {
   let ref = useRef();
 
   const handleRouteChange = (url, { shallow }) => {
-    setDropdown((prev) => !prev);
+    setDropdown((prev) => false);
   };
 
   const onClickHandler = (e) => {

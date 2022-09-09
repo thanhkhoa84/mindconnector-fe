@@ -4,12 +4,7 @@ import Image from "next/image";
 const LogoList = ({ backgroundColor, title, list }) => {
   let images = ["/img/saatchi.svg", "/img/vlu.svg", "/img/ogilvy.svg"];
   return (
-    <div
-      className="p-4"
-      style={{
-        backgroundColor: backgroundColor ? backgroundColor : "",
-      }}
-    >
+    <div className="bg-white/75 p-4">
       <Container>
         <div className="flex flex-col">
           <header>

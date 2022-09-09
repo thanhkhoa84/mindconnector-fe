@@ -1,23 +1,26 @@
-import Link from 'next/link';
-import Rating from '../../Rating';
-import styles from '../../../styles/components/common/courses/CourseCard.module.scss';
+import Link from "next/link";
+import dynamic from "next/dynamic";
+import styles from "../../../styles/components/common/courses/CourseCard.module.scss";
 
-const course = {
-  title: "Khoá học nghiên cứu và phân tích",
-  currency: "USD$",
-  price: "84.99",
-  lessons: "4",
-  time: "3 hours",
-  feature: true,
-};
+const Rating = dynamic(() => import("../../Rating"), {
+  ssr: false,
+});
 
-const CourseCard = () => {
-  let { title, currency, price, lessons, time, feature } = course;
+const CourseCard = ({ course }) => {
+  const info = {
+    title: "Khoá học nghiên cứu và phân tích",
+    currency: "USD$",
+    price: "84.99",
+    lessons: "4",
+    time: "3 hours",
+    feature: true,
+  };
+  let { title, currency, price, lessons, time, feature } = info;
   let priceMain = price.split(".")[0];
   let fraction = price.split(".")[1];
   return (
     <div
-      className={`relative inline-block w-full overflow-hidden rounded-[30px] border-[6px] border-orange-medium text-left`}
+      className={`relative max-w-[180px] overflow-hidden rounded-[30px] border-[6px] border-orange-medium text-left sm:max-w-[190px] md:max-w-[200px]`}
     >
       <div className={`overflow-hidden rounded-2xl  ${styles.courseCardImage}`}>
         <img src="/img/course-1.png" alt="" className="block w-full" />

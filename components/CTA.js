@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from '../styles/components/CTA.module.scss';
 
 const Button = React.forwardRef(({ href, onClick, ...props }, ref) => {
   return (

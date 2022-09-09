@@ -108,9 +108,9 @@ const Course = ({ questions, logoslist, programInfo }) => {
       <>
         <div className="bg-[url(/img/bg-head-section.png)] bg-cover py-[3em] text-center md:py-[4em] md:pb-[0]">
           <Container>
-            <SectionSubHeading>
+            <h4 className="font-bold text-gray">
               Chương trình Thành công trong học tập
-            </SectionSubHeading>
+            </h4>
             <h1 className="leading-0 text-3xl font-black md:text-6xl">
               Khoá học nghiên cứu và phân tích
             </h1>

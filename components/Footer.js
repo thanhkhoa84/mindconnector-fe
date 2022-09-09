@@ -20,7 +20,7 @@ const Footer = ({ position, navlinks }) => {
           <div className="mt-8 md:-mt-[40px]">
             <ul className="flex flex-row justify-center gap-4 md:justify-end md:gap-6 md:gap-6">
               <li>
-                <a href="https://facebook.com" target="_blank">
+                <a href="https://facebook.com" target="_blank" rel="noreferrer">
                   <Image
                     src="/img/facebook.svg"
                     alt=""
@@ -30,7 +30,11 @@ const Footer = ({ position, navlinks }) => {
                 </a>
               </li>
               <li>
-                <a href="https://instagram.com" target="_blank">
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Image
                     src="/img/instagram.svg"
                     alt=""
@@ -40,17 +44,17 @@ const Footer = ({ position, navlinks }) => {
                 </a>
               </li>
               <li>
-                <a href="https://twitter.com" target="_blank">
+                <a href="https://twitter.com" target="_blank" rel="noreferrer">
                   <Image src="/img/twitter.svg" alt="" width={40} height={40} />
                 </a>
               </li>
               <li>
-                <a href="https://youtube.com" target="_blank">
+                <a href="https://youtube.com" target="_blank" rel="noreferrer">
                   <Image src="/img/youtube.svg" alt="" width={40} height={40} />
                 </a>
               </li>
               <li>
-                <a href="https://linkedin.com" target="_blank">
+                <a href="https://linkedin.com" target="_blank" rel="noreferrer">
                   <Image
                     src="/img/linkedin.svg"
                     alt=""

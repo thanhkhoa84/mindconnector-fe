@@ -11,7 +11,7 @@ export default function Layout({ navlinks, children }) {
       </Head>
       <GlobalModal>
         <Header navlinks={navlinks} />
-        <main>{children}</main>
+        <main className="overflow-hidden">{children}</main>
         <Footer navlinks={navlinks} />
       </GlobalModal>
     </>
