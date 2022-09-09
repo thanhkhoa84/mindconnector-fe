@@ -90,34 +90,6 @@ const MobileNavItem = ({ link, index }) => {
     >
       {link.submenus ? (
         <>
-          {/* {mobile && !dropdown && (
-            <div>
-              <button href={link.path} onClick={onClickHandler}>
-                {link.name}{" "}
-                <span className="inline-block align-text-bottom">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className={`
-                    ${dropdown ? "-rotate-180" : ""}
-                    inline h-2 w-2 transition-all lg:hidden
-                  `}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </div>
-          )}
-          {mobile && dropdown && <Link href={link.path}>{link.name}</Link>}
-          {!mobile && <Link href={link.path}>{link.name}</Link>} */}
           <Link href={link.path}>{link.name}</Link>
           <MobileDropdown
             dropdId={`dropdown-${index}`}
@@ -144,8 +116,8 @@ const MobileNavItems = ({ navlinks }) => {
   );
 };
 
-const MobileNav = ({ ...navlinks }) => {
+const MobileNavFooter = ({ ...navlinks }) => {
   return <MobileNavItems {...navlinks} />;
 };
 
-export default MobileNav;
+export default MobileNavFooter;

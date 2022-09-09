@@ -130,7 +130,7 @@ const Course = ({ questions, logoslist, programInfo }) => {
             </div>
             <div className="mt-8 flex flex-col rounded-xl text-left md:relative md:top-[35px] md:mt-0 md:h-[70px] md:flex-row md:justify-between md:bg-white md:shadow-lg">
               <div className=" flex flex-row flex-nowrap items-start justify-start gap-4 rounded-2xl border-solid border-[#d2d2d2] bg-[#FFF2EB] bg-opacity-75 py-[1em] px-6 xs:flex-row sm:flex-row sm:gap-8 md:items-center md:bg-transparent">
-                <div className="text-gray">
+                <div className="text-black">
                   <p className="text-[20px] font-bold">
                     4.9{" "}
                     <span className="mt-0 inline-block text-[12px]">
@@ -139,11 +139,11 @@ const Course = ({ questions, logoslist, programInfo }) => {
                   </p>
                   <p className="text-[14px]">1988 Đánh giá</p>
                 </div>
-                <div className="text-gray">
+                <div className="text-black">
                   <p className="text-[20px] font-bold">2000</p>
                   <p className="text-[14px]">Học viên</p>
                 </div>
-                <div className="text-gray">
+                <div className="text-black">
                   <p className="text-[20px] font-bold">60</p>
                   <p className="text-[14px]">Giờ học</p>
                 </div>
@@ -239,18 +239,18 @@ const Course = ({ questions, logoslist, programInfo }) => {
                     Ai phù hợp với khoá học này?
                   </h4>
                   <ul className="list-inside list-disc">
-                    <li className="text-gray-default marker:m-0">
+                    <li className="text-black-default marker:m-0">
                       <span className="text-black">
                         Mauris ut dapibus lacus, sodales tempus ante. Donec sem
                         vestibulum. Gravida quam at, ultricies tellus.
                       </span>
                     </li>
-                    <li className="text-gray-default marker:m-0">
+                    <li className="text-black-default marker:m-0">
                       <span className="text-black">
                         Mauris ut dapibus lacus, sodales tempus ante.
                       </span>{" "}
                     </li>
-                    <li className="text-gray-default marker:m-0">
+                    <li className="text-black-default marker:m-0">
                       <span className="text-black">
                         Donec faucibus sem vestibulum. Gravida quam at,
                         ultricies tellus.

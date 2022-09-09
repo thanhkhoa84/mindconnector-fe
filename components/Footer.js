@@ -2,7 +2,7 @@ import Image from "next/image";
 import { LogoMobile } from "./Logo";
 import Container from "./Container";
 import Link from "next/link";
-import MobileNav from "./MobileNav";
+import MobileNavFooter from "./MobileNavFooter";
 
 const Footer = ({ position, navlinks }) => {
   return (
@@ -14,7 +14,7 @@ const Footer = ({ position, navlinks }) => {
           </div>
 
           <div>
-            <MobileNav navlinks={navlinks} position="footer" />
+            <MobileNavFooter navlinks={navlinks} position="footer" />
           </div>
 
           <div className="mt-8 md:-mt-[40px]">

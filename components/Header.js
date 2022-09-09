@@ -1,11 +1,8 @@
 import { useState, useEffect, useContext } from "react";
-import Image from "next/image";
 import { useRouter } from "next/router";
-import NavBar from "./NavBar";
-import MobileNav from "./MobileNav";
+import { NavBar, MobileNav } from "./HeaderNavigation";
 import { CTA } from "./CTA";
 import { Logo } from "./Logo";
-import styles from "../styles/components/Header.module.scss";
 
 const Header = ({ ...navlinks }) => {
   let [toggle, setToggle] = useState(false);
