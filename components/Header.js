@@ -47,6 +47,7 @@ const Header = ({ ...navlinks }) => {
             type="button"
             className="h-[40px] w-[30px] text-right text-white lg:hidden"
             onClick={toggleMenu}
+            aria-label="Menu Button"
           >
             <span className="inline text-center">
               <svg

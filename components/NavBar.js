@@ -71,7 +71,7 @@ const NavItem = ({ link, index }) => {
       router.events.off("hashChangeStart", handleRouteChange);
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  });
 
   return (
     <li

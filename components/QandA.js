@@ -21,7 +21,9 @@ const QandA = ({ questions }) => {
                 <summary className='relative cursor-pointer list-none rounded-2xl border border-purple bg-white py-4 pl-4 pr-10 transition-all duration-300 after:absolute after:top-[50%] after:right-4 after:inline-block after:h-[30px] after:w-[30px] after:translate-y-[-50%] after:bg-[url("/img/detail-arrow.png")] after:bg-cover after:transition-all group-open:after:-rotate-180'>
                   {question}
                 </summary>
-                <p className="hidden p-4 group-open:block">{answer}</p>
+                <p className="hidden p-4 transition-all group-open:block">
+                  {answer}
+                </p>
               </details>
             );
           })}

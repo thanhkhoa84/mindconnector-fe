@@ -271,12 +271,7 @@ const Program = ({ questions, logoslist, programInfo }) => {
               </div>
 
               <div className="mt-12" id="about">
-                <div
-                  className="
-                        aspect-w-16 aspect-h-9 relative mx-[-1em] overflow-hidden rounded-3xl
-                        bg-gray-default md:mx-0 [&>div>iframe]:h-full [&>div>iframe]:w-full
-                      "
-                >
+                <div className="aspect-w-16 aspect-h-9 relative -mx-[1em] mt-[3em] overflow-hidden bg-gray-default md:mx-0 md:rounded-3xl [&>div>iframe]:h-full [&>div>iframe]:w-full">
                   {/* <YouTube videoId="8dJyRm2jJ-U" opts={opts} onReady={_onReady}/> */}
                 </div>
               </div>

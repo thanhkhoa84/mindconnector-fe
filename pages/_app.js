@@ -48,6 +48,28 @@ MyApp.getInitialProps = async (ctx) => {
       ],
     },
     {
+      name: "Dành cho doanh nghiệp",
+      path: "business",
+      submenus: [
+        {
+          name: "Thành Công Trong Học Tập",
+          path: "/student#thanh-cong-trong-hoc-tap",
+        },
+        {
+          name: "Thành Công Trong Ứng Tuyển",
+          path: "/student#thanh-cong-trong-ung-tuyen",
+        },
+        {
+          name: "Thành Công Trong Khởi Sự Kinh Doanh",
+          path: "/student#thanh-cong-trong-khoi-su-kinh-doanh",
+        },
+        {
+          name: "Experience Tour",
+          path: "/business",
+        },
+      ],
+    },
+    {
       name: "Program",
       path: "program",
     },
@@ -55,28 +77,6 @@ MyApp.getInitialProps = async (ctx) => {
       name: "Course",
       path: "course",
     },
-    // {
-    //   name: "Dành cho doanh nghiệp",
-    //   path: "business",
-    //   submenus: [
-    //     {
-    //       name: "Thành Công Trong Học Tập",
-    //       path: "/student#thanh-cong-trong-hoc-tap",
-    //     },
-    //     {
-    //       name: "Thành Công Trong Ứng Tuyển",
-    //       path: "/student#thanh-cong-trong-ung-tuyen",
-    //     },
-    //     {
-    //       name: "Thành Công Trong Khởi Sự Kinh Doanh",
-    //       path: "/student#thanh-cong-trong-khoi-su-kinh-doanh",
-    //     },
-    //     {
-    //       name: "Experience Tour",
-    //       path: "/business",
-    //     },
-    //   ],
-    // },
     // {
     //   name: "Đối tác",
     //   path: "partners",

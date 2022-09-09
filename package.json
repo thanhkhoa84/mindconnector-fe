@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "flickity": "2.3.0",
     "framer-motion": "^7.3.2",
     "next": "12.2.5",
     "qs": "^6.11.0",
@@ -18,7 +19,8 @@
     "react-dom": "18.2.0",
     "react-flickity-component": "^3.6.3",
     "react-youtube": "^9.0.3",
-    "sass": "^1.54.9"
+    "sass": "^1.54.9",
+    "sharp": "^0.31.0"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",

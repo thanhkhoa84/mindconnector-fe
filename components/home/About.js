@@ -29,12 +29,7 @@ const About = () => {
           Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá
           nhân phát triển và tăng trưởng mạnh mẽ trong tương lai.
         </p>
-        <div
-          className={`
-            aspect-w-16 aspect-h-9 relative mx-[-1em] mt-[3em] bg-gray-default md:mx-0
-            [&>div>iframe]:h-full [&>div>iframe]:w-full
-          `}
-        >
+        <div className="aspect-w-16 aspect-h-9 relative -mx-[1em] mt-[3em] overflow-hidden bg-gray-default md:mx-0 md:rounded-3xl [&>div>iframe]:h-full [&>div>iframe]:w-full">
           {/* <YouTube videoId="8dJyRm2jJ-U" opts={opts} onReady={_onReady} /> */}
         </div>
       </Container>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
-import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
+import ActiveLink from "./ActiveLink";
 
 /* Mobile Navigation */
 const MobileDropdown = ({ items, dropdown, dropdId }) => {
@@ -10,8 +10,7 @@ const MobileDropdown = ({ items, dropdown, dropdId }) => {
     <ul
       id={`mobile-${dropdId}`}
       className={`
-      rounded-xl bg-[#EAE5DF] p-4 py-6 font-normal
-        ${dropdown ? "block" : "hidden"}
+        mt-4 flex flex-col items-center text-center font-normal md:text-left lg:items-start
       `}
     >
       {items.map((item, index) => {
@@ -35,6 +34,7 @@ const MobileDropdown = ({ items, dropdown, dropdId }) => {
 
 const MobileNavItem = ({ link, index }) => {
   const [dropdown, setDropdown] = useState(false);
+  const [mobile, setMobile] = useState(false);
   const router = useRouter();
   let ref = useRef();
 
@@ -43,11 +43,32 @@ const MobileNavItem = ({ link, index }) => {
   };
 
   const onClickHandler = (e) => {
+    if (window.innerWidth >= 1024) return;
     setDropdown((dropdown) => !dropdown);
-    e.preventDefault();
+  };
+
+  const handleResize = () => {
+    if (window.innerWidth >= 1024) {
+      setMobile(false);
+    } else {
+      setMobile(true);
+    }
   };
 
   useEffect(() => {
+    if (window.innerWidth >= 1024) {
+      setMobile(false);
+    } else {
+      setMobile(true);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [mobile]);
+
+  useEffect(() => {
+    if (window.innerWidth >= 1024) setDropdown(true);
     router.events.on("hashChangeStart", handleRouteChange);
     router.events.on("routeChangeStart", handleRouteChange);
 
@@ -60,35 +81,44 @@ const MobileNavItem = ({ link, index }) => {
   return (
     <li
       className={`
-        rounded-xl font-bold
-        ${index == 0 ? "" : "mt-4"}
-        ${link.submenus ? "p-0" : "w-full border border-purple bg-white p-4"}
+        inline-flex flex-col items-center font-bold md:items-start
+        ${link.submenus ? "p-0" : ""}
         ${link.submenus ? "group relative" : ""} 
-        ${link.submenus ? "bg-[#EAE5DF]" : ""} 
       `}
       ref={ref}
       key={index}
     >
       {link.submenus ? (
         <>
-          <button
-            data-dropdown-toggle={`mobile-dropdown-${index}`}
-            aria-expanded={dropdown ? "true" : "false"}
-            onClick={onClickHandler}
-            className="flex w-full flex-row items-center justify-between rounded-xl border border-purple bg-white px-4 py-3 text-left leading-none"
-          >
-            {link.name}
-            <span>
-              <img
-                src="/img/detail-arrow.png"
-                alt=""
-                className={`
-                  w-[30px] transition-all
-                  ${dropdown ? "-rotate-180" : ""}
-                `}
-              />
-            </span>
-          </button>
+          {/* {mobile && !dropdown && (
+            <div>
+              <button href={link.path} onClick={onClickHandler}>
+                {link.name}{" "}
+                <span className="inline-block align-text-bottom">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className={`
+                    ${dropdown ? "-rotate-180" : ""}
+                    inline h-2 w-2 transition-all lg:hidden
+                  `}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          )}
+          {mobile && dropdown && <Link href={link.path}>{link.name}</Link>}
+          {!mobile && <Link href={link.path}>{link.name}</Link>} */}
+          <Link href={link.path}>{link.name}</Link>
           <MobileDropdown
             dropdId={`dropdown-${index}`}
             items={link.submenus}
@@ -96,9 +126,7 @@ const MobileNavItem = ({ link, index }) => {
           />
         </>
       ) : (
-        <Link href={link.path} className="block hover:text-purple">
-          {link.name}
-        </Link>
+        <Link href={link.path}>{link.name}</Link>
       )}
     </li>
   );
@@ -106,7 +134,9 @@ const MobileNavItem = ({ link, index }) => {
 
 const MobileNavItems = ({ navlinks }) => {
   return (
-    <ul className="flex flex-col rounded-b-2xl bg-[#E0E0E0] p-4 pb-8 text-left shadow-asidebox">
+    <ul
+      className={`mt-8 grid grid-flow-row grid-cols-1 md:grid-cols-${navlinks.length} gap-6`}
+    >
       {navlinks.map((link, index) => {
         return <MobileNavItem link={link} index={index} key={index} />;
       })}
