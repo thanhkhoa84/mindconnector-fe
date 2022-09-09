@@ -129,7 +129,7 @@ const Course = ({ questions, logoslist, programInfo }) => {
               <p className="text-xs">CEO Alphabet</p>
             </div>
             <div className="mt-8 flex flex-col rounded-xl text-left md:relative md:top-[35px] md:mt-0 md:h-[70px] md:flex-row md:justify-between md:bg-white md:shadow-lg">
-              <div className=" flex flex-row flex-nowrap items-start justify-start gap-4 rounded-2xl border-solid border-[#d2d2d2] bg-[#FFF2EB] bg-opacity-75 py-[1em] px-6 xs:flex-row sm:flex-row sm:gap-8 md:items-center md:bg-transparent">
+              <div className=" flex flex-row flex-nowrap items-start justify-start gap-4 rounded-2xl border-2 border-solid border-[#d2d2d2] border-white bg-[#FFF2EB] bg-opacity-75 py-[1em] px-6 xs:flex-row sm:flex-row sm:gap-8 md:items-center md:bg-transparent">
                 <div className="text-black">
                   <p className="text-[20px] font-bold">
                     4.9{" "}

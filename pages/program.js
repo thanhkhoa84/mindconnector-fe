@@ -174,7 +174,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
               </div>
             </div>
             <div className="mt-8 flex flex-col rounded-xl text-left md:relative md:top-[35px] md:mt-0 md:h-[70px] md:flex-row md:justify-between md:bg-white md:shadow-lg">
-              <div className=" flex flex-row flex-nowrap items-start justify-start gap-4 rounded-2xl border-solid border-[#d2d2d2] bg-[#FFF2EB] bg-opacity-75 py-[1em] px-6 xs:flex-row sm:flex-row sm:gap-8 md:items-center md:bg-transparent">
+              <div className=" flex flex-row flex-nowrap items-start justify-start gap-4 rounded-2xl border-2 border-solid border-[#d2d2d2] border-white bg-[#FFF2EB] bg-opacity-75 py-[1em] px-6 xs:flex-row sm:flex-row sm:gap-8 md:items-center md:bg-transparent">
                 <div className="text-black">
                   <p className="text-[20px] font-bold">
                     4.9{" "}
@@ -294,9 +294,10 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
                   <li
                     key={index}
                     className={`
-                      relative my-0 mx-auto max-w-[320px] overflow-hidden 
+                      relative my-0 mx-auto  max-w-[320px] overflow-hidden
                       sm:max-w-[380px] md:mx-[1%] md:inline-block md:max-w-[18%] md:align-top
                       ${index % 2 ? "text-right md:mt-8" : "md:mt-8"}
+                      ${index == 0 ? "" : "mt-[2em] md:mt-0"}
                     `}
                   >
                     <div
