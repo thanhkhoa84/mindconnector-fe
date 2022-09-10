@@ -326,7 +326,9 @@ const Course = ({ questions, logoslist, programInfo }) => {
                   <br />
                 </p>
                 <p>
-                  <Link href="/">Xem tất cả chia sẻ</Link>
+                  <Link href="/">
+                    <span className="link-arrow">Xem tất cả chia sẻ</span>
+                  </Link>
                 </p>
               </div>
               <div id="qa">

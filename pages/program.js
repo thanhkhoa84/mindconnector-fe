@@ -309,7 +309,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
                       <div
                         className={`
                           absolute top-1/2
-                          -translate-y-1/2 after:absolute after:right-0 after:top-[50%] after:h-[24px] after:w-[24px] after:-translate-y-[8px] after:bg-[url(/img/indicator.png)] after:content-['']  md:static md:translate-y-0 after:md:top-full after:md:left-1/2 after:md:-translate-y-[22px] after:md:-translate-x-[10px]
+                          -translate-y-1/2 after:absolute after:right-0 after:top-[50%] after:h-[24px] after:w-[24px] after:-translate-y-[8px] after:animate-pulse after:bg-[url(/img/indicator.png)]  after:content-[''] md:static md:translate-y-0 after:md:top-full after:md:left-1/2 after:md:-translate-y-[22px] after:md:-translate-x-[10px]
                           ${
                             index % 2
                               ? "left-0 after:-right-[12px]"
@@ -361,9 +361,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
                 </p>
                 <p className="mt-4 hidden md:block">
                   <Link href="/">
-                    <span className="cursor-pointer font-bold text-orange-500">
-                      Xem tất cả chia sẻ{" "}
-                    </span>
+                    <span className="link-arrow">Xem tất cả chia sẻ</span>
                   </Link>
                 </p>
               </div>

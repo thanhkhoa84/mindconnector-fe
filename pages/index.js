@@ -9,7 +9,6 @@ import About from '../components/home/About';
 import Seo from './../components/SEO';
 import Container from './../components/Container';
 
-import styles from '../styles/pages/Home.module.scss';
 
 
 const HeroBanner = dynamic(() => import('../components/home/HeroBanner'), {
@@ -36,11 +35,11 @@ export default function Home({ slides, questions }) {
       </Head>
 
       <>
-        {/* <Seo seo={seo} /> */}
+        <Seo seo={seo} />
         <HeroBanner slides={slides} />
         <ValueSection />
         <About />
-        <section className={`relative py-12 ${styles.homeTeachers}`}>
+        <section className={`relative bg-[#FFF7ED] py-12`}>
           <Container>
             <Teachers />
           </Container>

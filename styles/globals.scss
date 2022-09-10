@@ -164,4 +164,8 @@ a {
     bottom: 0;
     right: 0;
   }
+
+  .link-arrow {
+    @apply font-bold text-orange-dark after:ml-2 after:inline-block after:h-[9px] after:w-[9px] after:bg-[url('/img/icon-arrow-discover.svg')] after:bg-cover after:content-[''] cursor-pointer;
+  }
 }

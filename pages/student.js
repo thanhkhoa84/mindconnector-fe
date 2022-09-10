@@ -11,18 +11,17 @@ import {
   BannerHeading,
 } from '../components/Heading';
 import Teachers from './../components/common/teachers/Teachers';
-import Courses from '../components/common/courses/Courses';
-import styles from '../styles/pages/Student.module.scss';
+import Courses from "../components/common/courses/Courses";
 
-
-const LogoList = dynamic(() => import('./../components/LogoList'), {
-  ssr: false
-})
+const LogoList = dynamic(() => import("./../components/LogoList"), {
+  ssr: false,
+});
 
 const Student = ({ questions, logoslist }) => {
   const seo = {
-    metaTitle: 'Mind Connector | Dành cho sinh viên',
-    metaDescription: 'Mind Connector là một mạng lưới của các nhà tư vấn kinh doanh cùng các giảng viên vốn là các lãnh đạo và chuyên gia hàng đầu trong nhiều lĩnh vực khác nhau. Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá nhân phát triển và tăng trưởng mạnh mẽ trong tương lai',
+    metaTitle: "Mind Connector | Dành cho sinh viên",
+    metaDescription:
+      "Mind Connector là một mạng lưới của các nhà tư vấn kinh doanh cùng các giảng viên vốn là các lãnh đạo và chuyên gia hàng đầu trong nhiều lĩnh vực khác nhau. Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá nhân phát triển và tăng trưởng mạnh mẽ trong tương lai",
     // shareImage: article.attributes.image,
     // article: true,
   };
@@ -34,7 +33,9 @@ const Student = ({ questions, logoslist }) => {
       </Head>
       <>
         <Seo seo={seo} />
-        <header className={`header-with-bg ${styles.studentHeader}`}>
+        <header
+          className={`bg-[url('/img/bg-head-section.png')] bg-cover py-[3em]`}
+        >
           <Container>
             <BannerHeading>
               Học hỏi <br className="hidden md:inline" />
@@ -51,10 +52,7 @@ const Student = ({ questions, logoslist }) => {
             list={logoslist}
           />
         </Container>
-        <section
-          id="thanh-cong-trong-hoc-tap"
-          className={`${styles.studentSuccess} ${styles.studentSuccess__Learning}`}
-        >
+        <section id="thanh-cong-trong-hoc-tap" className={`py-[3em] `}>
           <Container>
             <SectionSubHeading>Chương trình cơ bản</SectionSubHeading>
             <SectionHeading>Thành công trong học tập</SectionHeading>
@@ -64,7 +62,9 @@ const Student = ({ questions, logoslist }) => {
               để bạn có một hành trang vững chắc cho tương lai.
             </p>
             <p>
-              <Link href="#">Tìm hiểu thêm</Link>
+              <Link href="#">
+                <span className="link-arrow">Tìm hiểu thêm</span>
+              </Link>
             </p>
           </Container>
           <div>
@@ -75,7 +75,7 @@ const Student = ({ questions, logoslist }) => {
         </section>
         <section
           id="thanh-cong-trong-ung-tuyen"
-          className={`${styles.studentSuccess} ${styles.studentSuccess__Jobs}`}
+          className={`bg-[#FFEFDB]  py-[3em]`}
         >
           <Container>
             <SectionSubHeading>Chương trình trung cấp</SectionSubHeading>
@@ -86,7 +86,9 @@ const Student = ({ questions, logoslist }) => {
               năng quan trọng chính là chìa khoá để thành công.
             </p>
             <p>
-              <Link href="#">Tìm hiểu thêm</Link>
+              <Link href="#">
+                <span className="link-arrow">Tìm hiểu thêm</span>
+              </Link>
             </p>
           </Container>
           <div>
@@ -97,7 +99,7 @@ const Student = ({ questions, logoslist }) => {
         </section>
         <section
           id="thanh-cong-trong-khoi-su-kinh-doanh"
-          className={`${styles.studentSuccess} ${styles.studentSuccess__Startup}`}
+          className={`py-[3em]`}
         >
           <Container>
             <SectionSubHeading>Chương trình nâng cao</SectionSubHeading>
@@ -107,7 +109,9 @@ const Student = ({ questions, logoslist }) => {
               Vững vàng kiến thức và kỹ năng để khởi sự kinh doanh thuận lợi.
             </p>
             <p>
-              <Link href="#">Tìm hiểu thêm</Link>
+              <Link href="#">
+                <span className="link-arrow">Tìm hiểu thêm</span>
+              </Link>
             </p>
           </Container>
           <div>

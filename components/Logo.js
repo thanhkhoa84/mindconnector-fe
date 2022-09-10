@@ -1,30 +1,37 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import React from 'react';
-
-import styles from '../styles/components/Logo.module.scss';
+import Link from "next/link";
+import React from "react";
 
 const Title = React.forwardRef(({ onClick, href }, ref) => {
   return (
-    <a href={href} onClick={onClick} ref={ref} className='font-black inline-block text-white select-none text-sm leading-[1] lg:text-2xl lg:text-purple'>
+    <a
+      href={href}
+      onClick={onClick}
+      ref={ref}
+      className="inline-block select-none text-sm font-black leading-[1] text-white lg:text-2xl lg:text-purple
+    "
+    >
       Mind Connector
     </a>
   );
 });
-Title.displayName = 'Title';
+Title.displayName = "Title";
 
 const Logo = React.forwardRef(() => {
   return (
-    <Link href='/' passHref>
+    <Link href="/" passHref>
       <Title />
     </Link>
   );
 });
-Logo.displayName = 'Logo';
+Logo.displayName = "Logo";
 
 const LogoMobile = React.forwardRef(({ onClick, href }, ref) => {
-  return <h1 className={styles.logoMobile}>Mind Connector</h1>;
+  return (
+    <h1 className="block select-none text-center text-xl font-black leading-none text-purple md:text-2xl">
+      Mind Connector
+    </h1>
+  );
 });
-LogoMobile.displayName = 'LogoMobile';
+LogoMobile.displayName = "LogoMobile";
 
 module.exports = { Logo, LogoMobile };

@@ -25,7 +25,7 @@ const Business = () => (
       <Seo seo={seo} />
       <div>
         <Container>
-          <BannerHeading>Businessr</BannerHeading>
+          <BannerHeading>Business</BannerHeading>
         </Container>
       </div>
     </>
