@@ -106,7 +106,7 @@ const Course = ({ questions, logoslist, programInfo }) => {
       </Head>
       <Seo seo={seo} />
       <>
-        <div className="bg-[url(/img/bg-head-section.png)] bg-cover py-[3em] text-center md:py-[4em] md:pb-[0]">
+        <div className="bg-[#f9f5e9] bg-[url(/img/bg-head-section.png)] bg-cover py-[3em] text-center md:py-[4em] md:pb-[0]">
           <Container>
             <h4 className="font-bold text-gray">
               Chương trình Thành công trong học tập

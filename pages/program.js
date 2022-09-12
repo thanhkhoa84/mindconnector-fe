@@ -123,7 +123,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
       </Head>
       <Seo seo={seo} />
       <>
-        <div className="bg-[url(/img/bg-head-section.png)] bg-cover py-[3em] text-center md:py-[4em] md:pb-[0]">
+        <div className="bg-[#f9f5e9] bg-[url(/img/bg-head-section.png)] bg-cover py-[3em] text-center md:py-[4em] md:pb-[0]">
           <Container>
             <h4 className="font-bold text-gray">
               Chương trình Thành công trong học tập
@@ -380,13 +380,20 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
                     </div>
                   </div>
                   <div className="flex-shrink flex-grow self-center pb-14 lg:w-1/2 lg:self-end">
-                    <blockquote className='before:content-["] top-0 left-0 rounded-2xl bg-white/70 p-6 py-8 italic  shadow-asideboxLight after:absolute after:text-purple'>
-                      Mauris ut dapibus lacus, sodales tempus ante. Donec
-                      faucibus sem vestibulum, gravida quam at, ultricies
-                      tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit
-                      amet, consectetur adipiscing elit. Sed accumsan erat quam,
-                      ac iaculis neque tempus non. Cras mattis auctor gravida.
-                      Donec rutrum lobortis est, et faucibus arcu sagittis eu.
+                    <blockquote
+                      className={`relative rounded-2xl bg-white/70 p-6 py-8 italic shadow-asideboxLight 
+                      before:absolute before:-top-[0.3em] before:left-4 before:text-[60px] before:font-black before:leading-none  before:text-purple before:content-['"'] 
+                      after:absolute after:-bottom-[0.7em] after:right-[0.5em] after:text-[60px] after:font-black after:leading-none after:text-purple after:content-['"']`}
+                    >
+                      <p>
+                        Mauris ut dapibus lacus, sodales tempus ante. Donec
+                        faucibus sem vestibulum, gravida quam at, ultricies
+                        tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit
+                        amet, consectetur adipiscing elit. Sed accumsan erat
+                        quam, ac iaculis neque tempus non. Cras mattis auctor
+                        gravida. Donec rutrum lobortis est, et faucibus arcu
+                        sagittis eu.
+                      </p>
                     </blockquote>
                   </div>
                 </div>
