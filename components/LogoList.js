@@ -18,9 +18,13 @@ const LogoList = ({ backgroundColor, title, list }) => {
               return (
                 <li
                   key={`logolist-${index}`}
-                  className="flex flex-shrink flex-grow items-center justify-center px-4 py-4"
+                  className="flex w-1/2 items-center justify-center p-4 duration-500 md:w-1/5 lg:p-[30px]"
                 >
-                  <img src={imgSrc} alt="" />
+                  <img
+                    src={imgSrc}
+                    alt=""
+                    className="mx-auto block h-full max-h-8 object-contain"
+                  />
                 </li>
               );
             })}

@@ -125,7 +125,7 @@ a {
   }
 
   .btn {
-    @apply rounded-full text-center border-2 outline-none border-orange-medium transition h-12 leading-10 px-4 lg:px-6 text-base font-bold inline-block;
+    @apply rounded-full text-center border-2 outline-none border-orange-medium transition h-12 leading-10 px-4 lg:px-6 text-base font-bold inline-block transition-all;
     text-shadow: 0 1px 0px rgba(0,0,0,0.65);
   }
 
@@ -163,6 +163,10 @@ a {
     left: 0;
     bottom: 0;
     right: 0;
+  }
+
+  .bg-gradient-orange {
+    @apply bg-gradient-to-b from-[#f5cbcc] to-[#ffaf43];
   }
 
   .link-arrow {

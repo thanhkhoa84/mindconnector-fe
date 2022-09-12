@@ -23,8 +23,7 @@ const ValueSection = () => {
           <div className="relative flex flex-row">
             <div
               className={`
-              relative flex flex-col rounded-2xl border-4 border-white bg-gradient-to-b from-[#f5cbcc] to-[#ffaf43] shadow-xl
-              ${styles.valueInfo}
+              relative my-[1.5em] ml-0 -mr-[2em] flex max-w-full flex-col rounded-2xl border-4 border-white bg-gradient-to-b from-[#f5cbcc] to-[#ffaf43] px-4 pt-[2.5em] pb-4 shadow-lg md:w-[55%] md:pr-[10%]
             `}
             >
               <span className="absolute -top-[30px] block w-[66px]">
@@ -47,17 +46,24 @@ const ValueSection = () => {
               <p className="mt-4 md:hidden">
                 Xây dựng nền móng vững chắc để sẵn sàng theo đuổi thành công.
               </p>
-              <Link href="student">Discover more</Link>
+              <Link href="student">
+                <span className="link-arrow mt-4 font-black leading-none lg:mt-12">
+                  Discover more
+                </span>
+              </Link>
             </div>
-            <div className={`${styles.valueImage} shadow-asideboxLight`}>
-              <img src="/img/value-student.png" alt="" />
+            <div className="relative z-10 hidden overflow-hidden rounded-3xl object-cover shadow-lg md:flex md:w-[300px]">
+              <img
+                src="/img/value-student.png"
+                alt=""
+                className="object-cover"
+              />
             </div>
           </div>
           <div className="relative flex flex-row">
             <div
               className={`
-              relative flex flex-col rounded-2xl border-4 border-white bg-gradient-to-b from-[#f5cbcc] to-[#ffaf43] shadow-xl
-              ${styles.valueInfo}
+              relative my-[1.5em] ml-0 -mr-[2em] flex max-w-full flex-col rounded-2xl border-4 border-white bg-gradient-to-b from-[#f5cbcc] to-[#ffaf43] px-4 pt-[2.5em] pb-4 shadow-lg md:w-[55%] md:pr-[10%]
             `}
             >
               <span className="absolute -top-[30px] block w-[66px]">
@@ -80,10 +86,18 @@ const ValueSection = () => {
               <p className="mt-4 md:hidden">
                 Đào tạo nguồn nhân lực chất lượng để giúp công ty thêm lớn mạnh.
               </p>
-              <Link href="#">Discover more</Link>
+              <Link href="business">
+                <span className="link-arrow mt-4 font-black leading-none lg:mt-12">
+                  Discover more
+                </span>
+              </Link>
             </div>
-            <div className={styles.valueImage}>
-              <img src="/img/value-business.png" alt="" />
+            <div className="relative z-10 hidden overflow-hidden rounded-3xl object-cover shadow-lg md:flex md:w-[300px]">
+              <img
+                src="/img/value-business.png"
+                alt=""
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
