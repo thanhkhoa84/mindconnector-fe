@@ -1,75 +1,110 @@
-import { motion } from "framer-motion";
+import { forwardRef, useReducer, useRef, useState, useEffect } from "react";
+import styles from "./HeroBanner.module.scss";
 
-import Link from 'next/link';
-import { CTA } from '../CTA';
-import Container from './../Container';
-
-import styles from './HeroBanner.module.scss';
-import { useReducer, useRef, useState, useEffect } from 'react';
-
-/* 
-  TODO:
-  - Get slide width
-  - Positioning slides
-  - Init animation for first slide
-  - Recalculate when resize
-*/
-const Carousel = ({ ...props }) => {
-  let ref = useRef(null);
-  let translate = `translate3d(${-props.current * 995}px, 0, 0)`;
-
+const Carousel = forwardRef(({ ...props }, ref) => {
   return (
     <div
       role="group"
-      className={styles.HeroItemContainer}
+      className={`relative mx-auto ${styles.HeroItemContainer}`}
       {...props}
-      ref={ref}
       style={{
-        transform: translate,
+        transform: `translate3d(${-props.current * props.itemwidth}px, 0, 0)`,
       }}
+      ref={ref}
     />
   );
-};
+});
+Carousel.displayName = "Carousel";
 
-const CarouselItem = ({ headline, body, image, link, index }) => {
-  const width = 1005;
-  let translate = "translate3d(0,0,0)";
-  translate = `translate3d(${index * width}px, 0, 0)`;
+const CarouselItem = ({
+  headline,
+  body,
+  image,
+  link,
+  index,
+  currentindex,
+  isCurrent,
+  length,
+}) => {
+  let [width, setWidth] = useState(0);
+  let [position, setPosition] = useState(index);
+  let [progress, setProgress] = useState(index);
+  let ref = useRef();
 
-  /* 
-    TODO: make next slide available at last 
-  */
+  useEffect(() => {
+    let draw = () => {
+      setProgress(index);
+      setWidth(ref.current.clientWidth);
+      setPosition(width * index);
+    };
+    draw();
+    window.addEventListener("resize", draw);
+    return () => {
+      window.removeEventListener("resize", draw);
+    };
+  }, []);
+
+  useEffect(() => {
+    // (t %= this._items.length) < 0 ? this._items.length + t : t;
+    let animate = () => {
+      if (currentindex == length - 1 && index == 0) {
+        setProgress(1);
+      }
+
+      setPosition(width * progress);
+      console.log(`item ${index} - ${currentindex} ${progress}  `);
+    };
+    animate();
+  }, [currentindex]);
 
   return (
     <div
       role="tabpanel"
-      className={`hero-slide ${styles.HeroItem}`}
-      style={{ transform: translate }}
+      className={`
+        hero-slide group ${progress}
+        ${styles.HeroItem}  
+        ${isCurrent ? "active" : ""}
+      `}
+      ref={ref}
+      style={{
+        transform: `translate3d(${position}px, 0, 0)`,
+      }}
     >
       <a
         href={link}
+        className=""
         style={{
-          backgroundImage: `url(${image})`,
+          // backgroundImage: `url(${image})`,
           backgroundSize: "cover",
         }}
       >
-        <div className={`absolute bottom-[2em] left-[2em] w-[40%]`}>
-          <div
-            className={`px[1em] rounded-xl bg-white bg-opacity-80 py-12 px-8 pt-[2em] pb-[1em] shadow-xl`}
-          >
-            <h2 className="mb-[0.5em] text-4xl font-black leading-9">
-              {headline} {index}
-            </h2>
-            <p className="leading-6 line-clamp-3">{body}</p>
-            <p className={`btn-primary mt-4 inline-block`}>Xem thêm</p>
-          </div>
-        </div>
+        <figure>
+          <img src={image} alt="" />
+        </figure>
       </a>
+      <div
+        className={`
+            delay-0 static bottom-[2em] left-[2em] transition-all delay-500 duration-[650ms] sm:absolute sm:w-[40%]
+            ${isCurrent ? "opacity-1 translate-y-0" : "translate-y-8 opacity-0"}
+          `}
+      >
+        <div
+          className={`px[1em] z-10 rounded-xl bg-white bg-opacity-80 pt-[2em] pb-[1em] md:px-8 md:py-12 md:shadow-xl`}
+        >
+          <h2 className="mb-[0.5em] text-[28px] font-black leading-none md:text-4xl">
+            {headline} {progress}
+          </h2>
+          <p className="leading-6 line-clamp-3">{body}</p>
+          <p className={`btn-primary mt-4 inline-block`}>Xem thêm</p>
+        </div>
+      </div>
     </div>
   );
 };
 
-const HeroBanner = ({ slides }) => {
+const HeroBanner = ({ slides, ...props }) => {
+  let ref = useRef(null);
+  let [width, setWidth] = useState(0);
   let [state, dispatch] = useReducer(
     (state, action) => {
       switch (action.type) {
@@ -95,24 +130,51 @@ const HeroBanner = ({ slides }) => {
     },
     {
       currentIndex: 0,
+      nextSlide: 1,
     }
   );
 
+  /* 
+  TODO:
+    - Get slide width
+    - Positioning slides
+    - Init animation for first slide
+    - Calculate next, prev slide position
+    - Recalculate when resize
+  */
+
   useEffect(() => {
-    let width = document.querySelectorAll(".hero-slide")[0].offsetWidth;
-  }, [state.currentIndex]);
+    // rearrange slides
+    let draw = () => {
+      setWidth(ref.current.children[0].clientWidth);
+    };
+    draw();
+
+    window.addEventListener("resize", draw);
+    return () => {
+      window.removeEventListener("resize", draw);
+    };
+  }, []);
 
   return (
     <section className={styles.HeroBanner}>
       <h4 className="sr-only">Tin tức mới nhất</h4>
-      <Carousel slides={slides} current={state.currentIndex}>
+      <Carousel
+        slides={slides}
+        current={state.currentIndex}
+        ref={ref}
+        itemwidth={width}
+      >
         {slides.map(({ ...props }, i) => {
           return (
             <CarouselItem
               {...props}
               key={`hero-item-${i}`}
               index={i}
+              currentindex={state.currentIndex}
               isCurrent={i === state.currentIndex}
+              length={slides.length}
+              where={i}
               onClick={() => {
                 dispatch({ type: "GOTO", i });
               }}
@@ -131,6 +193,7 @@ const HeroBanner = ({ slides }) => {
                   aria-label={`Slide ${index + 1}`}
                   onClick={() => {
                     console.log(index);
+                    if (index == state.currentIndex) return;
                     dispatch({ type: "GOTO", index });
                   }}
                 >
