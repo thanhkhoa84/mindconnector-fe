@@ -19,92 +19,92 @@ const Carousel = forwardRef(({ ...props }, ref) => {
 });
 Carousel.displayName = "Carousel";
 
-const CarouselItem = ({
-  headline,
-  body,
-  image,
-  link,
-  index,
-  currentindex,
-  isCurrent,
-  length,
-  ...props
-}) => {
-  let [width, setWidth] = useState(0);
-  let [position, setPosition] = useState(index);
-  let [progress, setProgress] = useState(index);
-  let ref = useRef();
+// const CarouselItem = ({
+//   headline,
+//   body,
+//   image,
+//   link,
+//   index,
+//   currentindex,
+//   isCurrent,
+//   length,
+//   ...props
+// }) => {
+//   let [width, setWidth] = useState(0);
+//   let [position, setPosition] = useState(index);
+//   let [progress, setProgress] = useState(index);
+//   let ref = useRef();
 
-  useEffect(() => {
-    let draw = () => {
-      setProgress(index);
-      setWidth(ref.current.clientWidth);
-      setPosition(width * index);
-    };
-    draw();
-    window.addEventListener("resize", draw);
-    return () => {
-      window.removeEventListener("resize", draw);
-    };
-  }, []);
+//   useEffect(() => {
+//     let draw = () => {
+//       setProgress(index);
+//       setWidth(ref.current.clientWidth);
+//       setPosition(width * index);
+//     };
+//     draw();
+//     window.addEventListener("resize", draw);
+//     return () => {
+//       window.removeEventListener("resize", draw);
+//     };
+//   });
 
-  useEffect(() => {
-    // (t %= this._items.length) < 0 ? this._items.length + t : t;
-    let animate = () => {
-      if (currentindex == length - 1 && index == 0) {
-        setProgress(1);
-      }
+//   useEffect(() => {
+//     // (t %= this._items.length) < 0 ? this._items.length + t : t;
+//     let animate = () => {
+//       if (currentindex == length - 1 && index == 0) {
+//         setProgress(1);
+//       }
 
-      setPosition(width * progress);
-      console.log(`item ${index} - ${currentindex} ${progress}  `);
-    };
-    animate();
-  }, [currentindex]);
+//       setPosition(width * progress);
+//       console.log(`item ${index} - ${currentindex} ${progress}  `);
+//     };
+//     animate();
+//   }, [currentindex]);
 
-  return (
-    <div
-      role="tabpanel"
-      className={`
-        hero-slide group ${progress}
-        ${styles.HeroItem}  
-        ${isCurrent ? "active" : ""}
-      `}
-      ref={ref}
-      style={{
-        transform: `translate3d(${position}px, 0, 0)`,
-      }}
-    >
-      <a
-        href={link}
-        className=""
-        style={{
-          // backgroundImage: `url(${image})`,
-          backgroundSize: "cover",
-        }}
-      >
-        <figure>
-          <img src={image} alt="" />
-        </figure>
-      </a>
-      <div
-        className={`
-            delay-0 static bottom-[2em] left-[2em] transition-all delay-500 duration-[650ms] sm:absolute sm:w-[40%]
-            ${isCurrent ? "opacity-1 translate-y-0" : "translate-y-8 opacity-0"}
-          `}
-      >
-        <div
-          className={`z-10 rounded-xl bg-white bg-opacity-80 px-[1em] pt-[2em] pb-[1em] md:px-8 md:py-12 md:shadow-xl`}
-        >
-          <h2 className="mb-[0.5em] text-[28px] font-black leading-none md:text-4xl">
-            {headline} {progress}
-          </h2>
-          <p className="leading-6 line-clamp-3">{body}</p>
-          <p className={`btn-primary mt-4 inline-block`}>Xem thêm</p>
-        </div>
-      </div>
-    </div>
-  );
-};
+//   return (
+//     <div
+//       role="tabpanel"
+//       className={`
+//         hero-slide group ${progress}
+//         ${styles.HeroItem}  
+//         ${isCurrent ? "active" : ""}
+//       `}
+//       ref={ref}
+//       style={{
+//         transform: `translate3d(${position}px, 0, 0)`,
+//       }}
+//     >
+//       <a
+//         href={link}
+//         className=""
+//         style={{
+//           // backgroundImage: `url(${image})`,
+//           backgroundSize: "cover",
+//         }}
+//       >
+//         <figure>
+//           <img src={image} alt="" />
+//         </figure>
+//       </a>
+//       <div
+//         className={`
+//             delay-0 static bottom-[2em] left-[2em] transition-all delay-500 duration-[650ms] sm:absolute sm:w-[40%]
+//             ${isCurrent ? "opacity-1 translate-y-0" : "translate-y-8 opacity-0"}
+//           `}
+//       >
+//         <div
+//           className={`z-10 rounded-xl bg-white bg-opacity-80 px-[1em] pt-[2em] pb-[1em] md:px-8 md:py-12 md:shadow-xl`}
+//         >
+//           <h2 className="mb-[0.5em] text-[28px] font-black leading-none md:text-4xl">
+//             {headline} {progress}
+//           </h2>
+//           <p className="leading-6 line-clamp-3">{body}</p>
+//           <p className={`btn-primary mt-4 inline-block`}>Xem thêm</p>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
 const HeroBanner = ({ slides, ...props }) => {
   let ref = useRef(null);
