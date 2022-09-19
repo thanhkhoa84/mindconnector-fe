@@ -1,5 +1,6 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import styles from "../../../styles/components/common/courses/CourseCard.module.scss";
 
 const Rating = dynamic(() => import("../../Rating"), {
   ssr: false,
@@ -21,10 +22,7 @@ const CourseCard = ({ course }) => {
     <div
       className={`relative h-[278px] w-[165px] overflow-hidden rounded-[30px] border-[6px] border-orange-medium text-left md:h-[331px] md:w-[195px]`}
     >
-      <div
-        className={`overflow-hidden rounded-2xl before:absolute before:inset-0 before:top-1/3 before:bg-gradient-to-b before:from-transparent before:to-[#000] 
-          before:content-[''] after:absolute after:bottom-0 after:right-0 after:block after:block after:h-[55px] after:w-[55px] after:bg-[url(/img/course-arrow.svg)] after:bg-cover after:content-['']`}
-      >
+      <div className={`overflow-hidden rounded-2xl  ${styles.courseCardImage}`}>
         <img src="/img/course-1.png" alt="" className="block w-full" />
       </div>
       <Link href="course">
