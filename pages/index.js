@@ -1,24 +1,22 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import dynamic from 'next/dynamic'
+import Image from "next/future/image";
+import dynamic from "next/dynamic";
 
-import QandA from '../components/QandA';
-import ValueSection from '../components/home/ValueSection';
-import Teachers from '../components/common/teachers/Teachers';
-import About from '../components/home/About';
-import Seo from './../components/SEO';
-import Container from './../components/Container';
+import QandA from "../components/QandA";
+import ValueSection from "../components/home/ValueSection";
+import Teachers from "../components/common/teachers/Teachers";
+import About from "../components/home/About";
+import Seo from "./../components/SEO";
+import Container from "./../components/Container";
 
-
-
-const HeroBanner = dynamic(() => import('../components/home/HeroBanner'), {
-  ssr: false
-})
+const HeroBanner = dynamic(() => import("../components/home/HeroBanner"), {
+  ssr: false,
+});
 
 export default function Home({ slides, questions }) {
   const seo = {
-    metaTitle: 'Mind Connector',
-    metaDescription: 'Mind Connector',
+    metaTitle: "Mind Connector",
+    metaDescription: "Mind Connector",
     // shareImage: article.attributes.image,
     // article: true,
   };
@@ -36,7 +34,9 @@ export default function Home({ slides, questions }) {
 
       <>
         <Seo seo={seo} />
-        <HeroBanner slides={slides} />
+        <Container>
+          <HeroBanner slides={slides} />
+        </Container>
         <ValueSection />
         <About />
         <section className={`relative bg-[#FFF7ED] py-12`}>
