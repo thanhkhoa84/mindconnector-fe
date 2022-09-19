@@ -20,7 +20,7 @@ const CourseCard = ({ course }) => {
   let fraction = price.split(".")[1];
   return (
     <div
-      className={`relative h-[278px] w-[165px] overflow-hidden rounded-[30px] border-[6px] border-orange-medium text-left md:h-[331px] md:w-[195px]`}
+      className={`relative max-w-[180px] overflow-hidden rounded-[30px] border-[6px] border-orange-medium text-left sm:max-w-[180px] md:max-w-[200px]`}
     >
       <div className={`overflow-hidden rounded-2xl  ${styles.courseCardImage}`}>
         <img src="/img/course-1.png" alt="" className="block w-full" />
