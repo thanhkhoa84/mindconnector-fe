@@ -1,5 +1,8 @@
 import { forwardRef, useReducer, useRef, useState, useEffect } from "react";
 import styles from "./HeroBanner.module.scss";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Carousel = forwardRef(({ ...props }, ref) => {
   return (
@@ -25,6 +28,7 @@ const CarouselItem = ({
   currentindex,
   isCurrent,
   length,
+  ...props
 }) => {
   let [width, setWidth] = useState(0);
   let [position, setPosition] = useState(index);
@@ -89,7 +93,7 @@ const CarouselItem = ({
           `}
       >
         <div
-          className={`px[1em] z-10 rounded-xl bg-white bg-opacity-80 pt-[2em] pb-[1em] md:px-8 md:py-12 md:shadow-xl`}
+          className={`z-10 rounded-xl bg-white bg-opacity-80 px-[1em] pt-[2em] pb-[1em] md:px-8 md:py-12 md:shadow-xl`}
         >
           <h2 className="mb-[0.5em] text-[28px] font-black leading-none md:text-4xl">
             {headline} {progress}
@@ -143,23 +147,71 @@ const HeroBanner = ({ slides, ...props }) => {
     - Recalculate when resize
   */
 
-  useEffect(() => {
-    // rearrange slides
-    let draw = () => {
-      setWidth(ref.current.children[0].clientWidth);
-    };
-    draw();
+  // useEffect(() => {
+  //   // rearrange slides
+  //   let draw = () => {
+  //     setWidth(ref.current.children[0].clientWidth);
+  //   };
+  //   draw();
 
-    window.addEventListener("resize", draw);
-    return () => {
-      window.removeEventListener("resize", draw);
-    };
-  }, []);
+  //   window.addEventListener("resize", draw);
+  //   return () => {
+  //     window.removeEventListener("resize", draw);
+  //   };
+  // }, []);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   return (
     <section className={styles.HeroBanner}>
       <h4 className="sr-only">Tin tức mới nhất</h4>
-      <Carousel
+      <Slider {...settings}>
+        {slides.map(({ ...props }, index) => {
+          return (
+            <div {...props} key={index} className="relative mx-auto my-0">
+              <a
+                href={props.link}
+                className="mx-auto my-0 block"
+                style={{
+                  // backgroundImage: `url(${image})`,
+                  backgroundSize: "cover",
+                }}
+              >
+                <figure>
+                  <img src={props.image} alt="" className="w-full" />
+                </figure>
+              </a>
+              <div
+                className={`
+                  delay-0 static bottom-[2em] left-[2em] transition-all delay-500 duration-[650ms] sm:absolute sm:w-[40%]
+                  ${
+                    props.image
+                      ? "opacity-1 translate-y-0"
+                      : "translate-y-8 opacity-0"
+                  }
+                `}
+              >
+                <div
+                  className={`z-10 rounded-xl bg-white bg-opacity-80 px-[1em] pt-[2em] pb-[1em] md:px-8 md:py-12 md:shadow-xl`}
+                >
+                  <h2 className="mb-[0.5em] text-[28px] font-black leading-none md:text-4xl">
+                    {props.headline} {index}
+                  </h2>
+                  <p className="leading-6 line-clamp-3">{props.body}</p>
+                  <p className={`btn-primary mt-4 inline-block`}>Xem thêm</p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </Slider>
+      {/* <Carousel
         slides={slides}
         current={state.currentIndex}
         ref={ref}
@@ -181,9 +233,9 @@ const HeroBanner = ({ slides, ...props }) => {
             />
           );
         })}
-      </Carousel>
+      </Carousel> */}
 
-      <div className={styles.HeroDots}>
+      {/* <div className={styles.HeroDots}>
         <ul>
           {slides.map((slide, index) => {
             return (
@@ -203,7 +255,7 @@ const HeroBanner = ({ slides, ...props }) => {
             );
           })}
         </ul>
-      </div>
+      </div> */}
     </section>
   );
 };

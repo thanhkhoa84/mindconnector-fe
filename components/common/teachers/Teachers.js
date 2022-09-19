@@ -15,7 +15,9 @@ let socialImages = {
 const TeacherCard = ({ name, imgUrl, title, socials }) => {
   return (
     <div className={`${styles.teacherCard}`}>
-      <div className={styles.teacherImageContainer}>
+      <div
+        className={`max-w-[165px] md:max-w-[248px] ${styles.teacherImageContainer}`}
+      >
         <img
           src="/img/bg-teacher-card.svg"
           alt=""
@@ -25,7 +27,7 @@ const TeacherCard = ({ name, imgUrl, title, socials }) => {
           <img src={imgUrl} alt="" />
         </div>
       </div>
-      <div className="absolute top-[67.9758308157%] w-full px-4 text-center">
+      <div className="absolute top-[67.9758308157%] px-4 text-center">
         <h3 className="m-0 mt-1 text-base font-black text-purple md:text-sm">
           {name}
         </h3>
