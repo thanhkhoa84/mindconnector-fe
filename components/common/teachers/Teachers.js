@@ -19,7 +19,12 @@ const TeacherCard = ({ name, imgUrl, title, socials }) => {
         <img
           src="/img/bg-teacher-card.svg"
           alt=""
-          className={styles.teacherCardBg}
+          className={`dark:hidden ${styles.teacherCardBg}`}
+        />
+        <img
+          src="/img/bg-teacher-dark.svg"
+          alt=""
+          className={`hidden dark:block ${styles.teacherCardBg}`}
         />
         <div className={styles.teacherImage}>
           <img src={imgUrl} alt="" />
