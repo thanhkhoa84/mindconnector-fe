@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from "next/link";
 import dynamic from "next/dynamic";
-
+import Image from "next/future/image";
 import Container from "./../components/Container";
 import QandA from "./../components/QandA";
 import Seo from "./../components/SEO";
@@ -33,33 +33,34 @@ const Business = ({ questions, logoslist }) => {
       </Head>
       <>
         <Seo seo={seo} />
-        <header
-          className={`bg-[url('/img/bg-head-section.png')] bg-cover py-[3em]`}
-        >
-          <Container>
-            <BannerHeading>
-              Học hỏi <br className="hidden md:inline" />
-              để thành công
-            </BannerHeading>
-            <p className="text-center lg:text-left">
-              Cùng Mind Connector xây dựng nền tảng vững chắc để thành công.
+        <section className="dark relative flex origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-video.png)] bg-cover bg-center bg-no-repeat py-20 xl:py-44">
+          <div className="relative py-24 text-center dark:text-white">
+            <a className="inline-block cursor-pointer">
+              <Image
+                src="/img/btn-play-video.svg"
+                width={80}
+                height={80}
+                alt=""
+                className="block"
+              />
+            </a>
+            <h2 className="mt-8 text-4xl font-black">
+              Trusted Insights from top leading experts
+            </h2>
+            <p className="mt-4">
+              Provide world-class training & business consultancy developed by
+              leading experts in the industry
             </p>
-          </Container>
-        </header>
-        <Container>
-          <LogoList
-            title="Mind Connector hợp tác với trường đại học và công ty hàng đầu"
-            list={logoslist}
-          />
-        </Container>
+            <p className="mt-4">
+              <Link href="contact">
+                <span className="btn-primary">Contact us now</span>
+              </Link>
+            </p>
+          </div>
+        </section>
         <section className="dark bg-black py-12 dark:text-white">
           <Container>
             <Teachers />
-          </Container>
-        </section>
-        <section>
-          <Container>
-            <QandA questions={questions} />
           </Container>
         </section>
       </>
@@ -71,37 +72,10 @@ export default Business;
 
 export async function getStaticProps() {
   /** TODO: get real QaA from backend */
-  const questions = [
-    {
-      question: "Các chương trình học có cần yêu cầu đầu vào hay không?",
-      answer:
-        "Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.",
-    },
-    {
-      question:
-        "Làm cách nào tôi có thể trao đổi với giảng viên khi có những thắc mắc về bài học?",
-      answer:
-        "Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.",
-    },
-    {
-      question:
-        "Liệu tôi có thể khởi nghiệp ngay từ khi còn ngồi trên ghế nhà trường?",
-      answer:
-        "Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.",
-    },
-    {
-      question:
-        "Ngoài video bài giảng, tôi có nhận được tài liệu khác hay không?",
-      answer:
-        "Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.",
-    },
-  ];
-
   const logoslist = ["1", "2", "3", "4", "5"];
 
   return {
     props: {
-      questions,
       logoslist,
     },
   };

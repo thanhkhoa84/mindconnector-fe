@@ -2,7 +2,11 @@ import Image from "next/image";
 import { LogoMobile } from "./Logo";
 import Container from "./Container";
 import Link from "next/link";
-import MobileNavFooter from "./MobileNavFooter";
+import dynamic from "next/dynamic";
+
+let MobileNavFooter = dynamic(() => import("./MobileNavFooter"), {
+  ssr: false,
+});
 
 const Footer = ({ position, navlinks }) => {
   return (

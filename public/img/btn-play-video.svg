@@ -1,0 +1,14 @@
+<svg id="play-video-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80" viewBox="0 0 80 80">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffaf43"/>
+      <stop offset="1" stop-color="#ff6823"/>
+    </linearGradient>
+  </defs>
+  <rect id="Rectangle_17" data-name="Rectangle 17" width="80" height="80" rx="20" fill="#fff" opacity="0.7"/>
+  <g id="Group_19" data-name="Group 19" transform="translate(-190 -1970)">
+    <circle id="Ellipse_4" data-name="Ellipse 4" cx="30" cy="30" r="30" transform="translate(200 1980)" fill="#ff8348" opacity="0.2"/>
+    <circle id="Ellipse_5" data-name="Ellipse 5" cx="26" cy="26" r="26" transform="translate(204 1984)" fill="url(#linear-gradient)"/>
+    <path id="Path_26" data-name="Path 26" d="M180,1960v20.482l14-10.241Z" transform="translate(45 40)" fill="#fff"/>
+  </g>
+</svg>
