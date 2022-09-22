@@ -15,7 +15,7 @@ let socialImages = {
 const TeacherCard = ({ name, imgUrl, title, socials }) => {
   return (
     <div className={`${styles.teacherCard}`}>
-      <div className={styles.teacherImageContainer}>
+      <div className={`relative`}>
         <img
           src="/img/bg-teacher-card.svg"
           alt=""
@@ -100,7 +100,7 @@ const TeacherList = () => {
     },
   ];
   return (
-    <div className="text-center">
+    <div className="mt-20 text-center">
       {allTeachers.map((teacher, index) => {
         return <TeacherCard {...teacher} key={teacher.name} />;
       })}
@@ -131,15 +131,9 @@ const useMedia = (query) => {
 const Teachers = () => {
   const total = 5;
   return (
-    <div
-      className={`
-        ${total <= 5 ? "slider-less-than-five" : ""} 
-      }`}
-    >
+    <div className={``}>
       <SectionHeading align="center">Đội ngũ giảng viên</SectionHeading>
-      <div className="text-center">
-        <TeacherList />
-      </div>
+      <TeacherList />
     </div>
   );
 };

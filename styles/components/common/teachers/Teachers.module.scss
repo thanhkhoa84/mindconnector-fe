@@ -2,33 +2,25 @@
   display: inline-block;
   vertical-align: top;
   width: 98%;
-  height: 0;
-  padding-bottom: calc(457/248*100%);
   text-align: center;
   position: relative;
   margin: 1em 1%;
   margin-bottom: 2em;
   margin-top: 2em;
-  overflow: hidden;
   @media(min-width: 375px) {
     width: 48%;
-    padding-bottom: calc(457/248*48%);
   }
   @media(min-width: 768px) {
     width: 31%;
-    padding-bottom: calc(457/248*31%);
     &:nth-last-child(n+4), &:nth-last-child(n+4) ~ .teacherCard {
       width: 23%;
-      padding-bottom: calc(457/248*23%);
     }
   }
 
   @media(min-width: 992px) {
     width: 23%;
-    padding-bottom: calc(457/248*23%);
     &:nth-last-child(n+5), &:nth-last-child(n+5) ~ .teacherCard {
       width: 18%;
-      padding-bottom: calc(457/248*18%);
     }
   }
 }
@@ -38,7 +30,7 @@
   position: absolute;
   text-align: center;
   padding: 0 0.5em;
-  top: calc(225/331*100%);
+  top: 75%;
   h3 {
     font-size: 16px;
     color: #A71876;
@@ -79,34 +71,16 @@
   }
 }
 
-.teacherImageContainer {
-  position: relative;
-  width: 100%;
-  padding-bottom: calc(457/248*100%);
-}
-
 .teacherCardBg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
   width: 100%;
 }
 
 .teacherImage {
   position: absolute;
-  height: 0;
   width: 100%;
-  padding-bottom: calc(378/248*80%);
   margin: 0 auto;
   text-align: center;
-  overflow: hidden;
-  @media(min-width:1100px) {
-    padding-bottom: calc(302/248*100%);
-  }
-  img {
-    max-width: 87%;
-  }
+  top: -11%;
 }
 
 .socialInfo {
