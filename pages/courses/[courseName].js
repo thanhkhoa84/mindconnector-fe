@@ -1,15 +1,15 @@
 import Head from "next/head";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import Container from "../components/Container";
-import Seo from "../components/SEO";
-import { BannerHeading, SectionSubHeading } from "../components/Heading";
-import { QandAProgram } from "../components/QandA";
+import Container from "../../components/Container";
+import Seo from "../../components/SEO";
+import { BannerHeading, SectionSubHeading } from "../../components/Heading";
+import { QandAProgram } from "../../components/QandA";
 import { useEffect, useState, useRef } from "react";
 import {
   useGlobalModalContext,
   MODAL_TYPES,
-} from "../components/common/modal/GlobalModal";
+} from "../../components/common/modal/GlobalModal";
 
 const seo = {
   metaTitle: "Mind Connector",
@@ -18,7 +18,7 @@ const seo = {
   // article: true,
 };
 
-const LogoList = dynamic(() => import("./../components/LogoList"), {
+const LogoList = dynamic(() => import("../../components/LogoList"), {
   ssr: false,
 });
 
@@ -87,7 +87,7 @@ const TabPanels = () => {
   );
 };
 
-const Course = ({ questions, logoslist, programInfo }) => {
+const CoursePost = ({ questions, logoslist, programInfo }) => {
   const { showModal } = useGlobalModalContext();
   const createModal = () => {
     showModal(MODAL_TYPES.REGISTER_MODAL, {
@@ -428,6 +428,7 @@ export async function getStaticProps() {
     title: "Khoá học nghiên cứu và phân tích",
     price: "89.99",
   };
+
   return {
     props: {
       questions,
@@ -437,4 +438,11 @@ export async function getStaticProps() {
   };
 }
 
-export default Course;
+export async function getStaticPaths() {
+  return {
+    paths: ["/courses/khoa-hoc-nghien-cuu-va-phan-tich"],
+    fallback: true,
+  };
+}
+
+export default CoursePost;

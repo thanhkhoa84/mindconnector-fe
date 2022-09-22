@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
+import { useMenuContext } from "../components/common/MenuProvider";
 
-/* Mobile Navigation */
+// Footer navigation
+
 const MobileDropdown = ({ items, dropdown, dropdId }) => {
   return (
     <ul
@@ -102,7 +104,8 @@ const MobileNavItem = ({ link, index }) => {
   );
 };
 
-const MobileNavItems = ({ navlinks }) => {
+const MobileNavFooter = () => {
+  const navlinks = useMenuContext();
   return (
     <ul
       className={`mt-8 grid grid-flow-row grid-cols-1 md:grid-cols-${navlinks.length} gap-6`}
@@ -112,10 +115,6 @@ const MobileNavItems = ({ navlinks }) => {
       })}
     </ul>
   );
-};
-
-const MobileNavFooter = ({ ...navlinks }) => {
-  return <MobileNavItems {...navlinks} />;
 };
 
 export default MobileNavFooter;

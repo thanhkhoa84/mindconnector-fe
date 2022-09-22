@@ -14,8 +14,9 @@ const CourseCard = ({ course }) => {
     lessons: "4",
     time: "3 hours",
     feature: true,
+    rating: 1,
   };
-  let { title, currency, price, lessons, time, feature } = info;
+  let { title, currency, price, lessons, time, feature, rating } = info;
   let priceMain = price.split(".")[0];
   let fraction = price.split(".")[1];
   return (
@@ -25,7 +26,7 @@ const CourseCard = ({ course }) => {
       <div className={`overflow-hidden rounded-2xl  ${styles.courseCardImage}`}>
         <img src="/img/course-1.png" alt="" className="block w-full" />
       </div>
-      <Link href="course">
+      <Link href="/courses/khoa-hoc-nghien-cuu-va-phan-tich">
         <div
           className={`after:bg-gradient-overlay absolute top-0 left-0 right-0 bottom-0 flex cursor-pointer flex-col justify-end px-5 pb-9 text-sm text-white after:content-none md:p-4 md:pb-8`}
         >
@@ -41,7 +42,7 @@ const CourseCard = ({ course }) => {
             <span>{lessons} lessons &#x2022; </span>
             <span>{time}</span>
           </p>
-          <Rating value={4.5} total={1590} />
+          {rating > 0 && <Rating value={4.5} total={1590} />}
           <div className="mt-2 text-3xl font-bold">
             <span className="text-xs font-normal">{currency} </span>
             {priceMain}

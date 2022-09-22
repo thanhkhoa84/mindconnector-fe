@@ -2,17 +2,18 @@ import { useEffect, useState, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import YouTube from "react-youtube";
-import Container from "../components/Container";
-import Seo from "../components/SEO";
-import { BannerHeading, SectionSubHeading } from "../components/Heading";
-import QandA from "../components/QandA";
-import CourseCard from "../components/common/courses/CourseCard";
+import Container from "../../components/Container";
+import Seo from "../../components/SEO";
+import { BannerHeading, SectionSubHeading } from "../../components/Heading";
+import QandA from "../../components/QandA";
+import CourseCard from "../../components/common/courses/CourseCard";
 import {
   useGlobalModalContext,
   MODAL_TYPES,
-} from "../components/common/modal/GlobalModal";
+} from "../../components/common/modal/GlobalModal";
 
 const seo = {
   metaTitle: "Mind Connector",
@@ -21,11 +22,11 @@ const seo = {
   // article: true,
 };
 
-const LogoList = dynamic(() => import("./../components/LogoList"), {
+const LogoList = dynamic(() => import("../../components/LogoList"), {
   ssr: false,
 });
 
-const Decoration = dynamic(() => import("../components/Decoration"), {
+const Decoration = dynamic(() => import("../../components/Decoration"), {
   ssr: false,
 });
 
@@ -444,6 +445,25 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
   );
 };
 
+export async function getStaticPaths() {
+  // const dev = process.env.NODE_ENV !== "production";
+  // const server = dev
+  //   ? "http://localhost:3000"
+  //   : "https://your_deployment.server.com";
+  // const res = await fetch(`${server}/data/programs.json`);
+  // const programs = await res.text();
+  // console.log(programs);
+  // // let paths = programs.map((p) => {
+  // //   p.slug;
+  // // });
+
+  let paths = ["/programs/tetss"];
+  return {
+    paths,
+    fallback: true,
+  };
+}
+
 export async function getStaticProps() {
   /** TODO: get real QaA from backend */
   const questions = [
@@ -473,11 +493,14 @@ export async function getStaticProps() {
   const logoslist = ["1", "2", "3", "4"];
   const programInfo = {
     title: "Khoá học nghiên cứu và phân tích",
+    slug: "khoa-hoc-nghien-cuu-va-phan-tich",
     price: "89.99",
+    slug: "khoa-hoc-nghien-cuu-va-phan-tich",
   };
   const courses = [
     {
       title: "Khoá học nghiên cứu và phân tích",
+      slug: "khoa-hoc-nghien-cuu-va-phan-tich",
       currency: "USD$",
       price: "84.99",
       lessons: "4",
@@ -486,6 +509,7 @@ export async function getStaticProps() {
     },
     {
       title: "Khoá học nghiên cứu và phân tích",
+      slug: "khoa-hoc-nghien-cuu-va-phan-tich",
       currency: "USD$",
       price: "84.99",
       lessons: "4",
@@ -494,6 +518,7 @@ export async function getStaticProps() {
     },
     {
       title: "Khoá học nghiên cứu và phân tích",
+      slug: "khoa-hoc-nghien-cuu-va-phan-tich",
       currency: "USD$",
       price: "84.99",
       lessons: "4",
@@ -502,6 +527,7 @@ export async function getStaticProps() {
     },
     {
       title: "Khoá học nghiên cứu và phân tích",
+      slug: "khoa-hoc-nghien-cuu-va-phan-tich",
       currency: "USD$",
       price: "84.99",
       lessons: "4",
@@ -510,6 +536,7 @@ export async function getStaticProps() {
     },
     {
       title: "Khoá học nghiên cứu và phân tích",
+      slug: "khoa-hoc-nghien-cuu-va-phan-tich",
       currency: "USD$",
       price: "84.99",
       lessons: "4",
@@ -521,7 +548,6 @@ export async function getStaticProps() {
     props: {
       questions,
       logoslist,
-      programInfo,
       courses,
     },
   };

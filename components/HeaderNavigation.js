@@ -2,7 +2,9 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import ActiveLink from "./ActiveLink";
+import { useMenuContext } from "../components/common/MenuProvider";
 
+// Desktop Navigation
 const DropdownMenu = ({ items, dropdown, dropdId }) => {
   return (
     <ul
@@ -116,12 +118,13 @@ const NavItem = ({ link, index }) => {
   );
 };
 
-const NavItems = ({ navlinks }) => {
+const NavBar = () => {
+  const navlinks = useMenuContext();
   return (
     <ul
       className="relative z-10 m-0 h-full w-full flex-col items-center items-center justify-center
-      p-0 font-bold lg:mr-6 
-      lg:block lg:flex lg:flex-row lg:space-x-6 lg:bg-transparent"
+      p-0 font-bold md:space-x-2 
+      lg:mr-2 lg:block lg:flex lg:flex-row lg:space-x-3 lg:bg-transparent xl:space-x-4"
     >
       {navlinks.map((link, index) => {
         return <NavItem link={link} index={index} key={index} />;
@@ -130,11 +133,7 @@ const NavItems = ({ navlinks }) => {
   );
 };
 
-const NavBar = ({ ...navlinks }) => {
-  return <NavItems {...navlinks} />;
-};
-
-/* Mobile Navigation */
+// Mobile Navigation
 const MobileDropdown = ({ items, dropdown, dropdId }) => {
   return (
     <ul
@@ -234,7 +233,8 @@ const MobileNavItem = ({ link, index }) => {
   );
 };
 
-const MobileNavItems = ({ navlinks }) => {
+const MobileNav = () => {
+  const navlinks = useMenuContext();
   return (
     <ul className="flex flex-col rounded-b-2xl bg-[#E0E0E0] p-4 pb-8 text-left shadow-asidebox">
       {navlinks.map((link, index) => {
@@ -242,10 +242,6 @@ const MobileNavItems = ({ navlinks }) => {
       })}
     </ul>
   );
-};
-
-const MobileNav = ({ ...navlinks }) => {
-  return <MobileNavItems {...navlinks} />;
 };
 
 export { NavBar, MobileNav };

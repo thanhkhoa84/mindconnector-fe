@@ -174,7 +174,7 @@ const HeroBanner = ({ slides, ...props }) => {
       <Slider {...settings}>
         {slides.map(({ ...props }, index) => {
           return (
-            <div {...props} key={index} className="relative mx-auto my-0">
+            <div {...props} className="relative mx-auto my-0">
               <a
                 href={props.link}
                 className="mx-auto my-0 block"
