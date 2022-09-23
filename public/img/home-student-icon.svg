@@ -1,0 +1,8 @@
+<svg id="home-student-icon" xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66">
+  <rect id="Rectangle_12" data-name="Rectangle 12" width="66" height="66" rx="15" fill="#fff" opacity="0.2"/>
+  <rect id="Rectangle_11" data-name="Rectangle 11" width="60" height="60" rx="13" transform="translate(3 3)" fill="#fff"/>
+  <g id="Group_3099" data-name="Group 3099" transform="translate(-7475.11 -1945)">
+    <path id="Path_4361" data-name="Path 4361" d="M53.587,46.753a31,31,0,0,0-43.175,0,1,1,0,1,0,1.395,1.434,29,29,0,0,1,40.386,0,1,1,0,1,0,1.395-1.434Z" transform="translate(7476 1949)" fill="#a71876"/>
+    <path id="Path_4362" data-name="Path 4362" d="M32,34A12,12,0,1,0,20,22,12,12,0,0,0,32,34Zm0-22A10,10,0,1,1,22,22,10,10,0,0,1,32,12Z" transform="translate(7476 1949)" fill="#a71876"/>
+  </g>
+</svg>

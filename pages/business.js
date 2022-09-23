@@ -48,9 +48,7 @@ const Tab = ({ tab, index, active, onClick }) => {
       key={index}
       onClick={() => onClick(index)}
     >
-      <a href={tab.href} className="block" type="button">
-        {tab.title}
-      </a>
+      <button className="block">{tab.title}</button>
     </li>
   );
 };
@@ -81,7 +79,6 @@ const TabPanels = () => {
 };
 
 const Business = ({ questions, logoslist }) => {
-  console.log(MODAL_TYPES);
   const { showModal } = useGlobalModalContext();
   const createModal = () => {
     showModal(MODAL_TYPES.BUSINESS_VIDEO_MODAL, {
@@ -134,22 +131,189 @@ const Business = ({ questions, logoslist }) => {
           </div>
         </section>
         <section className="dark bg-black py-12">
-          <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
-            Our use cases
-          </h1>
+          <Container>
+            <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+              Our use cases
+            </h1>
+            <TabPanels />
+          </Container>
         </section>
         <section className="dark bg-black py-12">
           <Container>
             <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
               What makes us different
             </h1>
-            <TabPanels />
+            <ul className="mt-8 flex flex-col flex-wrap gap-8 md:flex-row">
+              <li className="relative flex-1 pt-8">
+                <Image
+                  src={"/img/home-student-icon.svg"}
+                  width={66}
+                  height={66}
+                  alt=""
+                  className="absolute left-6 top-0"
+                />
+                <div className="rounded-2xl bg-purple px-6 py-6 pt-10 text-white">
+                  <h3 className="text-[24px] font-black leading-tight">
+                    Personalized Service
+                  </h3>
+                  <p className="mt-2">
+                    Our service proffessionals and market research experts work
+                    with your team to create a tailored reserach approach,
+                    helping you get answers to your most pressing questions.
+                  </p>
+                </div>
+              </li>
+              <li className="relative flex-1 pt-8">
+                <Image
+                  src={"/img/home-student-icon.svg"}
+                  width={66}
+                  height={66}
+                  alt=""
+                  className="absolute left-6 top-0"
+                />
+                <div className="rounded-2xl bg-purple px-6 py-6 pt-10 text-white">
+                  <h3 className="text-[24px] font-black leading-tight">
+                    Personalized Service
+                  </h3>
+                  <p className="mt-2">
+                    Our service proffessionals and market research experts work
+                    with your team to create a tailored reserach approach,
+                    helping you get answers to your most pressing questions.
+                  </p>
+                </div>
+              </li>
+              <li className="relative flex-1 pt-8">
+                <Image
+                  src={"/img/home-student-icon.svg"}
+                  width={66}
+                  height={66}
+                  alt=""
+                  className="absolute left-6 top-0"
+                />
+                <div className="rounded-2xl bg-purple px-6 py-6 pt-10 text-white">
+                  <h3 className="text-[24px] font-black leading-tight">
+                    Personalized Service
+                  </h3>
+                  <p className="mt-2">
+                    Our service proffessionals and market research experts work
+                    with your team to create a tailored reserach approach,
+                    helping you get answers to your most pressing questions.
+                  </p>
+                </div>
+              </li>
+            </ul>
           </Container>
         </section>
         <section className="dark bg-black py-12">
-          <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
-            Check out the latest insights from our experts
-          </h1>
+          <Container>
+            <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+              Check out the latest insights from our experts
+            </h1>
+            <ul className="mt-8 flex flex-wrap justify-center gap-14 lg:justify-evenly lg:gap-6">
+              <li className="relative inline-flex h-[269px] w-[160px] flex-shrink-0 overflow-hidden rounded-3xl border-4 border-gray-500">
+                <Image
+                  src="/img/for-business-courses-article-card.png"
+                  width={160}
+                  height={269}
+                  alt=""
+                  className=""
+                />
+                <div className="absolute bottom-0 left-0 right-0 px-4 py-4 text-white">
+                  <h4 className="mb-2 text-base font-black leading-tight">
+                    Measure what customers want
+                  </h4>
+                  <Link href="">
+                    <span className="link-arrow">Xem thêm</span>
+                  </Link>
+                </div>
+              </li>
+              <li className="relative inline-flex h-[269px] w-[160px] flex-shrink-0 overflow-hidden rounded-3xl border-4 border-gray-500">
+                <Image
+                  src="/img/for-business-courses-article-card.png"
+                  width={160}
+                  height={269}
+                  alt=""
+                  className=""
+                />
+                <div className="absolute bottom-0 left-0 right-0 px-4 py-4 text-white">
+                  <h4 className="mb-2 text-base font-black leading-tight">
+                    Measure what customers want
+                  </h4>
+                  <Link href="">
+                    <span className="link-arrow">Xem thêm</span>
+                  </Link>
+                </div>
+              </li>
+              <li className="relative inline-flex h-[269px] w-[160px] flex-shrink-0 overflow-hidden rounded-3xl border-4 border-gray-500">
+                <Image
+                  src="/img/for-business-courses-article-card.png"
+                  width={160}
+                  height={269}
+                  alt=""
+                  className=""
+                />
+                <div className="absolute bottom-0 left-0 right-0 px-4 py-4 text-white">
+                  <h4 className="mb-2 text-base font-black leading-tight">
+                    Measure what customers want
+                  </h4>
+                  <Link href="">
+                    <span className="link-arrow">Xem thêm</span>
+                  </Link>
+                </div>
+              </li>
+              <li className="relative inline-flex h-[269px] w-[160px] flex-shrink-0 overflow-hidden rounded-3xl border-4 border-gray-500">
+                <Image
+                  src="/img/for-business-courses-article-card.png"
+                  width={160}
+                  height={269}
+                  alt=""
+                  className=""
+                />
+                <div className="absolute bottom-0 left-0 right-0 px-4 py-4 text-white">
+                  <h4 className="mb-2 text-base font-black leading-tight">
+                    Measure what customers want
+                  </h4>
+                  <Link href="">
+                    <span className="link-arrow">Xem thêm</span>
+                  </Link>
+                </div>
+              </li>
+              <li className="relative inline-flex h-[269px] w-[160px] flex-shrink-0 overflow-hidden rounded-3xl border-4 border-gray-500">
+                <Image
+                  src="/img/for-business-courses-article-card.png"
+                  width={160}
+                  height={269}
+                  alt=""
+                  className=""
+                />
+                <div className="absolute bottom-0 left-0 right-0 px-4 py-4 text-white">
+                  <h4 className="mb-2 text-base font-black leading-tight">
+                    Measure what customers want
+                  </h4>
+                  <Link href="">
+                    <span className="link-arrow">Xem thêm</span>
+                  </Link>
+                </div>
+              </li>
+              <li className="relative inline-flex h-[269px] w-[160px] flex-shrink-0 overflow-hidden rounded-3xl border-4 border-gray-500">
+                <Image
+                  src="/img/for-business-courses-article-card.png"
+                  width={160}
+                  height={269}
+                  alt=""
+                  className=""
+                />
+                <div className="absolute bottom-0 left-0 right-0 px-4 py-4 text-white">
+                  <h4 className="mb-2 text-base font-black leading-tight">
+                    Measure what customers want
+                  </h4>
+                  <Link href="">
+                    <span className="link-arrow">Xem thêm</span>
+                  </Link>
+                </div>
+              </li>
+            </ul>
+          </Container>
         </section>
         <section className="dark bg-black py-12 dark:text-white">
           <Container>
