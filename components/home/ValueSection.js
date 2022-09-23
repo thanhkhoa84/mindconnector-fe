@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import Image from "next/image";
+import Image from "next/future/image";
 import Container from "../../components/Container";
 import { SectionHeading } from "../../components/Heading";
 
@@ -52,9 +52,11 @@ const ValueSection = () => {
               </Link>
             </div>
             <div className="relative z-10 hidden overflow-hidden rounded-3xl object-cover shadow-lg lg:flex lg:w-[260px]">
-              <img
+              <Image
                 src="/img/value-student.png"
                 alt=""
+                width="300"
+                height="333"
                 className="object-cover"
               />
             </div>
@@ -92,9 +94,11 @@ const ValueSection = () => {
               </Link>
             </div>
             <div className="relative z-10 hidden overflow-hidden rounded-3xl object-cover shadow-lg lg:flex lg:w-[260px]">
-              <img
+              <Image
                 src="/img/value-business.png"
                 alt=""
+                width="300"
+                height="333"
                 className="object-cover"
               />
             </div>

@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import { useMenuContext } from "../components/common/MenuProvider";
 
 // Footer navigation
-
 const MobileDropdown = ({ items, dropdown, dropdId }) => {
   return (
     <ul
@@ -55,17 +54,17 @@ const MobileNavItem = ({ link, index }) => {
     }
   };
 
-  useEffect(() => {
-    if (window.innerWidth >= 1024) {
-      setMobile(false);
-    } else {
-      setMobile(true);
-    }
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [mobile]);
+  // useEffect(() => {
+  //   if (window.innerWidth >= 1024) {
+  //     setMobile(false);
+  //   } else {
+  //     setMobile(true);
+  //   }
+  //   window.addEventListener("resize", handleResize);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, [mobile]);
 
   useEffect(() => {
     if (window.innerWidth >= 1024) setDropdown(true);

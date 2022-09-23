@@ -1,9 +1,8 @@
 import Container from "./Container";
-import Image from "next/image";
+import Image from "next/future/image";
 
 const LogoList = ({ backgroundColor, title, list }) => {
   let images = ["/img/saatchi.svg", "/img/vlu.svg", "/img/ogilvy.svg"];
-  console.log(backgroundColor);
   return (
     <div
       className={`
@@ -18,18 +17,22 @@ const LogoList = ({ backgroundColor, title, list }) => {
               {title}
             </h2>
           </header>
-          <ul className="flex flex-row flex-wrap justify-center">
+          <ul className="flex flex-row flex-wrap justify-between">
             {list.map((li, index) => {
               let imgSrc = images[Math.floor(Math.random() * images.length)];
               return (
                 <li
                   key={`logolist-${index}`}
-                  className="flex w-1/2 items-center justify-center p-4 duration-500 md:w-1/5 lg:p-[30px]"
+                  className="lg:px-[10px]] relative flex w-1/2 items-center justify-center px-4 py-8 duration-500 sm:w-1/6 lg:py-[20px]"
                 >
-                  <img
+                  <Image
                     src={imgSrc}
                     alt=""
-                    className="mx-auto block h-full max-h-8 object-contain"
+                    priority={true}
+                    width={100}
+                    height={100}
+                    style={{}}
+                    className="mx-auto block h-full max-h-8 max-w-full "
                   />
                 </li>
               );

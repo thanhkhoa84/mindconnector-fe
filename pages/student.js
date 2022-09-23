@@ -86,7 +86,7 @@ const Student = ({ questions, logoslist }) => {
               năng quan trọng chính là chìa khoá để thành công.
             </p>
             <p>
-              <Link href="/programs/thanh-cong-trong-hoc-tap">
+              <Link href="/programs/thanh-cong-trong-ung-tuyen">
                 <span className="link-arrow">Tìm hiểu thêm</span>
               </Link>
             </p>
@@ -109,7 +109,7 @@ const Student = ({ questions, logoslist }) => {
               Vững vàng kiến thức và kỹ năng để khởi sự kinh doanh thuận lợi.
             </p>
             <p>
-              <Link href="/programs/thanh-cong-trong-hoc-tap">
+              <Link href="/programs/thanh-cong-trong-khoi-su-kinh-doanh">
                 <span className="link-arrow">Tìm hiểu thêm</span>
               </Link>
             </p>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
+import Image from "next/future/image";
 import ActiveLink from "./ActiveLink";
 import { useMenuContext } from "../components/common/MenuProvider";
 
@@ -208,9 +209,11 @@ const MobileNavItem = ({ link, index }) => {
           >
             {link.name}
             <span>
-              <img
+              <Image
                 src="/img/detail-arrow.png"
                 alt=""
+                width={30}
+                height={30}
                 className={`
                   w-[30px] transition-all
                   ${dropdown ? "-rotate-180" : ""}

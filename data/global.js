@@ -9,11 +9,11 @@ export const Navigation = [
       },
       {
         name: "Thành Công Trong Ứng Tuyển",
-        path: "/student#thanh-cong-trong-ung-tuyen",
+        path: "/programs/thanh-cong-trong-ung-tuyen",
       },
       {
         name: "Thành Công Trong Khởi Sự Kinh Doanh",
-        path: "/student#thanh-cong-trong-khoi-su-kinh-doanh",
+        path: "/programs/thanh-cong-trong-khoi-su-kinh-doanh",
       },
       {
         name: "Experience Tour",
@@ -23,25 +23,25 @@ export const Navigation = [
   },
   {
     name: "Dành cho doanh nghiệp",
-    path: "business",
-    submenus: [
-      {
-        name: "Thành Công Trong Học Tập",
-        path: "/student#thanh-cong-trong-hoc-tap",
-      },
-      {
-        name: "Thành Công Trong Ứng Tuyển",
-        path: "/student#thanh-cong-trong-ung-tuyen",
-      },
-      {
-        name: "Thành Công Trong Khởi Sự Kinh Doanh",
-        path: "/student#thanh-cong-trong-khoi-su-kinh-doanh",
-      },
-      {
-        name: "Experience Tour",
-        path: "/business",
-      },
-    ],
+    path: "/business",
+    // submenus: [
+    //   {
+    //     name: "Thành Công Trong Học Tập",
+    //     path: "/student#thanh-cong-trong-hoc-tap",
+    //   },
+    //   {
+    //     name: "Thành Công Trong Ứng Tuyển",
+    //     path: "/student#thanh-cong-trong-ung-tuyen",
+    //   },
+    //   {
+    //     name: "Thành Công Trong Khởi Sự Kinh Doanh",
+    //     path: "/student#thanh-cong-trong-khoi-su-kinh-doanh",
+    //   },
+    //   {
+    //     name: "Experience Tour",
+    //     path: "/business",
+    //   },
+    // ],
   },
   // {
   //   name: "Program",
@@ -51,16 +51,25 @@ export const Navigation = [
   //   name: "Course",
   //   path: "/course",
   // },
-  {
-    name: "Đối tác",
-    path: "partners",
-  },
-  {
-    name: "Tin tức & Sự kiện",
-    path: "news",
-  },
-  {
-    name: "Liên hệ",
-    path: "contact",
-  },
+  // {
+  //   name: "Đối tác",
+  //   path: "partners",
+  // },
+  // {
+  //   name: "Tin tức & Sự kiện",
+  //   path: "news",
+  // },
+  // {
+  //   name: "Liên hệ",
+  //   path: "contact",
+  // },
 ];
+
+export const Paths = {
+  programs: [
+    "thanh-cong-trong-hoc-tap",
+    "thanh-cong-trong-ung-tuyen",
+    "thanh-cong-trong-khoi-su-kinh-doanh",
+  ],
+  courses: ["khoa-hoc-nghien-cuu-va-phan-tich"],
+};

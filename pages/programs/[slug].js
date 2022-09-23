@@ -2,8 +2,8 @@ import { useEffect, useState, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import Image from "next/future/image";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import YouTube from "react-youtube";
 import Container from "../../components/Container";
 import Seo from "../../components/SEO";
@@ -14,6 +14,7 @@ import {
   useGlobalModalContext,
   MODAL_TYPES,
 } from "../../components/common/modal/GlobalModal";
+import { Paths } from "../../data/global";
 
 const seo = {
   metaTitle: "Mind Connector",
@@ -95,7 +96,7 @@ const TabPanels = () => {
   );
 };
 
-const Program = ({ questions, logoslist, programInfo, courses }) => {
+const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
   const { showModal } = useGlobalModalContext();
   const createModal = () => {
     showModal(MODAL_TYPES.REGISTER_MODAL, {
@@ -136,7 +137,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
             <div className="mt-8 flex flex-row flex-wrap justify-between gap-2 sm:justify-center md:gap-6">
               <div>
                 <div className="inline-block w-[90px] overflow-hidden rounded-full md:w-[100px]">
-                  <img
+                  <Image
                     src="/img/avatar.png"
                     alt="Avatar"
                     className="w-full object-cover transition-all hover:scale-[1.]"
@@ -149,7 +150,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
               </div>
               <div>
                 <div className="inline-block w-[90px] overflow-hidden rounded-full md:w-[100px]">
-                  <img
+                  <Image
                     src="/img/avatar.png"
                     alt="Avatar"
                     className="w-full object-cover transition-all hover:scale-[1.]"
@@ -162,7 +163,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
               </div>
               <div>
                 <div className="inline-block w-[90px] overflow-hidden rounded-full md:w-[100px]">
-                  <img
+                  <Image
                     src="/img/avatar.png"
                     alt="Avatar"
                     className="w-full object-cover transition-all hover:scale-[1.]"
@@ -180,7 +181,11 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
                   <p className="text-[20px] font-bold">
                     4.9{" "}
                     <span className="mt-0 inline-block text-[12px]">
-                      <img src="/img/star-rating-fill.svg" alt="" width={15} />
+                      <Image
+                        src="/img/star-rating-fill.svg"
+                        alt=""
+                        width={15}
+                      />
                     </span>
                   </p>
                   <p className="text-[14px]">1988 Đánh giá</p>
@@ -217,7 +222,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
                 <div className="w-full">
                   <div className="flex flex-col justify-evenly pt-16 md:flex-row">
                     <div className="relative flex-shrink flex-grow basis-full border-l border-[#F5CBCC] pl-8 pb-12 md:border-l-0 md:border-t md:pl-0 md:pt-12 md:pr-6">
-                      <img
+                      <Image
                         src="/img/icon-steps.svg"
                         alt=""
                         className="absolute top-[-5px] left-[-12px] w-[24px] md:top-[-12px] md:left-[-5px]"
@@ -234,7 +239,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
                       </p>
                     </div>
                     <div className="relative flex-shrink flex-grow basis-full border-l border-[#F5CBCC] pl-8 pb-12 md:border-l-0 md:border-t md:pl-0 md:pt-12 md:pr-6">
-                      <img
+                      <Image
                         src="/img/icon-steps.svg"
                         alt=""
                         className="absolute top-[-5px] left-[-12px] w-[24px] md:top-[-12px] md:left-[-5px]"
@@ -252,7 +257,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
                       </p>
                     </div>
                     <div className="relative flex-shrink flex-grow basis-full pl-8 pb-12 md:pl-0 md:pt-12 md:pr-6">
-                      <img
+                      <Image
                         src="/img/icon-steps.svg"
                         alt=""
                         className="absolute top-[-5px] left-[-12px] w-[24px] md:top-[-12px] md:left-[-5px]"
@@ -369,7 +374,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
               <div className="flex-shrink">
                 <div className="align-center flex flex flex-col justify-center lg:flex-row">
                   <div className="relative flex-shrink flex-grow self-center lg:w-1/2">
-                    <img src="/img/testimonial.png" alt="" />
+                    <Image src="/img/testimonial.png" width={440} alt="" />
                     <div className="absolute inset-x-0 bottom-[5em] text-center">
                       <div className="font-black text-purple">Ngân Huỳnh</div>
                       <div className="text-xs text-[#6C6C6C] lg:text-sm">
@@ -446,21 +451,13 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
 };
 
 export async function getStaticPaths() {
-  // const dev = process.env.NODE_ENV !== "production";
-  // const server = dev
-  //   ? "http://localhost:3000"
-  //   : "https://your_deployment.server.com";
-  // const res = await fetch(`${server}/data/programs.json`);
-  // const programs = await res.text();
-  // console.log(programs);
-  // // let paths = programs.map((p) => {
-  // //   p.slug;
-  // // });
+  let paths = Paths.programs.map((p) => {
+    return `/programs/${p}`;
+  });
 
-  let paths = ["/programs/tetss"];
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 }
 
@@ -491,16 +488,9 @@ export async function getStaticProps() {
     },
   ];
   const logoslist = ["1", "2", "3", "4"];
-  const programInfo = {
-    title: "Khoá học nghiên cứu và phân tích",
-    slug: "khoa-hoc-nghien-cuu-va-phan-tich",
-    price: "89.99",
-    slug: "khoa-hoc-nghien-cuu-va-phan-tich",
-  };
   const courses = [
     {
       title: "Khoá học nghiên cứu và phân tích",
-      slug: "khoa-hoc-nghien-cuu-va-phan-tich",
       currency: "USD$",
       price: "84.99",
       lessons: "4",
@@ -509,7 +499,6 @@ export async function getStaticProps() {
     },
     {
       title: "Khoá học nghiên cứu và phân tích",
-      slug: "khoa-hoc-nghien-cuu-va-phan-tich",
       currency: "USD$",
       price: "84.99",
       lessons: "4",
@@ -518,7 +507,6 @@ export async function getStaticProps() {
     },
     {
       title: "Khoá học nghiên cứu và phân tích",
-      slug: "khoa-hoc-nghien-cuu-va-phan-tich",
       currency: "USD$",
       price: "84.99",
       lessons: "4",
@@ -527,7 +515,6 @@ export async function getStaticProps() {
     },
     {
       title: "Khoá học nghiên cứu và phân tích",
-      slug: "khoa-hoc-nghien-cuu-va-phan-tich",
       currency: "USD$",
       price: "84.99",
       lessons: "4",
@@ -536,7 +523,6 @@ export async function getStaticProps() {
     },
     {
       title: "Khoá học nghiên cứu và phân tích",
-      slug: "khoa-hoc-nghien-cuu-va-phan-tich",
       currency: "USD$",
       price: "84.99",
       lessons: "4",
@@ -544,6 +530,7 @@ export async function getStaticProps() {
       feature: false,
     },
   ];
+
   return {
     props: {
       questions,
@@ -553,4 +540,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Program;
+export default ProgramPost;

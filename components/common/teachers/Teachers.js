@@ -1,5 +1,5 @@
 import { useState, useEffect, memo } from "react";
-
+import Image from "next/future/image";
 import { SectionHeading } from "../../Heading";
 
 import styles from "../../../styles/components/common/teachers/Teachers.module.scss";
@@ -16,18 +16,22 @@ const TeacherCard = ({ name, imgUrl, title, socials }) => {
   return (
     <div className={`${styles.teacherCard}`}>
       <div className={`relative`}>
-        <img
+        <Image
           src="/img/bg-teacher-card.svg"
           alt=""
+          width={244}
+          height={444}
           className={`dark:hidden ${styles.teacherCardBg}`}
         />
-        <img
+        <Image
           src="/img/bg-teacher-dark.svg"
           alt=""
+          width={244}
+          height={444}
           className={`hidden dark:block ${styles.teacherCardBg}`}
         />
         <div className={styles.teacherImage}>
-          <img src={imgUrl} alt="" />
+          <Image src={imgUrl} alt="" width={445} height={625} />
         </div>
       </div>
       <div className="absolute top-[67.9758308157%] w-full px-4 text-center">
@@ -134,7 +138,6 @@ const useMedia = (query) => {
 };
 
 const Teachers = () => {
-  const total = 5;
   return (
     <div className={``}>
       <SectionHeading align="center">Đội ngũ giảng viên</SectionHeading>

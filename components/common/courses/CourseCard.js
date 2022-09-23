@@ -1,6 +1,7 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import styles from "../../../styles/components/common/courses/CourseCard.module.scss";
+import Image from "next/future/image";
 
 const Rating = dynamic(() => import("../../Rating"), {
   ssr: false,
@@ -24,7 +25,13 @@ const CourseCard = ({ course }) => {
       className={`relative max-w-[180px] overflow-hidden rounded-[30px] border-[6px] border-orange-medium text-left sm:max-w-[180px] md:max-w-[200px]`}
     >
       <div className={`overflow-hidden rounded-2xl  ${styles.courseCardImage}`}>
-        <img src="/img/course-1.png" alt="" className="block w-full" />
+        <Image
+          src="/img/course-1.png"
+          alt=""
+          width={155}
+          height={268}
+          className="block w-full"
+        />
       </div>
       <Link href="/courses/khoa-hoc-nghien-cuu-va-phan-tich">
         <div

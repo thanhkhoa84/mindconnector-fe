@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import Image from "next/future/image";
 import Container from "../../components/Container";
 import Seo from "../../components/SEO";
 import { BannerHeading, SectionSubHeading } from "../../components/Heading";
@@ -10,6 +11,7 @@ import {
   useGlobalModalContext,
   MODAL_TYPES,
 } from "../../components/common/modal/GlobalModal";
+import { Paths } from "../../data/global";
 
 const seo = {
   metaTitle: "Mind Connector",
@@ -116,7 +118,7 @@ const CoursePost = ({ questions, logoslist, programInfo }) => {
             <p className="mt-4">“Khởi đầu vững chắc, tương lai khởi sắc”</p>
             <div className="mt-8">
               <div className="inline-block w-[100px] overflow-hidden rounded-full">
-                <img
+                <Image
                   src="/img/avatar.png"
                   alt="Avatar"
                   className="w-full object-cover transition-all hover:scale-[1.]"
@@ -133,7 +135,11 @@ const CoursePost = ({ questions, logoslist, programInfo }) => {
                   <p className="text-[20px] font-bold">
                     4.9{" "}
                     <span className="mt-0 inline-block text-[12px]">
-                      <img src="/img/star-rating-fill.svg" alt="" width={15} />
+                      <Image
+                        src="/img/star-rating-fill.svg"
+                        alt=""
+                        width={15}
+                      />
                     </span>
                   </p>
                   <p className="text-[14px]">1988 Đánh giá</p>
@@ -396,6 +402,16 @@ const CoursePost = ({ questions, logoslist, programInfo }) => {
   );
 };
 
+export async function getStaticPaths() {
+  let paths = Paths.courses.map((p) => {
+    return `/courses/${p}`;
+  });
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
 export async function getStaticProps() {
   /** TODO: get real QaA from backend */
   const questions = [
@@ -426,6 +442,7 @@ export async function getStaticProps() {
   const logoslist = ["1", "2", "3", "4"];
   const programInfo = {
     title: "Khoá học nghiên cứu và phân tích",
+    slug: "khoa-hoc-nghien-cuu-va-phan-tich",
     price: "89.99",
   };
 
@@ -435,13 +452,6 @@ export async function getStaticProps() {
       logoslist,
       programInfo,
     },
-  };
-}
-
-export async function getStaticPaths() {
-  return {
-    paths: ["/courses/khoa-hoc-nghien-cuu-va-phan-tich"],
-    fallback: true,
   };
 }
 

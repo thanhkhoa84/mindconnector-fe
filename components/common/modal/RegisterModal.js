@@ -48,7 +48,6 @@ const RegisterModal = () => {
   };
 
   useEffect(() => {
-    console.log("render");
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("keydown", keyDownHandler);
     // document.addEventListener("scroll", preventScroll);
@@ -57,7 +56,7 @@ const RegisterModal = () => {
       document.removeEventListener("keydown", keyDownHandler);
       // document.removeEventListener("scroll", preventScroll);
     };
-  }, []);
+  });
 
   return (
     <div className="fixed inset-0 z-50 flex h-full w-full items-center justify-center bg-gray-400 bg-opacity-90">

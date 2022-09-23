@@ -1,4 +1,5 @@
 import { forwardRef, useReducer, useRef, useState, useEffect } from "react";
+import Image from "next/future/image";
 import styles from "./HeroBanner.module.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -66,7 +67,7 @@ Carousel.displayName = "Carousel";
 //       role="tabpanel"
 //       className={`
 //         hero-slide group ${progress}
-//         ${styles.HeroItem}  
+//         ${styles.HeroItem}
 //         ${isCurrent ? "active" : ""}
 //       `}
 //       ref={ref}
@@ -174,7 +175,7 @@ const HeroBanner = ({ slides, ...props }) => {
       <Slider {...settings}>
         {slides.map(({ ...props }, index) => {
           return (
-            <div {...props} className="relative mx-auto my-0">
+            <div {...props} key={index} className="relative mx-auto my-0">
               <a
                 href={props.link}
                 className="mx-auto my-0 block"
@@ -184,7 +185,13 @@ const HeroBanner = ({ slides, ...props }) => {
                 }}
               >
                 <figure>
-                  <img src={props.image} alt="" className="w-full" />
+                  <Image
+                    src={props.image}
+                    alt=""
+                    width={868}
+                    height={580}
+                    className="w-full"
+                  />
                 </figure>
               </a>
               <div

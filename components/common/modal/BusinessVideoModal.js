@@ -19,14 +19,13 @@ const BusinessVideoModal = () => {
   };
 
   useEffect(() => {
-    console.log("render");
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("keydown", keyDownHandler);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", keyDownHandler);
     };
-  }, []);
+  });
 
   const opts = {
     height: "auto",

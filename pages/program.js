@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import Image from "next/image";
+import Image from "next/future/image";
 import YouTube from "react-youtube";
 import Container from "../components/Container";
 import Seo from "../components/SEO";
@@ -135,7 +135,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
             <div className="mt-8 flex flex-row flex-wrap justify-between gap-2 sm:justify-center md:gap-6">
               <div>
                 <div className="inline-block w-[90px] overflow-hidden rounded-full md:w-[100px]">
-                  <img
+                  <Image
                     src="/img/avatar.png"
                     alt="Avatar"
                     className="w-full object-cover transition-all hover:scale-[1.]"
@@ -148,7 +148,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
               </div>
               <div>
                 <div className="inline-block w-[90px] overflow-hidden rounded-full md:w-[100px]">
-                  <img
+                  <Image
                     src="/img/avatar.png"
                     alt="Avatar"
                     className="w-full object-cover transition-all hover:scale-[1.]"
@@ -161,7 +161,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
               </div>
               <div>
                 <div className="inline-block w-[90px] overflow-hidden rounded-full md:w-[100px]">
-                  <img
+                  <Image
                     src="/img/avatar.png"
                     alt="Avatar"
                     className="w-full object-cover transition-all hover:scale-[1.]"
@@ -179,7 +179,11 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
                   <p className="text-[20px] font-bold">
                     4.9{" "}
                     <span className="mt-0 inline-block text-[12px]">
-                      <img src="/img/star-rating-fill.svg" alt="" width={15} />
+                      <Image
+                        src="/img/star-rating-fill.svg"
+                        alt=""
+                        width={15}
+                      />
                     </span>
                   </p>
                   <p className="text-[14px]">1988 Đánh giá</p>
@@ -216,7 +220,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
                 <div className="w-full">
                   <div className="flex flex-col justify-evenly pt-16 md:flex-row">
                     <div className="relative flex-shrink flex-grow basis-full border-l border-[#F5CBCC] pl-8 pb-12 md:border-l-0 md:border-t md:pl-0 md:pt-12 md:pr-6">
-                      <img
+                      <Image
                         src="/img/icon-steps.svg"
                         alt=""
                         className="absolute top-[-5px] left-[-12px] w-[24px] md:top-[-12px] md:left-[-5px]"
@@ -233,7 +237,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
                       </p>
                     </div>
                     <div className="relative flex-shrink flex-grow basis-full border-l border-[#F5CBCC] pl-8 pb-12 md:border-l-0 md:border-t md:pl-0 md:pt-12 md:pr-6">
-                      <img
+                      <Image
                         src="/img/icon-steps.svg"
                         alt=""
                         className="absolute top-[-5px] left-[-12px] w-[24px] md:top-[-12px] md:left-[-5px]"
@@ -251,7 +255,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
                       </p>
                     </div>
                     <div className="relative flex-shrink flex-grow basis-full pl-8 pb-12 md:pl-0 md:pt-12 md:pr-6">
-                      <img
+                      <Image
                         src="/img/icon-steps.svg"
                         alt=""
                         className="absolute top-[-5px] left-[-12px] w-[24px] md:top-[-12px] md:left-[-5px]"
@@ -368,7 +372,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
               <div className="flex-shrink">
                 <div className="align-center flex flex flex-col justify-center lg:flex-row">
                   <div className="relative flex-shrink flex-grow self-center lg:w-1/2">
-                    <img src="/img/testimonial.png" alt="" />
+                    <Image src="/img/testimonial.png" alt="" />
                     <div className="absolute inset-x-0 bottom-[5em] text-center">
                       <div className="font-black text-purple">Ngân Huỳnh</div>
                       <div className="text-xs text-[#6C6C6C] lg:text-sm">

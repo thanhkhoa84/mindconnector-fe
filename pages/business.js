@@ -327,6 +327,13 @@ const Business = ({ questions, logoslist }) => {
 
 export default Business;
 
+// export async function getStaticPaths() {
+//   return {
+//     paths: ["/business"],
+//     fallback: true,
+//   };
+// }
+
 export async function getStaticProps() {
   /** TODO: get real QaA from backend */
   const logoslist = ["1", "2", "3", "4", "5"];
