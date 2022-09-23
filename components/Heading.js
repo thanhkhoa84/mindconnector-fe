@@ -12,9 +12,10 @@ const SectionHeading = ({ align, children }) => {
 const SectionSubHeading = ({ align, children }) => {
   return (
     <h2
-      className={`my-0 mx-auto text-base font-bold leading-[1] text-gray dark:text-white ${
-        align ? "text-center" : ""
-      }`}
+      className={`
+        my-0 mx-auto text-base font-bold leading-[1] text-gray dark:text-white 
+        ${align ? "text-center" : ""}
+      `}
     >
       {children}
     </h2>

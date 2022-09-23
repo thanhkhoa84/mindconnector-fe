@@ -124,7 +124,7 @@ const NavBar = () => {
     <ul
       className="relative z-10 m-0 h-full w-full flex-col items-center items-center justify-center
       p-0 font-bold md:space-x-2 
-      lg:mr-2 lg:block lg:flex lg:flex-row lg:space-x-3 lg:bg-transparent xl:space-x-4"
+      lg:mr-2 lg:block lg:flex lg:flex-row lg:space-x-3 lg:bg-transparent xl:space-x-8"
     >
       {navlinks.map((link, index) => {
         return <NavItem link={link} index={index} key={index} />;

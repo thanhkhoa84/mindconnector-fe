@@ -1,9 +1,10 @@
 import React, { useState, createContext, useContext } from "react";
 import RegisterModal from "./RegisterModal";
-import UpdateModal from "./UpdateModal";
+import BusinessVideoModal from "./BusinessVideoModal";
 
 export const MODAL_TYPES = {
   REGISTER_MODAL: "REGISTER_MODAL",
+  BUSINESS_VIDEO_MODAL: "BUSINESS_VIDEO_MODAL",
   // DELETE_MODAL: "DELETE_MODAL",
   // UPDATE_MODAL: "UPDATE_MODAL",
 };
@@ -11,7 +12,7 @@ export const MODAL_TYPES = {
 const MODAL_COMPONENTS = {
   [MODAL_TYPES.REGISTER_MODAL]: RegisterModal,
   // [MODAL_TYPES.DELETE_MODAL]: DeleteModal,
-  [MODAL_TYPES.UPDATE_MODAL]: UpdateModal,
+  [MODAL_TYPES.BUSINESS_VIDEO_MODAL]: BusinessVideoModal,
 };
 
 const initalState = {
