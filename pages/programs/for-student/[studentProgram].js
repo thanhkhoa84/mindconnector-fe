@@ -5,16 +5,16 @@ import dynamic from "next/dynamic";
 import Image from "next/future/image";
 import { useRouter } from "next/router";
 import YouTube from "react-youtube";
-import Container from "../../components/Container";
-import Seo from "../../components/SEO";
-import { BannerHeading, SectionSubHeading } from "../../components/Heading";
-import QandA from "../../components/QandA";
-import CourseCard from "../../components/common/courses/CourseCard";
+import Container from "../../../components/Container";
+import Seo from "../../../components/SEO";
+import { BannerHeading, SectionSubHeading } from "../../../components/Heading";
+import QandA from "../../../components/QandA";
+import CourseCard from "../../../components/common/courses/CourseCard";
 import {
   useGlobalModalContext,
   MODAL_TYPES,
-} from "../../components/common/modal/GlobalModal";
-import { Paths } from "../../data/global";
+} from "../../../components/common/modal/GlobalModal";
+import { Paths } from "../../../data/global";
 
 const seo = {
   metaTitle: "Mind Connector",
@@ -23,11 +23,11 @@ const seo = {
   // article: true,
 };
 
-const LogoList = dynamic(() => import("../../components/LogoList"), {
+const LogoList = dynamic(() => import("../../../components/LogoList"), {
   ssr: false,
 });
 
-const Decoration = dynamic(() => import("../../components/Decoration"), {
+const Decoration = dynamic(() => import("../../../components/Decoration"), {
   ssr: false,
 });
 
@@ -140,6 +140,8 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
                   <Image
                     src="/img/avatar.png"
                     alt="Avatar"
+                    width={200}
+                    height={200}
                     className="w-full object-cover transition-all hover:scale-[1.]"
                   />
                 </div>
@@ -153,6 +155,8 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
                   <Image
                     src="/img/avatar.png"
                     alt="Avatar"
+                    width={200}
+                    height={200}
                     className="w-full object-cover transition-all hover:scale-[1.]"
                   />
                 </div>
@@ -166,6 +170,8 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
                   <Image
                     src="/img/avatar.png"
                     alt="Avatar"
+                    width={200}
+                    height={200}
                     className="w-full object-cover transition-all hover:scale-[1.]"
                   />
                 </div>
@@ -185,6 +191,7 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
                         src="/img/star-rating-fill.svg"
                         alt=""
                         width={15}
+                        height={15}
                       />
                     </span>
                   </p>
@@ -225,6 +232,8 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
                       <Image
                         src="/img/icon-steps.svg"
                         alt=""
+                        width={24}
+                        height={24}
                         className="absolute top-[-5px] left-[-12px] w-[24px] md:top-[-12px] md:left-[-5px]"
                       />
                       <h4 className="mb-4 inline-block rounded-lg bg-purple p-3 py-1 text-sm font-bold text-white">
@@ -242,6 +251,8 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
                       <Image
                         src="/img/icon-steps.svg"
                         alt=""
+                        width={24}
+                        height={24}
                         className="absolute top-[-5px] left-[-12px] w-[24px] md:top-[-12px] md:left-[-5px]"
                       />
                       <h4 className="mb-4 inline-block rounded-lg bg-purple p-3 py-1 text-sm font-bold text-white">
@@ -260,6 +271,8 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
                       <Image
                         src="/img/icon-steps.svg"
                         alt=""
+                        width={24}
+                        height={24}
                         className="absolute top-[-5px] left-[-12px] w-[24px] md:top-[-12px] md:left-[-5px]"
                       />
                       <h4 className="mb-4 inline-block rounded-lg bg-purple p-3 py-1 text-sm font-bold text-white">
@@ -374,7 +387,12 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
               <div className="flex-shrink">
                 <div className="align-center flex flex flex-col justify-center lg:flex-row">
                   <div className="relative flex-shrink flex-grow self-center lg:w-1/2">
-                    <Image src="/img/testimonial.png" width={440} alt="" />
+                    <Image
+                      src="/img/testimonial.png"
+                      width={440}
+                      height={545}
+                      alt=""
+                    />
                     <div className="absolute inset-x-0 bottom-[5em] text-center">
                       <div className="font-black text-purple">Ngân Huỳnh</div>
                       <div className="text-xs text-[#6C6C6C] lg:text-sm">
@@ -451,9 +469,11 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
 };
 
 export async function getStaticPaths() {
-  let paths = Paths.programs.map((p) => {
-    return `/programs/${p}`;
+  let paths = Paths.programs.student.map((p) => {
+    return `/programs/for-student/${p}`;
   });
+
+  console.log(Paths.programs);
 
   return {
     paths,

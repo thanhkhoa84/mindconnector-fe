@@ -185,7 +185,7 @@ const MobileNavItem = ({ link, index }) => {
       router.events.off("routeChangeStart", handleRouteChange);
       router.events.off("hashChangeStart", handleRouteChange);
     };
-  }, [dropdown]);
+  }, [dropdown, router.events]);
 
   return (
     <li
