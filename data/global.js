@@ -79,7 +79,26 @@ export const Paths = {
     ],
   },
   courses: {
-    student: ["khoa-hoc-nghien-cuu-va-phan-tich"],
+    student: [
+      "khoa-hoc-nghien-cuu-va-phan-tich",
+      "theo-duoi-su-hoc-ca-doi",
+      "ky-nang-giao-tiep",
+      "ky-nang-lam-viec-nhom",
+      "ky-nang-tuong-tac",
+    ],
     business: ["khoa-hoc-nghien-cuu-va-phan-tich"],
   },
 };
+
+export const StudentCourses = [
+  {
+    title: "Khoá học nghiên cứu và phân tích",
+    currency: "USD$",
+    price: "84.99",
+    lessons: "4",
+    time: "3 hours",
+    feature: true,
+    rating: 1,
+    slug: "khoa-hoc-nghien-cuu-va-phan-tich",
+  },
+];

@@ -121,6 +121,8 @@ const CoursePost = ({ questions, logoslist, programInfo }) => {
                 <Image
                   src="/img/avatar.png"
                   alt="Avatar"
+                  width={200}
+                  height={200}
                   className="w-full object-cover transition-all hover:scale-[1.]"
                 />
               </div>
@@ -139,6 +141,7 @@ const CoursePost = ({ questions, logoslist, programInfo }) => {
                         src="/img/star-rating-fill.svg"
                         alt=""
                         width={15}
+                        height={15}
                       />
                     </span>
                   </p>

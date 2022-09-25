@@ -6,9 +6,8 @@ const LogoList = ({ backgroundColor, title, list }) => {
   return (
     <div
       className={`
-        ${
-          backgroundColor ? "bg-[" + backgroundColor + "]" : "bg-white/75 p-4"
-        }`}
+        p-4
+        ${backgroundColor ? "bg-[" + backgroundColor + "]" : "bg-white/75"}`}
     >
       <Container>
         <div className="flex flex-col">

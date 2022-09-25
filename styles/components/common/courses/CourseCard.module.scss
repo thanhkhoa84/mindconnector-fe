@@ -18,17 +18,11 @@
     background-size: cover;
     content: '';
     display: block;
-    width: 130px;
-    height: 130px;
     position: absolute;
-    bottom: -10px;
-    right: -10px;
-    @media(min-width: 475px) {
-      width: 55px;
-      height: 55px;
-      bottom: 0;
+    width: 55px;
+    height: 55px;
+    bottom: 0;
     right: 0;
-    }
   }
 }
 

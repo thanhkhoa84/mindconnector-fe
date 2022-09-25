@@ -10,6 +10,7 @@ import Seo from "../../../components/SEO";
 import { BannerHeading, SectionSubHeading } from "../../../components/Heading";
 import QandA from "../../../components/QandA";
 import CourseCard from "../../../components/common/courses/CourseCard";
+import ProgramCourseCard from "../../../components/common/courses/ProgramCourseCard";
 import {
   useGlobalModalContext,
   MODAL_TYPES,
@@ -313,8 +314,8 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
                   <li
                     key={index}
                     className={`
-                      relative my-0 mx-auto  max-w-[320px] overflow-hidden
-                      sm:max-w-[380px] md:mx-[1%] md:inline-block md:max-w-[18%] md:align-top
+                      relative my-0 mx-auto w-[300px] overflow-hidden md:mx-[1%] md:inline-block
+                      md:w-[18%] md:w-[190px] md:text-center md:align-top
                       ${index % 2 ? "text-right md:mt-8" : "md:mt-8"}
                       ${index == 0 ? "" : "mt-[2em] md:mt-0"}
                     `}
@@ -356,7 +357,7 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
                         ></div>
                       </div>
                       <div className="inline-block md:pt-[4em]">
-                        <CourseCard course={course} />
+                        <ProgramCourseCard course={course} />
                       </div>
                     </div>
                   </li>
@@ -473,10 +474,8 @@ export async function getStaticPaths() {
     return `/programs/for-student/${p}`;
   });
 
-  console.log(Paths.programs);
-
   return {
-    paths,
+    paths: paths,
     fallback: false,
   };
 }
@@ -516,41 +515,45 @@ export async function getStaticProps() {
       lessons: "4",
       time: "3 hours",
       feature: false,
+      slug: "/courses/for-student/khoa-hoc-nghien-cuu-va-phan-tich",
     },
     {
-      title: "Khoá học nghiên cứu và phân tích",
+      title: "Theo đuổi sự học cả đời ",
       currency: "USD$",
       price: "84.99",
       lessons: "4",
       time: "3 hours",
       feature: false,
+      slug: "/courses/for-student/theo-duoi-su-hoc-ca-doi",
     },
     {
-      title: "Khoá học nghiên cứu và phân tích",
+      title: "Kỹ năng giao tiếp",
       currency: "USD$",
       price: "84.99",
       lessons: "4",
       time: "3 hours",
       feature: false,
+      slug: "/courses/for-student/ky-nang-giao-tiep",
     },
     {
-      title: "Khoá học nghiên cứu và phân tích",
+      title: "Kỹ năng làm việc nhóm",
       currency: "USD$",
       price: "84.99",
       lessons: "4",
       time: "3 hours",
       feature: false,
+      slug: "/courses/for-student/ky-nang-lam-viec-nhom",
     },
     {
-      title: "Khoá học nghiên cứu và phân tích",
+      title: "Kỹ năng tương tác",
       currency: "USD$",
       price: "84.99",
       lessons: "4",
       time: "3 hours",
       feature: false,
+      slug: "/courses/for-student/ky-nang-tuong-tac",
     },
   ];
-
   return {
     props: {
       questions,

@@ -16,13 +16,14 @@ const CourseCard = ({ course }) => {
     time: "3 hours",
     feature: true,
     rating: 1,
+    slug: "/courses/for-student/khoa-hoc-nghien-cuu-va-phan-tich",
   };
-  let { title, currency, price, lessons, time, feature, rating } = info;
+  let { title, currency, price, lessons, time, feature, rating, slug } = info;
   let priceMain = price.split(".")[0];
   let fraction = price.split(".")[1];
   return (
     <div
-      className={`relative max-w-[180px] overflow-hidden rounded-[30px] border-[6px] border-orange-medium text-left sm:max-w-[180px] md:max-w-[200px]`}
+      className={`relative max-w-[180px] overflow-hidden rounded-[30px] border-[6px] border-orange-medium text-left md:max-w-[200px]`}
     >
       <div className={`overflow-hidden rounded-2xl  ${styles.courseCardImage}`}>
         <Image
@@ -33,9 +34,9 @@ const CourseCard = ({ course }) => {
           className="block w-full"
         />
       </div>
-      <Link href="/courses/khoa-hoc-nghien-cuu-va-phan-tich">
+      <Link href={slug}>
         <div
-          className={`after:bg-gradient-overlay absolute top-0 left-0 right-0 bottom-0 flex cursor-pointer flex-col justify-end px-5 pb-9 text-sm text-white after:content-none md:p-4 md:pb-8`}
+          className={`after:bg-gradient-overlay absolute top-0 left-0 right-0 bottom-0 flex cursor-pointer flex-col justify-end px-4 pb-4 text-sm text-white after:content-none md:p-4 md:pb-8`}
         >
           {feature && (
             <div className="overflow-hidden">
