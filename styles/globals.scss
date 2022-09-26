@@ -81,6 +81,7 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 summary::-webkit-details-marker { display: none }

@@ -41,7 +41,7 @@ const Student = ({ questions, logoslist }) => {
               Học hỏi <br className="hidden md:inline" />
               để thành công
             </BannerHeading>
-            <p className="text-center lg:text-left">
+            <p className="text-center md:text-left">
               Cùng Mind Connector xây dựng nền tảng vững chắc để thành công.
             </p>
           </Container>
@@ -128,6 +128,34 @@ const Student = ({ questions, logoslist }) => {
         <section>
           <Container>
             <QandA questions={questions} />
+          </Container>
+        </section>
+        <section className="pb-12">
+          <Container>
+            <div className="mt-8 mb-4 overflow-hidden rounded-3xl bg-[#941C50] text-white md:flex md:flex-row">
+              <header className="bg-[#B22F66] py-4 px-6">
+                <h3 className="text-[24px] font-black">Học thử miễn phí</h3>
+                <p className="mt-2 font-medium">
+                  Nhập email để thử trải nghiệm miễn phí các khoá học của Mind
+                  Connector.
+                </p>
+              </header>
+              <div className="items-center justify-between p-6 md:flex md:flex-col">
+                <form className="flex flex-col items-center gap-6 md:flex-row">
+                  <p className="w-full lg:w-[210px]">
+                    <input
+                      type="email"
+                      name="email_sub"
+                      className="h-[50px] w-full rounded-full p-4 lg:w-[210px]"
+                      placeholder="Email của bạn"
+                    />
+                  </p>
+                  <button className="btn-primary block w-full lg:min-w-[160px]">
+                    Đăng ký học ngay!
+                  </button>
+                </form>
+              </div>
+            </div>
           </Container>
         </section>
       </>

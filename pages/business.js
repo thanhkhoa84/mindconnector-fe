@@ -12,7 +12,6 @@ import {
   BannerHeading,
 } from "../components/Heading";
 import Teachers from "./../components/common/teachers/Teachers";
-import Courses from "../components/common/courses/Courses";
 import {
   useGlobalModalContext,
   MODAL_TYPES,
@@ -77,6 +76,26 @@ const TabPanels = () => {
     </ul>
   );
 };
+
+const BusinessCard = () => (
+  <div className="relative inline-flex h-[269px] w-[160px] overflow-hidden rounded-3xl border-4 border-gray-500">
+    <Image
+      src="/img/for-business-courses-article-card.png"
+      width={160}
+      height={269}
+      alt=""
+      className=""
+    />
+    <div className="absolute bottom-0 left-0 right-0 px-4 py-4 text-white">
+      <h4 className="mb-2 text-base font-black leading-tight">
+        Measure what customers want
+      </h4>
+      <Link href="">
+        <span className="link-arrow">Xem thêm</span>
+      </Link>
+    </div>
+  </div>
+);
 
 const Business = ({ questions, logoslist }) => {
   const { showModal } = useGlobalModalContext();
@@ -209,108 +228,21 @@ const Business = ({ questions, logoslist }) => {
             <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
               Check out the latest insights from our experts
             </h1>
-            <ul className="mt-8 flex flex-wrap justify-center gap-14 lg:justify-evenly lg:gap-6">
-              <li className="relative inline-flex h-[269px] w-[160px] flex-shrink-0 overflow-hidden rounded-3xl border-4 border-gray-500">
-                <Image
-                  src="/img/for-business-courses-article-card.png"
-                  width={160}
-                  height={269}
-                  alt=""
-                  className=""
-                />
-                <div className="absolute bottom-0 left-0 right-0 px-4 py-4 text-white">
-                  <h4 className="mb-2 text-base font-black leading-tight">
-                    Measure what customers want
-                  </h4>
-                  <Link href="">
-                    <span className="link-arrow">Xem thêm</span>
-                  </Link>
-                </div>
+            <ul className="mt-12 -mb-8 flex flex-nowrap items-center justify-start gap-4 overflow-hidden overflow-x-auto  pb-8 lg:justify-between lg:gap-6">
+              <li>
+                <BusinessCard />
               </li>
-              <li className="relative inline-flex h-[269px] w-[160px] flex-shrink-0 overflow-hidden rounded-3xl border-4 border-gray-500">
-                <Image
-                  src="/img/for-business-courses-article-card.png"
-                  width={160}
-                  height={269}
-                  alt=""
-                  className=""
-                />
-                <div className="absolute bottom-0 left-0 right-0 px-4 py-4 text-white">
-                  <h4 className="mb-2 text-base font-black leading-tight">
-                    Measure what customers want
-                  </h4>
-                  <Link href="">
-                    <span className="link-arrow">Xem thêm</span>
-                  </Link>
-                </div>
+              <li>
+                <BusinessCard />
               </li>
-              <li className="relative inline-flex h-[269px] w-[160px] flex-shrink-0 overflow-hidden rounded-3xl border-4 border-gray-500">
-                <Image
-                  src="/img/for-business-courses-article-card.png"
-                  width={160}
-                  height={269}
-                  alt=""
-                  className=""
-                />
-                <div className="absolute bottom-0 left-0 right-0 px-4 py-4 text-white">
-                  <h4 className="mb-2 text-base font-black leading-tight">
-                    Measure what customers want
-                  </h4>
-                  <Link href="">
-                    <span className="link-arrow">Xem thêm</span>
-                  </Link>
-                </div>
+              <li>
+                <BusinessCard />
               </li>
-              <li className="relative inline-flex h-[269px] w-[160px] flex-shrink-0 overflow-hidden rounded-3xl border-4 border-gray-500">
-                <Image
-                  src="/img/for-business-courses-article-card.png"
-                  width={160}
-                  height={269}
-                  alt=""
-                  className=""
-                />
-                <div className="absolute bottom-0 left-0 right-0 px-4 py-4 text-white">
-                  <h4 className="mb-2 text-base font-black leading-tight">
-                    Measure what customers want
-                  </h4>
-                  <Link href="">
-                    <span className="link-arrow">Xem thêm</span>
-                  </Link>
-                </div>
+              <li>
+                <BusinessCard />
               </li>
-              <li className="relative inline-flex h-[269px] w-[160px] flex-shrink-0 overflow-hidden rounded-3xl border-4 border-gray-500">
-                <Image
-                  src="/img/for-business-courses-article-card.png"
-                  width={160}
-                  height={269}
-                  alt=""
-                  className=""
-                />
-                <div className="absolute bottom-0 left-0 right-0 px-4 py-4 text-white">
-                  <h4 className="mb-2 text-base font-black leading-tight">
-                    Measure what customers want
-                  </h4>
-                  <Link href="">
-                    <span className="link-arrow">Xem thêm</span>
-                  </Link>
-                </div>
-              </li>
-              <li className="relative inline-flex h-[269px] w-[160px] flex-shrink-0 overflow-hidden rounded-3xl border-4 border-gray-500">
-                <Image
-                  src="/img/for-business-courses-article-card.png"
-                  width={160}
-                  height={269}
-                  alt=""
-                  className=""
-                />
-                <div className="absolute bottom-0 left-0 right-0 px-4 py-4 text-white">
-                  <h4 className="mb-2 text-base font-black leading-tight">
-                    Measure what customers want
-                  </h4>
-                  <Link href="">
-                    <span className="link-arrow">Xem thêm</span>
-                  </Link>
-                </div>
+              <li>
+                <BusinessCard />
               </li>
             </ul>
           </Container>
@@ -326,13 +258,6 @@ const Business = ({ questions, logoslist }) => {
 };
 
 export default Business;
-
-// export async function getStaticPaths() {
-//   return {
-//     paths: ["/business"],
-//     fallback: true,
-//   };
-// }
 
 export async function getStaticProps() {
   /** TODO: get real QaA from backend */

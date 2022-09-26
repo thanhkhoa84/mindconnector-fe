@@ -14,35 +14,35 @@ let socialImages = {
 
 const TeacherCard = ({ name, imgUrl, title, socials }) => {
   return (
-    <div className={`${styles.teacherCard}`}>
+    <div className={`mt-12 mb-8 ${styles.teacherCard}`}>
       <div className={`relative`}>
         <Image
-          src="/img/bg-teacher-card.svg"
+          src="/img/bg-teacher-card-dt.svg"
           alt=""
           width={244}
           height={444}
-          className={`dark:hidden ${styles.teacherCardBg}`}
+          className={`hidden md:block ${styles.teacherCardBg}`}
         />
         <Image
-          src="/img/bg-teacher-dark.svg"
+          src="/img/bg-teacher-card-mb.svg"
           alt=""
           width={244}
           height={444}
-          className={`hidden dark:block ${styles.teacherCardBg}`}
+          className={`md:hidden ${styles.teacherCardBg}`}
         />
         <div className={styles.teacherImage}>
           <Image src={imgUrl} alt="" width={445} height={625} />
         </div>
       </div>
-      <div className="absolute top-[67.9758308157%] w-full px-4 text-center">
-        <h3 className="m-0 mt-1 text-base font-black text-purple md:text-sm">
+      <div className="absolute top-[66%] flex w-full flex-col px-4 text-center md:top-[71%]">
+        <h3 className="m-0 text-sm font-black leading-none text-purple md:text-base">
           {name}
         </h3>
-        <p className="min-h-[calc(2*1.25*1em)] px-[0.3em] text-base leading-5 xs:text-xs lg:text-sm">
+        <p className="min-h-[calc(2*1.25*1em)] px-[0.3em] text-sm leading-none xs:text-xs md:text-base lg:text-sm">
           {title}
         </p>
         {socials && (
-          <div className={`mt-2 flex flex-row justify-center gap-2`}>
+          <div className={`inline-flex flex-row justify-center gap-2 lg:mt-2`}>
             {socials.map((s, i) => {
               return (
                 <a
@@ -109,7 +109,7 @@ const TeacherList = () => {
     },
   ];
   return (
-    <div className="mt-20 text-center">
+    <div className="-mx-4 flex flex-col flex-wrap items-center justify-around pt-8 text-center xs:flex-row md:mx-0 lg:justify-between lg:justify-evenly">
       {allTeachers.map((teacher, index) => {
         return <TeacherCard {...teacher} key={teacher.name} />;
       })}
