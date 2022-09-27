@@ -135,7 +135,7 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
               Thành công trong học tập
             </h1>
             <p className="mt-4">“Khởi đầu vững chắc, tương lai khởi sắc”</p>
-            <div className="mt-8 flex flex-row flex-wrap justify-between gap-2 sm:justify-center md:gap-6">
+            <div className="mt-8 flex flex-row flex-wrap justify-center gap-2 md:gap-6">
               <div>
                 <div className="inline-block w-[90px] overflow-hidden rounded-full md:w-[100px]">
                   <Image
