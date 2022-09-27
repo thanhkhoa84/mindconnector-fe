@@ -211,7 +211,6 @@ const HeroBanner = ({ slides, ...props }) => {
                     {props.headline} {index}
                   </h2>
                   <p className="leading-6 line-clamp-3">{props.body}</p>
-                  <p className={`btn-primary mt-4 inline-block`}>Xem thêm</p>
                 </div>
               </div>
             </div>
