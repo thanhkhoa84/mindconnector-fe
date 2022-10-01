@@ -5,7 +5,7 @@ import axios from "axios";
 const RegisterModal = () => {
   const { hideModal, store } = useGlobalModalContext();
   const { modalProps } = store || {};
-  const { title } = modalProps || {};
+  const { title, course } = modalProps || {};
   let ref = useRef(null);
 
   const handleClickOutside = (event) => {
@@ -28,11 +28,8 @@ const RegisterModal = () => {
     let data = {
       name: e.target.name.value,
       phone: e.target.phone.value,
-      dob: e.target.dob.value,
-      course: {
-        title,
-        price: "",
-      },
+      email: e.target.email.value,
+      course,
     };
     console.log(data);
     const config = {
@@ -80,6 +77,19 @@ const RegisterModal = () => {
             />
           </div>
           <div className="mt-4">
+            <label className="block hidden" htmlFor="dob" name="dob">
+              Ngày sinh
+            </label>
+            <input
+              type="email"
+              required
+              className="h-[50px] w-full rounded-full p-4"
+              id="email"
+              placeholder="Email"
+              name="email"
+            />
+          </div>
+          <div className="mt-4">
             <label className="block hidden" htmlFor="name">
               Số điện thoại
             </label>
@@ -92,18 +102,7 @@ const RegisterModal = () => {
               name="phone"
             />
           </div>
-          <div className="mt-4">
-            <label className="block hidden" htmlFor="dob" name="dob">
-              Ngày sinh
-            </label>
-            <input
-              type="date"
-              required
-              className="h-[50px] w-full rounded-full p-4"
-              id="dob"
-              placeholder="dd-mm-yyyy"
-            />
-          </div>
+
           <div className="mt-4">
             <input
               type="checkbox"

@@ -8,13 +8,11 @@ import YouTube from "react-youtube";
 import Container from "../../components/Container";
 import Seo from "../../components/SEO";
 import QandA from "../../components/QandA";
-import CourseCard from "../../components/common/courses/CourseCard";
 import ProgramCourseCard from "../../components/common/courses/ProgramCourseCard";
 import {
   useGlobalModalContext,
   MODAL_TYPES,
 } from "../../components/common/modal/GlobalModal";
-import { Paths } from "../../data/global";
 
 const seo = {
   metaTitle: "Mind Connector",
@@ -22,10 +20,6 @@ const seo = {
   // shareImage: article.attributes.image,
   // article: true,
 };
-
-const LogoList = dynamic(() => import("../../components/LogoList"), {
-  ssr: false,
-});
 
 const Decoration = dynamic(() => import("../../components/Decoration"), {
   ssr: false,
@@ -101,6 +95,7 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
   const createModal = () => {
     showModal(MODAL_TYPES.REGISTER_MODAL, {
       title: "Điền thông tin liên lạc, Mind Connector sẽ liên hệ bạn sau",
+      course: "Sẵn sàng khởi nghiệp kinh doanh",
       confirmBtn: "Save",
     });
   };
@@ -115,8 +110,6 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
   const _onReady = (event) => {
     event.target.pauseVideo();
   };
-
-  console.log(courses[0].slug.split("/")[2]);
 
   return (
     <>
@@ -204,7 +197,7 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
                   <p className="text-[14px]">Học viên</p>
                 </div>
                 <div className="text-black">
-                  <p className="text-[20px] font-bold">60</p>
+                  <p className="text-[20px] font-bold">41</p>
                   <p className="text-[14px]">Giờ học</p>
                 </div>
               </div>
@@ -380,11 +373,11 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
                   <b>Ngiên Cứu và Phân Tích</b>. Cùng lắng nghe những chia sẻ từ
                   họ nhé!
                 </p>
-                <p className="mt-4 hidden md:block">
+                {/* <p className="mt-4 hidden md:block">
                   <Link href="/">
                     <span className="link-arrow">Xem tất cả chia sẻ</span>
                   </Link>
-                </p>
+                </p> */}
               </div>
               <div className="flex-shrink">
                 <div className="align-center flex flex flex-col justify-center lg:flex-row">
@@ -395,12 +388,17 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
                       height={545}
                       alt=""
                     />
-                    <div className="absolute inset-x-0 bottom-[5em] text-center">
-                      <div className="font-black text-purple">Ngân Huỳnh</div>
+                    <div className="absolute inset-x-0 bottom-[5em] mx-auto max-w-[60%] text-center">
+                      <div className="font-black text-purple">
+                        Chị Phạm Thị Hải An
+                      </div>
                       <div className="text-xs text-[#6C6C6C] lg:text-sm">
-                        <p>Học viên Chương trình nâng cao</p>
+                        <p>
+                          Founder nhãn hàng Gac Lyco – các sản phẩm dinh dưỡng
+                          tiền Vitamin C từ Gấc
+                        </p>
                         <p className="font-black">
-                          “Thành công trong khởi sự kinh doanh”
+                          “Sẵn sàng khởi nghiệp kinh doanh”
                         </p>
                       </div>
                     </div>
@@ -412,13 +410,21 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
                       after:absolute after:-bottom-[0.7em] after:right-[0.5em] after:text-[60px] after:font-black after:leading-none after:text-purple after:content-['"']`}
                     >
                       <p>
-                        Mauris ut dapibus lacus, sodales tempus ante. Donec
-                        faucibus sem vestibulum, gravida quam at, ultricies
-                        tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit
-                        amet, consectetur adipiscing elit. Sed accumsan erat
-                        quam, ac iaculis neque tempus non. Cras mattis auctor
-                        gravida. Donec rutrum lobortis est, et faucibus arcu
-                        sagittis eu.
+                        Tôi có một khoảng thời gian được trải nghiệm thật sự cảm
+                        giác lăn xả vào dự án khi tham gia khóa đào tạo này.
+                        Trước đây tôi cũng biết được rằng khởi nghiệp không hề
+                        đơn giản, từ lúc ấp ủ ý tưởng đến lúc quyết tâm thực thi
+                        tôi rất lo lắng vì bản thân còn loay hoay, nhiều vấn đề
+                        chưa sáng tỏ. Khi tôi lên kế hoạch được 80% thì gặp được
+                        chương trình này. Phải nói rằng những thông tin trong
+                        khóa học rất thiết thực, các giảng viên là những người
+                        đã làm start up, đang thành công theo mô hình tự thân,
+                        tôi thấy vô cùng phù hợp với hoàn cảnh hiện tại của
+                        mình. Ban đầu tôi hơi lấn cấn về chi phí khóa học, tuy
+                        nhiên khi vào học thì không phải chỉ được học và tôi
+                        được các chuyên gia tư vấn thực sự trên kế hoạch kinh
+                        doanh của chính tôi. Học xong, tôi thấy tự tin hơn và
+                        biết rõ mình muốn gì hơn trong tương lai.
                       </p>
                     </blockquote>
                   </div>
