@@ -90,12 +90,13 @@ const TabPanels = () => {
   );
 };
 
-const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
+const ProgramPost = ({ questions, courses }) => {
   const { showModal } = useGlobalModalContext();
   const createModal = () => {
     showModal(MODAL_TYPES.REGISTER_MODAL, {
       title: "Điền thông tin liên lạc, Mind Connector sẽ liên hệ bạn sau",
-      course: "Sẵn sàng khởi nghiệp kinh doanh",
+      program: "Sẵn sàng khởi nghiệp kinh doanh",
+      course: "",
       confirmBtn: "Save",
     });
   };
@@ -480,75 +481,56 @@ export async function getStaticProps() {
   /** TODO: get real QaA from backend */
   const questions = [
     {
-      question: "Làm thế nào để tôi có thể trở thành sinh viên ưu tú?",
+      question:
+        "Tôi đang có một số vốn để khởi nghiệp, tôi không biết nên lựa chọn sản phẩm nào để kinh doanh. Vậy tôi phải bắt đầu từ đâu? ",
       answer:
-        "Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.",
+        'Sản phẩm đóng vai trò vô cùng quan trọng khi bạn bắt tay khởi nghiệp. Một sản phẩm chất lượng, được nhiều người mua sẽ là chìa khoá thành công của bạn. Hiểu được điều đó, với chương trình học “Sẵn sàng khởi nghiệp kinh doanh”, Mind Connector thiết kế các môn học như: “Sản phẩm", “Product Concept & Business Concept” cùng nhiều môn học có liên quan để bạn có thể xác định sản phẩm kinh doanh hợp lý, từ đó có thể chạm đến thành công trong hành trình khởi nghiệp của mình.',
     },
     {
-      question: "Tôi cần chuẩn bị hành trang gì cho một kỳ thực tập hoàn hảo?",
+      question: "Làm thế nào để khởi nghiệp không bị lỗ vốn?",
       answer:
-        "Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.",
+        'Lỗ vốn chính là vấn đề e ngại, khiến mọi người không dám bắt đầu con đường khởi nghiệp của mình. Tuy nhiên, vẫn có giải pháp để có thể phòng tránh việc lỗ vốn, đó chính là trang bị cho mình những kiến thức nền tảng vững chắc, cũng như nhận được sự tư vấn của những người có kinh nghiệm. Chương trình học “Sẵn sàng khởi nghiệp kinh doanh" tạo ra khoá học với tư duy và kiến thức nền tảng để mỗi cá nhân tự xác lập nguyên tắc riêng, từ đó tự tìm ra đường lối thành công trong ngắn hạn và dài hạn cho chính mình, cũng như phòng tránh những rủi ro có thể xảy ra. ',
     },
     {
       question:
-        "Liệu tôi có thể khởi nghiệp ngay từ khi còn ngồi trên ghế nhà trường?",
+        "Tôi nên tìm kiếm người đồng hành? Hay nên khởi nghiệp một mình?",
       answer:
-        "Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.",
-    },
-    {
-      question:
-        "Doanh nghiệp tôi muốn đào tạo một đội ngũ nhân viên chất lượng, Mind Connector có chương trình nào phù hợp hay không?",
-      answer:
-        "Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.",
+        'Mỗi hướng đi đều có những cơ hội và rủi ro khác nhau. Khi khởi nghiệp một mình bạn sẽ có tự do, khả năng quyết định độc lập, tránh những mâu thuẫn với bạn đồng hành. Tuy nhiên, bạn sẽ phải một mình giải quyết khối lượng công việc lớn, áp lực dồn lên bạn cũng nhiều hơn. Mặt khác, có bạn đồng hành sẽ giúp san sẻ rủi ro tài chính, bạn sẽ có cái nhìn khách quan hơn, tiềm năng công ty sẽ vô cùng lớn nếu bạn tìm được bạn đồng hành có năng lực. Để có thể đạt được điều đó, bạn nên chọn bạn đồng hành có chung chí hướng để tránh những mâu thuẫn đáng tiếc có thể xảy ra. Tham gia chương trình học “Sẵn sàng khởi nghiệp kinh doanh" sẽ giúp bạn trang bị những kiến thức nền tảng, để dù bạn khởi nghiệp một mình hay với một nhóm, bạn vẫn tìm được đường lối thành công. ',
     },
   ];
   const logoslist = ["1", "2", "3", "4"];
   const courses = [
     {
-      title: "Sẵn sàng khởi nghiệp kinh doanh",
+      title: "Lên kế hoạch kinh doanh",
       subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
-      currency: "USD$",
-      price: "84.99",
-      lessons: "4",
-      time: "41 hours",
+      lessons: "6",
+      time: "16 hours",
       feature: false,
-      slug: "/courses/san-sang-khoi-nghiep-kinh-doanh",
+      slug: "/courses/len-ke-hoach-kinh-doanh",
     },
     {
-      title: "Theo đuổi sự học cả đời ",
-      currency: "USD$",
-      price: "84.99",
-      lessons: "4",
-      time: "3 hours",
+      title: "Hoạch định kế hoạch kinhd doanh",
+      subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
+      lessons: "6",
+      time: "14 hours",
       feature: false,
-      slug: "/courses/theo-duoi-su-hoc-ca-doi",
+      slug: "/courses/hoach-dinh-ke-hoach-kinh-doanh",
     },
     {
-      title: "Kỹ năng giao tiếp",
-      currency: "USD$",
-      price: "84.99",
-      lessons: "4",
-      time: "3 hours",
+      title: "Quản lý hệ thống kinh doanh",
+      subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
+      lessons: "5",
+      time: "10 hours",
       feature: false,
-      slug: "/courses/ky-nang-giao-tiep",
+      slug: "/courses/quan-ly-he-thong-kinh-doanh",
     },
     {
-      title: "Kỹ năng làm việc nhóm",
-      currency: "USD$",
-      price: "84.99",
-      lessons: "4",
-      time: "3 hours",
+      title: "Thuyết trình cuối khóa",
+      subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
+      lessons: "1",
+      time: "1 hours",
       feature: false,
-      slug: "/courses/ky-nang-lam-viec-nhom",
-    },
-    {
-      title: "Kỹ năng tương tác",
-      currency: "USD$",
-      price: "84.99",
-      lessons: "4",
-      time: "3 hours",
-      feature: false,
-      slug: "/courses/ky-nang-tuong-tac",
+      slug: "/courses/thuyet-trinh-cuoi-khoa",
     },
   ];
   return {

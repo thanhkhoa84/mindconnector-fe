@@ -5,13 +5,10 @@ import BusinessVideoModal from "./BusinessVideoModal";
 export const MODAL_TYPES = {
   REGISTER_MODAL: "REGISTER_MODAL",
   BUSINESS_VIDEO_MODAL: "BUSINESS_VIDEO_MODAL",
-  // DELETE_MODAL: "DELETE_MODAL",
-  // UPDATE_MODAL: "UPDATE_MODAL",
 };
 
 const MODAL_COMPONENTS = {
   [MODAL_TYPES.REGISTER_MODAL]: RegisterModal,
-  // [MODAL_TYPES.DELETE_MODAL]: DeleteModal,
   [MODAL_TYPES.BUSINESS_VIDEO_MODAL]: BusinessVideoModal,
 };
 

@@ -5,7 +5,7 @@ import axios from "axios";
 const RegisterModal = () => {
   const { hideModal, store } = useGlobalModalContext();
   const { modalProps } = store || {};
-  const { title, course } = modalProps || {};
+  const { title, program, course } = modalProps || {};
   let ref = useRef(null);
 
   const handleClickOutside = (event) => {
@@ -30,15 +30,16 @@ const RegisterModal = () => {
       phone: e.target.phone.value,
       email: e.target.email.value,
       course,
+      program,
     };
-    console.log(data);
     const config = {
-      method: "get",
+      method: "post",
       url: "/api/register",
       responseType: "json",
       data,
     };
     let response = await axios(config);
+    console.log(data);
     if (response.status === 200) {
       hideModal();
     }
