@@ -13,9 +13,12 @@ const ValueSection = () => {
   return (
     <section className="bg-[#FFF7ED] pt-[4em]">
       <Container>
-        <SectionHeading align="center">
-          Cùng Mind Connector tạo ra những giá trị đích thực
-        </SectionHeading>
+        <h1
+          className={`mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white md:max-w-[80%]`}
+        >
+          Mind Connector cung cấp các chương trình đào tạo cho sinh viên và
+          doanh nghiệp
+        </h1>
         <div
           className={`mt-[3em] mb-[4em] flex flex-col justify-between gap-6 self-stretch pb-[1em] xs:flex-row xs:gap-3 lg:items-center lg:gap-4 lg:self-auto`}
         >
@@ -47,7 +50,7 @@ const ValueSection = () => {
               </p>
               <Link href="student">
                 <span className="link-arrow mt-4 font-black leading-none lg:mt-12">
-                  Discover more
+                  Khám phá
                 </span>
               </Link>
             </div>
@@ -89,7 +92,7 @@ const ValueSection = () => {
               </p>
               <Link href="business">
                 <span className="link-arrow mt-4 font-black leading-none lg:mt-12">
-                  Discover more
+                  Khám phá
                 </span>
               </Link>
             </div>
@@ -108,7 +111,7 @@ const ValueSection = () => {
 
       <LogoList
         backgroundColor="#FFFDFA"
-        title="Được tin chọn bởi nhiều trường đại học và doanh nghiệp"
+        title="Mind Connector đang là đối tác của các trường Đại học và Doanh nghiệp"
         list={list}
       />
     </section>

@@ -2,16 +2,16 @@ import Head from "next/head";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import Image from "next/future/image";
-import Container from "../../../components/Container";
-import Seo from "../../../components/SEO";
-import { BannerHeading, SectionSubHeading } from "../../../components/Heading";
-import { QandAProgram } from "../../../components/QandA";
+import Container from "../../components/Container";
+import Seo from "../../components/SEO";
+import { BannerHeading, SectionSubHeading } from "../../components/Heading";
+import { QandAProgram } from "../../components/QandA";
 import { useEffect, useState, useRef } from "react";
 import {
   useGlobalModalContext,
   MODAL_TYPES,
-} from "../../../components/common/modal/GlobalModal";
-import { Paths } from "../../../data/global";
+} from "../../components/common/modal/GlobalModal";
+import { Paths } from "../../data/global";
 
 const seo = {
   metaTitle: "Mind Connector",
@@ -20,7 +20,7 @@ const seo = {
   // article: true,
 };
 
-const LogoList = dynamic(() => import("../../../components/LogoList"), {
+const LogoList = dynamic(() => import("../../components/LogoList"), {
   ssr: false,
 });
 
@@ -406,8 +406,8 @@ const CoursePost = ({ questions, logoslist, programInfo }) => {
 };
 
 export async function getStaticPaths() {
-  let paths = Paths.courses.student.map((p) => {
-    return `/courses/for-student/${p}`;
+  let paths = Paths.courses.map((p) => {
+    return `/courses/${p}`;
   });
   return {
     paths,

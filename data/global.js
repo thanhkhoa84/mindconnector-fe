@@ -5,15 +5,15 @@ export const Navigation = [
     submenus: [
       {
         name: "Thành Công Trong Học Tập",
-        path: "/programs/for-student/thanh-cong-trong-hoc-tap",
+        path: "/programs/thanh-cong-trong-hoc-tap",
       },
       {
         name: "Thành Công Trong Ứng Tuyển",
-        path: "/programs/for-student/thanh-cong-trong-ung-tuyen",
+        path: "/programs/thanh-cong-trong-ung-tuyen",
       },
       {
         name: "Thành Công Trong Khởi Sự Kinh Doanh",
-        path: "/programs/for-student/thanh-cong-trong-khoi-su-kinh-doanh",
+        path: "/programs/thanh-cong-trong-khoi-su-kinh-doanh",
       },
       {
         name: "Experience Tour",
@@ -66,28 +66,18 @@ export const Navigation = [
 ];
 
 export const Paths = {
-  programs: {
-    student: [
-      "thanh-cong-trong-hoc-tap",
-      "thanh-cong-trong-ung-tuyen",
-      "thanh-cong-trong-khoi-su-kinh-doanh",
-    ],
-    business: [
-      "thanh-cong-trong-hoc-tap",
-      "thanh-cong-trong-ung-tuyen",
-      "thanh-cong-trong-khoi-su-kinh-doanh",
-    ],
-  },
-  courses: {
-    student: [
-      "khoa-hoc-nghien-cuu-va-phan-tich",
-      "theo-duoi-su-hoc-ca-doi",
-      "ky-nang-giao-tiep",
-      "ky-nang-lam-viec-nhom",
-      "ky-nang-tuong-tac",
-    ],
-    business: ["khoa-hoc-nghien-cuu-va-phan-tich"],
-  },
+  programs: [
+    "thanh-cong-trong-hoc-tap",
+    "thanh-cong-trong-ung-tuyen",
+    "thanh-cong-trong-khoi-su-kinh-doanh",
+  ],
+  courses: [
+    "khoa-hoc-nghien-cuu-va-phan-tich",
+    "theo-duoi-su-hoc-ca-doi",
+    "ky-nang-giao-tiep",
+    "ky-nang-lam-viec-nhom",
+    "ky-nang-tuong-tac",
+  ],
 };
 
 export const StudentCourses = [

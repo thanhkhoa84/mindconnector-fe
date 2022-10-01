@@ -5,17 +5,16 @@ import dynamic from "next/dynamic";
 import Image from "next/future/image";
 import { useRouter } from "next/router";
 import YouTube from "react-youtube";
-import Container from "../../../components/Container";
-import Seo from "../../../components/SEO";
-import { BannerHeading, SectionSubHeading } from "../../../components/Heading";
-import QandA from "../../../components/QandA";
-import CourseCard from "../../../components/common/courses/CourseCard";
-import ProgramCourseCard from "../../../components/common/courses/ProgramCourseCard";
+import Container from "../../components/Container";
+import Seo from "../../components/SEO";
+import QandA from "../../components/QandA";
+import CourseCard from "../../components/common/courses/CourseCard";
+import ProgramCourseCard from "../../components/common/courses/ProgramCourseCard";
 import {
   useGlobalModalContext,
   MODAL_TYPES,
-} from "../../../components/common/modal/GlobalModal";
-import { Paths } from "../../../data/global";
+} from "../../components/common/modal/GlobalModal";
+import { Paths } from "../../data/global";
 
 const seo = {
   metaTitle: "Mind Connector",
@@ -24,11 +23,11 @@ const seo = {
   // article: true,
 };
 
-const LogoList = dynamic(() => import("../../../components/LogoList"), {
+const LogoList = dynamic(() => import("../../components/LogoList"), {
   ssr: false,
 });
 
-const Decoration = dynamic(() => import("../../../components/Decoration"), {
+const Decoration = dynamic(() => import("../../components/Decoration"), {
   ssr: false,
 });
 
@@ -470,8 +469,8 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
 };
 
 export async function getStaticPaths() {
-  let paths = Paths.programs.student.map((p) => {
-    return `/programs/for-student/${p}`;
+  let paths = Paths.programs.map((p) => {
+    return `/programs/${p}`;
   });
 
   return {
@@ -515,7 +514,7 @@ export async function getStaticProps() {
       lessons: "4",
       time: "3 hours",
       feature: false,
-      slug: "/courses/for-student/khoa-hoc-nghien-cuu-va-phan-tich",
+      slug: "/courses/khoa-hoc-nghien-cuu-va-phan-tich",
     },
     {
       title: "Theo đuổi sự học cả đời ",
@@ -524,7 +523,7 @@ export async function getStaticProps() {
       lessons: "4",
       time: "3 hours",
       feature: false,
-      slug: "/courses/for-student/theo-duoi-su-hoc-ca-doi",
+      slug: "/courses/theo-duoi-su-hoc-ca-doi",
     },
     {
       title: "Kỹ năng giao tiếp",
@@ -533,7 +532,7 @@ export async function getStaticProps() {
       lessons: "4",
       time: "3 hours",
       feature: false,
-      slug: "/courses/for-student/ky-nang-giao-tiep",
+      slug: "/courses/ky-nang-giao-tiep",
     },
     {
       title: "Kỹ năng làm việc nhóm",
@@ -542,7 +541,7 @@ export async function getStaticProps() {
       lessons: "4",
       time: "3 hours",
       feature: false,
-      slug: "/courses/for-student/ky-nang-lam-viec-nhom",
+      slug: "/courses/ky-nang-lam-viec-nhom",
     },
     {
       title: "Kỹ năng tương tác",
@@ -551,7 +550,7 @@ export async function getStaticProps() {
       lessons: "4",
       time: "3 hours",
       feature: false,
-      slug: "/courses/for-student/ky-nang-tuong-tac",
+      slug: "/courses/ky-nang-tuong-tac",
     },
   ];
   return {
