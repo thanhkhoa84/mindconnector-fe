@@ -470,17 +470,6 @@ const ProgramPost = ({ questions, logoslist, programInfo, courses }) => {
   );
 };
 
-export async function getStaticPaths() {
-  let paths = Paths.programs.map((p) => {
-    return `/programs/${p}`;
-  });
-
-  return {
-    paths: paths,
-    fallback: false,
-  };
-}
-
 export async function getStaticProps() {
   /** TODO: get real QaA from backend */
   const questions = [
