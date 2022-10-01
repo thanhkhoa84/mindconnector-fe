@@ -70,11 +70,7 @@ export const Navigation = [
 ];
 
 export const Paths = {
-  programs: [
-    "san-sang-khoi-nghiep-kinh-doanh",
-    "thanh-cong-trong-ung-tuyen",
-    "thanh-cong-trong-khoi-su-kinh-doanh",
-  ],
+  programs: ["san-sang-khoi-nghiep-kinh-doanh"],
   courses: [
     "khoa-hoc-nghien-cuu-va-phan-tich",
     "theo-duoi-su-hoc-ca-doi",
@@ -83,16 +79,3 @@ export const Paths = {
     "ky-nang-tuong-tac",
   ],
 };
-
-export const StudentCourses = [
-  {
-    title: "Khoá học nghiên cứu và phân tích",
-    currency: "USD$",
-    price: "84.99",
-    lessons: "4",
-    time: "3 hours",
-    feature: true,
-    rating: 1,
-    slug: "khoa-hoc-nghien-cuu-va-phan-tich",
-  },
-];
