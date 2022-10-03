@@ -16,33 +16,17 @@ const TeacherCard = ({ name, imgUrl, title, socials }) => {
   return (
     <div className={`mt-12 mb-8 ${styles.teacherCard}`}>
       <div className={`relative`}>
-        <Image
-          src="/img/bg-teacher-card-dt.svg"
-          alt=""
-          width={244}
-          height={444}
-          className={`hidden md:block ${styles.teacherCardBg}`}
-        />
-        <Image
-          src="/img/bg-teacher-card-mb.svg"
-          alt=""
-          width={244}
-          height={444}
-          className={`md:hidden ${styles.teacherCardBg}`}
-        />
-        <div className={styles.teacherImage}>
-          <Image src={imgUrl} alt="" width={445} height={625} />
-        </div>
+        <Image src={imgUrl} alt="" width={248} height={248} />
       </div>
-      <div className="absolute top-[66%] flex w-full flex-col px-4 text-center md:top-[71%]">
+      <div className="mt-4 flex w-full flex-col px-4 text-center">
         <h3 className="m-0 text-sm font-black leading-none text-purple md:text-base">
           {name}
         </h3>
-        <p className="min-h-[calc(2*1.25*1em)] px-[0.3em] text-sm leading-none xs:text-xs md:text-base lg:text-sm">
+        <p className="mt-2 min-h-[calc(2*1.25*1em)] px-[0.3em] text-sm leading-none xs:text-xs md:text-base lg:text-sm">
           {title}
         </p>
         {socials && (
-          <div className={`inline-flex flex-row justify-center gap-2 lg:mt-2`}>
+          <div className={`mt-4 inline-flex flex-row justify-center gap-2`}>
             {socials.map((s, i) => {
               return (
                 <a
@@ -60,15 +44,7 @@ const TeacherCard = ({ name, imgUrl, title, socials }) => {
                     backgroundColor: "#ffaf43",
                   }}
                   key={s.name}
-                >
-                  {/* <img
-                    src={socialImages[s.name]}
-                    alt=""
-                    className=""
-                    width={30}
-                    height={30}
-                  /> */}
-                </a>
+                ></a>
               );
             })}
           </div>
