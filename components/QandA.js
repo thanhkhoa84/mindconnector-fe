@@ -18,7 +18,7 @@ const QandA = ({ questions }) => {
                 key={`qa-${index}`}
                 className="group mt-4 rounded-2xl bg-orange-light"
               >
-                <summary className='relative cursor-pointer list-none rounded-2xl border border-purple bg-white py-4 pl-4 pr-14 transition-all duration-300 after:absolute after:top-[50%] after:right-4 after:inline-block after:h-[30px] after:w-[30px] after:translate-y-[-50%] after:bg-[url("/img/detail-arrow.png")] after:bg-cover after:transition-all group-open:after:-rotate-180'>
+                <summary className='relative cursor-pointer list-none appearance-none rounded-2xl border border-[#E75C9D] bg-white py-6 pl-4 pr-14 font-bold text-[#676767] transition-all duration-300 after:absolute after:top-[50%] after:right-4 after:inline-block after:h-[30px] after:w-[30px] after:translate-y-[-50%] after:bg-[url("/img/detail-arrow.png")] after:bg-cover after:transition-all group-open:after:-rotate-180'>
                   {question}
                 </summary>
                 <p className="hidden p-4 transition-all group-open:block">
@@ -46,7 +46,7 @@ const QandAProgram = ({ questions }) => {
                 key={`qa-${index}`}
                 className="group mt-4 appearance-none rounded-2xl bg-orange-light "
               >
-                <summary className='relative cursor-pointer list-none appearance-none rounded-2xl border border-purple bg-white py-4 pl-4 pr-14 transition-all duration-300 after:absolute after:top-[50%] after:right-4 after:inline-block after:h-[30px] after:w-[30px] after:translate-y-[-50%] after:bg-[url("/img/detail-arrow.png")] after:bg-cover after:transition-all group-open:after:-rotate-180'>
+                <summary className='relative cursor-pointer list-none appearance-none rounded-2xl border border-[#E75C9D] bg-white py-6 pl-4 pr-14 font-bold text-[#676767] transition-all duration-300 after:absolute after:top-[50%] after:right-4 after:inline-block after:h-[30px] after:w-[30px] after:translate-y-[-50%] after:bg-[url("/img/detail-arrow.png")] after:bg-cover after:transition-all group-open:after:-rotate-180'>
                   {question}
                 </summary>
                 <p className="hidden p-4 group-open:block">{answer}</p>
