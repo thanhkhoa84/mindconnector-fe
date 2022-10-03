@@ -43,10 +43,10 @@ export const Navigation = [
   //     },
   //   ],
   // },
-  // {
-  //   name: "Dành cho doanh nghiệp",
-  //   path: "/business",
-  // },
+  {
+    name: "Dành cho doanh nghiệp",
+    path: "/business",
+  },
   // {
   //   name: "Program",
   //   path: "/program",

@@ -15,7 +15,7 @@ const ValueSection = () => {
           doanh nghiệp
         </h1>
         <div
-          className={`mt-[3em] mb-[4em] flex flex-col justify-between gap-6 self-stretch pb-[1em] xs:flex-row xs:gap-4 lg:items-center lg:gap-6 lg:self-auto`}
+          className={`mt-[3em] mb-[4em] flex flex-col justify-between gap-6 self-stretch pb-[1em] xs:flex-row xs:gap-4 lg:items-center lg:gap-12 lg:self-auto`}
         >
           <div className="relative flex flex-row  justify-between">
             <div
@@ -33,7 +33,7 @@ const ValueSection = () => {
                 />
               </span>
               <h2 className="text-[19px] font-black leading-6 md:text-[22px]">
-                Dành cho <br className="md:hidden" />
+                Dành cho <br className="md:hidden lg:inline" />
                 sinh viên
               </h2>
               <p className="mt-4 hidden lg:block">
@@ -75,7 +75,7 @@ const ValueSection = () => {
                 />
               </span>
               <h2 className="text-[19px] font-black leading-6 md:text-[22px]">
-                Dành cho <br className="md:hidden" />
+                Dành cho <br className="md:hidden lg:inline" />
                 doanh nghiệp
               </h2>
               <p className="mt-4 hidden lg:block">
