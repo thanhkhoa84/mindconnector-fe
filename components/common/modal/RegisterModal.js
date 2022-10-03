@@ -48,11 +48,9 @@ const RegisterModal = () => {
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("keydown", keyDownHandler);
-    // document.addEventListener("scroll", preventScroll);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", keyDownHandler);
-      // document.removeEventListener("scroll", preventScroll);
     };
   });
 

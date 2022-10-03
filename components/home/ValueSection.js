@@ -2,14 +2,9 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import Image from "next/future/image";
 import Container from "../../components/Container";
-import { SectionHeading } from "../../components/Heading";
-
-const LogoList = dynamic(() => import("./../LogoList"), {
-  ssr: false,
-});
+import LogoList from "./../LogoList";
 
 const ValueSection = () => {
-  const list = ["1", "2", "3", "4", "5", "6"];
   return (
     <section className="bg-[#FFF7ED] pt-[4em]">
       <Container>
@@ -20,7 +15,7 @@ const ValueSection = () => {
           doanh nghiệp
         </h1>
         <div
-          className={`mt-[3em] mb-[4em] flex flex-col justify-between gap-6 self-stretch pb-[1em] xs:flex-row xs:gap-3 lg:items-center lg:gap-4 lg:self-auto`}
+          className={`mt-[3em] mb-[4em] flex flex-col justify-between gap-6 self-stretch pb-[1em] xs:flex-row xs:gap-4 lg:items-center lg:gap-6 lg:self-auto`}
         >
           <div className="relative flex flex-row  justify-between">
             <div
@@ -108,12 +103,9 @@ const ValueSection = () => {
           </div>
         </div>
       </Container>
-
-      <LogoList
-        backgroundColor="#FFFDFA"
-        title="Mind Connector đang là đối tác của các trường Đại học và Doanh nghiệp"
-        list={list}
-      />
+      <div className="mt-8">
+        <LogoList title="Mind Connector đang là đối tác của các trường Đại học và Doanh nghiệp" />
+      </div>
     </section>
   );
 };

@@ -2,12 +2,18 @@ import Container from "./Container";
 import Image from "next/future/image";
 
 const LogoList = ({ backgroundColor, title, list }) => {
-  let images = ["/img/saatchi.svg", "/img/vlu.svg", "/img/ogilvy.svg"];
+  let images = [
+    "/img/logo-valoma.png",
+    "/img/logo-v.png",
+    "/img/logo-gdnn.png",
+    "/img/logo-vilas.png",
+    "/img/logo-gli.png",
+  ];
   return (
     <div
       className={`
         p-4
-        ${backgroundColor ? "bg-[" + backgroundColor + "]" : "bg-white/75"}`}
+        ${backgroundColor ? "bg-['" + backgroundColor + "']" : "bg-white"}`}
     >
       <Container>
         <div className="flex flex-col">
@@ -17,8 +23,8 @@ const LogoList = ({ backgroundColor, title, list }) => {
             </h2>
           </header>
           <ul className="flex flex-row flex-wrap justify-between">
-            {list.map((li, index) => {
-              let imgSrc = images[Math.floor(Math.random() * images.length)];
+            {images.map((li, index) => {
+              let imgSrc = images[index];
               return (
                 <li
                   key={`logolist-${index}`}
@@ -31,7 +37,7 @@ const LogoList = ({ backgroundColor, title, list }) => {
                     width={100}
                     height={100}
                     style={{}}
-                    className="mx-auto block h-full max-h-8 max-w-full "
+                    className="mx-auto block h-full max-h-8 max-w-full object-contain"
                   />
                 </li>
               );

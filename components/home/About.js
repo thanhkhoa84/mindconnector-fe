@@ -33,7 +33,6 @@ const About = () => {
           {/* <YouTube videoId="8dJyRm2jJ-U" opts={opts} onReady={_onReady} /> */}
         </div>
       </Container>
-      <LogoList title="Đối tác" list={["1", "2", "3", "4", "5", "6"]} />
     </section>
   );
 };
