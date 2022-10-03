@@ -362,71 +362,61 @@ const ProgramPost = ({ questions, courses }) => {
 
         <div className="mt-12 bg-[#FFEFDB] py-14" id="rating">
           <Container>
-            <div className="flex flex-col lg:flex-row">
-              <div className="flex-shrink text-center lg:text-left">
-                <h2 className="mb-3 text-center text-[34px] font-black leading-[1] leading-[1.2] lg:text-left">
+            <div className="flex flex-col">
+              <div className="flex-shrink text-center">
+                <h2 className="mb-3 text-center text-[34px] font-black">
                   Chia sẻ từ học viên Mind Connector
                 </h2>
                 <p>
-                  645 học viên đã tham gia khoá học{" "}
-                  <b>Ngiên Cứu và Phân Tích</b>. Cùng lắng nghe những chia sẻ từ
-                  họ nhé!
+                  Hơn 6688 học viên đang học tại Mind Connector. Lắng nghe những
+                  chia sẻ từ họ nhé.
                 </p>
-                {/* <p className="mt-4 hidden md:block">
-                  <Link href="/">
-                    <span className="link-arrow">Xem tất cả chia sẻ</span>
-                  </Link>
-                </p> */}
               </div>
-              <div className="flex-shrink">
-                <div className="align-center flex flex flex-col justify-center lg:flex-row">
-                  <div className="relative flex-shrink flex-grow self-center lg:w-1/2">
-                    <Image
-                      src="/img/testimonial.png"
-                      width={440}
-                      height={545}
-                      alt=""
-                    />
-                    <div className="absolute inset-x-0 bottom-[5em] mx-auto max-w-[60%] text-center">
-                      <div className="font-black text-purple">
-                        Chị Phạm Thị Hải An
-                      </div>
-                      <div className="text-xs text-[#6C6C6C] lg:text-sm">
-                        <p>
-                          Founder nhãn hàng Gac Lyco – các sản phẩm dinh dưỡng
-                          tiền Vitamin C từ Gấc
-                        </p>
-                        <p className="font-black">
-                          “Sẵn sàng khởi nghiệp kinh doanh”
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex-shrink flex-grow self-center pb-14 lg:w-1/2 lg:self-end">
-                    <blockquote
-                      className={`relative rounded-2xl bg-white/70 p-6 py-8 italic shadow-asideboxLight 
+              <div className="align-center mt-12 flex flex-col">
+                <div className="flex-shrink flex-grow self-center pb-14 ">
+                  <blockquote
+                    className={`relative rounded-2xl bg-white/70 p-6 py-8 italic shadow-asideboxLight 
                       before:absolute before:-top-[0.3em] before:left-4 before:text-[60px] before:font-black before:leading-none  before:text-purple before:content-['"'] 
                       after:absolute after:-bottom-[0.7em] after:right-[0.5em] after:text-[60px] after:font-black after:leading-none after:text-purple after:content-['"']`}
-                    >
-                      <p>
-                        Tôi có một khoảng thời gian được trải nghiệm thật sự cảm
-                        giác lăn xả vào dự án khi tham gia khóa đào tạo này.
-                        Trước đây tôi cũng biết được rằng khởi nghiệp không hề
-                        đơn giản, từ lúc ấp ủ ý tưởng đến lúc quyết tâm thực thi
-                        tôi rất lo lắng vì bản thân còn loay hoay, nhiều vấn đề
-                        chưa sáng tỏ. Khi tôi lên kế hoạch được 80% thì gặp được
-                        chương trình này. Phải nói rằng những thông tin trong
-                        khóa học rất thiết thực, các giảng viên là những người
-                        đã làm start up, đang thành công theo mô hình tự thân,
-                        tôi thấy vô cùng phù hợp với hoàn cảnh hiện tại của
-                        mình. Ban đầu tôi hơi lấn cấn về chi phí khóa học, tuy
-                        nhiên khi vào học thì không phải chỉ được học và tôi
-                        được các chuyên gia tư vấn thực sự trên kế hoạch kinh
-                        doanh của chính tôi. Học xong, tôi thấy tự tin hơn và
-                        biết rõ mình muốn gì hơn trong tương lai.
-                      </p>
-                    </blockquote>
-                  </div>
+                  >
+                    <p>
+                      Tôi có một khoảng thời gian được trải nghiệm thật sự cảm
+                      giác lăn xả vào dự án khi tham gia khóa đào tạo này. Trước
+                      đây tôi cũng biết được rằng khởi nghiệp không hề đơn giản,
+                      từ lúc ấp ủ ý tưởng đến lúc quyết tâm thực thi tôi rất lo
+                      lắng vì bản thân còn loay hoay, nhiều vấn đề chưa sáng tỏ.
+                      Khi tôi lên kế hoạch được 80% thì gặp được chương trình
+                      này. Phải nói rằng những thông tin trong khóa học rất
+                      thiết thực, các giảng viên là những người đã làm start up,
+                      đang thành công theo mô hình tự thân, tôi thấy vô cùng phù
+                      hợp với hoàn cảnh hiện tại của mình. Ban đầu tôi hơi lấn
+                      cấn về chi phí khóa học, tuy nhiên khi vào học thì không
+                      phải chỉ được học và tôi được các chuyên gia tư vấn thực
+                      sự trên kế hoạch kinh doanh của chính tôi. Học xong, tôi
+                      thấy tự tin hơn và biết rõ mình muốn gì hơn trong tương
+                      lai.
+                    </p>
+                    <div className="mt-4 flex flex-row items-center gap-6">
+                      <Image
+                        src="/img/testimonial.png"
+                        width={60}
+                        height={60}
+                        alt=""
+                        className="block"
+                      />
+                      <div className="">
+                        <h3 className="font-black text-purple">
+                          Chị Phạm Thị Hải An
+                        </h3>
+                        <div className="text-xs text-[#6C6C6C] lg:text-sm">
+                          <p>Học viên Chương trình nâng cao </p>
+                          <p className="font-black">
+                            “Thành công trong khởi sự kinh doanh”
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </blockquote>
                 </div>
               </div>
             </div>
