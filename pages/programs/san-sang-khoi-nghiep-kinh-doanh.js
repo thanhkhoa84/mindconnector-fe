@@ -21,6 +21,29 @@ const seo = {
   // article: true,
 };
 
+const mentors = [
+  {
+    name: "Bà Nguyễn Thị Thanh Trúc",
+    title: "Cố Vấn Đào Tạo",
+    image: "/img//mentors/mandy-nguyen.png",
+  },
+  {
+    name: "Bà Đào Minh Huyền",
+    title: "StartUp Advisor - Cố vấn Khởi nghiệp và Đầu tư",
+    image: "/img//mentors/dao-minh-huyen.png",
+  },
+  {
+    name: "Bà Nina Trần Lê",
+    title: "Thiết kế chương trình và vận hành",
+    image: "/img/mentors/nina-tran.png",
+  },
+  {
+    name: "Ông Nguyễn Mạnh Cường",
+    title: "Chuyên viên chiến lược và sáng tạo",
+    image: "/img//mentors/nguyen-manh-cuong.png",
+  },
+];
+
 const Decoration = dynamic(() => import("../../components/Decoration"), {
   ssr: false,
 });
@@ -130,52 +153,27 @@ const ProgramPost = ({ questions, courses }) => {
             <p className="mt-4">
               ““Khởi nghiệp thuận lợi, chạm đỉnh vinh quang””
             </p>
-            <div className="mt-8 flex flex-row flex-wrap justify-center gap-2 md:gap-6">
-              <div>
-                <div className="inline-block w-[90px] overflow-hidden rounded-full md:w-[100px]">
-                  <Image
-                    src="/img/avatar.png"
-                    alt="Avatar"
-                    width={200}
-                    height={200}
-                    className="w-full object-cover transition-all hover:scale-[1.]"
-                  />
-                </div>
-                <p className="mt-1 text-[18px] font-black text-purple">
-                  Stephanie J
-                </p>
-                <p className="text-xs">CEO Alphabet</p>
-              </div>
-              <div>
-                <div className="inline-block w-[90px] overflow-hidden rounded-full md:w-[100px]">
-                  <Image
-                    src="/img/avatar.png"
-                    alt="Avatar"
-                    width={200}
-                    height={200}
-                    className="w-full object-cover transition-all hover:scale-[1.]"
-                  />
-                </div>
-                <p className="mt-1 text-[18px] font-black text-purple">
-                  Stephanie J
-                </p>
-                <p className="text-xs">CEO Alphabet</p>
-              </div>
-              <div>
-                <div className="inline-block w-[90px] overflow-hidden rounded-full md:w-[100px]">
-                  <Image
-                    src="/img/avatar.png"
-                    alt="Avatar"
-                    width={200}
-                    height={200}
-                    className="w-full object-cover transition-all hover:scale-[1.]"
-                  />
-                </div>
-                <p className="mt-1 text-[18px] font-black text-purple">
-                  Stephanie J
-                </p>
-                <p className="text-xs">CEO Alphabet</p>
-              </div>
+            <div className="mt-8 flex flex-row flex-wrap justify-around gap-4 md:justify-center md:gap-6">
+              {mentors.map((m, index) => {
+                const { name, title, image } = m;
+                return (
+                  <div className="w-[48%] md:w-auto">
+                    <div className="inline-block w-[90px] overflow-hidden rounded-full md:w-[100px]">
+                      <Image
+                        src={image}
+                        alt="Avatar"
+                        width={200}
+                        height={200}
+                        className="w-full object-cover transition-all hover:scale-[1.]"
+                      />
+                    </div>
+                    <p className="mt-1 text-xs font-black text-purple md:text-base">
+                      {name}
+                    </p>
+                    <p className="mx-auto max-w-[80%] text-xs">{title}</p>
+                  </div>
+                );
+              })}
             </div>
             <div className="mt-8 flex flex-col rounded-xl text-left md:relative md:top-[35px] md:mt-0 md:h-[70px] md:flex-row md:justify-between md:bg-white md:shadow-lg">
               <div className=" flex flex-row flex-nowrap items-start justify-start gap-4 rounded-2xl border-2 border-solid border-[#d2d2d2] border-white bg-[#FFF2EB] bg-opacity-75 py-[1em] px-6 xs:flex-row sm:flex-row sm:gap-8 md:items-center md:bg-transparent">

@@ -131,7 +131,7 @@ a {
   }
 
   .btn-primary {
-    @apply btn bg-gradient;
+    @apply btn bg-gradient cursor-pointer;
     text-shadow: 0 1px 0px rgba(0,0,0,0.65);
     &:hover {
       text-shadow: 0 1px 0px rgba(225, 225, 225, 0.65);

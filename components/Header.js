@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import { NavBar, MobileNav } from "./HeaderNavigation";
 import { CTA } from "./CTA";
 import { Logo } from "./Logo";
@@ -36,9 +37,9 @@ const Header = ({ ...navlinks }) => {
             <NavBar {...navlinks} />
           </div>
 
-          <CTA href="explore" name="header-cta">
-            Khám phá ngay
-          </CTA>
+          <Link href="">
+            <span className="header-cta">Khám phá ngay</span>
+          </Link>
 
           <button
             type="button"
