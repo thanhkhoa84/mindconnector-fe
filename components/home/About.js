@@ -30,7 +30,20 @@ const About = () => {
           triển mạnh mẽ trong tương lai.
         </p>
         <div className="my-[60px]">
-          <Image src="/img/home-about.png" width={2080} height={880} />
+          <Image
+            src="/img/home-about.png"
+            alt=""
+            width={2080}
+            height={880}
+            className="hidden md:block"
+          />
+          <Image
+            src="/img/home-about-mb.png"
+            alt=""
+            width={690}
+            height={916}
+            className="md:hidden"
+          />
         </div>
       </Container>
     </section>
