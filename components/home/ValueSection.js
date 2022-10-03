@@ -20,7 +20,7 @@ const ValueSection = () => {
           <div className="relative flex flex-row  justify-between">
             <div
               className={`
-              relative mt-[1.5em] ml-0 -mr-[2em] flex max-w-full flex-col justify-between rounded-2xl border-4 border-white bg-gradient-to-b from-[#f5cbcc] to-[#ffaf43] px-4 pt-[2.5em] pb-4 shadow-lg lg:my-[1.5em] lg:w-[55%] lg:pr-[2em]
+              relative mt-[1.5em] ml-0 -mr-[2em] flex max-w-full flex-col justify-between rounded-2xl border-4 border-white bg-gradient-to-br from-[#FFF4EB] via-[#FFE4D5] to-[#FDD2D3] px-4 pt-[2.5em] pb-4 shadow-lg lg:my-[1.5em] lg:w-[55%] lg:pr-[2em]
             `}
             >
               <span className="absolute -top-[30px] block w-[66px]">
@@ -62,7 +62,7 @@ const ValueSection = () => {
           <div className="relative flex flex-row  justify-between">
             <div
               className={`
-              relative mt-[1.5em] ml-0 -mr-[2em] flex max-w-full flex-col justify-between rounded-2xl border-4 border-white bg-gradient-to-b from-[#f5cbcc] to-[#ffaf43] px-4 pt-[2.5em] pb-4 shadow-lg lg:my-[1.5em] lg:w-[55%] lg:pr-[2em]
+              relative mt-[1.5em] ml-0 -mr-[2em] flex max-w-full flex-col justify-between rounded-2xl border-4 border-white bg-gradient-to-br from-[#FFF4EB] via-[#FFE4D5] to-[#FDD2D3] px-4 pt-[2.5em] pb-4 shadow-lg lg:my-[1.5em] lg:w-[55%] lg:pr-[2em]
             `}
             >
               <span className="absolute -top-[30px] block w-[66px]">
