@@ -34,9 +34,9 @@ export default function Home({ slides, questions }) {
 
       <>
         <Seo seo={seo} />
-        <Container>
+        <div>
           <HeroBanner slides={slides} />
-        </Container>
+        </div>
         <ValueSection />
         <About />
         <section className={`relative bg-[#FFF7ED] py-12`}>
