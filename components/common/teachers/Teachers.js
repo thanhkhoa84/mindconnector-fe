@@ -22,7 +22,7 @@ const TeacherCard = ({ name, imgUrl, title, socials }) => {
         <h3 className="m-0 text-sm font-black leading-none text-purple md:text-base">
           {name}
         </h3>
-        <p className="mt-2 min-h-[calc(2*1.25*1em)] px-[0.3em] text-sm leading-none xs:text-xs md:text-base lg:text-sm">
+        <p className="mt-2 min-h-[calc(2*1.25*1em)] px-[0.3em] text-sm leading-none dark:text-white xs:text-xs md:text-base lg:text-sm">
           {title}
         </p>
         {socials && (
