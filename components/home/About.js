@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import YouTube from 'react-youtube';
-
-import Container from '../../components/Container';
+import Image from "next/future/image";
+import Container from "../../components/Container";
 import { SectionHeading } from "../../components/Heading";
 
 const LogoList = dynamic(() => import("./../LogoList"), {
@@ -29,8 +29,8 @@ const About = () => {
           Mind Connector kết nối tầm nhìn giúp doanh nghiệp và cá nhân phát
           triển mạnh mẽ trong tương lai.
         </p>
-        <div className="aspect-w-16 aspect-h-9 relative -mx-[1em] mt-[3em] overflow-hidden bg-gray md:mx-0 md:rounded-3xl [&>div>iframe]:h-full [&>div>iframe]:w-full">
-          {/* <YouTube videoId="8dJyRm2jJ-U" opts={opts} onReady={_onReady} /> */}
+        <div className="my-[60px]">
+          <Image src="/img/home-about.png" width={2080} height={880} />
         </div>
       </Container>
     </section>
