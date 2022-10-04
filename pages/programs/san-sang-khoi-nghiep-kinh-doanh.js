@@ -429,7 +429,7 @@ const ProgramPost = ({ questions, courses }) => {
           </Container>
         </div>
 
-        <div className="mt-12 bg-[#FFEFDB] py-14" id="rating">
+        <div className="relative mt-12 bg-[#FFEFDB] py-14" id="rating">
           <Container>
             <div className="flex flex-col">
               <div className="flex-shrink text-center">
@@ -566,7 +566,7 @@ export async function getStaticProps() {
       slug: "/courses/len-ke-hoach-kinh-doanh",
     },
     {
-      title: "Hoạch định kế hoạch kinhd doanh",
+      title: "Hoạch định kế hoạch kinh doanh",
       subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
       lessons: "6",
       time: "14 hours",

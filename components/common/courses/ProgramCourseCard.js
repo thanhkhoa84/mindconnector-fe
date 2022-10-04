@@ -26,7 +26,9 @@ const ProgramCourseCard = ({ course }) => {
         <div
           className={`after:bg-gradient-overlay absolute top-0 left-0 right-0 bottom-0 flex cursor-pointer flex-col justify-end px-4 pb-8 text-sm text-white after:content-none md:p-4 md:pb-8`}
         >
-          <h3 className="mt-2 text-xl font-black leading-5">{title}</h3>
+          <h3 className="mt-2 text-xl font-black uppercase leading-5">
+            {title}
+          </h3>
           <p className="mt-2 leading-4">
             <span>{lessons} lessons &#x2022; </span>
             <span>{time}</span>
