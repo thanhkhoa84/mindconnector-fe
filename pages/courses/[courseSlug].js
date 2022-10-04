@@ -13,6 +13,7 @@ import {
 } from "../../components/common/modal/GlobalModal";
 import { Paths } from "../../data/global";
 
+
 const seo = {
   metaTitle: "Mind Connector",
   metaDescription: "Mind Connector",
@@ -109,11 +110,9 @@ const CoursePost = ({ questions, logoslist, programInfo }) => {
       <>
         <div className="bg-[#f9f5e9] bg-[url(/img/bg-head-section.png)] bg-cover py-[3em] text-center md:py-[4em] md:pb-[0]">
           <Container>
-            <h4 className="font-bold text-gray">
-              Chương trình Thành công trong học tập
-            </h4>
+            <h4 className="font-bold text-gray">Chương trình</h4>
             <h1 className="leading-0 text-3xl font-black md:text-6xl">
-              Khoá học nghiên cứu và phân tích
+              Lên kế hoạch kinh doanh
             </h1>
             <p className="mt-4">“Khởi đầu vững chắc, tương lai khởi sắc”</p>
             <div className="mt-8">
@@ -157,11 +156,11 @@ const CoursePost = ({ questions, logoslist, programInfo }) => {
                 </div>
               </div>
               <div className="mt-6 flex flex-row flex-wrap items-center justify-between md:mt-0 md:gap-5 md:px-6">
-                <p>
+                {/* <p>
                   Học phí <span className="text-[14px] font-bold">USD$</span>{" "}
                   <span className="text-[32px] font-bold">84</span>
                   <sup className="text-[18px] font-bold">99</sup>
-                </p>
+                </p> */}
                 <p>
                   <button onClick={createModal} className="btn-primary">
                     Đăng ký học ngay
@@ -409,6 +408,7 @@ export async function getStaticPaths() {
   let paths = Paths.courses.map((p) => {
     return `/courses/${p}`;
   });
+  console.log(paths);
   return {
     paths,
     fallback: false,

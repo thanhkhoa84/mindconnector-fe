@@ -147,7 +147,7 @@ const ProgramPost = ({ questions, courses }) => {
         <div className="bg-[#f9f5e9] bg-[url(/img/bg-head-section.png)] bg-cover py-[3em] text-center md:py-[4em] md:pb-[0]">
           <Container>
             <h4 className="font-bold text-gray">Chương trình</h4>
-            <h1 className="leading-0 text-3xl font-black normal-case md:text-6xl">
+            <h1 className="leading-0 text-3xl font-black uppercase md:text-6xl">
               Sẵn sàng khởi nghiệp kinh doanh
             </h1>
             <p className="mt-4">
@@ -287,9 +287,78 @@ const ProgramPost = ({ questions, courses }) => {
                 </div>
               </div>
 
-              <div className="mt-12" id="about">
-                <div className="aspect-w-16 aspect-h-9 relative -mx-[1em] mt-[3em] overflow-hidden bg-gray md:mx-0 md:rounded-3xl [&>div>iframe]:h-full [&>div>iframe]:w-full">
-                  {/* <YouTube videoId="8dJyRm2jJ-U" opts={opts} onReady={_onReady}/> */}
+              <div className="mt-12 py-12" id="about">
+                <h2 className="mb-3 mb-8 text-center text-[34px] font-black md:hidden">
+                  Về chương trình
+                </h2>
+                <div className="flex flex-col md:flex-row">
+                  <div className="relative flex-1 ">
+                    <Image
+                      src="/img/program-info.png"
+                      width={448}
+                      height={299}
+                      alt=""
+                      className="translate-x-[25vw] md:translate-x-[40%] lg:translate-x-[50%]"
+                    />
+                  </div>
+                  <div className="relative mt-12 flex inline-flex flex-1 flex-col items-center justify-center md:mt-0 md:items-start">
+                    <h2 className="mb-3 hidden text-[34px] font-black md:block">
+                      Về chương trình
+                    </h2>
+                    <p className="max-w-[300px] md:max-w-none">
+                      <a
+                        href=""
+                        download
+                        className="btn-primary w-[300px] md:w-auto"
+                      >
+                        Tải thông tin
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-12" id="schedule">
+                <h2 className="mb-3 text-center text-[34px] font-black md:text-left">
+                  Lịch học
+                </h2>
+                <div className="flex flex-col md:flex-row">
+                  <div className="flex-1 items-center justify-center text-center md:pr-12 md:text-left">
+                    <p>
+                      <b>Chiêu sinh:</b> Tháng 10/2022
+                    </p>
+                    <p>
+                      <b>Chi tiết khóa học:</b> 20 buổi trong 8 tuần
+                    </p>
+                    <Image
+                      src="/img/icon-schedule.png"
+                      width={488}
+                      height={328}
+                      alt=""
+                      className="mx-auto mt-12 block"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <div>
+                      <p className="font-bold">Lịch học tháng 11</p>
+                      <Image
+                        src="/img/schedule-nov.png"
+                        width={512}
+                        height={175}
+                        alt=""
+                        className="mt-4 w-full"
+                      />
+                    </div>
+                    <div className="mt-8">
+                      <p className="font-bold">Lịch học tháng 12</p>
+                      <Image
+                        src="/img/schedule-dec.png"
+                        width={512}
+                        height={175}
+                        alt=""
+                        className="mt-4 w-full"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -298,7 +367,7 @@ const ProgramPost = ({ questions, courses }) => {
         <div className="relative mt-[4em]">
           <Decoration />
           <Container>
-            <h2 className="hidden text-center text-[22px] font-black leading-none lg:block">
+            <h2 className="text-center text-[22px] font-black leading-none md:text-[34px] lg:block">
               Phát triển mọi kỹ năng với cấu trúc chương trình học chặt chẽ
             </h2>
             <ul className="mt-8 overflow-hidden md:text-center">

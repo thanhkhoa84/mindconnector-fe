@@ -71,11 +71,5 @@ export const Navigation = [
 
 export const Paths = {
   programs: ["san-sang-khoi-nghiep-kinh-doanh"],
-  courses: [
-    "khoa-hoc-nghien-cuu-va-phan-tich",
-    "theo-duoi-su-hoc-ca-doi",
-    "ky-nang-giao-tiep",
-    "ky-nang-lam-viec-nhom",
-    "ky-nang-tuong-tac",
-  ],
+  courses: ["len-ke-hoach-kinh-doanh"],
 };
