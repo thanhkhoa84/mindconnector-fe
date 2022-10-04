@@ -157,7 +157,7 @@ const ProgramPost = ({ questions, courses }) => {
               {mentors.map((m, index) => {
                 const { name, title, image } = m;
                 return (
-                  <div className="w-[48%] md:w-auto">
+                  <div className="w-[48%] md:w-auto" key={index}>
                     <div className="inline-block w-[90px] overflow-hidden rounded-full md:w-[100px]">
                       <Image
                         src={image}
