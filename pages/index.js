@@ -61,42 +61,34 @@ export async function getStaticProps() {
         "Mind Connector là một mạng lưới của các nhà tư vấn kinh doanh cùng các giảng viên vốn là các lãnh đạo và chuyên gia hàng đầu trong nhiều lĩnh vực khác nhau. Vì thế, Mind Connector sẽ cung cấp những chương trình học đa dạng, khác biệt nhưng vẫn phù hợp với nhu cầu thực tế của từng cá nhân. Vì thế, với các kiến thức từ Mind Connector, bạn hoàn toàn có thể tự tin để có thể chinh phục những dự định của tương lai.",
     },
     {
-      question:
-        "Tôi là sinh viên năm 4, tôi vẫn chưa biết xác định tương lai sau này của mình như thế nào? Em phải làm gì?",
+      question: "Mind Connector có những loại khóa học nào?",
       answer:
-        'Việc xác định hướng tương lai ngay từ khi ngồi trên ghế nhà trường rất quan trọng. Vì điều này sẽ giúp bạn tiết kiệm thời gian, chọn được nghề nghiệp phù hợp, từ đó sẽ có hướng đi chắc chắn cho tương lai. Để có một tương lai vững vàng bạn nên có một nền tảng kiến thức vững chắc. Mind Connector sẽ cung cấp những chương trình đào tạo với những kiến thức chuyên sâu và thiết thực để bạn có thể định hướng tương lai. Trong đó có hai chương trình nổi bật là “Thành công trong ứng tuyển" để bạn có thể tự tin ứng tuyển vào bất kì vị trí nào tại các doanh nghiệp, và chương trình “Sẵn sàng khởi nghiệp kinh doanh" để bạn có thể làm chủ chính doanh nghiệp của mình.',
+        "Mỗi cá nhân, mỗi doanh nghiệp sẽ có nhu cầu và định hướng phát triển riêng. Vì thế Mind Connector xây dựng những chương trình học với những kiến thức nền tảng, dù đa dạng, khác biệt nhưng vẫn đáp ứng được nhu cầu, nguyện vọng của từng cá nhân. Đối với sinh viên đang ngồi trên ghế nhà trường, bạn có thể tham khảo khoá học “Kỹ năng xã hội” để không những có thể trở thành một sinh viên ưu tú mà còn trang bị cho mình những kỹ năng phục vụ cho tương lai. Bên cạnh đó, khi sắp tốt nghiệp ra trường, bạn có thể tham khảo khoá học “Vững vàng lập nghiệp” nếu muốn trở thành nhân viên xuất sắc ở công ty bạn yêu thích, hoặc khoá học “Thành công trong khởi nghiệp kinh doanh” để có thể chạm đỉnh vinh quang trên con đường khởi nghiệp của mình. Không dừng lại ở đó, Mind Connector còn thiết kế những khoá đào tạo nội bộ cho các doanh nghiệp và cung cấp các giải pháp chiến lược chuyên biệt, sát cánh cùng doanh nghiệp trên hành trình phát triển mỗi ngày.",
     },
     {
-      question: "Mind Connector có đảm bảo kết quả sau khi học tập hay không?",
+      question:
+        "Các chương trình đào tạo của MC có cần chất lượng đầu vào hay không?",
       answer:
-        "Mỗi cá nhân, mỗi doanh nghiệp sẽ có nhu cầu và định hướng phát triển riêng. Vì thế Mind Connector xây dựng những chương trình học với những kiến thức nền tảng, dù đa dạng, khác biệt nhưng vẫn đáp ứng được nhu cầu, nguyện vọng của từng cá nhân. Từ những kiến thức nền tảng này, bạn sẽ chắc chắn xây dựng được lộ trình phát triển cho tương lai từ đó đạt được kết quả tươi sáng nhất. ",
+        "Các chương trình đào tạo của MC không yêu cầu chất lượng đầu vào. Miễn bạn là sinh viên đang muốn phấn đấu để trở nên ưu tú, hay muốn trở thành nhân viên xuất sắc sau khi ra trường. Miễn doanh nghiệp của bạn đang muốn đào tạo đội ngũ nhân viên tài ba, hay doanh nghiệp đang có vấn đề cần tìm kiếm sự tư vấn giải pháp chuyên nghiệp, tận tâm. Mind Connector sẽ có những chương trình phù hợp với từng nhu cầu của cá nhân, doanh nghiệp, từ đó có thể sát cánh cùng tất cả mọi người để hướng đến một tương lai thành công rực rỡ.",
     },
   ];
 
   let slides = [
     {
-      headline: "Buổi làm việc của MC và Tập đoàn Nhựa Trường Phát tại Hà Nội",
-      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean laoreet in elit vestibulum. Aenean hendrerit arcu vitae commodo sem consequat phasellus",
-      image: "/img/home-banner.png",
-      link: "#",
+      headline: "Mind Connector ký hợp đồng tư vấn dài hạn với Tập Đoàn STP ",
+      body: "Mind Connector trở thành đơn vị tư vấn chính thức của Tập Đoàn STP tại Hà Nội về mô hình kinh doanh và xây dựng thương hiệu trong lĩnh vực Aquatech.",
+      image: "/img/home-banner-1.jpg",
+    },
+    {
+      headline:
+        "Mind Connector đảm nhiệm vai trò mới tại Hội Giáo Dục Nghề Nghiệp phía Nam ",
+      body: "Ngày 15/7/2022, Ban Giám Đốc Hội Giáo Dục Nghề Nghiệp phía Nam đã chính thức chỉ định Mind Connector làm Trung Tâm Đào Tạo Kỹ Năng và Kết Nối Doanh Nghiệp, cung cấp các khoá đào tạo cho các trường Cao Đẳng và Doanh Nghiệp thuộc hệ thống hỗ trợ đào tạo của Hội.",
+      image: "/img/home-banner-2.jpg",
     },
     {
       headline: "Workshop với Valoma và 8 trường Đại Học Phía Nam",
-      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean laoreet in elit vestibulum. Aenean hendrerit arcu vitae commodo sem consequat phasellus",
-      image: "/img/home-banner.png",
-      link: "#",
-    },
-    {
-      headline: "Workshop với Valoma và 8 trường Đại Học Phía Nam",
-      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean laoreet in elit vestibulum. Aenean hendrerit arcu vitae commodo sem consequat phasellus",
-      image: "/img/home-banner.png",
-      link: "#",
-    },
-    {
-      headline: "Workshop với Valoma và 8 trường Đại Học Phía Nam",
-      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean laoreet in elit vestibulum. Aenean hendrerit arcu vitae commodo sem consequat phasellus",
-      image: "/img/home-banner.png",
-      link: "#",
+      body: "",
+      image: "/img/home-banner-3.jpg",
     },
   ];
 

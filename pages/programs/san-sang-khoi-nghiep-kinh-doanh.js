@@ -58,8 +58,8 @@ const tabs = [
     href: "#schedule",
   },
   {
-    title: "Đánh giá",
-    href: "#rating",
+    title: "Cảm nhận",
+    href: "#testimonial",
   },
   {
     title: "Hỏi đáp",
@@ -253,12 +253,11 @@ const ProgramPost = ({ questions, courses }) => {
                         Cấu trúc
                       </h4>
                       <h3 className="mb-4 text-xl font-black leading-none md:text-2xl md:leading-none">
-                        30 ngày học linh hoạt
+                        Kinh doanh thuận lợi
                       </h3>
                       <p className="pr-8 leading-5">
-                        Chương trình được thiết kế để bạn học trong vòng 30
-                        ngày. Bạn có thể rút ngắn hoặc kéo dài tuỳ theo thời
-                        gian của mình.
+                        Vững vàng kiến thức và kỹ năng để khởi sự kinh doanh
+                        thuận lợi.
                       </p>
                     </div>
                     <div className="relative flex-shrink flex-grow basis-full pl-8 pb-12 md:pl-0 md:pt-12 md:pr-6">
@@ -273,11 +272,13 @@ const ProgramPost = ({ questions, courses }) => {
                         Chứng nhận
                       </h4>
                       <h3 className="mb-4 text-xl font-black leading-none md:text-2xl md:leading-none">
-                        Chứng nhận hoàn thành chương trình
+                        Cơ hội thực hiện dự án
                       </h3>
                       <p className="pr-8 leading-5">
-                        Bạn sẽ nhận chứng nhận sau khi hoàn thành chương trình
-                        học.
+                        Các học viên sẽ bày dự án với Ban Chuyên Môn và có cơ
+                        hội nhận được phần tài trợ tương đương 200,000,000 VNĐ.
+                        Ngoài ra, học viên còn có cơ hội nhận thêm tài trợ từ
+                        các nhà đầu tư khác.
                       </p>
                     </div>
                   </div>
@@ -429,7 +430,7 @@ const ProgramPost = ({ questions, courses }) => {
           </Container>
         </div>
 
-        <div className="relative mt-12 bg-[#FFEFDB] py-14" id="rating">
+        <div className="relative mt-12 bg-[#FFEFDB] py-14" id="testimonal">
           <Container>
             <div className="flex flex-col">
               <div className="flex-shrink text-center">
