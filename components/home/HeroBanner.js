@@ -54,8 +54,8 @@ const Slide = ({ index, ...props }) => {
         <Image
           src={props.image}
           alt={props.headline}
-          width={1920}
-          height={1282}
+          width={2800}
+          height={1396}
           priority={true}
           className="block w-full"
         />
