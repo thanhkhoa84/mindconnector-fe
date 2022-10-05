@@ -323,7 +323,7 @@ const ProgramPost = ({ questions, courses }) => {
                   Lịch học
                 </h2>
                 <div className="flex flex-col md:flex-row">
-                  <div className="flex-1 items-center justify-center text-center md:pr-12 md:text-left">
+                  <div className="flex-[3] items-center justify-center text-center md:pr-12 md:text-left">
                     <p>
                       <b>Chiêu sinh:</b> Tháng 10/2022
                     </p>
@@ -338,7 +338,7 @@ const ProgramPost = ({ questions, courses }) => {
                       className="mx-auto mt-12 block"
                     />
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-[5]">
                     <div>
                       <p className="font-bold">Lịch học tháng 11</p>
                       <Image
@@ -371,16 +371,13 @@ const ProgramPost = ({ questions, courses }) => {
             <h2 className="text-center text-[22px] font-black leading-none md:text-[34px] lg:block">
               Phát triển mọi kỹ năng với cấu trúc chương trình học chặt chẽ
             </h2>
-            <ul className="mt-8 overflow-hidden md:text-center">
+            <ul className="mt-8 flex flex-wrap gap-4 overflow-hidden md:justify-center md:gap-8 lg:justify-around lg:gap-4">
               {courses.map((course, index) => {
                 return (
                   <li
                     key={index}
                     className={`
-                      relative my-0 mx-auto w-[300px] overflow-hidden md:mx-[1%] md:inline-block
-                      md:w-[18%] md:w-[190px] md:text-center md:align-top
-                      ${index % 2 ? "text-right md:mt-8" : "md:mt-8"}
-                      ${index == 0 ? "" : "mt-[2em] md:mt-0"}
+                      overflow-hiddenmd:text-center relative my-0 inline-block md:align-top lg:flex-shrink
                     `}
                   >
                     <div className="inline-block md:pt-[4em]">
@@ -534,6 +531,7 @@ export async function getStaticProps() {
       lessons: "6",
       time: "16 hours",
       feature: false,
+      img: "/img/course-01.png",
       slug: "/courses/len-ke-hoach-kinh-doanh",
     },
     {
@@ -542,6 +540,7 @@ export async function getStaticProps() {
       lessons: "6",
       time: "14 hours",
       feature: false,
+      img: "/img/course-02.png",
       slug: "/courses/hoach-dinh-ke-hoach-kinh-doanh",
     },
     {
@@ -550,6 +549,7 @@ export async function getStaticProps() {
       lessons: "5",
       time: "10 hours",
       feature: false,
+      img: "/img/course-03.png",
       slug: "/courses/quan-ly-he-thong-kinh-doanh",
     },
     {
@@ -558,6 +558,7 @@ export async function getStaticProps() {
       lessons: "1",
       time: "1 hours",
       feature: false,
+      img: "/img/course-04.png",
       slug: "/courses/thuyet-trinh-cuoi-khoa",
     },
   ];
