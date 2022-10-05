@@ -430,7 +430,7 @@ const ProgramPost = ({ questions, courses }) => {
           </Container>
         </div>
 
-        <div className="relative mt-12 bg-[#FFEFDB] py-14" id="testimonal">
+        <div className="relative mt-12 bg-[#FFEFDB] py-14" id="testimonial">
           <Container>
             <div className="flex flex-col">
               <div className="flex-shrink text-center">
