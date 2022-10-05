@@ -2,8 +2,6 @@ import { useState, useEffect, memo } from "react";
 import Image from "next/future/image";
 import { SectionHeading } from "../../Heading";
 
-import styles from "../../../styles/components/common/teachers/Teachers.module.scss";
-
 let socialImages = {
   linkedin: "/img/linkedin.svg",
   instagram: "/img/linkedin.svg",
@@ -14,7 +12,9 @@ let socialImages = {
 
 const TeacherCard = ({ name, imgUrl, title, socials }) => {
   return (
-    <div className={`mt-12 mb-8 ${styles.teacherCard}`}>
+    <div
+      className={`inlinbe-block relative mb-12 w-[160px] align-top md:w-[288px] lg:w-[228px]`}
+    >
       <div className={`relative`}>
         <Image src={imgUrl} alt="" width={248} height={248} />
       </div>
@@ -85,7 +85,7 @@ const TeacherList = () => {
     },
   ];
   return (
-    <div className="-mx-4 flex flex-col flex-wrap items-center justify-around pt-8 text-center xs:flex-row md:mx-0 lg:justify-between lg:justify-evenly">
+    <div className="-mx-4 flex flex-col flex-wrap items-center justify-around pt-12 text-center xs:flex-row md:mx-0 lg:justify-between lg:justify-evenly">
       {allTeachers.map((teacher, index) => {
         return <TeacherCard {...teacher} key={teacher.name} />;
       })}
