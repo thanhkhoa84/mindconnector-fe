@@ -4,6 +4,7 @@ import styles from "./HeroBanner.module.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Container from "../Container";
 
 const HeroBanner = ({ slides, ...props }) => {
   let ref = useRef(null);
@@ -65,26 +66,30 @@ const HeroBanner = ({ slides, ...props }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 10000,
+    fade: true,
   };
 
   return (
     <section className={`pb-10 ${styles.HeroBanner}`}>
-      <h4 className="sr-only">Tin tức mới nhất</h4>
-      <Slider {...settings}>
-        {slides.map(({ ...props }, index) => {
-          return (
-            <div {...props} key={index} className="relative mx-auto my-0">
-              <figure>
-                <Image
-                  src={props.image}
-                  alt=""
-                  width={1920}
-                  height={1282}
-                  className="w-full"
-                />
-              </figure>
-              <div
-                className={`
+      <Container>
+        <h4 className="sr-only">Tin tức mới nhất</h4>
+        <Slider {...settings}>
+          {slides.map(({ ...props }, index) => {
+            return (
+              <div {...props} key={index} className="relative mx-auto my-0">
+                <figure>
+                  <Image
+                    src={props.image}
+                    alt=""
+                    width={1920}
+                    height={1282}
+                    className="w-full"
+                  />
+                </figure>
+                <div
+                  className={`
                   delay-0 static bottom-[2em] left-[2em] transition-all delay-500 duration-[650ms] md:absolute md:w-[420px] lg:w-1/3
                   ${
                     props.image
@@ -92,20 +97,21 @@ const HeroBanner = ({ slides, ...props }) => {
                       : "translate-y-8 opacity-0"
                   }
                 `}
-              >
-                <div
-                  className={`z-10 rounded-xl bg-white bg-opacity-80 px-[1em] pt-[2em] pb-[1em] md:px-8 md:py-12 md:shadow-xl`}
                 >
-                  <h2 className="mb-[0.5em] text-[28px] font-black leading-none md:text-3xl">
-                    {props.headline}
-                  </h2>
-                  <p className="line-clamp-12 leading-6">{props.body}</p>
+                  <div
+                    className={`z-10 rounded-xl bg-white bg-opacity-80 px-[1em] pt-[2em] pb-[1em] md:px-8 md:py-12 md:shadow-xl`}
+                  >
+                    <h2 className="mb-[0.5em] text-[28px] font-black leading-none md:text-3xl">
+                      {props.headline}
+                    </h2>
+                    <p className="line-clamp-12 leading-6">{props.body}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </Slider>
+            );
+          })}
+        </Slider>
+      </Container>
     </section>
   );
 };
