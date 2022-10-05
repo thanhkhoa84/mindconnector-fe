@@ -81,11 +81,11 @@ const Slide = ({ index, ...props }) => {
 const HeroBanner = ({ slides, ...props }) => {
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 10000,
     fade: false,
     adaptiveHeight: true,
@@ -94,7 +94,9 @@ const HeroBanner = ({ slides, ...props }) => {
   };
 
   return (
-    <section className={`max-auto bg-[#FFF7ED] ${styles.HeroBanner}`}>
+    <section
+      className={`max-auto relative mx-auto overflow-hidden bg-[#FFF7ED]`}
+    >
       <h4 className="sr-only">Tin tức mới nhất</h4>
       <Slider {...settings}>
         {slides.map(({ ...props }, index) => {
