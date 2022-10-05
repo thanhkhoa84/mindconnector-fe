@@ -27,9 +27,9 @@ const Header = ({ ...navlinks }) => {
   });
 
   return (
-    <header className="relative">
+    <header className="relative bg-purple lg:bg-white">
       <Container>
-        <div className="rounded2-b-xl flex h-[60px] items-center justify-between bg-purple px-4 lg:h-[80px] lg:rounded-none lg:bg-white ">
+        <div className="rounded2-b-xl flex h-[60px] items-center justify-between lg:-mx-4 lg:h-[80px] lg:rounded-none ">
           <div className="flex flex-wrap items-center">
             <Logo />
           </div>
@@ -89,7 +89,7 @@ const Header = ({ ...navlinks }) => {
         <div
           className={`
           ${toggle ? "block" : "hidden"}
-          absolute top-full z-10 w-full rounded-b-2xl bg-transparent lg:hidden
+          absolute top-full z-10 -mx-[1em] w-full rounded-b-2xl bg-transparent lg:hidden
         `}
         >
           <MobileNav {...navlinks} />

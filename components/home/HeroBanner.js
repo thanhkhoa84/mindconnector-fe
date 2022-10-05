@@ -4,114 +4,103 @@ import styles from "./HeroBanner.module.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Container from "../Container";
+
+function NextArrow(props) {
+  const { className, onClick } = props;
+  return (
+    <div
+      className={`
+        absolute top-1/2 -right-[40px] z-10 hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden lg:block
+      `}
+      onClick={onClick}
+      style={{}}
+    >
+      <Image
+        src="/img/btn-next.png"
+        width={80}
+        height={80}
+        alt=""
+        className="absolute top-0 left-0"
+      />
+    </div>
+  );
+}
+
+function PrevArrow(props) {
+  const { className, onClick } = props;
+  return (
+    <div
+      className={`
+        absolute top-1/2 -left-[40px] z-10 hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden lg:block
+      `}
+      onClick={onClick}
+      style={{}}
+    >
+      <Image
+        src="/img/btn-prev.png"
+        width={80}
+        height={80}
+        alt=""
+        className="absolute top-0 right-0"
+      />
+    </div>
+  );
+}
+
+const Slide = ({ index, ...props }) => {
+  return (
+    <div {...props} className="relative mx-auto my-0">
+      <div className="leading-[1]">
+        <Image
+          src={props.image}
+          alt={props.headline}
+          width={1920}
+          height={1282}
+          priority={true}
+          className="block w-full"
+        />
+      </div>
+      <div
+        className={`
+        delay-0 lg:w-1/3} static bottom-[2em] left-[2em] transition-all delay-500 duration-[650ms] lg:absolute lg:w-[420px]
+      `}
+      >
+        <div
+          className={`z-10 rounded-xl bg-white bg-opacity-80 px-[1em] pt-[2em] pb-[2em] lg:ml-[10%] lg:px-8 lg:py-12 lg:pb-[1em] lg:shadow-xl`}
+        >
+          <h2 className="mb-[0.5em] text-[28px] font-black leading-none md:text-3xl">
+            {props.headline}
+          </h2>
+          <p className="line-clamp-12 leading-6">{props.body}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const HeroBanner = ({ slides, ...props }) => {
-  let ref = useRef(null);
-  let [width, setWidth] = useState(0);
-  let [state, dispatch] = useReducer(
-    (state, action) => {
-      switch (action.type) {
-        case "NEXT":
-          return {
-            ...state,
-            currentIndex: (state.currentIndex + 1) % slides.length,
-          };
-        case "PREV":
-          return {
-            ...state,
-            currentIndex:
-              (state.currentIndex - 1 + slides.length) % slides.length,
-          };
-        case "GOTO":
-          return {
-            ...state,
-            currentIndex: action.index,
-          };
-        default:
-          return state;
-      }
-    },
-    {
-      currentIndex: 0,
-      nextSlide: 1,
-    }
-  );
-
-  /* 
-  TODO:
-    - Get slide width
-    - Positioning slides
-    - Init animation for first slide
-    - Calculate next, prev slide position
-    - Recalculate when resize
-  */
-
-  // useEffect(() => {
-  //   // rearrange slides
-  //   let draw = () => {
-  //     setWidth(ref.current.children[0].clientWidth);
-  //   };
-  //   draw();
-
-  //   window.addEventListener("resize", draw);
-  //   return () => {
-  //     window.removeEventListener("resize", draw);
-  //   };
-  // }, []);
-
   const settings = {
-    dots: true,
-    infinite: true,
+    dots: false,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 10000,
-    fade: true,
+    fade: false,
+    adaptiveHeight: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
 
   return (
-    <section className={`pb-10 ${styles.HeroBanner}`}>
-      <Container>
-        <h4 className="sr-only">Tin tức mới nhất</h4>
-        <Slider {...settings}>
-          {slides.map(({ ...props }, index) => {
-            return (
-              <div {...props} key={index} className="relative mx-auto my-0">
-                <figure>
-                  <Image
-                    src={props.image}
-                    alt=""
-                    width={1920}
-                    height={1282}
-                    className="w-full"
-                  />
-                </figure>
-                <div
-                  className={`
-                  delay-0 static bottom-[2em] left-[2em] transition-all delay-500 duration-[650ms] md:absolute md:w-[420px] lg:w-1/3
-                  ${
-                    props.image
-                      ? "opacity-1 translate-y-0"
-                      : "translate-y-8 opacity-0"
-                  }
-                `}
-                >
-                  <div
-                    className={`z-10 rounded-xl bg-white bg-opacity-80 px-[1em] pt-[2em] pb-[1em] md:px-8 md:py-12 md:shadow-xl`}
-                  >
-                    <h2 className="mb-[0.5em] text-[28px] font-black leading-none md:text-3xl">
-                      {props.headline}
-                    </h2>
-                    <p className="line-clamp-12 leading-6">{props.body}</p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </Slider>
-      </Container>
+    <section className={`max-auto bg-[#FFF7ED] ${styles.HeroBanner}`}>
+      <h4 className="sr-only">Tin tức mới nhất</h4>
+      <Slider {...settings}>
+        {slides.map(({ ...props }, index) => {
+          return <Slide {...props} index={index} key={index} />;
+        })}
+      </Slider>
     </section>
   );
 };

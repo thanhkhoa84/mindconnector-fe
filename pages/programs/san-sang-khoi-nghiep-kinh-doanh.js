@@ -192,7 +192,7 @@ const ProgramPost = ({ questions, courses }) => {
                   <p className="text-[14px]">1988 Đánh giá</p>
                 </div>
                 <div className="text-black">
-                  <p className="text-[20px] font-bold">2000</p>
+                  <p className="text-[20px] font-bold">200</p>
                   <p className="text-[14px]">Học viên</p>
                 </div>
                 <div className="text-black">
