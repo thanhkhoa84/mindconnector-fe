@@ -58,12 +58,13 @@ export async function getStaticProps() {
     {
       question: "Điểm khác biệt của Mind Connector là gì?",
       answer:
-        "Mind Connector là một mạng lưới của các nhà tư vấn kinh doanh cùng các giảng viên vốn là các lãnh đạo và chuyên gia hàng đầu trong nhiều lĩnh vực khác nhau. Vì thế, Mind Connector sẽ cung cấp những chương trình học đa dạng, khác biệt nhưng vẫn phù hợp với nhu cầu thực tế của từng cá nhân. Vì thế, với các kiến thức từ Mind Connector, bạn hoàn toàn có thể tự tin để có thể chinh phục những dự định của tương lai.",
+        "Mind Connector là một mạng lưới của các nhà tư vấn kinh doanh cùng các giảng viên vốn là các lãnh đạo và chuyên gia có kinh nghiệm thực chiến trong nhiều lĩnh vực khác nhau. Vì thế, Mind Connector sẽ cung cấp những chương trình học đa dạng, khác biệt nhưng vẫn phù hợp với nhu cầu thực tế của từng cá nhân. Với các kiến thức từ Mind Connector, bạn hoàn toàn có thể tự tin để có thể chinh phục những dự định của tương lai.",
     },
     {
       question: "Mind Connector có những loại khóa học nào?",
       answer:
-        "Mỗi cá nhân, mỗi doanh nghiệp sẽ có nhu cầu và định hướng phát triển riêng. Vì thế Mind Connector xây dựng những chương trình học với những kiến thức nền tảng, dù đa dạng, khác biệt nhưng vẫn đáp ứng được nhu cầu, nguyện vọng của từng cá nhân. Đối với sinh viên đang ngồi trên ghế nhà trường, bạn có thể tham khảo khoá học “Kỹ năng xã hội” để không những có thể trở thành một sinh viên ưu tú mà còn trang bị cho mình những kỹ năng phục vụ cho tương lai. Bên cạnh đó, khi sắp tốt nghiệp ra trường, bạn có thể tham khảo khoá học “Vững vàng lập nghiệp” nếu muốn trở thành nhân viên xuất sắc ở công ty bạn yêu thích, hoặc khoá học “Thành công trong khởi nghiệp kinh doanh” để có thể chạm đỉnh vinh quang trên con đường khởi nghiệp của mình. Không dừng lại ở đó, Mind Connector còn thiết kế những khoá đào tạo nội bộ cho các doanh nghiệp và cung cấp các giải pháp chiến lược chuyên biệt, sát cánh cùng doanh nghiệp trên hành trình phát triển mỗi ngày.",
+        "Mỗi cá nhân, mỗi doanh nghiệp sẽ có nhu cầu và định hướng phát triển riêng. Vì thế Mind Connector xây dựng những chương trình học với những kiến thức nền tảng, dù đa dạng, khác biệt nhưng vẫn đáp ứng được nhu cầu, nguyện vọng của từng cá nhân. Đối với sinh viên đang ngồi trên ghế nhà trường, bạn có thể tham khảo khoá học “Kỹ năng xã hội” để không những có thể trở thành một sinh viên ưu tú mà còn trang bị cho mình những kỹ năng phục vụ cho tương lai. Bên cạnh đó, khi sắp tốt nghiệp ra trường, bạn có thể tham khảo khoá học “Vững vàng lập nghiệp” nếu muốn trở thành nhân viên xuất sắc ở công ty bạn yêu thích, hoặc khoá học “Thành công trong khởi nghiệp kinh doanh” để có thể chạm đỉnh vinh quang trên con đường khởi nghiệp của mình. Không dừng lại ở đó, Mind Connector còn thiết kế những khoá đào tạo nội bộ cho các doanh nghiệp và cung cấp các giải pháp chiến lược chuyên biệt, sát cánh cùng doanh nghiệp trên hành trình phát triển mỗi ngày. 
+        ",
     },
     {
       question:
