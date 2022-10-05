@@ -11,7 +11,7 @@ const ProgramCourseCard = ({ course }) => {
   let { title, lessons, time, slug } = course;
   return (
     <div
-      className={`relative w-[165px] overflow-hidden rounded-[30px] border-[6px] border-orange-medium text-left md:w-[190px] `}
+      className={`relative w-[165px] overflow-hidden rounded-[30px] border-[6px] border-[#FFF7EC] text-left md:w-[190px] `}
     >
       <div className={`overflow-hidden rounded-2xl  ${styles.courseCardImage}`}>
         <Image

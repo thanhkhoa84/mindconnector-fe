@@ -383,45 +383,8 @@ const ProgramPost = ({ questions, courses }) => {
                       ${index == 0 ? "" : "mt-[2em] md:mt-0"}
                     `}
                   >
-                    <div
-                      className={`
-                        md:inline-block md:align-top
-                        ${index % 2 ? "text-right md:mt-[4em]" : ""}
-                      `}
-                    >
-                      <div
-                        className={`
-                          absolute top-1/2
-                          -translate-y-1/2 after:absolute after:right-0 after:top-[50%] after:h-[24px] after:w-[24px] after:-translate-y-[8px] after:animate-pulse after:bg-[url(/img/indicator.png)]  after:content-[''] md:static md:translate-y-0 after:md:top-full after:md:left-1/2 after:md:-translate-y-[22px] after:md:-translate-x-[10px]
-                          ${
-                            index % 2
-                              ? "left-0 after:-right-[12px]"
-                              : "right-0 after:-left-[12px]"
-                          }
-                        `}
-                      >
-                        <div className="flex flex-col items-center justify-center">
-                          <p className="relative z-10 inline-block rounded-xl bg-purple px-4 py-2 text-sm font-bold leading-none text-white">
-                            Khoá
-                          </p>
-                          <p
-                            className={`
-                              relative -top-[10px] inline-flex h-[78px] w-[78px] items-center justify-center rounded-xl bg-[#FDF2F2] text-[54px] font-black text-[#F5B0C5] shadow-lg
-                            `}
-                          >
-                            {index + 1}
-                          </p>
-                        </div>
-                        <div
-                          className={`
-                            absolute top-1/2 w-[100vw] translate-y-[3px] border-t-2 border-dotted md:top-full md:left-1/2 md:h-[200px] md:w-0 md:w-[1px] md:border-t-0 md:border-r-2
-                            ${index % 2 ? "left-full" : "right-full"}
-                          `}
-                        ></div>
-                      </div>
-                      <div className="inline-block md:pt-[4em]">
-                        <ProgramCourseCard course={course} />
-                      </div>
+                    <div className="inline-block md:pt-[4em]">
+                      <ProgramCourseCard course={course} />
                     </div>
                   </li>
                 );
