@@ -447,9 +447,9 @@ const ProgramPost = ({ questions, courses }) => {
                             Founder nhãn hàng Gac Lyco – các sản phẩm dinh dưỡng
                             tiền Vitamin C từ Gấc
                           </p>
-                          <p className="font-black">
+                          {/* <p className="font-black">
                             “Thành công trong khởi sự kinh doanh”
-                          </p>
+                          </p> */}
                         </div>
                       </div>
                     </div>
