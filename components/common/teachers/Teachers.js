@@ -22,10 +22,13 @@ const TeacherCard = ({ name, imgUrl, title, socials }) => {
         <h3 className="m-0 text-sm font-black leading-none text-purple md:text-base">
           {name}
         </h3>
-        <p className="mt-2 min-h-[calc(2*1.25*1em)] px-[0.3em] text-sm leading-none dark:text-white xs:text-xs md:text-base lg:text-sm">
-          {title}
+        <p
+          dangerouslySetInnerHTML={{ __html: title }}
+          className="mt-2 min-h-[calc(2*1.25*1em)] px-[0.3em] text-sm leading-none dark:text-white xs:text-xs md:text-base lg:text-sm"
+        >
+          {/* {title} */}
         </p>
-        {socials && (
+        {/* {socials && (
           <div className={`mt-4 inline-flex flex-row justify-center gap-2`}>
             {socials.map((s, i) => {
               return (
@@ -48,7 +51,7 @@ const TeacherCard = ({ name, imgUrl, title, socials }) => {
               );
             })}
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
@@ -59,7 +62,7 @@ const TeacherList = () => {
     {
       name: "Hiếu Nguyễn",
       imgUrl: "/img/mentors/hieu-nguyen.png",
-      title: "Phụ trách nghiên cứu phát triển thị trường",
+      title: "Phụ trách nghiên cứu <br/>phát triển thị trường",
       socials: [
         { name: "linkedin", url: "https://linkedin.com" },
         { name: "twitter", url: "https://twitter.com" },
@@ -68,19 +71,19 @@ const TeacherList = () => {
     {
       name: "Nina Trần",
       imgUrl: "/img/mentors/nina-tran.png",
-      title: "Phụ trách thiết kế chương trình",
+      title: "Phụ trách thiết kế <br/>chương trình",
       socials: [{ name: "linkedin", url: "https://linkedin.com" }],
     },
     {
       name: "Mandy Nguyễn",
       imgUrl: "/img/mentors/mandy-nguyen.png",
-      title: "Chuyên gia Kinh doanh - Marketing",
+      title: "Chuyên gia <br/>Kinh doanh - Marketing",
       socials: [{ name: "linkedin", url: "https://linkedin.com" }],
     },
     {
       name: "Đào Minh Huyền",
       imgUrl: "/img/mentors/dao-minh-huyen.png",
-      title: "Owner of Ask2Go App, Mihoo Cosmetics,…",
+      title: "Owner of Ask2Go App, <br/>Mihoo Cosmetics,…",
       socials: [{ name: "linkedin", url: "https://linkedin.com" }],
     },
   ];
