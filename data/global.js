@@ -73,3 +73,6 @@ export const Paths = {
   programs: ["san-sang-khoi-nghiep-kinh-doanh"],
   courses: ["len-ke-hoach-kinh-doanh"],
 };
+
+
+export const contactEmail = "register@mindconnector.com.vn";

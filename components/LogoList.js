@@ -4,7 +4,7 @@ import Image from "next/future/image";
 const LogoList = ({ backgroundColor, title, list }) => {
   let images = [
     "/img/logo-valoma.png",
-    // "/img/logo-v.png",
+    "/img/logo-v.png",
     "/img/logo-gdnn.png",
     "/img/logo-vilas.png",
     "/img/logo-gli.png",
@@ -34,8 +34,8 @@ const LogoList = ({ backgroundColor, title, list }) => {
                     src={imgSrc}
                     alt=""
                     priority={true}
-                    width={100}
-                    height={100}
+                    width={200}
+                    height={200}
                     style={{}}
                     className="mx-auto block h-full max-h-8 max-w-full object-contain"
                   />
