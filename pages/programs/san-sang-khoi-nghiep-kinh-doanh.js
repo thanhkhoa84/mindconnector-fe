@@ -151,7 +151,7 @@ const ProgramPost = ({ questions, courses }) => {
               Sẵn sàng khởi nghiệp kinh doanh
             </h1>
             <p className="mt-4">
-              ““Khởi nghiệp thuận lợi, chạm đỉnh vinh quang””
+              “Khởi nghiệp thuận lợi, chạm đỉnh vinh quang”
             </p>
             <div className="mt-8 grid grid-cols-2 gap-8 md:flex md:justify-center">
               {mentors.map((m, index) => {
@@ -308,7 +308,7 @@ const ProgramPost = ({ questions, courses }) => {
                     </h2>
                     <p className="max-w-[300px] md:max-w-none">
                       <a
-                        href=""
+                        href="/docs/[Mind Connector] Sẵn sàng khởi nghiệp kinh doanh.pdf"
                         download
                         className="btn-primary w-[300px] md:w-auto"
                       >
@@ -479,7 +479,10 @@ const ProgramPost = ({ questions, courses }) => {
                           Chị Phạm Thị Hải An
                         </h3>
                         <div className="text-xs text-[#6C6C6C] lg:text-sm">
-                          <p>Học viên Chương trình nâng cao </p>
+                          <p>
+                            Founder nhãn hàng Gac Lyco – các sản phẩm dinh dưỡng
+                            tiền Vitamin C từ Gấc
+                          </p>
                           <p className="font-black">
                             “Thành công trong khởi sự kinh doanh”
                           </p>

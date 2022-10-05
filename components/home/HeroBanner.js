@@ -99,7 +99,7 @@ const HeroBanner = ({ slides, ...props }) => {
                   <h2 className="mb-[0.5em] text-[28px] font-black leading-none md:text-3xl">
                     {props.headline}
                   </h2>
-                  <p className="leading-6 line-clamp-3">{props.body}</p>
+                  <p className="line-clamp-12 leading-6">{props.body}</p>
                 </div>
               </div>
             </div>
