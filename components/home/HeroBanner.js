@@ -62,11 +62,11 @@ const Slide = ({ index, ...props }) => {
       </div>
       <div
         className={`
-        delay-0 lg:w-1/3} static bottom-[2em] left-[2em] transition-all delay-500 duration-[650ms] lg:absolute lg:w-[420px]
+        delay-0 lg:w-1/3} static bottom-[2em] transition-all delay-500 duration-[650ms] lg:absolute lg:left-[calc((100vw-1024px)/2)] lg:max-w-[420px] xl:left-[calc((100vw-1120px)/2)]
       `}
       >
         <div
-          className={`z-10 rounded-xl bg-white bg-opacity-80 px-[1em] pt-[2em] pb-[2em] lg:ml-[10%] lg:px-8 lg:py-12 lg:pb-[1em] lg:shadow-xl`}
+          className={` z-10 rounded-xl bg-white bg-opacity-80 px-[1em] pt-[2em] pb-[2em] lg:px-8 lg:py-8 lg:shadow-xl`}
         >
           <h2 className="mb-[0.5em] text-[28px] font-black leading-none md:text-3xl">
             {props.headline}
