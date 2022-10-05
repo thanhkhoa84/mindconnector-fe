@@ -4,7 +4,7 @@ import Image from "next/future/image";
 const LogoList = ({ backgroundColor, title, list }) => {
   let images = [
     "/img/logo-valoma.png",
-    "/img/logo-v.png",
+    // "/img/logo-v.png",
     "/img/logo-gdnn.png",
     "/img/logo-vilas.png",
     "/img/logo-gli.png",

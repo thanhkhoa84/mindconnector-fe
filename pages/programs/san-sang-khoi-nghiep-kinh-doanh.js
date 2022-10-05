@@ -153,11 +153,11 @@ const ProgramPost = ({ questions, courses }) => {
             <p className="mt-4">
               ““Khởi nghiệp thuận lợi, chạm đỉnh vinh quang””
             </p>
-            <div className="mt-8 flex flex-row flex-wrap justify-around gap-4 md:justify-center md:gap-6">
+            <div className="mt-8 grid grid-cols-2 gap-8 md:flex md:justify-center">
               {mentors.map((m, index) => {
                 const { name, title, image } = m;
                 return (
-                  <div className="w-[48%] md:w-auto" key={index}>
+                  <div className="" key={index}>
                     <div className="inline-block w-[90px] overflow-hidden rounded-full md:w-[100px]">
                       <Image
                         src={image}
@@ -170,7 +170,7 @@ const ProgramPost = ({ questions, courses }) => {
                     <p className="mt-1 text-xs font-black text-purple md:text-base">
                       {name}
                     </p>
-                    <p className="mx-auto max-w-[80%] text-xs">{title}</p>
+                    <p className="mx-auto text-xs">{title}</p>
                   </div>
                 );
               })}
