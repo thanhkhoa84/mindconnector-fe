@@ -85,7 +85,7 @@ const HeroBanner = ({ slides, ...props }) => {
               </figure>
               <div
                 className={`
-                  delay-0 static bottom-[2em] left-[2em] transition-all delay-500 duration-[650ms] sm:absolute md:w-[420px]
+                  delay-0 static bottom-[2em] left-[2em] transition-all delay-500 duration-[650ms] md:absolute md:w-[420px] lg:w-1/3
                   ${
                     props.image
                       ? "opacity-1 translate-y-0"

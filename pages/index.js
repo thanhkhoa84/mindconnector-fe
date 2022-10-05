@@ -85,11 +85,6 @@ export async function getStaticProps() {
       body: "Ngày 15/7/2022, Ban Giám Đốc Hội Giáo Dục Nghề Nghiệp phía Nam đã chính thức chỉ định Mind Connector làm Trung Tâm Đào Tạo Kỹ Năng và Kết Nối Doanh Nghiệp, cung cấp các khoá đào tạo cho các trường Cao Đẳng và Doanh Nghiệp thuộc hệ thống hỗ trợ đào tạo của Hội.",
       image: "/img/home-banner-2.jpg",
     },
-    {
-      headline: "Workshop với Valoma và 8 trường Đại Học Phía Nam",
-      body: "",
-      image: "/img/home-banner-3.jpg",
-    },
   ];
 
   return {
