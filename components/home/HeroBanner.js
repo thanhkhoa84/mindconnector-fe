@@ -78,8 +78,8 @@ const HeroBanner = ({ slides, ...props }) => {
                 <Image
                   src={props.image}
                   alt=""
-                  width={1380}
-                  height={920}
+                  width={1920}
+                  height={1282}
                   className="w-full"
                 />
               </figure>

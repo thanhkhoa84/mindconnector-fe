@@ -77,13 +77,13 @@ export async function getStaticProps() {
     {
       headline: "Mind Connector ký hợp đồng tư vấn dài hạn với Tập Đoàn STP ",
       body: "Mind Connector trở thành đơn vị tư vấn chính thức của Tập Đoàn STP tại Hà Nội về mô hình kinh doanh và xây dựng thương hiệu trong lĩnh vực Aquatech.",
-      image: "/img/home-banner-1.jpg",
+      image: "/img/home-banner-1.png",
     },
     {
       headline:
         "Mind Connector đảm nhiệm vai trò mới tại Hội Giáo Dục Nghề Nghiệp phía Nam ",
       body: "Ngày 15/7/2022, Ban Giám Đốc Hội Giáo Dục Nghề Nghiệp phía Nam đã chính thức chỉ định Mind Connector làm Trung Tâm Đào Tạo Kỹ Năng và Kết Nối Doanh Nghiệp, cung cấp các khoá đào tạo cho các trường Cao Đẳng và Doanh Nghiệp thuộc hệ thống hỗ trợ đào tạo của Hội.",
-      image: "/img/home-banner-2.jpg",
+      image: "/img/home-banner-2.png",
     },
   ];
 
