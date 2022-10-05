@@ -128,22 +128,24 @@ const NavBar = () => {
       lg:mr-2 lg:block lg:flex lg:flex-row lg:space-x-3 lg:bg-transparent xl:space-x-8"
     >
       <li>
-        <ActiveLink href="/">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="12"
-            height="12"
-            viewBox="0 0 12 12"
-            className="cursor-pointer"
-          >
-            <path
-              id="_001-home"
-              data-name="001-home"
-              d="M11.677,5.219h0L6.781.324a1.1,1.1,0,0,0-1.563,0L.325,5.216l0,.005A1.1,1.1,0,0,0,1.056,7.1l.034,0h.2v3.6A1.294,1.294,0,0,0,2.578,12H4.493a.352.352,0,0,0,.352-.352V8.824a.591.591,0,0,1,.59-.59h1.13a.591.591,0,0,1,.59.59v2.824A.352.352,0,0,0,7.506,12H9.421a1.294,1.294,0,0,0,1.293-1.293V7.1H10.9a1.1,1.1,0,0,0,.782-1.885Zm0,0"
-              transform="translate(0.001)"
-              fill="#2b2b2b"
-            />
-          </svg>
+        <ActiveLink href="/" activeClassName="[&>svg>path]:fill-purple">
+          <a className="group block hover:[&>svg>path]:fill-purple">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              className="cursor-pointer"
+            >
+              <path
+                id="_001-home"
+                data-name="001-home"
+                d="M11.677,5.219h0L6.781.324a1.1,1.1,0,0,0-1.563,0L.325,5.216l0,.005A1.1,1.1,0,0,0,1.056,7.1l.034,0h.2v3.6A1.294,1.294,0,0,0,2.578,12H4.493a.352.352,0,0,0,.352-.352V8.824a.591.591,0,0,1,.59-.59h1.13a.591.591,0,0,1,.59.59v2.824A.352.352,0,0,0,7.506,12H9.421a1.294,1.294,0,0,0,1.293-1.293V7.1H10.9a1.1,1.1,0,0,0,.782-1.885Zm0,0"
+                transform="translate(0.001)"
+                fill="#2b2b2b"
+              />
+            </svg>
+          </a>
         </ActiveLink>
       </li>
       {navlinks.map((link, index) => {

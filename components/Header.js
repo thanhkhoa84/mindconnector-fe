@@ -29,7 +29,7 @@ const Header = ({ ...navlinks }) => {
   return (
     <header className="relative bg-purple lg:bg-white">
       <Container>
-        <div className="rounded2-b-xl flex h-[60px] items-center justify-between lg:-mx-4 lg:h-[80px] lg:rounded-none ">
+        <div className="rounded2-b-xl flex h-[60px] items-center justify-between lg:h-[80px] lg:rounded-none ">
           <div className="flex flex-wrap items-center">
             <Logo />
           </div>
