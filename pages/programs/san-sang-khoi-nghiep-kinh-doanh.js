@@ -408,11 +408,15 @@ const ProgramPost = ({ questions, courses }) => {
               <div className="align-center mt-12 flex flex-col">
                 <div className="flex-shrink flex-grow self-center pb-14 ">
                   <blockquote
-                    className={`relative rounded-2xl bg-white/70 p-6 py-8 italic shadow-asideboxLight 
+                    className={`relative rounded-2xl bg-white/70 p-10 py-8 italic shadow-asideboxLight 
                       before:absolute before:-top-[0.3em] before:left-4 before:text-[60px] before:font-black before:leading-none  before:text-purple before:content-['"'] 
                       after:absolute after:-bottom-[0.7em] after:right-[0.5em] after:text-[60px] after:font-black after:leading-none after:text-purple after:content-['"']`}
                   >
-                    <p>
+                    <h5 className="text-4xl font-black not-italic text-purple">
+                      Tôi có một khoảng thời gian được trải nghiệm thật sự cảm
+                      giác lăn xả vào dự án khi tham gia khóa đào tạo này.
+                    </h5>
+                    <p className="mt-8 text-justify italic">
                       Tôi có một khoảng thời gian được trải nghiệm thật sự cảm
                       giác lăn xả vào dự án khi tham gia khóa đào tạo này. Trước
                       đây tôi cũng biết được rằng khởi nghiệp không hề đơn giản,
@@ -437,7 +441,7 @@ const ProgramPost = ({ questions, courses }) => {
                         alt=""
                         className="block"
                       />
-                      <div className="">
+                      <div className="not-italic">
                         <h3 className="font-black text-purple">
                           Chị Phạm Thị Hải An
                         </h3>
