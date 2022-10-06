@@ -293,7 +293,7 @@ const CoursePost = ({ questions, logoslist, programInfo, testimonial }) => {
                       <b>Ngiên Cứu và Phân Tích</b>. Cùng lắng nghe những chia
                       sẻ từ họ nhé!
                     </p>
-                    <div className="mt-12">
+                    <div className="mt-8">
                       <Testimonial data={testimonial} />
                     </div>
                   </div>
