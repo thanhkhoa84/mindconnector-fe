@@ -4,7 +4,8 @@ import dynamic from "next/dynamic";
 import Image from "next/future/image";
 import Container from "../../components/Container";
 import Seo from "../../components/SEO";
-import { BannerHeading, SectionSubHeading } from "../../components/Heading";
+import { SectionSubHeading } from "../../components/Heading";
+import Testimonial from "../../components/Testimonial";
 import { QandAProgram } from "../../components/QandA";
 import { useEffect, useState, useRef } from "react";
 import {
@@ -12,7 +13,6 @@ import {
   MODAL_TYPES,
 } from "../../components/common/modal/GlobalModal";
 import { Paths } from "../../data/global";
-
 
 const seo = {
   metaTitle: "Mind Connector",
@@ -90,7 +90,7 @@ const TabPanels = () => {
   );
 };
 
-const CoursePost = ({ questions, logoslist, programInfo }) => {
+const CoursePost = ({ questions, logoslist, programInfo, testimonial }) => {
   const { showModal } = useGlobalModalContext();
   const createModal = () => {
     showModal(MODAL_TYPES.REGISTER_MODAL, {
@@ -282,6 +282,69 @@ const CoursePost = ({ questions, logoslist, programInfo }) => {
                     lobortis est, et faucibus arcu sagittis eu.
                   </p>
                 </div>
+
+                <div className="w-ful mt-12 mb-12" id="rating">
+                  <div>
+                    <h2 className="mb-3 text-[34px] font-black leading-[1] leading-[1.2]">
+                      Chia sẻ từ học viên Mind Connector
+                    </h2>
+                    <p>
+                      645 học viên đã tham gia khoá học{" "}
+                      <b>Ngiên Cứu và Phân Tích</b>. Cùng lắng nghe những chia
+                      sẻ từ họ nhé!
+                    </p>
+                    <div className="mt-12">
+                      <Testimonial data={testimonial} />
+                    </div>
+                  </div>
+                  <div id="qa">
+                    <QandAProgram questions={questions} />
+                  </div>
+                  <div id="register">
+                    <h2 className="text-[34px] font-black">Đăng ký khoá học</h2>
+                    <p>Đăng ký ngay để phát triển kỹ năng của bạn. </p>
+                    <div className="mt-8 mb-4 flex flex-col overflow-hidden rounded-3xl bg-[#941C50] text-white lg:flex-row lg:justify-between">
+                      <header className="flex items-center justify-center bg-[#B22F66] py-4 px-6 lg:bg-[#941C50]">
+                        <h3 className="text-[24px] font-black">
+                          Đăng ký khoá lẻ
+                        </h3>
+                      </header>
+                      <div className="flex flex-col items-center justify-center p-6 sm:flex-row lg:justify-end ">
+                        <p className="flex items-center sm:basis-[300px]">
+                          <button
+                            onClick={createModal}
+                            className="btn-primary block w-full md:min-w-[296px]"
+                          >
+                            Đăng ký học ngay!
+                          </button>
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-center sm:text-left">Hoặc</p>
+                    <div className="mt-4 overflow-hidden rounded-3xl bg-[#FF8348] text-white">
+                      <header className="py-4 px-6">
+                        <h3 className="text-[24px] font-black">
+                          Đăng ký toàn bộ chương trình, nhận ngay ưu đãi
+                        </h3>
+                        <p className="mt-2 font-medium">
+                          Bạn có thể đăng ký cả chương trình Thành Công Trong
+                          học Tập để nhận giá ưu đãi vô cùng hấp dẫn.{" "}
+                        </p>
+                      </header>
+                      <div className="p-6">
+                        <p className="sm:basis-[300px]">
+                          <button
+                            onClick={createModal}
+                            className="btn-invert block w-full md:min-w-[296px]"
+                          >
+                            {/* Đừng Bỏ Lỡ, Đăng Ký Học Ngay! */}
+                            Khám Phá Tất Cả Các Khoá Học
+                          </button>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <aside className="hidden w-full md:block md:w-2/5 lg:w-[336px]">
                 <div className="divide-y rounded-2xl p-8 px-6 shadow-asideboxLight">
@@ -315,87 +378,6 @@ const CoursePost = ({ questions, logoslist, programInfo }) => {
                   </div>
                 </div>
               </aside>
-            </div>
-
-            <div
-              className="mt-12 mb-12 w-full md:w-3/5 lg:w-[688px]"
-              id="rating"
-            >
-              <div>
-                <h2 className="mb-3 text-[34px] font-black leading-[1] leading-[1.2]">
-                  Chia sẻ từ học viên Mind Connector
-                </h2>
-                <p>
-                  645 học viên đã tham gia khoá học{" "}
-                  <b>Ngiên Cứu và Phân Tích</b>. Cùng lắng nghe những chia sẻ từ
-                  họ nhé!
-                </p>
-                <p>
-                  <br />
-                </p>
-                <p>
-                  <Link href="/">
-                    <span className="link-arrow">Xem tất cả chia sẻ</span>
-                  </Link>
-                </p>
-              </div>
-              <div id="qa">
-                <QandAProgram questions={questions} />
-              </div>
-              <div id="register">
-                <h2 className="text-[34px] font-black">Đăng ký khoá học</h2>
-                <p>Đăng ký ngay để phát triển kỹ năng của bạn. </p>
-                <div className="mt-8 mb-4 overflow-hidden rounded-3xl bg-[#941C50] text-white">
-                  <header className="bg-[#B22F66] py-4 px-6">
-                    <h3 className="text-[24px] font-black">Đăng ký khoá lẻ</h3>
-                  </header>
-                  <div className="flex flex-col items-center justify-between p-6 sm:flex-row">
-                    <p className="text-[14px] font-bold">
-                      <span>Học phí USD$</span>{" "}
-                      <span className="text-[32px]">
-                        89<sup className="text-[18px]">99</sup>
-                      </span>
-                    </p>
-                    <p className="flex items-center sm:basis-[300px]">
-                      <button
-                        onClick={createModal}
-                        className="btn-primary block w-full md:min-w-[296px]"
-                      >
-                        Đăng ký học ngay!
-                      </button>
-                    </p>
-                  </div>
-                </div>
-                <p className="text-center sm:text-left">Hoặc</p>
-                <div className="mt-4 overflow-hidden rounded-3xl bg-[#D34C2A] text-white">
-                  <header className="bg-[#FE8C57] py-4 px-6">
-                    <h3 className="text-[24px] font-black">
-                      Đăng ký toàn bộ chương trình, nhận ngay ưu đãi
-                    </h3>
-                    <p className="mt-2 font-medium">
-                      Bạn có thể đăng ký cả chương trình Thành Công Trong học
-                      Tập để nhận giá ưu đãi vô cùng hấp dẫn.{" "}
-                    </p>
-                  </header>
-                  <div className="flex flex-col items-center justify-between p-6 sm:flex-row">
-                    <p className="text-[14px] font-bold">
-                      <span>Học phí USD$</span>{" "}
-                      <span className="text-[32px]">
-                        289<sup className="text-[18px]">99</sup>
-                      </span>
-                    </p>
-                    <p className="sm:basis-[300px]">
-                      <button
-                        onClick={createModal}
-                        className="btn-invert block w-full md:min-w-[296px]"
-                      >
-                        {/* Đừng Bỏ Lỡ, Đăng Ký Học Ngay! */}
-                        Khám Phá Tất Cả Các Khoá Học
-                      </button>
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </Container>
@@ -448,12 +430,35 @@ export async function getStaticProps() {
     slug: "khoa-hoc-nghien-cuu-va-phan-tich",
     price: "89.99",
   };
+  const testimonial = {
+    headline: `Tôi có một khoảng thời gian được trải nghiệm thật sự cảm giác
+    lăn xả vào dự án khi tham gia khóa đào tạo này.`,
+    body: `Tôi có một khoảng thời gian được trải nghiệm thật sự cảm giác lăn xả
+    vào dự án khi tham gia khóa đào tạo này. Trước đây tôi cũng biết được
+    rằng khởi nghiệp không hề đơn giản, từ lúc ấp ủ ý tưởng đến lúc quyết
+    tâm thực thi tôi rất lo lắng vì bản thân còn loay hoay, nhiều vấn đề
+    chưa sáng tỏ. Khi tôi lên kế hoạch được 80% thì gặp được chương trình
+    này. Phải nói rằng những thông tin trong khóa học rất thiết thực, các
+    giảng viên là những người đã làm start up, đang thành công theo mô
+    hình tự thân, tôi thấy vô cùng phù hợp với hoàn cảnh hiện tại của
+    mình. Ban đầu tôi hơi lấn cấn về chi phí khóa học, tuy nhiên khi vào
+    học thì không phải chỉ được học và tôi được các chuyên gia tư vấn thực
+    sự trên kế hoạch kinh doanh của chính tôi. Học xong, tôi thấy tự tin
+    hơn và biết rõ mình muốn gì hơn trong tương lai.`,
+    peep: {
+      name: `Chị Phạm Thị Hải An`,
+      title: `Founder nhãn hàng Gac Lyco – các sản phẩm dinh dưỡng tiền
+      Vitamin C từ Gấc`,
+      image: `/img/testimonial.png`,
+    },
+  };
 
   return {
     props: {
       questions,
       logoslist,
       programInfo,
+      testimonial,
     },
   };
 }

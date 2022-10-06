@@ -9,6 +9,7 @@ import Container from "../../components/Container";
 import Seo from "../../components/SEO";
 import QandA from "../../components/QandA";
 import ProgramCourseCard from "../../components/common/courses/ProgramCourseCard";
+import Testimonial from "../../components/Testimonial";
 import {
   useGlobalModalContext,
   MODAL_TYPES,
@@ -113,7 +114,7 @@ const TabPanels = () => {
   );
 };
 
-const ProgramPost = ({ questions, courses }) => {
+const ProgramPost = ({ questions, courses, testimonial }) => {
   const { showModal } = useGlobalModalContext();
   const createModal = () => {
     showModal(MODAL_TYPES.REGISTER_MODAL, {
@@ -404,56 +405,7 @@ const ProgramPost = ({ questions, courses }) => {
               </div>
               <div className="align-center mt-12 flex flex-col">
                 <div className="flex-shrink flex-grow self-center pb-14 ">
-                  <blockquote
-                    className={`relative rounded-2xl bg-white/70 p-10 py-8 italic shadow-asideboxLight 
-                      before:absolute before:-top-[0.3em] before:left-4 before:text-[60px] before:font-black before:leading-none  before:text-purple before:content-['"'] 
-                      after:absolute after:-bottom-[0.7em] after:right-[0.5em] after:text-[60px] after:font-black after:leading-none after:text-purple after:content-['"']`}
-                  >
-                    <h5 className="text-4xl font-black not-italic text-purple">
-                      Tôi có một khoảng thời gian được trải nghiệm thật sự cảm
-                      giác lăn xả vào dự án khi tham gia khóa đào tạo này.
-                    </h5>
-                    <p className="mt-8 text-justify italic">
-                      Tôi có một khoảng thời gian được trải nghiệm thật sự cảm
-                      giác lăn xả vào dự án khi tham gia khóa đào tạo này. Trước
-                      đây tôi cũng biết được rằng khởi nghiệp không hề đơn giản,
-                      từ lúc ấp ủ ý tưởng đến lúc quyết tâm thực thi tôi rất lo
-                      lắng vì bản thân còn loay hoay, nhiều vấn đề chưa sáng tỏ.
-                      Khi tôi lên kế hoạch được 80% thì gặp được chương trình
-                      này. Phải nói rằng những thông tin trong khóa học rất
-                      thiết thực, các giảng viên là những người đã làm start up,
-                      đang thành công theo mô hình tự thân, tôi thấy vô cùng phù
-                      hợp với hoàn cảnh hiện tại của mình. Ban đầu tôi hơi lấn
-                      cấn về chi phí khóa học, tuy nhiên khi vào học thì không
-                      phải chỉ được học và tôi được các chuyên gia tư vấn thực
-                      sự trên kế hoạch kinh doanh của chính tôi. Học xong, tôi
-                      thấy tự tin hơn và biết rõ mình muốn gì hơn trong tương
-                      lai.
-                    </p>
-                    <div className="mt-4 flex flex-row items-center gap-6">
-                      <Image
-                        src="/img/testimonial.png"
-                        width={60}
-                        height={60}
-                        alt=""
-                        className="block"
-                      />
-                      <div className="not-italic">
-                        <h3 className="font-black text-purple">
-                          Chị Phạm Thị Hải An
-                        </h3>
-                        <div className="text-xs text-[#6C6C6C] lg:text-sm">
-                          <p>
-                            Founder nhãn hàng Gac Lyco – các sản phẩm dinh dưỡng
-                            tiền Vitamin C từ Gấc
-                          </p>
-                          {/* <p className="font-black">
-                            “Thành công trong khởi sự kinh doanh”
-                          </p> */}
-                        </div>
-                      </div>
-                    </div>
-                  </blockquote>
+                  <Testimonial data={testimonial} />
                 </div>
               </div>
             </div>
@@ -562,11 +514,34 @@ export async function getStaticProps() {
       slug: "/courses/thuyet-trinh-cuoi-khoa",
     },
   ];
+  const testimonial = {
+    headline: `Tôi có một khoảng thời gian được trải nghiệm thật sự cảm giác
+    lăn xả vào dự án khi tham gia khóa đào tạo này.`,
+    body: `Tôi có một khoảng thời gian được trải nghiệm thật sự cảm giác lăn xả
+    vào dự án khi tham gia khóa đào tạo này. Trước đây tôi cũng biết được
+    rằng khởi nghiệp không hề đơn giản, từ lúc ấp ủ ý tưởng đến lúc quyết
+    tâm thực thi tôi rất lo lắng vì bản thân còn loay hoay, nhiều vấn đề
+    chưa sáng tỏ. Khi tôi lên kế hoạch được 80% thì gặp được chương trình
+    này. Phải nói rằng những thông tin trong khóa học rất thiết thực, các
+    giảng viên là những người đã làm start up, đang thành công theo mô
+    hình tự thân, tôi thấy vô cùng phù hợp với hoàn cảnh hiện tại của
+    mình. Ban đầu tôi hơi lấn cấn về chi phí khóa học, tuy nhiên khi vào
+    học thì không phải chỉ được học và tôi được các chuyên gia tư vấn thực
+    sự trên kế hoạch kinh doanh của chính tôi. Học xong, tôi thấy tự tin
+    hơn và biết rõ mình muốn gì hơn trong tương lai.`,
+    peep: {
+      name: `Chị Phạm Thị Hải An`,
+      title: `Founder nhãn hàng Gac Lyco – các sản phẩm dinh dưỡng tiền
+      Vitamin C từ Gấc`,
+      image: `/img/testimonial.png`,
+    },
+  };
   return {
     props: {
       questions,
       logoslist,
       courses,
+      testimonial,
     },
   };
 }
