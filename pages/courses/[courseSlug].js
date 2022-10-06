@@ -347,8 +347,8 @@ const CoursePost = ({ questions, logoslist, programInfo, testimonial }) => {
                 </div>
               </div>
               <aside className="hidden w-full md:block md:w-2/5 lg:w-[336px]">
-                <div className="divide-y rounded-2xl p-8 px-6 shadow-asideboxLight">
-                  <div className="pb-8">
+                <div className="rounded-2xl p-6 px-5 shadow-asideboxLight">
+                  <div className="">
                     <SectionSubHeading>
                       Chương trình Thành công trong học tập
                     </SectionSubHeading>
@@ -359,14 +359,14 @@ const CoursePost = ({ questions, logoslist, programInfo, testimonial }) => {
                       “Khởi đầu vững chắc, tương lai khởi sắc”
                     </p>
                   </div>
-                  <div className="flex flex-col items-baseline justify-between pt-4">
-                    <p className="flex w-full flex-row items-center justify-between text-[14px] font-bold">
+                  <div className="flex flex-col items-baseline justify-between">
+                    {/* <p className="flex w-full flex-row items-center justify-between text-[14px] font-bold">
                       <span className="h-full">Học phí </span>
                       <span className="text-[32px]">
                         <span className="text-[14px]">USD$</span>289
                         <sup className="text-[18px]">99</sup>
                       </span>
-                    </p>
+                    </p> */}
                     <p className="mt-4 min-w-[296px]">
                       <button
                         onClick={createModal}
