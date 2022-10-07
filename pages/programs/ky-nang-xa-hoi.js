@@ -24,19 +24,19 @@ const seo = {
 
 const mentors = [
   {
-    name: "Bà Nguyễn Thị Thanh Trúc",
-    title: "Cố Vấn Đào Tạo",
-    image: "/img/mentors/mandy-nguyen.png",
-  },
-  {
-    name: "Bà Đào Minh Huyền",
-    title: "StartUp Advisor - Cố vấn Khởi nghiệp và Đầu tư",
-    image: "/img//mentors/dao-minh-huyen.png",
-  },
-  {
     name: "Bà Nina Trần Lê",
     title: "Thiết kế chương trình <br/>và vận hành",
     image: "/img/mentors/nina-tran.png",
+  },
+  {
+    name: "Nguyễn Phan Ngọc Hiếu",
+    title: "Chuyên viên <br/>phát triển thị trường",
+    image: "/img/mentors/hieu-nguyen.png",
+  },
+  {
+    name: "Bà Nguyễn Thị Thanh Trúc",
+    title: "Cố Vấn Đào Tạo",
+    image: "/img/mentors/mandy-nguyen.png",
   },
   {
     name: "Ông Nguyễn Mạnh Cường",
@@ -149,11 +149,9 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
           <Container>
             <h4 className="font-bold text-gray">Chương trình</h4>
             <h1 className="leading-0 text-3xl font-black uppercase md:text-6xl">
-              Sẵn sàng khởi nghiệp kinh doanh
+              KỸ NĂNG XÃ HỘI
             </h1>
-            <p className="mt-4">
-              “Khởi nghiệp thuận lợi, chạm đỉnh vinh quang”
-            </p>
+            <p className="mt-4">“Nền tảng vững chắc, tương lai khởi sắc"</p>
             <div className="mt-8 grid grid-cols-2 gap-8 md:flex md:justify-center">
               {mentors.map((m, index) => {
                 const { name, title, image } = m;
@@ -193,18 +191,23 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                       />
                     </span>
                   </p>
-                  <p className="text-[14px]">2033 Đánh giá</p>
+                  <p className="text-[14px]">1810 Đánh giá</p>
                 </div>
                 <div className="text-black">
                   <p className="text-[20px] font-bold">200</p>
                   <p className="text-[14px]">Học viên</p>
                 </div>
                 <div className="text-black">
-                  <p className="text-[20px] font-bold">32</p>
+                  <p className="text-[20px] font-bold">24</p>
                   <p className="text-[14px]">Giờ học</p>
                 </div>
               </div>
               <div className="mt-6 flex flex-row flex-wrap items-center justify-between md:mt-0 md:gap-5 md:px-6">
+                {/* <p>
+                  Học phí <span className="text-[14px] font-bold">USD$</span>{" "}
+                  <span className="text-[32px] font-bold">84</span>
+                  <sup className="text-[18px] font-bold">99</sup>
+                </p> */}
                 <p>
                   <button onClick={createModal} className="btn-primary">
                     Đăng ký học ngay
@@ -233,13 +236,13 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                         Mục tiêu
                       </h4>
                       <h3 className="mb-4 text-xl font-black leading-none md:text-2xl md:leading-none">
-                        Phát triển sự nghiệp bền vững
+                        Xây dựng nền tảng vững chắc
                       </h3>
                       <p className="pr-8 leading-5">
-                        Giúp các bạn sinh viên mới ra trường hay người mới bắt
-                        đầu đi làm sẵn sàng về mặt tư duy, kỹ năng, ý thức và
-                        thái độ để tự định hình sự nghiệp của mình trong ngắn
-                        hạn và dài hạn.
+                        Khoá học này giúp sinh viên nâng cao năng suất học tập
+                        và kỹ năng nghiên cứu, từ đó cạnh tranh tốt hơn trong
+                        môi trường học thuật, đồng thời hoàn thiện tính cách và
+                        thay đổi tư duy.
                       </p>
                     </div>
                     <div className="relative flex-shrink flex-grow basis-full border-l border-[#F5CBCC] pl-8 pb-12 md:border-l-0 md:border-t md:pl-0 md:pt-12 md:pr-6">
@@ -274,10 +277,12 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                         Kết quả
                       </h4>
                       <h3 className="mb-4 text-xl font-black leading-none md:text-2xl md:leading-none">
-                        Cơ hội tuyển dụng 
+                        Chứng nhận hoàn thành chương trình
                       </h3>
                       <p className="pr-8 leading-5">
-                      Các học viên sẽ có cơ hội được giới thiệu vào các công ty, tập đoàn lớn sau khi hoàn thành khoá học.
+                        Các học viên sẽ được chứng nhận bởi Mind Connector và
+                        các đối tác của Mind Connector tương ứng với chương
+                        trình học đã hoàn thành.
                       </p>
                     </div>
                   </div>
@@ -291,7 +296,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                 <div className="flex flex-col overflow-hidden rounded-[20px] text-white md:flex-row">
                   <div className="">
                     <Image
-                      src="/img/info-program-san-sang.png"
+                      src="/img/info-program-ky-nang.png"
                       width={704}
                       height={400}
                       alt=""
@@ -327,7 +332,11 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                       <b>Chiêu sinh:</b> Tháng 10/2022
                     </p>
                     <p>
-                      <b>Chi tiết khóa học:</b> 20 buổi trong 8 tuần
+                      <b>Chi tiết khóa học:</b>
+                      <br />
+                      Học phần Tổng quát: 9 buổi
+                      <br />
+                      Học phần Nâng cao: 3 buổi
                     </p>
                     <Image
                       src="/img/icon-schedule.png"
@@ -459,24 +468,14 @@ export async function getStaticProps() {
   /** TODO: get real QaA from backend */
   const questions = [
     {
-      question:
-        "Tôi đang có một số vốn để khởi nghiệp, tôi không biết nên lựa chọn sản phẩm nào để kinh doanh. Vậy tôi phải bắt đầu từ đâu? ",
-      answer:
-        'Sản phẩm đóng vai trò vô cùng quan trọng khi bạn bắt tay khởi nghiệp. Một sản phẩm chất lượng, được nhiều người mua sẽ là chìa khoá thành công của bạn. Hiểu được điều đó, với chương trình học “Sẵn sàng khởi nghiệp kinh doanh”, Mind Connector thiết kế các môn học như: “Sản phẩm", “Product Concept & Business Concept” cùng nhiều môn học có liên quan để bạn có thể xác định sản phẩm kinh doanh hợp lý, từ đó có thể chạm đến thành công trong hành trình khởi nghiệp của mình.',
+      question: `Tại sao sinh viên nên theo học chương trình này?`,
+      answer: `Theo nghiên cứu của Harvard, kỹ năng xã hội quyết định 75% sự thành công. Vì thế, ngoài những kiến thức nền tảng được học ở trường, các bạn sinh viên nên trang bị cho mình những kỹ năng cần thiết khác. Chương trình Kỹ Năng Xã Hội của Mind Connector sẽ tạo điều kiện cho bạn học tập và thực hành những kỹ năng xã hội quan trọng. Với những kỹ năng này, bạn không những có thể dùng để phục vụ cho việc học, mà còn có thể thay đổi tư duy, tạo lập những thói quen tích cực, xây dựng thương hiệu cá nhân,… từ đó hướng về sự thành công trong tương lai. `,
     },
     {
-      question: "Làm thế nào để khởi nghiệp không bị lỗ vốn?",
-      answer:
-        'Lỗ vốn chính là vấn đề e ngại, khiến mọi người không dám bắt đầu con đường khởi nghiệp của mình. Tuy nhiên, vẫn có giải pháp để có thể phòng tránh việc lỗ vốn, đó chính là trang bị cho mình những kiến thức nền tảng vững chắc, cũng như nhận được sự tư vấn của những người có kinh nghiệm. Chương trình học “Sẵn sàng khởi nghiệp kinh doanh" tạo ra khoá học với tư duy và kiến thức nền tảng để mỗi cá nhân tự xác lập nguyên tắc riêng, từ đó tự tìm ra đường lối thành công trong ngắn hạn và dài hạn cho chính mình, cũng như phòng tránh những rủi ro có thể xảy ra. ',
-    },
-    {
-      question:
-        "Tôi nên tìm kiếm người đồng hành? Hay nên khởi nghiệp một mình?",
-      answer:
-        'Mỗi hướng đi đều có những cơ hội và rủi ro khác nhau. Khi khởi nghiệp một mình bạn sẽ có tự do, khả năng quyết định độc lập, tránh những mâu thuẫn với bạn đồng hành. Tuy nhiên, bạn sẽ phải một mình giải quyết khối lượng công việc lớn, áp lực dồn lên bạn cũng nhiều hơn. Mặt khác, có bạn đồng hành sẽ giúp san sẻ rủi ro tài chính, bạn sẽ có cái nhìn khách quan hơn, tiềm năng công ty sẽ vô cùng lớn nếu bạn tìm được bạn đồng hành có năng lực. Để có thể đạt được điều đó, bạn nên chọn bạn đồng hành có chung chí hướng để tránh những mâu thuẫn đáng tiếc có thể xảy ra. Tham gia chương trình học “Sẵn sàng khởi nghiệp kinh doanh" sẽ giúp bạn trang bị những kiến thức nền tảng, để dù bạn khởi nghiệp một mình hay với một nhóm, bạn vẫn tìm được đường lối thành công. ',
+      question: `Sau chương trình này, em có nên theo học chương trình nào khác để hoàn thiện bản thân hơn hay không?      `,
+      answer: `Sau chương trình Kỹ Năng Xã Hội, bạn có thể tham khảo chương trình Vững Vàng Lập Nghiệp. Điểm đặc biệt của chương trình Vững Vàng Lập Nghiệp là bạn sẽ có cơ hội giới thiệu vào những tập đoàn lớn sau kết thúc chương trình, từ đó tăng cơ hội làm việc tại những doanh nghiệp và công ty mà bạn yêu thích.`,
     },
   ];
-  const logoslist = ["1", "2", "3", "4"];
   const courses = [
     {
       title: "Lên kế hoạch kinh doanh",
@@ -516,31 +515,17 @@ export async function getStaticProps() {
     },
   ];
   const testimonial = {
-    headline: `Tôi có một khoảng thời gian được trải nghiệm thật sự cảm giác
-    lăn xả vào dự án khi tham gia khóa đào tạo này.`,
-    body: `Tôi có một khoảng thời gian được trải nghiệm thật sự cảm giác lăn xả
-    vào dự án khi tham gia khóa đào tạo này. Trước đây tôi cũng biết được
-    rằng khởi nghiệp không hề đơn giản, từ lúc ấp ủ ý tưởng đến lúc quyết
-    tâm thực thi tôi rất lo lắng vì bản thân còn loay hoay, nhiều vấn đề
-    chưa sáng tỏ. Khi tôi lên kế hoạch được 80% thì gặp được chương trình
-    này. Phải nói rằng những thông tin trong khóa học rất thiết thực, các
-    giảng viên là những người đã làm start up, đang thành công theo mô
-    hình tự thân, tôi thấy vô cùng phù hợp với hoàn cảnh hiện tại của
-    mình. Ban đầu tôi hơi lấn cấn về chi phí khóa học, tuy nhiên khi vào
-    học thì không phải chỉ được học và tôi được các chuyên gia tư vấn thực
-    sự trên kế hoạch kinh doanh của chính tôi. Học xong, tôi thấy tự tin
-    hơn và biết rõ mình muốn gì hơn trong tương lai.`,
+    headline: `Em cảm thấy vô cùng tự tin vì có thể áp dụng những kiến thức, kỹ năng hữu ích của chương trình vào lúc học ở trường.`,
+    body: `Vừa rời khỏi ghế nhà trường và bước vào giảng đường đại học là một thay đổi lớn trong cuộc đời của em. Lúc đầu em rất hoang mang, lo lắng vì cách học ở đại học không hề giống cấp 3. Chẳng những thế, ngoài việc học, em còn phải học những kỹ năng mềm để không những là một sinh viên ưu tú mà em còn có thể chuẩn bị hành trang cho tương lai. Sau khi tìm hiểu thông tin và quyết định học tại Mind Connector với chương trình Kỹ Năng Xã Hội, em cảm thấy vô cùng tự tin vì có thể áp dụng những kiến thức, kỹ năng hữu ích của chương trình vào lúc học ở trường. Vì thế dù môn nào em cũng có thể chinh phục được. Em nghĩ rằng đây là một chương trình bổ ích cho tất cả các bạn sinh viên để có thể thành công trên con đường học vấn của mình.`,
     peep: {
-      name: `Chị Phạm Thị Hải An`,
-      title: `Founder nhãn hàng Gac Lyco – các sản phẩm dinh dưỡng tiền
-      Vitamin C từ Gấc`,
+      name: `Hương Lan`,
+      title: `Học viên tham gia Chương trình`,
       image: `/img/testimonial.png`,
     },
   };
   return {
     props: {
       questions,
-      logoslist,
       courses,
       testimonial,
     },

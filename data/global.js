@@ -4,13 +4,18 @@ export const Navigation = [
     path: "/student",
     submenus: [
       {
+        name: "Kỹ Năng Xã Hội",
+        path: "/programs/ky-nang-xa-hoi",
+      },
+      {
+        name: "Vững Vàng Lập Nghiệp",
+        path: "/programs/vung-vang-lap-nghiep",
+      },
+      {
         name: "Sẵn sàng khởi nghiệp kinh doanh",
         path: "/programs/san-sang-khoi-nghiep-kinh-doanh",
       },
-      // {
-      //   name: "Thành Công Trong Ứng Tuyển",
-      //   path: "/programs/thanh-cong-trong-ung-tuyen",
-      // },
+
       // {
       //   name: "Thành Công Trong Khởi Sự Kinh Doanh",
       //   path: "/programs/thanh-cong-trong-khoi-su-kinh-doanh",

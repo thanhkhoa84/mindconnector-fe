@@ -28,8 +28,8 @@ const ProgramCourseCard = ({ course }) => {
       >
         <h3 className="mt-2 text-xl font-black uppercase leading-5">{title}</h3>
         <p className="mt-2 leading-4">
-          <span>{lessons} lessons &#x2022; </span>
-          <span>{time}</span>
+          <span>{lessons} bài học &#x2022; </span>
+          <span>{time} giờ</span>
         </p>
       </div>
       {/* </Link> */}

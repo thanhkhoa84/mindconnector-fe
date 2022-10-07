@@ -1,6 +1,4 @@
-import Head from 'next/head';
-import Image from "next/future/image";
-import dynamic from "next/dynamic";
+import Head from "next/head";
 
 import QandA from "../components/QandA";
 import ValueSection from "../components/home/ValueSection";
@@ -8,10 +6,7 @@ import Teachers from "../components/common/teachers/Teachers";
 import About from "../components/home/About";
 import Seo from "./../components/SEO";
 import Container from "./../components/Container";
-
-const HeroBanner = dynamic(() => import("../components/home/HeroBanner"), {
-  ssr: false,
-});
+import HeroBanner from "../components/home/HeroBanner";
 
 export default function Home({ slides, questions }) {
   const seo = {
@@ -73,9 +68,9 @@ export async function getStaticProps() {
     },
     {
       question:
-        "Các chương trình đào tạo của MC có cần chất lượng đầu vào hay không?",
+        "Các chương trình đào tạo của Mind Connector có cần chất lượng đầu vào hay không?",
       answer:
-        "Các chương trình đào tạo của MC không yêu cầu chất lượng đầu vào. Miễn bạn là sinh viên đang muốn phấn đấu để trở nên ưu tú, hay muốn trở thành nhân viên xuất sắc sau khi ra trường. Miễn doanh nghiệp của bạn đang muốn đào tạo đội ngũ nhân viên tài ba, hay doanh nghiệp đang có vấn đề cần tìm kiếm sự tư vấn giải pháp chuyên nghiệp, tận tâm. Mind Connector sẽ có những chương trình phù hợp với từng nhu cầu của cá nhân, doanh nghiệp, từ đó có thể sát cánh cùng tất cả mọi người để hướng đến một tương lai thành công rực rỡ.",
+        "Các chương trình đào tạo của Mind Connector không yêu cầu chất lượng đầu vào. Miễn bạn là sinh viên đang muốn phấn đấu để trở nên ưu tú, hay muốn trở thành nhân viên xuất sắc sau khi ra trường. Miễn doanh nghiệp của bạn đang muốn đào tạo đội ngũ nhân viên tài ba, hay doanh nghiệp đang có vấn đề cần tìm kiếm sự tư vấn giải pháp chuyên nghiệp, tận tâm. Mind Connector sẽ có những chương trình phù hợp với từng nhu cầu của cá nhân, doanh nghiệp, từ đó có thể sát cánh cùng tất cả mọi người để hướng đến một tương lai thành công rực rỡ.",
     },
   ];
 
@@ -83,19 +78,19 @@ export async function getStaticProps() {
     {
       headline: "Mind Connector ký hợp đồng tư vấn dài hạn với Tập Đoàn STP ",
       body: "Mind Connector trở thành đơn vị tư vấn chính thức của Tập Đoàn STP tại Hà Nội về mô hình kinh doanh và xây dựng thương hiệu trong lĩnh vực Aquatech.",
-      image: "/img/top-banner-01.png",
+      image: "/img/Top-banner-01.png",
     },
     {
       headline:
         "Mind Connector đảm nhiệm vai trò mới tại Hội Giáo Dục Nghề Nghiệp phía Nam ",
       body: "Ngày 15/7/2022, Ban Giám Đốc Hội Giáo Dục Nghề Nghiệp phía Nam đã chính thức chỉ định Mind Connector làm Trung Tâm Đào Tạo Kỹ Năng và Kết Nối Doanh Nghiệp, cung cấp các khoá đào tạo cho các trường Cao Đẳng và Doanh Nghiệp thuộc hệ thống hỗ trợ đào tạo của Hội.",
-      image: "/img/top-banner-02.png",
+      image: "/img/Top-banner-03.png",
     },
     {
       headline:
         "Mind Connector ký kết MOU với Hiệp hội Phát triển Nhân lực Logistics Vietnam ",
       body: "Trong chuỗi sự kiện VALOMA CONFEST 2022, Mind Connector đã trở thành đối tác chiến lược với VALOMA trong lĩnh vực kết nối các chuyên gia trong lĩnh vực Logistics và hỗ trợ cho sinh viên, doanh nghiệp và nhà trường qua Job Fair 2022.",
-      image: "/img/top-banner-03.png",
+      image: "/img/top-banner-02.png",
     },
   ];
 

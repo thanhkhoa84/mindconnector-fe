@@ -21,7 +21,7 @@ const Footer = ({ position, navlinks }) => {
             <MobileNavFooter navlinks={navlinks} position="footer" />
           </div>
 
-          <div className="mt-8 md:-mt-[40px]">
+          {/* <div className="mt-8 md:-mt-[40px]">
             <ul className="flex flex-row justify-center gap-4 md:justify-end md:gap-6 md:gap-6">
               <li>
                 <a href="https://facebook.com" target="_blank" rel="noreferrer">
@@ -68,7 +68,7 @@ const Footer = ({ position, navlinks }) => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </Container>
 

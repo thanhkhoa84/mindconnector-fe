@@ -38,7 +38,7 @@ const Header = ({ ...navlinks }) => {
               <NavBar {...navlinks} />
             </div>
 
-            <Link href="">
+            <Link href="/student">
               <span className="header-cta">Khám phá ngay</span>
             </Link>
 
