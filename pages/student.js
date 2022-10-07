@@ -52,17 +52,17 @@ const Student = ({ questions, logoslist }) => {
             list={logoslist}
           />
         </Container>
-        <section id="thanh-cong-trong-hoc-tap" className={`py-[3em] `}>
+        <section className={`py-[3em] `}>
           <Container>
             <SectionSubHeading>Chương trình cơ bản</SectionSubHeading>
-            <SectionHeading>Thành công trong học tập</SectionHeading>
+            <SectionHeading>Kỹ Năng Xã Hội</SectionHeading>
             <p>
-              <b>“Khởi đầu vững chắc, tương lai khởi sắc”</b> <br />
+              <b>“Nền tảng vững chắc, tương lai khởi sắc”</b> <br />
               Trang bị những kỹ năng cần thiết ngay từ khi ngồi trên giảng đường
               để bạn có một hành trang vững chắc cho tương lai.
             </p>
             <p>
-              <Link href="/programs/for-student/thanh-cong-trong-hoc-tap">
+              <Link href="/programs/ky-nang-xa-hoi">
                 <span className="link-arrow">Tìm hiểu thêm</span>
               </Link>
             </p>
@@ -73,20 +73,17 @@ const Student = ({ questions, logoslist }) => {
             </Container>
           </div>
         </section>
-        <section
-          id="thanh-cong-trong-ung-tuyen"
-          className={`bg-[#FFEFDB]  py-[3em]`}
-        >
+        <section className={`bg-[#FFEFDB]  py-[3em]`}>
           <Container>
             <SectionSubHeading>Chương trình trung cấp</SectionSubHeading>
-            <SectionHeading>Thành công trong ứng tuyển</SectionHeading>
+            <SectionHeading>Vững Vàng Lập Nghiệp</SectionHeading>
             <p>
-              <b>“Kỹ năng công việc, dẫn lối thành công”</b> <br />
+              <b>“Kỹ năng thiết thực, dẫn lối thành công”</b> <br />
               Chuẩn bị một phong cách làm việc chuyên nghiệp cùng với những kỹ
               năng quan trọng chính là chìa khoá để thành công.
             </p>
             <p>
-              <Link href="/programs/for-student/thanh-cong-trong-ung-tuyen">
+              <Link href="/programs/vung-vang-lap-nghiep">
                 <span className="link-arrow">Tìm hiểu thêm</span>
               </Link>
             </p>
@@ -97,19 +94,16 @@ const Student = ({ questions, logoslist }) => {
             </Container>
           </div>
         </section>
-        <section
-          id="thanh-cong-trong-khoi-su-kinh-doanh"
-          className={`py-[3em]`}
-        >
+        <section className={`py-[3em]`}>
           <Container>
             <SectionSubHeading>Chương trình nâng cao</SectionSubHeading>
-            <SectionHeading>Thành công trong khởi sự kinh doanh</SectionHeading>
+            <SectionHeading>Sẵn Sàng Khởi Nghiệp Kinh Doanh</SectionHeading>
             <p>
               <b>“Khởi nghiệp thuận lợi, chạm đỉnh vinh quang”</b> <br />
               Vững vàng kiến thức và kỹ năng để khởi sự kinh doanh thuận lợi.
             </p>
             <p>
-              <Link href="/programs/for-student/thanh-cong-trong-khoi-su-kinh-doanh">
+              <Link href="/programs/san-sang-khoi-nghiep-kinh-doanh">
                 <span className="link-arrow">Tìm hiểu thêm</span>
               </Link>
             </p>
@@ -125,19 +119,19 @@ const Student = ({ questions, logoslist }) => {
             <Teachers />
           </Container>
         </section>
-        <section>
+        {/* <section>
           <Container>
             <QandA questions={questions} />
           </Container>
-        </section>
+        </section> */}
         <section className="pb-12">
           <Container>
             <div className="mt-8 mb-4 overflow-hidden rounded-3xl bg-[#941C50] text-white md:flex md:flex-row">
               <header className="bg-[#B22F66] py-4 px-6">
                 <h3 className="text-[24px] font-black">Học thử miễn phí</h3>
                 <p className="mt-2 font-medium">
-                  Nhập email để thử trải nghiệm miễn phí các khoá học của Mind
-                  Connector.
+                  Nhập thông tin để có cơ hội trải nghiệm miễn phí các chương
+                  trình của Mind Connector.
                 </p>
               </header>
               <div className="items-center justify-between p-6 md:flex md:flex-col">
@@ -151,7 +145,7 @@ const Student = ({ questions, logoslist }) => {
                     />
                   </p>
                   <button className="btn-primary block w-full lg:min-w-[160px]">
-                    Đăng ký học ngay!
+                    Đừng bỏ lỡ, đăng ký ngay!
                   </button>
                 </form>
               </div>

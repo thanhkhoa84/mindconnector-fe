@@ -11,6 +11,7 @@ import QandA from "../../components/QandA";
 import CoursesCardList from "../../components/common/courses/CoursesCardList";
 import Testimonial from "../../components/Testimonial";
 import TabPanels from "../../components/TabPanels";
+import { programs } from "../../data/global";
 
 import {
   useGlobalModalContext,
@@ -400,79 +401,7 @@ export async function getStaticProps() {
       answer: `Sau chương trình, bạn sẽ có cơ hội được giới thiệu vào các doanh nghiệp; làm chủ sự nghiệp của mình; đóng góp vào sự phát triển doanh nghiệp; điều chỉnh thái độ tác phong phù hợp với nơi làm việc; xây dựng network và nhân hiệu của mình, tạo đà thành công chắc chắn tại doanh nghiệp.`,
     },
   ];
-  const courses = [
-    {
-      title: "Thay đổi suy nghĩ",
-      time: "2",
-      feature: false,
-      img: "/img/course-01.png",
-    },
-    {
-      title: "Tích góp kinh nghiệm",
-      time: "2",
-      img: "/img/course-02.png",
-    },
-    {
-      title: `Khả năng tự chủ`,
-      time: `2`,
-      img: "/img/course-02.png",
-    },
-    {
-      title: `Khả năng trình bày`,
-      time: `2`,
-      img: "/img/course-02.png",
-    },
-    {
-      title: `Giao tiếp và tương tác`,
-      time: `2`,
-      img: "/img/course-02.png",
-    },
-    {
-      title: `Xây dựng lòng tin`,
-      time: `2`,
-      img: "/img/course-02.png",
-    },
-    {
-      title: `Xác định sự nghiệp dài hạn`,
-      time: `2`,
-      img: "/img/course-02.png",
-    },
-    {
-      title: `Định hình tư duy`,
-      time: `2`,
-      img: "/img/course-02.png",
-    },
-    {
-      title: `Giải quyết vấn đề`,
-      time: `2`,
-      img: "/img/course-02.png",
-    },
-    {
-      title: `Quản lý dự án`,
-      time: `2`,
-      img: "/img/course-02.png",
-    },
-    {
-      title: `Khả năng sáng tạo`,
-      time: `2`,
-      img: "/img/course-02.png",
-    },
-    {
-      title: `Làm việc theo nhóm`,
-      time: `2`,
-      img: "/img/course-02.png",
-    },
-    {
-      title: `Lớp học mô phỏng thực tế`,
-      time: `2`,
-      img: "/img/course-02.png",
-    },
-    {
-      title: `Thi kiểm tra cuối cùng `,
-      time: `2`,
-      img: "/img/course-02.png",
-    },
-  ];
+  const courses = programs.trungCap;
   const testimonial = {
     headline: `Chương trình này là một cơ hội giúp em kịp thời thay đổi suy nghĩ, tự tin trình bày, trao đổi với nhà tuyển dụng.`,
     body: `Thiếu kinh nghiệm và khả năng trình bày chưa có sức thuyết phục là vấn đề mà em cũng như nhiều bạn sinh viên khác gặp phải khi tìm kiếm công việc đầu tiên sau tốt nghiệp. Điều này cũng khiến em dễ bị tự ti khi phỏng vấn. Có thể nói rằng chương trình này là một cơ hội giúp em kịp thời thay đổi suy nghĩ, tự tin trình bày, trao đổi với nhà tuyển dụng. Ngoài ra, các anh chị giảng viên còn hướng dẫn em phương pháp quản lý và tư duy để công việc đạt được hiệu quả.`,

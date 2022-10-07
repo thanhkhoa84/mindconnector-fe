@@ -11,6 +11,7 @@ import QandA from "../../components/QandA";
 import CoursesCardList from "../../components/common/courses/CoursesCardList";
 import Testimonial from "../../components/Testimonial";
 import TabPanels from "../../components/TabPanels";
+import { programs } from "../../data/global";
 
 import {
   useGlobalModalContext,
@@ -400,44 +401,7 @@ export async function getStaticProps() {
     },
   ];
   const logoslist = ["1", "2", "3", "4"];
-  const courses = [
-    {
-      title: "Lên kế hoạch kinh doanh",
-      subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
-      lessons: "6",
-      time: "16",
-      feature: false,
-      img: "/img/course-01.png",
-      slug: "/courses/len-ke-hoach-kinh-doanh",
-    },
-    {
-      title: "Hoạch định kế hoạch kinh doanh",
-      subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
-      lessons: "6",
-      time: "14",
-      feature: false,
-      img: "/img/course-02.png",
-      slug: "/courses/hoach-dinh-ke-hoach-kinh-doanh",
-    },
-    {
-      title: "Quản lý hệ thống kinh doanh",
-      subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
-      lessons: "5",
-      time: "10",
-      feature: false,
-      img: "/img/course-03.png",
-      slug: "/courses/quan-ly-he-thong-kinh-doanh",
-    },
-    {
-      title: "Thuyết trình cuối khóa",
-      subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
-      lessons: "1",
-      time: "1",
-      feature: false,
-      img: "/img/course-04.png",
-      slug: "/courses/thuyet-trinh-cuoi-khoa",
-    },
-  ];
+  const courses = programs.caoCap;
   const testimonial = {
     headline: `Tôi có một khoảng thời gian được trải nghiệm thật sự cảm giác
     lăn xả vào dự án khi tham gia khóa đào tạo này.`,

@@ -11,6 +11,7 @@ import QandA from "../../components/QandA";
 import CoursesCardList from "../../components/common/courses/CoursesCardList";
 import Testimonial from "../../components/Testimonial";
 import TabPanels from "../../components/TabPanels";
+import { programs } from "../../data/global";
 
 import {
   useGlobalModalContext,
@@ -401,80 +402,7 @@ export async function getStaticProps() {
       answer: `Sau chương trình Kỹ Năng Xã Hội, bạn có thể tham khảo chương trình Vững Vàng Lập Nghiệp. Điểm đặc biệt của chương trình Vững Vàng Lập Nghiệp là bạn sẽ có cơ hội giới thiệu vào những tập đoàn lớn sau kết thúc chương trình, từ đó tăng cơ hội làm việc tại những doanh nghiệp và công ty mà bạn yêu thích.`,
     },
   ];
-  const courses = [
-    {
-      title: "Theo đuổi sự học cả đời",
-      time: "2",
-      level: "Tổng quát",
-      img: "/img/course-01.png",
-    },
-    {
-      title: "Nghiên cứu và phân tích",
-      time: "2",
-      level: "Tổng quát",
-      img: "/img/course-01.png",
-    },
-    {
-      title: "Kỹ năng giao tiếp",
-      time: "2",
-      level: "Tổng quát",
-      img: "/img/course-01.png",
-    },
-    {
-      title: "Kỹ năng làm việc nhóm",
-      time: "2",
-      level: "Tổng quát",
-      img: "/img/course-01.png",
-    },
-    {
-      title: "Khả năng quan sát",
-      time: "2",
-      level: "Tổng quát",
-      img: "/img/course-01.png",
-    },
-    {
-      title: "Kỹ năng tương tác",
-      time: "2",
-      level: "Tổng quát",
-      img: "/img/course-01.png",
-    },
-    {
-      title: "Chọn lọc thông tin trên Internet",
-      time: "2",
-      level: "Tổng quát",
-      img: "/img/course-01.png",
-    },
-    {
-      title: "Sử dụng công nghệ một cách có mục đích",
-      time: "2",
-      level: "Tổng quát",
-      img: "/img/course-01.png",
-    },
-    {
-      title: "Rèn luyện tính nhẫn nại",
-      time: "2",
-      level: "Tổng quát",
-      img: "/img/course-01.png",
-    },
-    {
-      title: "Tổ chức công việc và cuộc sống",
-      time: "2",
-      level: "Nâng cao ",
-      img: "/img/course-01.png",
-    },
-    {
-      title: "Tổ chức tài chính",
-      time: "2",
-      level: "Nâng cao ",
-      img: "/img/course-01.png",
-    },
-    {
-      title: "Chăm sóc nhân hiệu",
-      time: "2",
-      level: "Nâng cao",
-      img: "/img/course-01.png",
-    },
-  ];
+  const courses = programs.soCap;
   const testimonial = {
     headline: `Em cảm thấy vô cùng tự tin vì có thể áp dụng những kiến thức, kỹ năng hữu ích của chương trình vào lúc học ở trường.`,
     body: `Vừa rời khỏi ghế nhà trường và bước vào giảng đường đại học là một thay đổi lớn trong cuộc đời của em. Lúc đầu em rất hoang mang, lo lắng vì cách học ở đại học không hề giống cấp 3. Chẳng những thế, ngoài việc học, em còn phải học những kỹ năng mềm để không những là một sinh viên ưu tú mà em còn có thể chuẩn bị hành trang cho tương lai. Sau khi tìm hiểu thông tin và quyết định học tại Mind Connector với chương trình Kỹ Năng Xã Hội, em cảm thấy vô cùng tự tin vì có thể áp dụng những kiến thức, kỹ năng hữu ích của chương trình vào lúc học ở trường. Vì thế dù môn nào em cũng có thể chinh phục được. Em nghĩ rằng đây là một chương trình bổ ích cho tất cả các bạn sinh viên để có thể thành công trên con đường học vấn của mình.`,
