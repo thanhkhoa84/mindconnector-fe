@@ -8,8 +8,10 @@ import YouTube from "react-youtube";
 import Container from "../../components/Container";
 import Seo from "../../components/SEO";
 import QandA from "../../components/QandA";
-import ProgramCourseCard from "../../components/common/courses/ProgramCourseCard";
+import CoursesCardList from "../../components/common/courses/CoursesCardList";
 import Testimonial from "../../components/Testimonial";
+import TabPanels from "../../components/TabPanels";
+
 import {
   useGlobalModalContext,
   MODAL_TYPES,
@@ -48,71 +50,6 @@ const mentors = [
 const Decoration = dynamic(() => import("../../components/Decoration"), {
   ssr: false,
 });
-
-const tabs = [
-  {
-    title: "Về chương trình",
-    href: "#about",
-  },
-  {
-    title: "Lịch học",
-    href: "#schedule",
-  },
-  {
-    title: "Cảm nhận",
-    href: "#testimonial",
-  },
-  {
-    title: "Hỏi đáp",
-    href: "#qa",
-  },
-  {
-    title: "Cách đăng ký",
-    href: "#register",
-  },
-];
-
-const Tab = ({ tab, index, active, onClick }) => {
-  return (
-    <li
-      className={`
-      ${active ? "font-bold text-black" : "text-[#9A9A9A]"}
-      inline-block py-0 px-4 pl-0 align-middle hover:font-bold hover:text-black md:pl-6
-      `}
-      key={index}
-      onClick={() => onClick(index)}
-    >
-      <a href={tab.href} className="block" type="button">
-        {tab.title}
-      </a>
-    </li>
-  );
-};
-
-const TabPanels = () => {
-  const [current, setCurrent] = useState(0);
-  let clickHandler = (index) => {
-    setCurrent(index);
-  };
-
-  return (
-    <ul className="block flex w-full overflow-x-auto overflow-y-hidden whitespace-nowrap py-6 pr-4 md:justify-evenly">
-      {tabs.map((tab, index) => {
-        return (
-          <Tab
-            onClick={() => {
-              clickHandler(index);
-            }}
-            key={tab.title}
-            tab={tab}
-            index={index}
-            active={current == index}
-          />
-        );
-      })}
-    </ul>
-  );
-};
 
 const ProgramPost = ({ questions, courses, testimonial }) => {
   const { showModal } = useGlobalModalContext();
@@ -330,7 +267,9 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                       <b>Chiêu sinh:</b> Tháng 10/2022
                     </p>
                     <p>
-                      <b>Chi tiết khóa học:</b> 20 buổi trong 8 tuần
+                      <b>Chi tiết khóa học:</b> <br />
+                      Học phần 1 & 2: 12 buổi <br />
+                      Học phần 3: 2 - 4 buổi
                     </p>
                     <Image
                       src="/img/icon-schedule.png"
@@ -373,22 +312,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
             <h2 className="text-center text-[22px] font-black leading-none md:text-[34px] lg:block">
               Phát triển mọi kỹ năng với cấu trúc chương trình học chặt chẽ
             </h2>
-            <ul className="mt-8 flex flex-wrap gap-4 overflow-hidden md:justify-center md:gap-8 lg:justify-around lg:gap-4">
-              {courses.map((course, index) => {
-                return (
-                  <li
-                    key={index}
-                    className={`
-                      overflow-hiddenmd:text-center relative my-0 inline-block md:align-top lg:flex-shrink
-                    `}
-                  >
-                    <div className="inline-block md:pt-[4em]">
-                      <ProgramCourseCard course={course} />
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
+            <CoursesCardList courses={courses} />
           </Container>
         </div>
 
@@ -476,40 +400,75 @@ export async function getStaticProps() {
   ];
   const courses = [
     {
-      title: "Lên kế hoạch kinh doanh",
-      subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
-      lessons: "6",
-      time: "16",
+      title: "Thay đổi suy nghĩ",
+      time: "2",
       feature: false,
       img: "/img/course-01.png",
-      slug: "/courses/len-ke-hoach-kinh-doanh",
     },
     {
-      title: "Hoạch định kế hoạch kinh doanh",
-      subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
-      lessons: "6",
-      time: "14",
-      feature: false,
+      title: "Tích góp kinh nghiệm",
+      time: "2",
       img: "/img/course-02.png",
-      slug: "/courses/hoach-dinh-ke-hoach-kinh-doanh",
     },
     {
-      title: "Quản lý hệ thống kinh doanh",
-      subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
-      lessons: "5",
-      time: "10",
-      feature: false,
-      img: "/img/course-03.png",
-      slug: "/courses/quan-ly-he-thong-kinh-doanh",
+      title: `Khả năng tự chủ`,
+      time: `2`,
+      img: "/img/course-02.png",
     },
     {
-      title: "Thuyết trình cuối khóa",
-      subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
-      lessons: "1",
-      time: "1",
-      feature: false,
-      img: "/img/course-04.png",
-      slug: "/courses/thuyet-trinh-cuoi-khoa",
+      title: `Khả năng trình bày`,
+      time: `2`,
+      img: "/img/course-02.png",
+    },
+    {
+      title: `Giao tiếp và tương tác`,
+      time: `2`,
+      img: "/img/course-02.png",
+    },
+    {
+      title: `Xây dựng lòng tin`,
+      time: `2`,
+      img: "/img/course-02.png",
+    },
+    {
+      title: `Xác định sự nghiệp dài hạn`,
+      time: `2`,
+      img: "/img/course-02.png",
+    },
+    {
+      title: `Định hình tư duy`,
+      time: `2`,
+      img: "/img/course-02.png",
+    },
+    {
+      title: `Giải quyết vấn đề`,
+      time: `2`,
+      img: "/img/course-02.png",
+    },
+    {
+      title: `Quản lý dự án`,
+      time: `2`,
+      img: "/img/course-02.png",
+    },
+    {
+      title: `Khả năng sáng tạo`,
+      time: `2`,
+      img: "/img/course-02.png",
+    },
+    {
+      title: `Làm việc theo nhóm`,
+      time: `2`,
+      img: "/img/course-02.png",
+    },
+    {
+      title: `Lớp học mô phỏng thực tế`,
+      time: `2`,
+      img: "/img/course-02.png",
+    },
+    {
+      title: `Thi kiểm tra cuối cùng `,
+      time: `2`,
+      img: "/img/course-02.png",
     },
   ];
   const testimonial = {

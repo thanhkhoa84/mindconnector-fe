@@ -8,8 +8,10 @@ import YouTube from "react-youtube";
 import Container from "../../components/Container";
 import Seo from "../../components/SEO";
 import QandA from "../../components/QandA";
-import ProgramCourseCard from "../../components/common/courses/ProgramCourseCard";
+import CoursesCardList from "../../components/common/courses/CoursesCardList";
 import Testimonial from "../../components/Testimonial";
+import TabPanels from "../../components/TabPanels";
+
 import {
   useGlobalModalContext,
   MODAL_TYPES,
@@ -48,71 +50,6 @@ const mentors = [
 const Decoration = dynamic(() => import("../../components/Decoration"), {
   ssr: false,
 });
-
-const tabs = [
-  {
-    title: "Về chương trình",
-    href: "#about",
-  },
-  {
-    title: "Lịch học",
-    href: "#schedule",
-  },
-  {
-    title: "Cảm nhận",
-    href: "#testimonial",
-  },
-  {
-    title: "Hỏi đáp",
-    href: "#qa",
-  },
-  {
-    title: "Cách đăng ký",
-    href: "#register",
-  },
-];
-
-const Tab = ({ tab, index, active, onClick }) => {
-  return (
-    <li
-      className={`
-      ${active ? "font-bold text-black" : "text-[#9A9A9A]"}
-      inline-block py-0 px-4 pl-0 align-middle hover:font-bold hover:text-black md:pl-6
-      `}
-      key={index}
-      onClick={() => onClick(index)}
-    >
-      <a href={tab.href} className="block" type="button">
-        {tab.title}
-      </a>
-    </li>
-  );
-};
-
-const TabPanels = () => {
-  const [current, setCurrent] = useState(0);
-  let clickHandler = (index) => {
-    setCurrent(index);
-  };
-
-  return (
-    <ul className="block flex w-full overflow-x-auto overflow-y-hidden whitespace-nowrap py-6 pr-4 md:justify-evenly">
-      {tabs.map((tab, index) => {
-        return (
-          <Tab
-            onClick={() => {
-              clickHandler(index);
-            }}
-            key={tab.title}
-            tab={tab}
-            index={index}
-            active={current == index}
-          />
-        );
-      })}
-    </ul>
-  );
-};
 
 const ProgramPost = ({ questions, courses, testimonial }) => {
   const { showModal } = useGlobalModalContext();
@@ -274,10 +211,11 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                         Kết quả
                       </h4>
                       <h3 className="mb-4 text-xl font-black leading-none md:text-2xl md:leading-none">
-                        Cơ hội tuyển dụng 
+                        Cơ hội tuyển dụng
                       </h3>
                       <p className="pr-8 leading-5">
-                      Các học viên sẽ có cơ hội được giới thiệu vào các công ty, tập đoàn lớn sau khi hoàn thành khoá học.
+                        Các học viên sẽ có cơ hội được giới thiệu vào các công
+                        ty, tập đoàn lớn sau khi hoàn thành khoá học.
                       </p>
                     </div>
                   </div>
@@ -370,22 +308,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
             <h2 className="text-center text-[22px] font-black leading-none md:text-[34px] lg:block">
               Phát triển mọi kỹ năng với cấu trúc chương trình học chặt chẽ
             </h2>
-            <ul className="mt-8 flex flex-wrap gap-4 overflow-hidden md:justify-center md:gap-8 lg:justify-around lg:gap-4">
-              {courses.map((course, index) => {
-                return (
-                  <li
-                    key={index}
-                    className={`
-                      overflow-hiddenmd:text-center relative my-0 inline-block md:align-top lg:flex-shrink
-                    `}
-                  >
-                    <div className="inline-block md:pt-[4em]">
-                      <ProgramCourseCard course={course} />
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
+            <CoursesCardList courses={courses} />
           </Container>
         </div>
 
