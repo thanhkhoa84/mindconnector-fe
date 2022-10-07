@@ -88,7 +88,9 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
             <h1 className="leading-0 text-3xl font-black uppercase md:text-6xl">
               VỮNG VÀNG LẬP NGHIỆP
             </h1>
-            <p className="mt-4">“Kỹ năng thiết thực, dẫn lối thành công"</p>
+            <p className="mt-4">
+              &quot;Kỹ năng thiết thực, dẫn lối thành công&quot;
+            </p>
             <div className="mt-8 grid grid-cols-2 gap-8 md:flex md:justify-center">
               {mentors.map((m, index) => {
                 const { name, title, image } = m;
