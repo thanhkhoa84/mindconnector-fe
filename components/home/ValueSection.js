@@ -85,11 +85,11 @@ const ValueSection = () => {
               <p className="mt-4 lg:hidden">
                 Đào tạo nguồn nhân lực chất lượng để giúp công ty thêm lớn mạnh.
               </p>
-              {/* <Link href="business">
+              <Link href="/">
                 <span className="link-arrow mt-4 font-black leading-none lg:mt-12">
                   Khám phá
                 </span>
-              </Link> */}
+              </Link>
             </div>
             <div className="relative z-10 hidden overflow-hidden rounded-3xl object-cover shadow-lg lg:flex lg:w-[260px]">
               <Image
