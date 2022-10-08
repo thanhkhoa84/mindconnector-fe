@@ -138,7 +138,7 @@ const Student = ({ questions, logoslist, programs }) => {
         <section className="pb-12">
           <Container>
             <div className="mt-8 mb-4 items-center overflow-hidden rounded-3xl bg-[#941C50] text-white md:flex md:flex-row">
-              <header className="bg-[#B22F66] py-6 px-6">
+              <header className="bg-[#B22F66] py-8 px-6">
                 <h3 className="text-[24px] font-black">Học thử miễn phí</h3>
                 <p className="mt-2 font-medium">
                   Nhập thông tin để có cơ hội trải nghiệm miễn phí các chương

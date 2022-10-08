@@ -12,7 +12,7 @@ export const Navigation = [
         path: "/programs/vung-vang-lap-nghiep",
       },
       {
-        name: "Sẵn sàng khởi nghiệp kinh doanh",
+        name: "Sẵn Sàng Khởi Nghiệp Kinh Doanh",
         path: "/programs/san-sang-khoi-nghiep-kinh-doanh",
       },
 
