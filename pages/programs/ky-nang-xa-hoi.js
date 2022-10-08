@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Container from "../../components/Container";
 import Seo from "../../components/SEO";
 import QandA from "../../components/QandA";
-import CoursesList from "../../components/common/courses/CoursesCardList";
+import CoursesCardList from "../../components/common/courses/CoursesCardList";
 import Testimonial from "../../components/Testimonial";
 import TabPanels from "../../components/TabPanels";
 import { programs } from "../../data/global";
@@ -273,8 +273,8 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                 <h2 className="mb-3 text-center text-[34px] font-black md:text-left">
                   Lịch học
                 </h2>
-                <div className=" flex-col md:flex-row">
-                  <div className="inline-flex items-center justify-center text-center md:pr-12 md:text-left">
+                <div className="flex flex-col md:flex-row">
+                  <div className="flex-[3] items-center justify-center text-center md:pr-12 md:text-left">
                     <p>
                       <b>Chiêu sinh:</b> Tháng 10/2022
                     </p>
@@ -293,53 +293,29 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                       className="mx-auto mt-12 block"
                     />
                   </div>
-                  <div className="">
-                    <Slider {...scheduleSettings}>
-                      <div>
-                        <p className="font-bold">Lịch học tháng 11</p>
-                        <Image
-                          src="/img/schedule-nov.png"
-                          width={512}
-                          height={175}
-                          alt=""
-                          className="mt-4 w-full"
-                        />
-                      </div>
-                      <div className="">
-                        <p className="font-bold">Lịch học tháng 12</p>
-                        <Image
-                          src="/img/schedule-dec.png"
-                          width={512}
-                          height={175}
-                          alt=""
-                          className="mt-4 w-full"
-                        />
-                      </div>
-                    </Slider>
+                  <div className="flex-[5]">
+                    <div>
+                      <p className="font-bold">Lịch học tháng 11</p>
+                      <Image
+                        src="/img/schedule-nov.png"
+                        width={512}
+                        height={175}
+                        alt=""
+                        className="mt-4 w-full"
+                      />
+                    </div>
+                    <div className="mt-8">
+                      <p className="font-bold">Lịch học tháng 12</p>
+                      <Image
+                        src="/img/schedule-dec.png"
+                        width={512}
+                        height={175}
+                        alt=""
+                        className="mt-4 w-full"
+                      />
+                    </div>
                   </div>
                 </div>
-                <Slider {...scheduleSettings}>
-                  <div>
-                    <p className="font-bold">Lịch học tháng 11</p>
-                    <Image
-                      src="/img/schedule-nov.png"
-                      width={512}
-                      height={175}
-                      alt=""
-                      className="mt-4 w-full"
-                    />
-                  </div>
-                  <div className="">
-                    <p className="font-bold">Lịch học tháng 12</p>
-                    <Image
-                      src="/img/schedule-dec.png"
-                      width={512}
-                      height={175}
-                      alt=""
-                      className="mt-4 w-full"
-                    />
-                  </div>
-                </Slider>
               </div>
             </div>
           </Container>
@@ -352,7 +328,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
             </h2>
           </Container>
           <div className="course-card relative mt-8 block py-8">
-            <CoursesList courses={courses} />
+            <CoursesCardList courses={courses} />
           </div>
         </div>
 

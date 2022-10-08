@@ -9,38 +9,6 @@ const Rating = dynamic(() => import("../../Rating"), {
   ssr: false,
 });
 
-const ProgramCourseCard = ({ course }) => {
-  let { title, lessons, time, img, level } = course;
-  return (
-    <div
-      // className={`relative w-[165px] overflow-hidden rounded-[30px] border-[6px] border-[#FFF7EC] text-left md:w-[190px] `}
-      className={`relative inline-block w-[165px] overflow-hidden rounded-[30px] border-[6px] border-[#FFF7EC] text-left md:w-[190px]`}
-    >
-      <div className={`overflow-hidden rounded-2xl `}>
-        <Image
-          src={img}
-          alt=""
-          width={360}
-          height={540}
-          className="block w-full"
-        />
-      </div>
-      {/* <Link href={slug}> */}
-      <div
-        className={`after:bg-gradient-overlay absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-end px-4 pb-8 text-sm text-white after:content-none md:p-4 md:pb-8`}
-      >
-        <h3 className="mt-2 text-xl font-black uppercase leading-5">{title}</h3>
-        <p className="mt-2 leading-4">
-          {lessons && <span>{lessons} bài học &#x2022; </span>}
-          {level && <span>{level} &#x2022; </span>}
-          <span>{time} giờ</span>
-        </p>
-      </div>
-      {/* </Link> */}
-    </div>
-  );
-};
-
 const Slide = ({ index, course, ...props }) => {
   let { title, lessons, time, img, level, feature } = course;
   return (
@@ -61,13 +29,13 @@ const Slide = ({ index, course, ...props }) => {
       <div
         className={`after:bg-gradient-overlay absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-end px-4 pb-8 text-sm text-white after:content-none md:p-4 md:pb-8`}
       >
-        {/* {feature && (
+        {feature && (
           <div className="overflow-hidden">
             <h5 className="float-left inline-block h-6 rounded-sm bg-purple px-2 text-[10px] font-bold leading-6">
               Môn học bán chạy
             </h5>
           </div>
-        )} */}
+        )}
         <h3 className="mt-2 text-xl font-black uppercase leading-5">{title}</h3>
         <p className="mt-2 leading-4">
           {level && <span>{level} &#x2022; </span>}
@@ -121,22 +89,22 @@ function PrevArrow(props) {
   );
 }
 
-const CoursesList = ({ courses }) => {
+const StudentCardList = ({ courses }) => {
   let settings = {
     dots: true,
     infinite: false,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 5,
+    slidesToScroll: 5,
     initialSlide: 0,
     responsive: [
       {
         breakpoint: 1160,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 4,
+          slidesToScroll: 1,
         },
       },
       {
@@ -181,4 +149,4 @@ const CoursesList = ({ courses }) => {
   );
 };
 
-export default CoursesList;
+export default StudentCardList;

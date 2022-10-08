@@ -11,7 +11,7 @@ import {
   BannerHeading,
 } from '../components/Heading';
 import Teachers from './../components/common/teachers/Teachers';
-import CoursesList from "./../components/common/courses/CoursesCardList";
+import StudentCardList from "./../components/common/courses/StudentCardList";
 import { programs } from "../data/global";
 
 const LogoList = dynamic(() => import("./../components/LogoList"), {
@@ -69,7 +69,7 @@ const Student = ({ questions, logoslist, programs }) => {
             </p>
           </Container>
           <div className="course-card relative mt-8 block py-8">
-            <CoursesList courses={programs.soCap} />
+            <StudentCardList courses={programs.soCap} />
           </div>
         </section>
         <section className={`bg-[#FFEFDB]  py-[3em]`}>
@@ -89,7 +89,7 @@ const Student = ({ questions, logoslist, programs }) => {
           </Container>
           <div>
             <div className="course-card relative mt-8 block py-8">
-              <CoursesList courses={programs.soCap} />
+              <StudentCardList courses={programs.trungCap} />
             </div>
           </div>
         </section>
@@ -109,7 +109,7 @@ const Student = ({ questions, logoslist, programs }) => {
           </Container>
           <div>
             <div className="course-card relative mt-8 block py-8">
-              <CoursesList courses={programs.soCap} />
+              <StudentCardList courses={programs.caoCap} />
             </div>
           </div>
         </section>
