@@ -34,32 +34,30 @@ const CourseCard = ({ course }) => {
           className="block w-full"
         />
       </div>
-      <Link href={slug}>
-        <div
-          className={`after:bg-gradient-overlay absolute top-0 left-0 right-0 bottom-0 flex cursor-pointer flex-col justify-end px-4 pb-4 text-sm text-white after:content-none md:p-4 md:pb-8`}
-        >
-          {feature && (
-            <div className="overflow-hidden">
-              <h5 className="float-left inline-block h-6 rounded-sm bg-purple px-2 text-[10px] font-bold leading-6">
-                Khoá học bán chạy
-              </h5>
-            </div>
-          )}
-          <h3 className="mt-2 text-xl font-black leading-5">{title}</h3>
-          <p className="mt-2 leading-4">
-            <span>{lessons} lessons &#x2022; </span>
-            <span>{time}</span>
-          </p>
-          {rating > 0 && <Rating value={4.5} total={1590} />}
-          <div className="mt-2 text-3xl font-bold">
-            <span className="text-xs font-normal">{currency} </span>
-            {priceMain}
-            <sup className="top-[-1em] text-[0.45em] font-normal">
-              {fraction}
-            </sup>
+      {/* <Link href={slug}> */}
+      <div
+        className={`after:bg-gradient-overlay absolute top-0 left-0 right-0 bottom-0 flex cursor-pointer flex-col justify-end px-4 pb-4 text-sm text-white after:content-none md:p-4 md:pb-8`}
+      >
+        {feature && (
+          <div className="overflow-hidden">
+            <h5 className="float-left inline-block h-6 rounded-sm bg-purple px-2 text-[10px] font-bold leading-6">
+              Khoá học bán chạy
+            </h5>
           </div>
+        )}
+        <h3 className="mt-2 text-xl font-black leading-5">{title}</h3>
+        <p className="mt-2 leading-4">
+          <span>{lessons} lessons &#x2022; </span>
+          <span>{time}</span>
+        </p>
+        {rating > 0 && <Rating value={4.5} total={1590} />}
+        <div className="mt-2 text-3xl font-bold">
+          <span className="text-xs font-normal">{currency} </span>
+          {priceMain}
+          <sup className="top-[-1em] text-[0.45em] font-normal">{fraction}</sup>
         </div>
-      </Link>
+      </div>
+      {/* </Link> */}
     </div>
   );
 };

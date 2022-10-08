@@ -408,7 +408,7 @@ export async function getStaticProps() {
     peep: {
       name: `Hạ My`,
       title: `Học viên tham gia Chương trình`,
-      image: `/img/testimonial.png`,
+      image: `/img/Testimonial - Vững Vàng Lập Nghiệp.png`,
     },
   };
   return {

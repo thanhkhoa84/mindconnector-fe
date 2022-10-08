@@ -12,13 +12,15 @@ const Testimonial = ({ data }) => {
       <h5 className="text-4xl font-black not-italic text-purple">{headline}</h5>
       <p className="mt-8 text-justify italic">{body}</p>
       <div className="mt-4 flex flex-row items-center gap-6">
-        <Image
-          src={peep.image}
-          width={60}
-          height={60}
-          alt=""
-          className="block"
-        />
+        <div className="h-[60px] w-[60px] overflow-hidden rounded-full">
+          <Image
+            src={peep.image}
+            width={60}
+            height={60}
+            alt=""
+            className="block"
+          />
+        </div>
         <div className="not-italic">
           <h3 className="font-black text-purple">{peep.name}</h3>
           <div className="text-xs text-[#6C6C6C] lg:text-sm">
