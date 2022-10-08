@@ -39,7 +39,6 @@ const RegisterModal = () => {
       data,
     };
     let response = await axios(config);
-    console.log(data);
     if (response.status === 200) {
       hideModal();
     }
