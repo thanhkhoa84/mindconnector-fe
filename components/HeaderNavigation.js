@@ -17,8 +17,12 @@ const DropdownMenu = ({ items, dropdown, dropdId }) => {
     >
       {items.map((item, index) => {
         return (
-          <li key={index} className="w-full font-normal leading-8">
-            <ActiveLink href={item.path} activeClassName="" scroll={false}>
+          <li key={index} className="group w-full font-normal leading-8">
+            <ActiveLink
+              href={item.path}
+              activeClassName="text-purple"
+              scroll={false}
+            >
               <a className="hover:text-purple">{item.name}</a>
             </ActiveLink>
           </li>
