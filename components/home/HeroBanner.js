@@ -10,7 +10,7 @@ function NextArrow(props) {
   return (
     <div
       className={`
-        absolute top-1/2 -right-[40px] z-10 h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:block
+        absolute top-[calc(100%*1396/2800/2)] -right-[40px] z-10 h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:top-1/2 lg:block
       `}
       onClick={onClick}
       style={{}}
@@ -31,7 +31,7 @@ function PrevArrow(props) {
   return (
     <div
       className={`
-        absolute top-1/2 -left-[40px] z-10 h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:block
+        absolute top-[calc(100%*1396/2800/2)] -left-[40px] z-10 h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:top-1/2 lg:block
       `}
       onClick={onClick}
       style={{}}
@@ -88,7 +88,7 @@ const HeroBanner = ({ slides, ...props }) => {
     autoplay: true,
     autoplaySpeed: 10000,
     fade: false,
-    adaptiveHeight: true,
+    // adaptiveHeight: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
