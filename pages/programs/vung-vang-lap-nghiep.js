@@ -316,7 +316,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
               Phát triển mọi kỹ năng với cấu trúc chương trình học chặt chẽ
             </h2>
           </Container>
-          <div className="relative mt-8 block py-8">
+          <div className="course-card relative mt-8 block py-8">
             <CoursesCardList courses={courses} />
           </div>
         </div>
