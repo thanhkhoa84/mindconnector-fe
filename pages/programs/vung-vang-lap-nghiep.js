@@ -3,7 +3,9 @@ import Head from "next/head";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import Image from "next/future/image";
-import YouTube from "react-youtube";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import Container from "../../components/Container";
 import Seo from "../../components/SEO";

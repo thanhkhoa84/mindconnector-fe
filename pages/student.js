@@ -11,13 +11,14 @@ import {
   BannerHeading,
 } from '../components/Heading';
 import Teachers from './../components/common/teachers/Teachers';
-import Courses from "../components/common/courses/Courses";
+import CoursesList from "./../components/common/courses/CoursesCardList";
+import { programs } from "../data/global";
 
 const LogoList = dynamic(() => import("./../components/LogoList"), {
   ssr: false,
 });
 
-const Student = ({ questions, logoslist }) => {
+const Student = ({ questions, logoslist, programs }) => {
   const seo = {
     metaTitle: "Mind Connector | Dành cho sinh viên",
     metaDescription:
@@ -67,10 +68,8 @@ const Student = ({ questions, logoslist }) => {
               </Link>
             </p>
           </Container>
-          <div>
-            <Container>
-              <Courses />
-            </Container>
+          <div className="course-card relative mt-8 block py-8">
+            <CoursesList courses={programs.soCap} />
           </div>
         </section>
         <section className={`bg-[#FFEFDB]  py-[3em]`}>
@@ -89,9 +88,9 @@ const Student = ({ questions, logoslist }) => {
             </p>
           </Container>
           <div>
-            <Container>
-              <Courses />
-            </Container>
+            <div className="course-card relative mt-8 block py-8">
+              <CoursesList courses={programs.soCap} />
+            </div>
           </div>
         </section>
         <section className={`py-[3em]`}>
@@ -109,9 +108,9 @@ const Student = ({ questions, logoslist }) => {
             </p>
           </Container>
           <div>
-            <Container>
-              <Courses />
-            </Container>
+            <div className="course-card relative mt-8 block py-8">
+              <CoursesList courses={programs.soCap} />
+            </div>
           </div>
         </section>
         <section>
@@ -163,36 +162,44 @@ export async function getStaticProps() {
   /** TODO: get real QaA from backend */
   const questions = [
     {
-      question: 'Các chương trình học có cần yêu cầu đầu vào hay không?',
+      question: "Các chương trình học có cần yêu cầu đầu vào hay không?",
       answer:
-        'Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.',
+        "Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.",
     },
     {
       question:
-        'Làm cách nào tôi có thể trao đổi với giảng viên khi có những thắc mắc về bài học?',
+        "Làm cách nào tôi có thể trao đổi với giảng viên khi có những thắc mắc về bài học?",
       answer:
-        'Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.',
+        "Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.",
     },
     {
       question:
-        'Liệu tôi có thể khởi nghiệp ngay từ khi còn ngồi trên ghế nhà trường?',
+        "Liệu tôi có thể khởi nghiệp ngay từ khi còn ngồi trên ghế nhà trường?",
       answer:
-        'Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.',
+        "Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.",
     },
     {
       question:
-        'Ngoài video bài giảng, tôi có nhận được tài liệu khác hay không?',
+        "Ngoài video bài giảng, tôi có nhận được tài liệu khác hay không?",
       answer:
-        'Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.',
+        "Mauris ut dapibus lacus, sodales tempus ante. Donec faucibus sem vestibulum, gravida quam at, ultricies tellus. Etiam ac bibendum quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan erat quam, ac iaculis neque tempus non. Cras mattis auctor. Donec rutrum lobortis est, et faucibus arcu sagittis eu.",
     },
   ];
 
-  const logoslist = ['1', '2', '3', '4', '5'];
+  const logoslist = ["1", "2", "3", "4", "5"];
 
+  let soCap = programs.soCap.filter((c) => c.feature == true);
+  let trungCap = programs.trungCap.filter((c) => c.feature == true);
+  let caoCap = programs.caoCap.filter((c) => c.feature == true);
   return {
     props: {
       questions,
       logoslist,
+      programs: {
+        soCap,
+        trungCap,
+        caoCap,
+      },
     },
   };
 }

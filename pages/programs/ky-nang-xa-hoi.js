@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Container from "../../components/Container";
 import Seo from "../../components/SEO";
 import QandA from "../../components/QandA";
-import CoursesCardList from "../../components/common/courses/CoursesCardList";
+import CoursesList from "../../components/common/courses/CoursesCardList";
 import Testimonial from "../../components/Testimonial";
 import TabPanels from "../../components/TabPanels";
 import { programs } from "../../data/global";
@@ -53,6 +53,11 @@ const mentors = [
 const Decoration = dynamic(() => import("../../components/Decoration"), {
   ssr: false,
 });
+
+const scheduleSettings = {
+  dots: false,
+  arrows: false,
+};
 
 const ProgramPost = ({ questions, courses, testimonial }) => {
   const { showModal } = useGlobalModalContext();
@@ -311,6 +316,28 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                     </div>
                   </div>
                 </div>
+                <Slider {...scheduleSettings}>
+                  <div>
+                    <p className="font-bold">Lịch học tháng 11</p>
+                    <Image
+                      src="/img/schedule-nov.png"
+                      width={512}
+                      height={175}
+                      alt=""
+                      className="mt-4 w-full"
+                    />
+                  </div>
+                  <div className="">
+                    <p className="font-bold">Lịch học tháng 12</p>
+                    <Image
+                      src="/img/schedule-dec.png"
+                      width={512}
+                      height={175}
+                      alt=""
+                      className="mt-4 w-full"
+                    />
+                  </div>
+                </Slider>
               </div>
             </div>
           </Container>
@@ -323,7 +350,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
             </h2>
           </Container>
           <div className="course-card relative mt-8 block py-8">
-            <CoursesCardList courses={courses} />
+            <CoursesList courses={courses} />
           </div>
         </div>
 
