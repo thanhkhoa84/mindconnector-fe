@@ -59,7 +59,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
   const createModal = () => {
     showModal(MODAL_TYPES.REGISTER_MODAL, {
       title: "Điền thông tin liên lạc, Mind Connector sẽ liên hệ bạn sau",
-      program: "Sẵn sàng khởi nghiệp kinh doanh",
+      program: "VỮNG VÀNG LẬP NGHIỆP",
       course: "",
       confirmBtn: "Save",
     });
