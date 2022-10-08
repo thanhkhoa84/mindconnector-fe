@@ -36,7 +36,7 @@ const RegisterModal = () => {
     };
     let mailConfig = {
       method: "post",
-      url: "https://mindconnector.vn/api/register",
+      url: "https://mindconnector.com.vn/api/register",
       // url: "http://localhost:3000/api/register",
       headers: {
         "Content-Type": "application/json",
