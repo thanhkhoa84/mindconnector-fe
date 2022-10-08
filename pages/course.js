@@ -219,7 +219,6 @@ const Course = ({ questions, logoslist, programInfo }) => {
                   <LogoList
                     backgroundColor="#FFFDFA"
                     title="Tổ chức và đối tác tham gia vào khoá học"
-                    list={logoslist}
                   />
                 </div>
                 <div className="mt-12">

@@ -309,7 +309,9 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
             <h2 className="text-center text-[22px] font-black leading-none md:text-[34px] lg:block">
               Phát triển mọi kỹ năng với cấu trúc chương trình học chặt chẽ
             </h2>
-            <CoursesCardList courses={courses} />
+            <div className="block py-8">
+              <CoursesCardList courses={courses} />
+            </div>
           </Container>
         </div>
 

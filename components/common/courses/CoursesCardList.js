@@ -47,7 +47,9 @@ const Slide = ({ index, course, ...props }) => {
     <div
       className={`relative w-[140px] overflow-hidden rounded-[30px] border-[6px] border-[#FFF7EC] text-left xs:w-[165px] md:w-[190px] `}
     >
-      <div className={`overflow-hidden rounded-2xl `}>
+      <div
+        className={`overflow-hidden rounded-2xl after:absolute after:inset-0 after:block after:bg-gradient-to-b after:from-[rgba(43,43,43,0)] after:to-[#000] after:content-['']`}
+      >
         <Image
           src={img}
           alt=""
