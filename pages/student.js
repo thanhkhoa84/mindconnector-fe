@@ -33,7 +33,7 @@ const Student = ({ questions, logoslist, programs }) => {
   const createModal = () => {
     showModal(MODAL_TYPES.REGISTER_MODAL, {
       title: "Điền thông tin liên lạc, Mind Connector sẽ liên hệ bạn sau",
-      program: "KỸ NĂNG XÃ HỘI",
+      program: "",
       course: "",
       confirmBtn: "Save",
     });
