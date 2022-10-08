@@ -230,12 +230,12 @@ export const programs = {
   ],
   caoCap: [
     {
-      title: "Lên kế hoạch kinh doanh",
+      title: "Xây dựng định hướng kinh doanh",
       subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
       lessons: "6",
       time: "16",
       feature: false,
-      img: "/img/course-01.png",
+      img: "/img/programs/san-sang-khoi-nghiep-kinh-doanh/01 Xây dựng định hướng kinh doanh.jpg",
       slug: "/courses/len-ke-hoach-kinh-doanh",
     },
     {
@@ -244,7 +244,7 @@ export const programs = {
       lessons: "6",
       time: "14",
       feature: false,
-      img: "/img/course-02.png",
+      img: "/img/programs/san-sang-khoi-nghiep-kinh-doanh/02 Hoạch định kế hoạch kinh doanh.jpg",
       slug: "/courses/hoach-dinh-ke-hoach-kinh-doanh",
     },
     {
@@ -253,7 +253,7 @@ export const programs = {
       lessons: "5",
       time: "10",
       feature: false,
-      img: "/img/course-03.png",
+      img: "/img/programs/san-sang-khoi-nghiep-kinh-doanh/03 Quản lý hệ thống kinh doanh.jpg",
       slug: "/courses/quan-ly-he-thong-kinh-doanh",
     },
     {
@@ -262,7 +262,7 @@ export const programs = {
       lessons: "1",
       time: "1",
       feature: false,
-      img: "/img/course-04.png",
+      img: "/img/programs/san-sang-khoi-nghiep-kinh-doanh/04 Thuyết trình cuối khóa.jpg",
       slug: "/courses/thuyet-trinh-cuoi-khoa",
     },
   ],
