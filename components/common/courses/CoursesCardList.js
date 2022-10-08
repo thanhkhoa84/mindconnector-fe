@@ -71,7 +71,7 @@ const Slide = ({ index, course, ...props }) => {
         <h3 className="mt-2 text-xl font-black uppercase leading-5">{title}</h3>
         <p className="mt-2 leading-4">
           {level && <span>{level} &#x2022; </span>}
-          {lessons && <span>{lessons} lessons &#x2022; </span>}
+          {lessons && <span>{lessons} bài học &#x2022; </span>}
           <span>{time} giờ</span>
         </p>
       </div>
