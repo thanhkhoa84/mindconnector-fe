@@ -25,16 +25,16 @@ const RegisterModal = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let data = {
+    let data = {data:{
       name: e.target.name.value,
       phone: e.target.phone.value,
       email: e.target.email.value,
       course,
       program,
-    };
+    }};
     const config = {
       method: "post",
-      url: "/api/register",
+      url: "https://be.mindconnector.vn/api/student-contacts",
       responseType: "json",
       data,
     };
