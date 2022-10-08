@@ -25,21 +25,38 @@ const RegisterModal = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let data = {data:{
-      name: e.target.name.value,
-      phone: e.target.phone.value,
-      email: e.target.email.value,
-      course,
-      program,
-    }};
-    const config = {
+    let data = {
+      data: {
+        name: e.target.name.value,
+        phone: e.target.phone.value,
+        email: e.target.email.value,
+        course,
+        program,
+      },
+    };
+    let mailConfig = {
       method: "post",
-      url: "https://be.mindconnector.vn/api/student-contacts",
+      url: "https://mindconnector.vn/api/register",
+      // url: "http://localhost:3000/api/register",
+      headers: {
+        "Content-Type": "application/json",
+      },
       responseType: "json",
       data,
     };
-    let response = await axios(config);
-    if (response.status === 200) {
+
+    const config = {
+      method: "post",
+      url: "https://be.mindconnector.vn/api/student-contacts",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      responseType: "json",
+      data,
+    };
+    let mailRes = await axios(mailConfig);
+    // let response = await axios(config);
+    if (mailRes.status === 200) {
       hideModal();
     }
   };
@@ -127,6 +144,6 @@ const RegisterModal = () => {
       </div>
     </div>
   );
-};
+};;;
 
 export default RegisterModal;

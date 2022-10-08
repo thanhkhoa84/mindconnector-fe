@@ -1,18 +1,45 @@
-export default function register(req, res) {
+import nodemailer from "nodemailer";
+
+const register = async (req, res) => {
   // Get data submitted in request's body.
   const body = req.body;
+  let name = body.data.name;
+  let email = body.data.email;
+  let phone = body.data.phone;
+  let program = body.data.program;
+  let course = body.data.course;
 
-  // Optional logging to see the responses
-  // in the command line where next.js app is running.
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: "thanhkhoa84@gmail.com",
+      pass: "qrymmfojzubpgtad",
+    },
+  });
 
-  // Guard clause checks for first and last name,
-  // and returns early if they are not found
-  if (!body.name) {
-    // Sends a HTTP bad request error code
-    // return res.status(400).json({ data: "Name not found" });
+  try {
+    const emailRes = await transporter.sendMail({
+      from: email,
+      to: "register@mindconnector.com.vn",
+      // cc: "thanhkhoa84@gmail.com",
+      subject: `Mind Connector - Register submission from ${name}`,
+      html: `
+        <p><b>NEW REGISTRATION FROM WEBSITE</b></p>
+
+        <p><b>Tên:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Số điện thoại:</b> ${phone}</p>
+        <p><b>Program:</b> ${program}</p>
+        <p><b>Course:</b> ${course}</p>
+      `,
+    });
+  } catch (err) {
+    console.log(err);
   }
 
-  // Found the name.
-  // Sends a HTTP success code
   res.status(200).json({ data: `Register success!` });
-}
+};
+
+export default register;
