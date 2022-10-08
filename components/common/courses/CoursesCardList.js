@@ -52,7 +52,7 @@ const Slide = ({ index, course, ...props }) => {
       >
         <Image
           src={img}
-          alt=""
+          alt={title}
           width={360}
           height={540}
           className="block w-full"

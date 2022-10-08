@@ -28,7 +28,7 @@ const CourseCard = ({ course }) => {
       <div className={`overflow-hidden rounded-2xl  ${styles.courseCardImage}`}>
         <Image
           src="/img/course-1.png"
-          alt=""
+          alt={title}
           width={155}
           height={268}
           className="block w-full"
