@@ -250,7 +250,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                       Tải ngay tài liệu để biết thêm tất tần tật những thông tin
                       về khoá học.
                     </p>
-                    <p className="mx-auto mt-4 max-w-[300px] md:max-w-none">
+                    <p className="mt-4 max-w-[300px] md:max-w-none">
                       <a
                         href="/docs/[Mind Connector] Sẵn sàng khởi nghiệp kinh doanh.pdf"
                         download
@@ -289,16 +289,6 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                       <p className="font-bold">Lịch học tháng 11</p>
                       <Image
                         src="/img/schedule-nov.png"
-                        width={512}
-                        height={175}
-                        alt=""
-                        className="mt-4 w-full"
-                      />
-                    </div>
-                    <div className="mt-8">
-                      <p className="font-bold">Lịch học tháng 12</p>
-                      <Image
-                        src="/img/schedule-dec.png"
                         width={512}
                         height={175}
                         alt=""

@@ -48,10 +48,10 @@ export const Navigation = [
   //     },
   //   ],
   // },
-  // {
-  //   name: "Dành cho doanh nghiệp",
-  //   path: "/business",
-  // },
+  {
+    name: "Dành cho doanh nghiệp",
+    path: "/",
+  },
   // {
   //   name: "Program",
   //   path: "/program",
@@ -79,7 +79,6 @@ export const Paths = {
   courses: ["len-ke-hoach-kinh-doanh"],
 };
 
-
 export const programs = {
   soCap: [
     {
@@ -92,7 +91,7 @@ export const programs = {
     {
       title: "Nghiên cứu và phân tích",
       time: "2",
-      feature: true,
+      feature: "Môn học bán chạy",
       level: "Tổng quát",
       img: "/img/programs/ky-nang-xa-hoi/02 Nghiên cứu và phân tích.jpg",
     },
@@ -106,7 +105,7 @@ export const programs = {
     {
       title: "Kỹ năng làm việc nhóm",
       time: "2",
-      feature: true,
+      feature: "Môn học bán chạy",
       level: "Tổng quát",
       img: "/img/programs/ky-nang-xa-hoi/04 Làm việc nhóm.jpg",
     },
@@ -148,21 +147,21 @@ export const programs = {
     {
       title: "Tổ chức công việc và cuộc sống",
       time: "2",
-      feature: true,
+      feature: "Môn học bán chạy",
       level: "Nâng cao ",
       img: "/img/programs/ky-nang-xa-hoi/10 Tổ chức công việc và cuộc sống.jpg",
     },
     {
       title: "Tổ chức tài chính",
       time: "2",
-      feature: true,
+      feature: "Môn học bán chạy",
       level: "Nâng cao ",
       img: "/img/programs/ky-nang-xa-hoi/11 Tổ chức tài chính.jpg",
     },
     {
       title: "Chăm sóc nhân hiệu",
       time: "2",
-      feature: true,
+      feature: "Môn học bán chạy",
       level: "Nâng cao",
       img: "/img/programs/ky-nang-xa-hoi/12 Chăm sóc nhân hiệu.jpg",
     },
@@ -183,7 +182,7 @@ export const programs = {
     {
       title: `Khả năng tự chủ`,
       time: `2`,
-      feature: true,
+      feature: "Môn học bán chạy",
       img: "/img/programs/vung-vang-lap-nghiep/03 Khả năng tự chủ.jpg",
     },
     {
@@ -207,13 +206,13 @@ export const programs = {
     {
       title: `Xác định sự nghiệp dài hạn`,
       time: `2`,
-      feature: true,
+      feature: "Môn học bán chạy",
       img: "/img/programs/vung-vang-lap-nghiep/07 Xác định sự nghiệp dài hạn.jpg",
     },
     {
       title: `Định hình tư duy`,
       time: `2`,
-      feature: true,
+      feature: "Môn học bán chạy",
       img: "/img/programs/vung-vang-lap-nghiep/08 Định hình tư duy.jpg",
     },
     {
@@ -225,7 +224,7 @@ export const programs = {
     {
       title: `Quản lý dự án`,
       time: `2`,
-      feature: true,
+      feature: "Môn học bán chạy",
       img: "/img/programs/vung-vang-lap-nghiep/10 Quản lý dự án.jpg",
     },
     {
@@ -243,7 +242,7 @@ export const programs = {
     {
       title: `Lớp học mô phỏng thực tế`,
       time: `2`,
-      feature: true,
+      feature: "Môn học bán chạy",
       img: "/img/programs/vung-vang-lap-nghiep/13 Lớp học mô phỏng.jpg",
     },
     {
@@ -259,7 +258,7 @@ export const programs = {
       subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
       lessons: "6",
       time: "16",
-      feature: true,
+      feature: "Chủ đề bán chạy",
       img: "/img/programs/san-sang-khoi-nghiep-kinh-doanh/01 Xây dựng định hướng kinh doanh.jpg",
       slug: "/courses/len-ke-hoach-kinh-doanh",
     },
@@ -268,7 +267,7 @@ export const programs = {
       subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
       lessons: "6",
       time: "14",
-      feature: true,
+      feature: "Chủ đề bán chạy",
       img: "/img/programs/san-sang-khoi-nghiep-kinh-doanh/02 Hoạch định kế hoạch kinh doanh.jpg",
       slug: "/courses/hoach-dinh-ke-hoach-kinh-doanh",
     },
@@ -277,7 +276,7 @@ export const programs = {
       subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
       lessons: "5",
       time: "10",
-      feature: true,
+      feature: "Chủ đề bán chạy",
       img: "/img/programs/san-sang-khoi-nghiep-kinh-doanh/03 Quản lý hệ thống kinh doanh.jpg",
       slug: "/courses/quan-ly-he-thong-kinh-doanh",
     },
@@ -286,7 +285,7 @@ export const programs = {
       subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
       lessons: "1",
       time: "1",
-      feature: true,
+      feature: "Chủ đề bán chạy",
       img: "/img/programs/san-sang-khoi-nghiep-kinh-doanh/04 Thuyết trình cuối khóa.jpg",
       slug: "/courses/thuyet-trinh-cuoi-khoa",
     },

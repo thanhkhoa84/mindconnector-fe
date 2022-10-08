@@ -32,7 +32,7 @@ const Slide = ({ index, course, ...props }) => {
         {feature && (
           <div className="overflow-hidden">
             <h5 className="float-left inline-block h-6 rounded-sm bg-purple px-2 text-[10px] font-bold leading-6">
-              Môn học bán chạy
+              {feature}
             </h5>
           </div>
         )}

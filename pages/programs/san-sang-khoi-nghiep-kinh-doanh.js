@@ -246,9 +246,9 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                       Tải ngay tài liệu để biết thêm tất tần tật những thông tin
                       về khoá học.
                     </p>
-                    <p className="mx-auto mt-4 max-w-[300px] md:max-w-none">
+                    <p className="mt-4 max-w-[300px] md:max-w-none">
                       <a
-                        href="/docs/[Mind Connector] Sẵn sàng khởi nghiệp kinh doanh.pdf"
+                        href="/docs/[Mind Connector] Vững Vàng Lập Nghiệp.pdf"
                         download
                         className="btn-primary w-[300px] md:w-auto"
                       >

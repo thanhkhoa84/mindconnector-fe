@@ -10,13 +10,15 @@ import {
   SectionSubHeading,
   BannerHeading,
 } from '../components/Heading';
-import Teachers from './../components/common/teachers/Teachers';
+import LogoList from "./../components/LogoList";
+import Teachers from "./../components/common/teachers/Teachers";
 import StudentCardList from "./../components/common/courses/StudentCardList";
 import { programs } from "../data/global";
 
-const LogoList = dynamic(() => import("./../components/LogoList"), {
-  ssr: false,
-});
+import {
+  useGlobalModalContext,
+  MODAL_TYPES,
+} from "./../components/common/modal/GlobalModal";
 
 const Student = ({ questions, logoslist, programs }) => {
   const seo = {
@@ -25,6 +27,16 @@ const Student = ({ questions, logoslist, programs }) => {
       "Mind Connector là một mạng lưới của các nhà tư vấn kinh doanh cùng các giảng viên vốn là các lãnh đạo và chuyên gia hàng đầu trong nhiều lĩnh vực khác nhau. Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá nhân phát triển và tăng trưởng mạnh mẽ trong tương lai",
     // shareImage: article.attributes.image,
     // article: true,
+  };
+
+  const { showModal } = useGlobalModalContext();
+  const createModal = () => {
+    showModal(MODAL_TYPES.REGISTER_MODAL, {
+      title: "Điền thông tin liên lạc, Mind Connector sẽ liên hệ bạn sau",
+      program: "KỸ NĂNG XÃ HỘI",
+      course: "",
+      confirmBtn: "Save",
+    });
   };
 
   return (
@@ -125,7 +137,7 @@ const Student = ({ questions, logoslist, programs }) => {
         </section> */}
         <section className="pb-12">
           <Container>
-            <div className="mt-8 mb-4 overflow-hidden rounded-3xl bg-[#941C50] text-white md:flex md:flex-row">
+            <div className="mt-8 mb-4 items-center overflow-hidden rounded-3xl bg-[#941C50] text-white md:flex md:flex-row">
               <header className="bg-[#B22F66] py-4 px-6">
                 <h3 className="text-[24px] font-black">Học thử miễn phí</h3>
                 <p className="mt-2 font-medium">
@@ -134,19 +146,12 @@ const Student = ({ questions, logoslist, programs }) => {
                 </p>
               </header>
               <div className="items-center justify-between p-6 md:flex md:flex-col">
-                <form className="flex flex-col items-center gap-6 md:flex-row">
-                  <p className="w-full lg:w-[210px]">
-                    <input
-                      type="email"
-                      name="email_sub"
-                      className="h-[50px] w-full rounded-full p-4 lg:w-[210px]"
-                      placeholder="Email của bạn"
-                    />
-                  </p>
-                  <button className="btn-primary block w-full lg:min-w-[160px]">
-                    Đừng bỏ lỡ, đăng ký ngay!
-                  </button>
-                </form>
+                <button
+                  onClick={createModal}
+                  className="btn-primary block w-full min-w-[296px] overflow-hidden text-[13px] sm:text-[16px]"
+                >
+                  Đừng bỏ lỡ, đăng ký ngay!
+                </button>
               </div>
             </div>
           </Container>
@@ -188,9 +193,11 @@ export async function getStaticProps() {
 
   const logoslist = ["1", "2", "3", "4", "5"];
 
-  let soCap = programs.soCap.filter((c) => c.feature == true);
-  let trungCap = programs.trungCap.filter((c) => c.feature == true);
-  let caoCap = programs.caoCap.filter((c) => c.feature == true);
+  let soCap = programs.soCap.filter((c) => c.feature == "Môn học bán chạy");
+  let trungCap = programs.trungCap.filter(
+    (c) => c.feature == "Môn học bán chạy"
+  );
+  let caoCap = programs.caoCap.filter((c) => c.feature == "Chủ đề bán chạy");
   return {
     props: {
       questions,

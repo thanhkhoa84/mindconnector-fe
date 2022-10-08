@@ -10,7 +10,7 @@ function NextArrow(props) {
   return (
     <div
       className={`
-        absolute top-1/2 -right-[40px] z-10 hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden lg:block
+        absolute top-1/2 -right-[40px] z-10 h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:block
       `}
       onClick={onClick}
       style={{}}
@@ -31,7 +31,7 @@ function PrevArrow(props) {
   return (
     <div
       className={`
-        absolute top-1/2 -left-[40px] z-10 hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden lg:block
+        absolute top-1/2 -left-[40px] z-10 h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:block
       `}
       onClick={onClick}
       style={{}}
