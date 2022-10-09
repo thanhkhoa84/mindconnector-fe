@@ -36,8 +36,7 @@ const RegisterModal = () => {
     };
     let mailConfig = {
       method: "post",
-      url: "https://mindconnector.com.vn/api/register",
-      // url: "http://localhost:3000/api/register",
+      url: `${process.env.NEXT_PUBLIC_API}/api/register`,
       headers: {
         "Content-Type": "application/json",
       },
@@ -47,15 +46,15 @@ const RegisterModal = () => {
 
     const config = {
       method: "post",
-      url: "https://be.mindconnector.vn/api/student-contacts",
+      url: `https://be.mindconnector.vn/api/student-contacts`,
       headers: {
         "Content-Type": "application/json",
       },
       responseType: "json",
       data,
     };
-    let mailRes = await axios(mailConfig);
     let response = await axios(config);
+    let mailRes = await axios(mailConfig);
     if (mailRes.status === 200) {
       hideModal();
     }
@@ -144,6 +143,6 @@ const RegisterModal = () => {
       </div>
     </div>
   );
-};;;
+};;;;
 
 export default RegisterModal;

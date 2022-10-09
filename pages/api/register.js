@@ -14,15 +14,15 @@ const register = async (req, res) => {
     port: 465,
     secure: true,
     auth: {
-      user: "thanhkhoa84@gmail.com",
-      pass: "qrymmfojzubpgtad",
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
   try {
     const emailRes = await transporter.sendMail({
       from: email,
-      // to: "register@mindconnector.com.vn",
+      to: process.env.REGISTER_EMAIL,
       to: "thanhkhoa84@gmail.com",
       subject: `Mind Connector - Register submission from ${name}`,
       html: `
