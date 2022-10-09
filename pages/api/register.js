@@ -23,7 +23,6 @@ const register = async (req, res) => {
     const emailRes = await transporter.sendMail({
       from: email,
       to: process.env.REGISTER_EMAIL,
-      to: "thanhkhoa84@gmail.com",
       subject: `Mind Connector - Register submission from ${name}`,
       html: `
         <p><b>NEW REGISTRATION FROM WEBSITE</b></p>
