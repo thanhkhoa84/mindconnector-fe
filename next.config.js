@@ -4,7 +4,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ["localhost:3000"],
-    unoptimized: false,
+    unoptimized: true,
   },
   exportPathMap: async function (
     defaultPathMap,
