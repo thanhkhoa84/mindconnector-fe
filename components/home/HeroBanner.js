@@ -56,8 +56,8 @@ const Slide = ({ index, ...props }) => {
           blurDataURL={props.image}
           placeholder="blur"
           alt={props.headline}
-          width={2800}
-          height={1396}
+          width={1920}
+          height={957}
           priority={true}
           className="block w-full"
         />
