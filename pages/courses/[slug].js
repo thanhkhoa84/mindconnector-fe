@@ -388,7 +388,6 @@ export async function getStaticPaths() {
   let paths = Paths.courses.map((p) => {
     return `/courses/${p}`;
   });
-  console.log(paths);
   return {
     paths,
     fallback: false,
