@@ -36,7 +36,7 @@ const mentors = [
   {
     name: "Bà Đào Minh Huyền",
     title: "StartUp Advisor - Cố vấn Khởi nghiệp và Đầu tư",
-    image: "/img//mentors/dao-minh-huyen.png",
+    image: "/img/mentors/dao-minh-huyen.png",
   },
   {
     name: "Bà Nina Trần Lê",
