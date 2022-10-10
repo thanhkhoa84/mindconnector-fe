@@ -53,6 +53,8 @@ const Slide = ({ index, ...props }) => {
       <div className="leading-[1]">
         <Image
           src={props.image}
+          blurDataURL={props.image}
+          placeholder="blur"
           alt={props.headline}
           width={2800}
           height={1396}
