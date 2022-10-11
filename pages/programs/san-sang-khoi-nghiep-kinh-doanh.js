@@ -29,22 +29,22 @@ const seo = {
 
 const mentors = [
   {
-    name: "Bà Nguyễn Thị Thanh Trúc",
-    title: "Cố Vấn Đào Tạo",
-    image: "/img/mentors/mandy-nguyen.png",
-  },
-  {
-    name: "Bà Đào Minh Huyền",
-    title: "StartUp Advisor - Cố vấn Khởi nghiệp và Đầu tư",
-    image: "/img/mentors/dao-minh-huyen.png",
-  },
-  {
-    name: "Bà Nina Trần Lê",
-    title: "Thiết kế chương trình <br/>và vận hành",
+    name: "Nina Trần",
+    title: "Chuyên gia Tư vấn<br/>Thương hiệu và <br/>Chuyển đổi số",
     image: "/img/mentors/nina-tran.png",
   },
   {
-    name: "Ông Nguyễn Mạnh Cường",
+    name: "Mandy Nguyễn",
+    title: "Chuyên gia <br/>Kinh doanh - Marketing",
+    image: "/img/mentors/mandy-nguyen.png",
+  },
+  {
+    name: "Đào Minh Huyền",
+    title: "Cố vấn Khởi nghiệp <br/>và Đầu tư",
+    image: "/img/mentors/dao-minh-huyen.png",
+  },
+  {
+    name: "Nguyễn Mạnh Cường",
     title: "Chuyên viên chiến lược <br/>và sáng tạo",
     image: "/img/mentors/nguyen-manh-cuong.png",
   },
@@ -239,13 +239,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                     />
                   </div>
                   <div className="flex inline-flex flex-col items-start bg-purple p-8 md:items-start lg:justify-center">
-                    <h2 className="mb-3 text-[34px] font-black">
-                      Về chương trình
-                    </h2>
-                    <p>
-                      Tải ngay tài liệu để biết thêm tất tần tật những thông tin
-                      về khoá học.
-                    </p>
+                    <h2 className="text-[34px] font-black">Về chương trình</h2>
                     <p className="mt-4 max-w-[300px] md:max-w-none">
                       <a
                         href="/docs/[Mind Connector] Sẵn sàng khởi nghiệp kinh doanh.pdf"

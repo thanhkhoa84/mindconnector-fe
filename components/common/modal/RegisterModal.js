@@ -126,9 +126,13 @@ const RegisterModal = () => {
             />
             <label htmlFor="term" className="align-middle">
               Tôi đồng ý với các{" "}
-              <span className="font-bold underline">
+              <a
+                href="https://docs.google.com/document/d/1D_jTT8YlllIZy_Jsh7-YUYutlUttSEGy9YwoUzhoN5c/edit?usp=sharing"
+                target="_blank"
+                className="font-bold underline"
+              >
                 điều khoản & điều kiện
-              </span>
+              </a>
             </label>
           </div>
           <div className="mt-4 text-center">

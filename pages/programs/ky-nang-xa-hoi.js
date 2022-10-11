@@ -29,22 +29,22 @@ const seo = {
 
 const mentors = [
   {
-    name: "Bà Nina Trần Lê",
-    title: "Thiết kế chương trình <br/>và vận hành",
+    name: "Nina Trần",
+    title: "Chuyên gia Tư vấn<br/>Thương hiệu và <br/>Chuyển đổi số",
     image: "/img/mentors/nina-tran.png",
   },
   {
-    name: "Nguyễn Phan Ngọc Hiếu",
-    title: "Chuyên viên <br/>phát triển thị trường",
-    image: "/img/mentors/hieu-nguyen.png",
-  },
-  {
-    name: "Bà Nguyễn Thị Thanh Trúc",
-    title: "Cố Vấn Đào Tạo",
+    name: "Mandy Nguyễn",
+    title: "Chuyên gia <br/>Kinh doanh - Marketing",
     image: "/img/mentors/mandy-nguyen.png",
   },
   {
-    name: "Ông Nguyễn Mạnh Cường",
+    name: "Đào Minh Huyền",
+    title: "Cố vấn Khởi nghiệp <br/>và Đầu tư",
+    image: "/img/mentors/dao-minh-huyen.png",
+  },
+  {
+    name: "Nguyễn Mạnh Cường",
     title: "Chuyên viên chiến lược <br/>và sáng tạo",
     image: "/img/mentors/nguyen-manh-cuong.png",
   },
@@ -250,13 +250,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                     />
                   </div>
                   <div className="flex inline-flex flex-col items-start bg-purple p-8 md:items-start lg:justify-center">
-                    <h2 className="mb-3 text-[34px] font-black">
-                      Về chương trình
-                    </h2>
-                    <p>
-                      Tải ngay tài liệu để biết thêm tất tần tật những thông tin
-                      về khoá học.
-                    </p>
+                    <h2 className="text-[34px] font-black">Về chương trình</h2>
                     <p className="mt-4">
                       <button className="btn-primary" onClick={createModal}>
                         Tìm hiểu ngay
@@ -323,7 +317,8 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
             <div className="flex flex-col">
               <div className="flex-shrink text-center">
                 <h2 className="mb-3 text-center text-[34px] font-black">
-                  Chia sẻ từ học viên Mind Connector
+                  Chia sẻ từ học viên <br />
+                  Mind Connector
                 </h2>
                 <p>
                   Hơn 6688 học viên đang học tại Mind Connector. Lắng nghe những
@@ -402,7 +397,7 @@ export async function getStaticProps() {
     body: `Vừa rời khỏi ghế nhà trường và bước vào giảng đường đại học là một thay đổi lớn trong cuộc đời của em. Lúc đầu em rất hoang mang, lo lắng vì cách học ở đại học không hề giống cấp 3. Chẳng những thế, ngoài việc học, em còn phải học những kỹ năng mềm để không những là một sinh viên ưu tú mà em còn có thể chuẩn bị hành trang cho tương lai. Sau khi tìm hiểu thông tin và quyết định học tại Mind Connector với chương trình Kỹ Năng Xã Hội, em cảm thấy vô cùng tự tin vì có thể áp dụng những kiến thức, kỹ năng hữu ích của chương trình vào lúc học ở trường. Vì thế dù môn nào em cũng có thể chinh phục được. Em nghĩ rằng đây là một chương trình bổ ích cho tất cả các bạn sinh viên để có thể thành công trên con đường học vấn của mình.`,
     peep: {
       name: `Hương Lan`,
-      title: `Học viên tham gia Chương trình`,
+      title: `Sinh viên năm hai trường Đại học Tài chính - Marketing`,
       image: `/img/Testimonial - Kỹ Năng Xã Hội.png`,
     },
   };

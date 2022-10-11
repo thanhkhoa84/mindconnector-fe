@@ -13,7 +13,7 @@ const Slide = ({ index, course, ...props }) => {
   let { title, lessons, time, img, level, feature } = course;
   return (
     <div
-      className={`relative w-[140px] overflow-hidden rounded-[30px] border-[6px] border-[#FFF7EC] text-left xs:w-[165px] md:w-[190px] `}
+      className={`relative w-[190px] overflow-hidden rounded-[30px] border-[6px] border-[#FFF7EC] text-left`}
     >
       <div
         className={`overflow-hidden rounded-2xl after:absolute after:inset-0 after:block after:bg-gradient-to-b after:from-[rgba(43,43,43,0)] after:to-[#000] after:content-['']`}
@@ -36,7 +36,10 @@ const Slide = ({ index, course, ...props }) => {
             </h5>
           </div>
         )}
-        <h3 className="mt-2 text-xl font-black uppercase leading-5">{title}</h3>
+        <h3
+          className="mt-2 text-xl font-black uppercase leading-[1.35]"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
         <p className="mt-2 leading-4">
           {level && <span>{level} &#x2022; </span>}
           {lessons && <span>{lessons} bài học &#x2022; </span>}
@@ -52,7 +55,7 @@ function NextArrow(props) {
   return (
     <div
       className={`
-        absolute top-1/2 -right-[40px] z-10 hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:block
+        absolute top-1/2 -right-[40px] z-10 -mt-[55px] hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:block
       `}
       onClick={onClick}
       style={{}}
@@ -73,7 +76,7 @@ function PrevArrow(props) {
   return (
     <div
       className={`
-        absolute top-1/2 -left-[40px] z-10 hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:block
+        absolute top-1/2 -left-[40px] z-10 -mt-[55px] hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:block
       `}
       onClick={onClick}
       style={{}}
@@ -96,15 +99,15 @@ const StudentCardList = ({ courses }) => {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 5,
+    slidesToShow: 4,
+    slidesToScroll: 4,
     initialSlide: 0,
     responsive: [
       {
         breakpoint: 1160,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 1,
+          slidesToScroll: 4,
         },
       },
       {
@@ -122,14 +125,14 @@ const StudentCardList = ({ courses }) => {
         },
       },
       {
-        breakpoint: 512,
+        breakpoint: 640,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
         },
       },
       {
-        breakpoint: 320,
+        breakpoint: 420,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

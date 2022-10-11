@@ -18,7 +18,7 @@ const Testimonial = ({ data }) => {
             width={60}
             height={60}
             alt=""
-            className="block"
+            className="block rounded-full"
           />
         </div>
         <div className="not-italic">

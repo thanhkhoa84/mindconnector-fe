@@ -8,7 +8,6 @@ const Rating = dynamic(() => import("../../Rating"), {
 });
 
 const CourseCard = ({ course }) => {
-  console.log(course);
   let { title, lessons, time, feature, rating, level } = course;
   // let priceMain = price.split(".")[0];
   // let fraction = price.split(".")[1];

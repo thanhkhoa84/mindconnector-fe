@@ -107,12 +107,14 @@ a {
   }
 }
 
-.course-card .slick-list {max-width: 1120px; margin: 0 auto !important;}
+.course-card .slick-list {max-width: 1120px; margin: 0 auto !important; padding-bottom: 55px;}
 
 .slick-slide {
   display: flex !important;
   justify-content: center
 }
+
+.slick-dots {bottom: 0 !important;}
 
 
 @layer components {

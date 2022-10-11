@@ -1,6 +1,7 @@
 import { useState, useEffect, memo } from "react";
 import Image from "next/future/image";
 import { SectionHeading } from "../../Heading";
+import { allTeachers } from "../../../data/global";
 
 let socialImages = {
   linkedin: "/img/linkedin.svg",
@@ -13,7 +14,7 @@ let socialImages = {
 const TeacherCard = ({ name, imgUrl, title, socials }) => {
   return (
     <div
-      className={`inlinbe-block relative mb-12 w-[160px] align-top md:w-[288px] lg:w-[228px]`}
+      className={`relative mb-12 inline-block w-[160px] align-top align-top md:w-[288px] lg:w-[228px]`}
     >
       <div className={`relative`}>
         <Image src={imgUrl} alt="" width={248} height={248} />
@@ -58,37 +59,8 @@ const TeacherCard = ({ name, imgUrl, title, socials }) => {
 };
 
 const TeacherList = () => {
-  const allTeachers = [
-    {
-      name: "Hiếu Nguyễn",
-      imgUrl: "/img/mentors/hieu-nguyen.png",
-      title: "Phụ trách nghiên cứu <br/>phát triển thị trường",
-      socials: [
-        { name: "linkedin", url: "https://linkedin.com" },
-        { name: "twitter", url: "https://twitter.com" },
-      ],
-    },
-    {
-      name: "Nina Trần",
-      imgUrl: "/img/mentors/nina-tran.png",
-      title: "Phụ trách thiết kế <br/>chương trình",
-      socials: [{ name: "linkedin", url: "https://linkedin.com" }],
-    },
-    {
-      name: "Mandy Nguyễn",
-      imgUrl: "/img/mentors/mandy-nguyen.png",
-      title: "Chuyên gia <br/>Kinh doanh - Marketing",
-      socials: [{ name: "linkedin", url: "https://linkedin.com" }],
-    },
-    {
-      name: "Đào Minh Huyền",
-      imgUrl: "/img/mentors/dao-minh-huyen.png",
-      title: "Owner of Ask2Go App, <br/>Mihoo Cosmetics,…",
-      socials: [{ name: "linkedin", url: "https://linkedin.com" }],
-    },
-  ];
   return (
-    <div className="-mx-4 flex flex-col flex-wrap items-center justify-around pt-12 text-center xs:flex-row md:mx-0 lg:justify-between lg:justify-evenly">
+    <div className="-mx-4 flex flex-col flex-wrap items-start justify-around pt-12 text-center xs:flex-row md:mx-0 lg:justify-evenly">
       {allTeachers.map((teacher, index) => {
         return <TeacherCard {...teacher} key={teacher.name} />;
       })}

@@ -26,8 +26,10 @@ const About = () => {
       <Container>
         <SectionHeading align="center">Về Mind Connector</SectionHeading>
         <p className="text-center lg:my-0 lg:mx-auto lg:max-w-[46%]">
-          Mind Connector kết nối tầm nhìn giúp doanh nghiệp và cá nhân phát
-          triển mạnh mẽ trong tương lai.
+          Mind Connector là một mạng lưới của các nhà tư vấn kinh doanh cùng các
+          giảng viên vốn là các lãnh đạo và chuyên gia hàng đầu trong nhiều lĩnh
+          vực khác nhau giúp các doanh nghiệp và cá nhân phát triển mạnh mẽ
+          trong tương lai.
         </p>
         <div className="my-[60px]">
           <Image

@@ -79,10 +79,40 @@ export const Paths = {
   courses: ["len-ke-hoach-kinh-doanh"],
 };
 
+export const allTeachers = [
+  {
+    name: "Nina Trần",
+    imgUrl: "/img/mentors/nina-tran.png",
+    title: "Chuyên gia Tư vấn<br/>Thương hiệu và <br/>Chuyển đổi số",
+    socials: [{ name: "linkedin", url: "https://linkedin.com" }],
+  },
+  {
+    name: "Mandy Nguyễn",
+    imgUrl: "/img/mentors/mandy-nguyen.png",
+    title: "Chuyên gia <br/>Kinh doanh - Marketing",
+    socials: [{ name: "linkedin", url: "https://linkedin.com" }],
+  },
+  {
+    name: "Đào Minh Huyền",
+    imgUrl: "/img/mentors/dao-minh-huyen.png",
+    title: "Cố vấn Khởi nghiệp <br/>và Đầu tư",
+    socials: [{ name: "linkedin", url: "https://linkedin.com" }],
+  },
+  {
+    name: "Ông Nguyễn Mạnh Cường",
+    imgUrl: "/img/mentors/nguyen-manh-cuong.png",
+    title: "Chuyên viên chiến lược <br/>và sáng tạo",
+    socials: [
+      { name: "linkedin", url: "https://linkedin.com" },
+      { name: "twitter", url: "https://twitter.com" },
+    ],
+  },
+];
+
 export const programs = {
   soCap: [
     {
-      title: "Theo đuổi sự học cả đời",
+      title: "Theo đuổi <br/>sự học cả đời",
       time: "2",
       feature: false,
       level: "Tổng quát",
@@ -96,7 +126,7 @@ export const programs = {
       img: "/img/programs/ky-nang-xa-hoi/02 Nghiên cứu và phân tích.jpg",
     },
     {
-      title: "Kỹ năng giao tiếp",
+      title: "Kỹ năng <br/>giao tiếp",
       time: "2",
       feature: false,
       level: "Tổng quát",
@@ -145,14 +175,14 @@ export const programs = {
       img: "/img/programs/ky-nang-xa-hoi/09 Nhẫn nại.jpg",
     },
     {
-      title: "Tổ chức công việc và cuộc sống",
+      title: "Tổ chức công việc và <br/>cuộc sống",
       time: "2",
       feature: "Môn học bán chạy",
       level: "Nâng cao ",
       img: "/img/programs/ky-nang-xa-hoi/10 Tổ chức công việc và cuộc sống.jpg",
     },
     {
-      title: "Tổ chức tài chính",
+      title: "Tổ chức <br/>tài chính",
       time: "2",
       feature: "Môn học bán chạy",
       level: "Nâng cao ",
@@ -168,19 +198,19 @@ export const programs = {
   ],
   trungCap: [
     {
-      title: "Thay đổi suy nghĩ",
+      title: "Thay đổi <br/>suy nghĩ",
       time: "2",
       feature: false,
       img: "/img/programs/vung-vang-lap-nghiep/01 Thay đổi suy nghĩ.jpg",
     },
     {
-      title: "Tích góp kinh nghiệm",
+      title: "Tích góp <br/>kinh nghiệm",
       time: "2",
       feature: false,
       img: "/img/programs/vung-vang-lap-nghiep/02 Tích góp kinh nghiệm.jpg",
     },
     {
-      title: `Khả năng tự chủ`,
+      title: `Khả năng <br/>tự chủ`,
       time: `2`,
       feature: "Môn học bán chạy",
       img: "/img/programs/vung-vang-lap-nghiep/03 Khả năng tự chủ.jpg",
@@ -204,13 +234,13 @@ export const programs = {
       img: "/img/programs/vung-vang-lap-nghiep/06 Xây dựng lòng tin.jpg",
     },
     {
-      title: `Xác định sự nghiệp dài hạn`,
+      title: `Xác định <br/>sự nghiệp <br/>dài hạn`,
       time: `2`,
       feature: "Môn học bán chạy",
       img: "/img/programs/vung-vang-lap-nghiep/07 Xác định sự nghiệp dài hạn.jpg",
     },
     {
-      title: `Định hình tư duy`,
+      title: `Định hình <br/>tư duy`,
       time: `2`,
       feature: "Môn học bán chạy",
       img: "/img/programs/vung-vang-lap-nghiep/08 Định hình tư duy.jpg",
@@ -222,7 +252,7 @@ export const programs = {
       img: "/img/programs/vung-vang-lap-nghiep/09 Giải quyết vấn đề.jpg",
     },
     {
-      title: `Quản lý dự án`,
+      title: `Quản lý <br/>dự án`,
       time: `2`,
       feature: "Môn học bán chạy",
       img: "/img/programs/vung-vang-lap-nghiep/10 Quản lý dự án.jpg",
@@ -234,13 +264,13 @@ export const programs = {
       img: "/img/programs/vung-vang-lap-nghiep/11 Khả năng sáng tạo.jpg",
     },
     {
-      title: `Làm việc theo nhóm`,
+      title: `Làm việc <br/>theo nhóm`,
       time: `2`,
       feature: false,
       img: "/img/programs/vung-vang-lap-nghiep/12 Làm việc nhóm.jpg",
     },
     {
-      title: `Lớp học mô phỏng thực tế`,
+      title: `Lớp học <br/>mô phỏng <br/>thực tế`,
       time: `2`,
       feature: "Môn học bán chạy",
       img: "/img/programs/vung-vang-lap-nghiep/13 Lớp học mô phỏng.jpg",
@@ -272,7 +302,7 @@ export const programs = {
       slug: "/courses/hoach-dinh-ke-hoach-kinh-doanh",
     },
     {
-      title: "Quản lý hệ thống kinh doanh",
+      title: "Quản lý <br/>hệ thống <br/>kinh doanh",
       subtitle: "Khởi nghiệp thuận lợi, chạm đỉnh vinh quang",
       lessons: "5",
       time: "10",

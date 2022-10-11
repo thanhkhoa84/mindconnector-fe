@@ -88,7 +88,7 @@ export async function getStaticProps() {
     },
     {
       headline:
-        "Mind Connector ký kết MOU với Hiệp hội Phát triển Nhân lực Logistics Vietnam ",
+        "Mind Connector hợp tác cùng Hiệp hội Phát triển Nhân lực Logistics Việt Nam",
       body: "Trong chuỗi sự kiện VALOMA CONFEST 2022, Mind Connector đã trở thành đối tác chiến lược với VALOMA trong lĩnh vực kết nối các chuyên gia trong lĩnh vực Logistics và hỗ trợ cho sinh viên, doanh nghiệp và nhà trường qua Job Fair 2022.",
       image: "/img/home-banner-03.png",
     },

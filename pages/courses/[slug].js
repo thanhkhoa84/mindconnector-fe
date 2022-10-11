@@ -284,7 +284,8 @@ const CoursePost = ({ questions, logoslist, programInfo, testimonial }) => {
                 <div className="w-ful mt-12 mb-12" id="rating">
                   <div>
                     <h2 className="mb-3 text-[34px] font-black leading-[1] leading-[1.2]">
-                      Chia sẻ từ học viên Mind Connector
+                      Chia sẻ từ học viên <br />
+                      Mind Connector
                     </h2>
                     <p>
                       645 học viên đã tham gia khoá học{" "}
