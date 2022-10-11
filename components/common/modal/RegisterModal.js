@@ -129,6 +129,7 @@ const RegisterModal = () => {
               <a
                 href="https://docs.google.com/document/d/1D_jTT8YlllIZy_Jsh7-YUYutlUttSEGy9YwoUzhoN5c/edit?usp=sharing"
                 target="_blank"
+                rel="noreferrer"
                 className="font-bold underline"
               >
                 điều khoản & điều kiện
