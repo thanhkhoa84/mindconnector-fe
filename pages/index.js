@@ -10,7 +10,7 @@ import HeroBanner from "../components/home/HeroBanner";
 
 export default function Home({ slides, questions }) {
   const seo = {
-    metaTitle: "Mind Connector",
+    metaTitle: "Trang chủ",
     metaDescription: "Mind Connector",
     // shareImage: article.attributes.image,
     // article: true,

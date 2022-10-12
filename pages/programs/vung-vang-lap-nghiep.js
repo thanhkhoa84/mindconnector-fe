@@ -17,7 +17,7 @@ import {
 } from "../../components/common/modal/GlobalModal";
 
 const seo = {
-  metaTitle: "Mind Connector",
+  metaTitle: "Vững vàng lập nghiệp",
   metaDescription: "Mind Connector",
   // shareImage: article.attributes.image,
   // article: true,
