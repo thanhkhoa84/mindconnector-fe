@@ -11,7 +11,7 @@ let socialImages = {
   instagram: "/img/instagram.svg",
 };
 
-const TeacherCard = ({ name, imgUrl, title, socials }) => {
+const TeacherCard = ({ entitled, name, imgUrl, title, socials }) => {
   return (
     <div
       className={`relative mb-12 inline-block w-[160px] align-top align-top md:w-[288px] lg:w-[228px]`}
@@ -19,13 +19,14 @@ const TeacherCard = ({ name, imgUrl, title, socials }) => {
       <div className={`relative`}>
         <Image src={imgUrl} alt="" width={248} height={248} />
       </div>
-      <div className="mt-4 flex w-full flex-col px-4 text-center">
+      <div className="mt-4 flex w-full flex-col px-2 text-center">
+        <h4 className="m-0 text-xs leading-none text-purple">{entitled}</h4>
         <h3 className="m-0 text-sm font-black leading-none text-purple md:text-base">
           {name}
         </h3>
         <p
           dangerouslySetInnerHTML={{ __html: title }}
-          className="mt-2 min-h-[calc(2*1.25*1em)] px-[0.3em] text-sm leading-none dark:text-white xs:text-xs md:text-base lg:text-sm"
+          className="m-0 min-h-[calc(2*1.25*1em)] text-sm leading-none dark:text-white xs:text-xs md:text-base lg:text-sm"
         >
           {/* {title} */}
         </p>

@@ -1,11 +1,6 @@
-import { useEffect, useState, useRef } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import dynamic from "next/dynamic";
 import Image from "next/future/image";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 import Container from "../../components/Container";
 import Seo from "../../components/SEO";
@@ -14,6 +9,7 @@ import CoursesCardList from "../../components/common/courses/CoursesCardList";
 import Testimonial from "../../components/Testimonial";
 import TabPanels from "../../components/TabPanels";
 import { programs } from "../../data/global";
+import CourseTeachers from "../../components/common/teachers/CourseTeachers";
 
 import {
   useGlobalModalContext,
@@ -29,23 +25,27 @@ const seo = {
 
 const mentors = [
   {
+    entitled: "Bà",
     name: "Nina Trần",
-    title: "Chuyên gia Tư vấn<br/>Thương hiệu và <br/>Chuyển đổi số",
+    title: "Chuyên gia <br/>Tư vấn Thương hiệu",
     image: "/img/mentors/nina-tran.png",
   },
   {
+    entitled: "Bà",
     name: "Mandy Nguyễn",
-    title: "Chuyên gia <br/>Kinh doanh - Marketing",
+    title: "Chuyên gia <br/>Sales - Marketing",
     image: "/img/mentors/mandy-nguyen.png",
   },
   {
+    entitled: "Bà",
     name: "Đào Minh Huyền",
-    title: "Cố vấn Khởi nghiệp <br/>và Đầu tư",
+    title: "Cố vấn Khởi nghiệp",
     image: "/img/mentors/dao-minh-huyen.png",
   },
   {
+    entitled: "Ông",
     name: "Nguyễn Mạnh Cường",
-    title: "Chuyên viên chiến lược <br/>và sáng tạo",
+    title: "Chuyên gia chiến lược",
     image: "/img/mentors/nguyen-manh-cuong.png",
   },
 ];
@@ -99,31 +99,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
             <p className="mt-4">
               &quot;Nền tảng vững chắc, tương lai khởi sắc&quot;
             </p>
-            <div className="mt-8 grid grid-cols-2 gap-8 md:flex md:justify-center">
-              {mentors.map((m, index) => {
-                const { name, title, image } = m;
-                return (
-                  <div className="" key={index}>
-                    <div className="inline-block w-[90px] overflow-hidden rounded-full md:w-[100px]">
-                      <Image
-                        src={image}
-                        alt="Avatar"
-                        width={200}
-                        height={200}
-                        className="w-full object-cover transition-all hover:scale-[1.]"
-                      />
-                    </div>
-                    <p className="mt-1 text-xs font-black text-purple md:text-base">
-                      {name}
-                    </p>
-                    <p
-                      dangerouslySetInnerHTML={{ __html: title }}
-                      className="mx-auto text-xs"
-                    />
-                  </div>
-                );
-              })}
-            </div>
+            <CourseTeachers teachers={mentors} />
             <div className="mt-8 flex flex-col rounded-xl text-left md:relative md:top-[35px] md:mt-0 md:h-[70px] md:flex-row md:justify-between md:bg-white md:shadow-lg">
               <div className=" flex flex-row flex-nowrap items-start justify-start gap-4 rounded-2xl border-2 border-solid border-[#d2d2d2] border-white bg-[#FFF2EB] bg-opacity-75 py-[1em] px-6 xs:flex-row sm:flex-row sm:gap-8 md:items-center md:bg-transparent">
                 <div className="text-black">
@@ -185,7 +161,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                       <h3 className="mb-4 text-xl font-black leading-none md:text-2xl md:leading-none">
                         Xây dựng nền tảng vững chắc
                       </h3>
-                      <p className="pr-8 leading-5">
+                      <p className="pr-4 leading-5">
                         Khoá học này giúp sinh viên nâng cao năng suất học tập
                         và kỹ năng nghiên cứu, từ đó cạnh tranh tốt hơn trong
                         môi trường học thuật, đồng thời hoàn thiện tính cách và
@@ -206,7 +182,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                       <h3 className="mb-4 text-xl font-black leading-none md:text-2xl md:leading-none">
                         30 ngày học linh hoạt
                       </h3>
-                      <p className="pr-8 leading-5">
+                      <p className="pr-4 leading-5">
                         Chương trình được thiết kế để bạn học trong vòng 30
                         ngày. Bạn có thể rút ngắn hoặc kéo dài tùy theo thời
                         gian của mình.
@@ -226,7 +202,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                       <h3 className="mb-4 text-xl font-black leading-none md:text-2xl md:leading-none">
                         Chứng nhận hoàn thành chương trình
                       </h3>
-                      <p className="pr-8 leading-5">
+                      <p className="pr-4 leading-5">
                         Các học viên sẽ được chứng nhận bởi Mind Connector và
                         các đối tác của Mind Connector tương ứng với chương
                         trình học đã hoàn thành.
@@ -241,7 +217,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
 
               <div className="mt-12 py-12" id="about">
                 <div className="flex flex-col overflow-hidden rounded-[20px] text-white md:flex-row">
-                  <div className="">
+                  <div className="overflow-hidden">
                     <Image
                       src="/img/info-program-ky-nang.png"
                       width={704}
@@ -249,10 +225,15 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                       alt=""
                     />
                   </div>
-                  <div className="flex inline-flex flex-col items-start bg-purple p-8 md:items-start lg:justify-center">
-                    <h2 className="text-[34px] font-black">Về chương trình</h2>
+                  <div className="inline-flex flex-col items-start bg-purple p-8 md:min-w-[340px] md:rounded-tr-[20px] md:rounded-br-[20px] lg:justify-center">
+                    <h2 className="text-[28px] font-black md:text-[34px]">
+                      Về chương trình
+                    </h2>
                     <p className="mt-4">
-                      <button className="btn-primary" onClick={createModal}>
+                      <button
+                        className="btn-primary block max-w-[300px] md:inline-block md:w-auto"
+                        onClick={createModal}
+                      >
                         Tìm hiểu ngay
                       </button>
                     </p>
@@ -355,7 +336,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                   Mind Connector.
                 </p>
               </header>
-              <div className="flex flex-col items-center justify-center gap-2 p-6 md:w-2/5">
+              <div className="flex min-w-[296px] flex-col items-center justify-center gap-2 p-6 md:w-2/5">
                 {/* <p className="text-[14px] font-bold">
                   <span>Học phí USD$</span>{" "}
                   <span className="text-[32px]">
@@ -365,7 +346,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                 <p className="flex items-center">
                   <button
                     onClick={createModal}
-                    className="btn-primary block w-full overflow-hidden text-[13px] sm:text-[16px] lg:min-w-[296px]"
+                    className="btn-primary block w-full overflow-hidden text-[13px] sm:text-[16px]"
                   >
                     Đừng bỏ lỡ, đăng ký ngay!
                   </button>

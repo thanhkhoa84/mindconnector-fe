@@ -45,7 +45,7 @@ const Slide = ({ index, course, ...props }) => {
   let { title, lessons, time, img, level, feature } = course;
   return (
     <div
-      className={`relative w-[190px] overflow-hidden rounded-[30px] border-[6px] border-[#FFF7EC] text-left `}
+      className={`relative overflow-hidden rounded-[30px] border-[6px] border-[#FFF7EC] text-left xs:w-[174px]`}
     >
       <div
         className={`overflow-hidden rounded-2xl after:absolute after:inset-0 after:block after:bg-gradient-to-b after:from-[rgba(43,43,43,0)] after:to-[#000] after:content-['']`}
@@ -69,7 +69,7 @@ const Slide = ({ index, course, ...props }) => {
           </div>
         )} */}
         <h3
-          className="mt-2 text-xl font-black uppercase leading-[1.35]"
+          className="mt-2 text-lg font-black uppercase leading-[1.35]"
           dangerouslySetInnerHTML={{ __html: title }}
         />
         <p className="mt-2 leading-4">
@@ -131,22 +131,15 @@ const CoursesList = ({ courses }) => {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 5,
+    slidesToScroll: 5,
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1160,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 4,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
         },
       },
       {
@@ -164,7 +157,7 @@ const CoursesList = ({ courses }) => {
         },
       },
       {
-        breakpoint: 420,
+        breakpoint: 374,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

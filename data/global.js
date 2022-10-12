@@ -81,27 +81,31 @@ export const Paths = {
 
 export const allTeachers = [
   {
+    entitled: "Bà",
     name: "Nina Trần",
-    imgUrl: "/img/mentors/nina-tran.png",
-    title: "Chuyên gia Tư vấn<br/>Thương hiệu và <br/>Chuyển đổi số",
+    imgUrl: "/img/mentors/nina-tran-02.png",
+    title: "Chuyên gia <br/>Tư vấn Thương hiệu",
     socials: [{ name: "linkedin", url: "https://linkedin.com" }],
   },
   {
+    entitled: "Bà",
     name: "Mandy Nguyễn",
-    imgUrl: "/img/mentors/mandy-nguyen.png",
-    title: "Chuyên gia <br/>Kinh doanh - Marketing",
+    imgUrl: "/img/mentors/mandy-nguyen-02.png",
+    title: "Chuyên gia <br/>Sales - Marketing",
     socials: [{ name: "linkedin", url: "https://linkedin.com" }],
   },
   {
+    entitled: "Bà",
     name: "Đào Minh Huyền",
     imgUrl: "/img/mentors/dao-minh-huyen.png",
-    title: "Cố vấn Khởi nghiệp <br/>và Đầu tư",
+    title: "Cố vấn Khởi nghiệp",
     socials: [{ name: "linkedin", url: "https://linkedin.com" }],
   },
   {
-    name: "Ông Nguyễn Mạnh Cường",
+    entitled: "Ông",
+    name: "Nguyễn Mạnh Cường",
     imgUrl: "/img/mentors/nguyen-manh-cuong.png",
-    title: "Chuyên viên chiến lược <br/>và sáng tạo",
+    title: "Chuyên gia chiến lược",
     socials: [
       { name: "linkedin", url: "https://linkedin.com" },
       { name: "twitter", url: "https://twitter.com" },
@@ -112,7 +116,7 @@ export const allTeachers = [
 export const programs = {
   soCap: [
     {
-      title: "Theo đuổi <br/>sự học cả đời",
+      title: "Theo đuổi <br/>sự học <br/>cả đời",
       time: "2",
       feature: false,
       level: "Tổng quát",

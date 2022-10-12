@@ -231,7 +231,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
                       <h3 className="mb-4 text-xl font-black leading-none md:text-2xl md:leading-none">
                         Xây dựng nền tảng vững chắc
                       </h3>
-                      <p className="pr-8 leading-5">
+                      <p className="pr-4 leading-5">
                         Chương trình học này sẽ giúp bạn có một khởi đầu vững
                         vàng trong hành trình chạm đến thành công.
                       </p>
@@ -248,7 +248,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
                       <h3 className="mb-4 text-xl font-black leading-none md:text-2xl md:leading-none">
                         30 ngày học linh hoạt
                       </h3>
-                      <p className="pr-8 leading-5">
+                      <p className="pr-4 leading-5">
                         Chương trình được thiết kế để bạn học trong vòng 30
                         ngày. Bạn có thể rút ngắn hoặc kéo dài tuỳ theo thời
                         gian của mình.
@@ -266,7 +266,7 @@ const Program = ({ questions, logoslist, programInfo, courses }) => {
                       <h3 className="mb-4 text-xl font-black leading-none md:text-2xl md:leading-none">
                         Chứng nhận hoàn thành chương trình
                       </h3>
-                      <p className="pr-8 leading-5">
+                      <p className="pr-4 leading-5">
                         Bạn sẽ nhận chứng nhận sau khi hoàn thành chương trình
                         học.
                       </p>
