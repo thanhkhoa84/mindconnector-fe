@@ -14,19 +14,25 @@ let socialImages = {
 const TeacherCard = ({ entitled, name, imgUrl, title, socials }) => {
   return (
     <div
-      className={`relative mb-12 inline-block w-[160px] align-top align-top md:w-[288px] lg:w-[228px]`}
+      className={`relative mb-12 inline-block w-[160px] max-w-[228px] px-[10px] align-top xs:w-[49%] sm:w-[25%] md:mb-0 lg:w-[228px]`}
     >
-      <div className={`relative`}>
-        <Image src={imgUrl} alt="" width={248} height={248} />
+      <div className={`relative text-center`}>
+        <Image
+          src={imgUrl}
+          alt=""
+          width={248}
+          height={248}
+          className="inline-block align-top"
+        />
       </div>
-      <div className="mt-4 flex w-full flex-col px-2 text-center">
+      <div className="mt-4 flex w-full flex-col text-center">
         <h4 className="m-0 text-xs leading-none text-purple">{entitled}</h4>
         <h3 className="m-0 text-sm font-black leading-none text-purple md:text-base">
           {name}
         </h3>
         <p
           dangerouslySetInnerHTML={{ __html: title }}
-          className="m-0 min-h-[calc(2*1.25*1em)] text-sm leading-none dark:text-white xs:text-xs md:text-base lg:text-sm"
+          className="m-0 min-h-[calc(2*1.25*1em)] text-sm leading-none dark:text-white sm:text-xs lg:text-base lg:text-sm"
         >
           {/* {title} */}
         </p>
@@ -61,7 +67,7 @@ const TeacherCard = ({ entitled, name, imgUrl, title, socials }) => {
 
 const TeacherList = () => {
   return (
-    <div className="-mx-4 flex flex-col flex-wrap items-start justify-around pt-12 text-center xs:flex-row md:mx-0 lg:justify-evenly">
+    <div className="-mx-4 flex flex-col flex-wrap items-center justify-center pt-12 text-center xs:flex-row xs:items-start md:mx-0 md:justify-around lg:justify-evenly">
       {allTeachers.map((teacher, index) => {
         return <TeacherCard {...teacher} key={teacher.name} />;
       })}
