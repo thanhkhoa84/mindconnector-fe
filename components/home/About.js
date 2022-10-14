@@ -1,30 +1,13 @@
-import dynamic from 'next/dynamic';
-import YouTube from 'react-youtube';
 import Image from "next/future/image";
 import Container from "../../components/Container";
-import { SectionHeading } from "../../components/Heading";
-
-const LogoList = dynamic(() => import("./../LogoList"), {
-  ssr: false,
-});
 
 const About = () => {
-  const opts = {
-    height: "auto",
-    width: "100%",
-    playerVars: {
-      autoplay: 0,
-    },
-  };
-
-  const _onReady = (event) => {
-    event.target.pauseVideo();
-  };
-
   return (
     <section className="pt-[3em]">
       <Container>
-        <SectionHeading align="center">Về Mind Connector</SectionHeading>
+        <h1 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">
+          Về Mind Connector
+        </h1>
         <p className="text-center lg:my-0 lg:mx-auto lg:max-w-[46%]">
           Mind Connector là một mạng lưới của các nhà tư vấn kinh doanh cùng các
           giảng viên vốn là các lãnh đạo và chuyên gia hàng đầu trong nhiều lĩnh

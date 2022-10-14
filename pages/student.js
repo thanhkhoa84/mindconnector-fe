@@ -1,15 +1,8 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import dynamic from 'next/dynamic';
+import Link from "next/link";
 
-import Container from './../components/Container';
-import QandA from './../components/QandA';
-import Seo from './../components/SEO';
-import {
-  SectionHeading,
-  SectionSubHeading,
-  BannerHeading,
-} from '../components/Heading';
+import Container from "./../components/Container";
+import Seo from "./../components/SEO";
 import LogoList from "./../components/LogoList";
 import Teachers from "./../components/common/teachers/Teachers";
 import StudentCardList from "./../components/common/courses/StudentCardList";
@@ -50,10 +43,10 @@ const Student = ({ questions, logoslist, programs }) => {
           className={`bg-[url('/img/bg-head-section.png')] bg-cover py-[3em]`}
         >
           <Container>
-            <BannerHeading>
+            <h1 className="mx-auto mt-0 mb-4 text-center text-3xl font-black dark:text-white dark:text-white md:text-left md:text-6xl md:leading-[1.2]">
               Học hỏi <br className="hidden md:inline" />
               để thành công
-            </BannerHeading>
+            </h1>
             <p className="text-center md:text-left">
               Cùng Mind Connector xây dựng nền tảng vững chắc để thành công.
             </p>
@@ -67,8 +60,12 @@ const Student = ({ questions, logoslist, programs }) => {
         </Container>
         <section className={`py-[3em] `}>
           <Container>
-            <SectionSubHeading>Chương trình cơ bản</SectionSubHeading>
-            <SectionHeading>Kỹ Năng Xã Hội</SectionHeading>
+            <h2 className="my-0 mx-auto text-base font-bold leading-[1] text-gray dark:text-white">
+              Chương trình cơ bản
+            </h2>
+            <h1 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">
+              Kỹ Năng Xã Hội
+            </h1>
             <p>
               <b>“Nền tảng vững chắc, tương lai khởi sắc”</b> <br />
               Trang bị những kỹ năng cần thiết ngay từ khi ngồi trên giảng đường
@@ -86,8 +83,12 @@ const Student = ({ questions, logoslist, programs }) => {
         </section>
         <section className={`bg-[#FFEFDB]  py-[3em]`}>
           <Container>
-            <SectionSubHeading>Chương trình trung cấp</SectionSubHeading>
-            <SectionHeading>Vững Vàng Lập Nghiệp</SectionHeading>
+            <h2 className="my-0 mx-auto text-base font-bold leading-[1] text-gray dark:text-white">
+              Chương trình trung cấp
+            </h2>
+            <h1 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">
+              Vững Vàng Lập Nghiệp
+            </h1>
             <p>
               <b>“Kỹ năng thiết thực, dẫn lối thành công”</b> <br />
               Chuẩn bị một phong cách làm việc chuyên nghiệp cùng với những kỹ
@@ -107,8 +108,12 @@ const Student = ({ questions, logoslist, programs }) => {
         </section>
         <section className={`py-[3em]`}>
           <Container>
-            <SectionSubHeading>Chương trình nâng cao</SectionSubHeading>
-            <SectionHeading>Sẵn Sàng Khởi Nghiệp Kinh Doanh</SectionHeading>
+            <h2 className="my-0 mx-auto text-base font-bold leading-[1] text-gray dark:text-white">
+              Chương trình nâng cao
+            </h2>
+            <h1 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">
+              Sẵn Sàng Khởi Nghiệp Kinh Doanh
+            </h1>
             <p>
               <b>“Khởi nghiệp thuận lợi, chạm đỉnh vinh quang”</b> <br />
               Vững vàng kiến thức và kỹ năng để khởi sự kinh doanh thuận lợi.

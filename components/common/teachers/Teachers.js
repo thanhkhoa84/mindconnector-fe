@@ -1,6 +1,5 @@
 import { useState, useEffect, memo } from "react";
 import Image from "next/future/image";
-import { SectionHeading } from "../../Heading";
 import { allTeachers } from "../../../data/global";
 
 let socialImages = {
@@ -78,7 +77,9 @@ const TeacherList = () => {
 const Teachers = () => {
   return (
     <div className={``}>
-      <SectionHeading align="center">Đội ngũ giảng viên</SectionHeading>
+      <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+        Đội ngũ giảng viên
+      </h1>
       <TeacherList />
     </div>
   );

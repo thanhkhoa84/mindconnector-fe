@@ -3,7 +3,6 @@ import dynamic from "next/dynamic";
 import Image from "next/future/image";
 import Container from "../../components/Container";
 import Seo from "../../components/SEO";
-import { SectionSubHeading } from "../../components/Heading";
 import Testimonial from "../../components/Testimonial";
 import { QandAProgram } from "../../components/QandA";
 import { useEffect, useState, useRef } from "react";
@@ -348,9 +347,9 @@ const CoursePost = ({ questions, logoslist, programInfo, testimonial }) => {
               <aside className="hidden w-full md:block md:w-2/5 lg:w-[336px]">
                 <div className="rounded-2xl p-6 px-5 shadow-asideboxLight">
                   <div className="">
-                    <SectionSubHeading>
+                    <h2 className="my-0 mx-auto text-base font-bold leading-[1] text-gray dark:text-white">
                       Chương trình Thành công trong học tập
-                    </SectionSubHeading>
+                    </h2>
                     <h3 className="mt-2 text-[24px] font-black leading-8">
                       Khoá học nghiên cứu và phân tích
                     </h3>

@@ -1,6 +1,5 @@
 import { forwardRef, useReducer, useRef, useState, useEffect } from "react";
 import Image from "next/future/image";
-import styles from "./HeroBanner.module.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

@@ -1,11 +1,11 @@
-import Header from './Header';
-import Footer from './Footer';
-import Head from 'next/head';
+import Header from "../Header";
+import Footer from "../Footer";
+import Head from "next/head";
 import Router from "next/router";
 import { useState } from "react";
-import { MenuProvider } from "../components/common/MenuProvider";
-import { GlobalModal } from "./common/modal/GlobalModal";
-import { Navigation } from "../data/global";
+import { MenuProvider } from "./MenuProvider";
+import { GlobalModal } from "./modal/GlobalModal";
+import { Navigation } from "../../data/global";
 
 Router.onRouteChangeComplete = () => {
   window.scroll({

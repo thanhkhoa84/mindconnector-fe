@@ -1,19 +1,19 @@
-import Head from 'next/head';
+import Head from "next/head";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import Image from "next/future/image";
 import { useState } from "react";
-import Container from "./../components/Container";
-import QandA from "./../components/QandA";
-import Seo from "./../components/SEO";
+import Container from "../components/Container";
+import QandA from "../components/QandA";
+import Seo from "../components/SEO";
 import BusinessCardList from "../components/common/courses/BusinessCardList";
-import Teachers from "./../components/common/teachers/Teachers";
+import Teachers from "../components/common/teachers/Teachers";
 import {
   useGlobalModalContext,
   MODAL_TYPES,
 } from "../components/common/modal/GlobalModal";
 
-const LogoList = dynamic(() => import("./../components/LogoList"), {
+const LogoList = dynamic(() => import("../components/LogoList"), {
   ssr: false,
 });
 
@@ -226,7 +226,7 @@ const Business = ({ questions, logoslist }) => {
             </h1>
           </Container>
           <div className="course-card business-card relative mt-8 block py-8">
-            <BusinessCardList courses={[1, 1, 2, 3, 4, 5, 2, 3, 4, 5]} />
+            <BusinessCardList courses={Array(25).fill(0)} />
           </div>
         </section>
         <section className="dark bg-black py-12 dark:text-white">
@@ -251,4 +251,3 @@ export async function getStaticProps() {
     },
   };
 }
-
