@@ -379,7 +379,7 @@ export async function getStaticProps() {
     peep: {
       name: `Hương Lan`,
       title: `Sinh viên năm hai trường Đại học Tài chính - Marketing`,
-      image: `/img/Testimonial - Kỹ Năng Xã Hội.png`,
+      image: `/img/testimonial-ky-nang-xa-hoi.png`,
     },
   };
   return {

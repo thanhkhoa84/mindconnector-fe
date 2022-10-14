@@ -374,7 +374,7 @@ export async function getStaticProps() {
     peep: {
       name: `Hạ My`,
       title: `Sinh viên năm cuối trường Đại học Ngoại Thương`,
-      image: `/img/Testimonial - Vững Vàng Lập Nghiệp.png`,
+      image: `/img/testimonial-vung-vang-lap-nghiep.png`,
     },
   };
   return {
