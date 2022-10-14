@@ -108,10 +108,25 @@ a {
 }
 
 .course-card .slick-list {max-width: 1120px; margin: 0 auto !important; padding-bottom: 55px;}
+.business-card .slick-dots li.slick-active button:before {
+  color: white !important;
+}
+
+.business-card .slick-dots li button:before {
+  color: #6b6b6b !important;
+}
 
 .slick-slide {
   display: flex !important;
-  justify-content: center
+  justify-content: center;
+}
+
+.slick-dots li button {
+  padding: 0 !important;
+}
+
+.slick-dots li button:before {
+  font-size: 10px !important;
 }
 
 .slick-dots {bottom: 0 !important;}

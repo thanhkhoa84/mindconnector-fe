@@ -6,11 +6,7 @@ import { useState } from "react";
 import Container from "./../components/Container";
 import QandA from "./../components/QandA";
 import Seo from "./../components/SEO";
-import {
-  SectionHeading,
-  SectionSubHeading,
-  BannerHeading,
-} from "../components/Heading";
+import BusinessCardList from "../components/common/courses/BusinessCardList";
 import Teachers from "./../components/common/teachers/Teachers";
 import {
   useGlobalModalContext,
@@ -228,24 +224,10 @@ const Business = ({ questions, logoslist }) => {
             <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
               Check out the latest insights from our experts
             </h1>
-            <ul className="mt-12 -mb-8 flex flex-nowrap items-center justify-start gap-4 overflow-hidden overflow-x-auto  pb-8 lg:justify-between lg:gap-6">
-              <li>
-                <BusinessCard />
-              </li>
-              <li>
-                <BusinessCard />
-              </li>
-              <li>
-                <BusinessCard />
-              </li>
-              <li>
-                <BusinessCard />
-              </li>
-              <li>
-                <BusinessCard />
-              </li>
-            </ul>
           </Container>
+          <div className="course-card business-card relative mt-8 block py-8">
+            <BusinessCardList courses={[1, 1, 2, 3, 4, 5, 2, 3, 4, 5]} />
+          </div>
         </section>
         <section className="dark bg-black py-12 dark:text-white">
           <Container>
