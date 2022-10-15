@@ -22,7 +22,6 @@ const About = () => {
             height={880}
             blurDataURL="/img/home-about.png"
             placeholder="blur"
-            priority={true}
             className="hidden md:inline-block"
           />
           <Image
@@ -30,7 +29,6 @@ const About = () => {
             alt=""
             width={690}
             height={916}
-            priority={true}
             blurDataURL="/img/home-about-mb.png"
             placeholder="blur"
             className="md:hidden"
