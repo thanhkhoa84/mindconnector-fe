@@ -5,7 +5,7 @@ const About = () => {
   return (
     <section className="pt-[3em]">
       <Container>
-        <h1 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">
+        <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
           Về Mind Connector
         </h1>
         <p className="text-center lg:my-0 lg:mx-auto lg:max-w-[46%]">

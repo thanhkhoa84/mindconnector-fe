@@ -14,8 +14,8 @@ const CourseTeachers = ({ teachers }) => {
               <Image
                 src={image}
                 alt="Avatar"
-                width={200}
-                height={200}
+                width={100}
+                height={100}
                 className="w-full object-cover transition-all hover:scale-[1.]"
               />
             </div>
