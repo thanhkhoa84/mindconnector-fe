@@ -16,6 +16,9 @@ const CourseTeachers = ({ teachers }) => {
                 alt="Avatar"
                 width={100}
                 height={100}
+                blurDataURL={image}
+                placeholder="blur"
+                priority={true}
                 className="w-full object-cover transition-all hover:scale-[1.]"
               />
             </div>
