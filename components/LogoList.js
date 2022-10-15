@@ -33,10 +33,11 @@ const LogoList = ({ backgroundColor, title, list }) => {
                   <Image
                     src={imgSrc}
                     alt=""
+                    blurDataURL={imgSrc}
+                    placeholder="blur"
                     priority={true}
                     width={200}
                     height={200}
-                    style={{}}
                     className="mx-auto block h-full max-h-8 max-w-full object-contain"
                   />
                 </li>
