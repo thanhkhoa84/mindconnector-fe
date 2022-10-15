@@ -132,6 +132,12 @@ a {
 
 .slick-dots {bottom: 0 !important;}
 
+.slick-prev:before,
+.slick-next:before,
+.slick-dots li button:before, {
+  font-family: sans-serif !important;
+}
+
 
 @layer components {
   .nav {
