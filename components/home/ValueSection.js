@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import dynamic from 'next/dynamic';
+import Link from "next/link";
 import Image from "next/future/image";
 import Container from "../../components/Container";
 import LogoList from "./../LogoList";
@@ -29,6 +28,8 @@ const ValueSection = () => {
                   className="block"
                   width="66"
                   height="66"
+                  blurDataURL="/img/icon-value-for-student.png"
+                  placeholder="blur"
                   alt=""
                 />
               </span>
@@ -55,6 +56,8 @@ const ValueSection = () => {
                 alt=""
                 width="300"
                 height="333"
+                blurDataURL="/img/value-student.png"
+                placeholder="blur"
                 className="object-cover"
               />
             </div>
@@ -71,6 +74,8 @@ const ValueSection = () => {
                   className="block"
                   width="66"
                   height="66"
+                  blurDataURL="/img/icon-value-for-business.png"
+                  placeholder="blur"
                   alt=""
                 />
               </span>
@@ -97,6 +102,8 @@ const ValueSection = () => {
                 alt=""
                 width="300"
                 height="333"
+                blurDataURL="/img/value-business.png"
+                placeholder="blur"
                 className="object-cover"
               />
             </div>

@@ -20,6 +20,8 @@ const About = () => {
             alt=""
             width={2080}
             height={880}
+            blurDataURL="/img/home-about.png"
+            placeholder="blur"
             className="hidden md:block"
           />
           <Image
@@ -27,6 +29,8 @@ const About = () => {
             alt=""
             width={690}
             height={916}
+            blurDataURL="/img/home-about-mb.png"
+            placeholder="blur"
             className="md:hidden"
           />
         </div>
