@@ -51,7 +51,7 @@ function PrevArrow(props) {
 
 const Slide = ({ index, ...props }) => {
   return (
-    <div {...props} className="relative mx-auto my-0">
+    <div className="relative mx-auto my-0">
       <div className="leading-[1]">
         <Image
           src={props.image}
