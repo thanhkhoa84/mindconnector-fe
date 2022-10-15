@@ -1,4 +1,3 @@
-import { forwardRef, useReducer, useRef, useState, useEffect } from "react";
 import Image from "next/future/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -109,4 +108,3 @@ const HeroBanner = ({ slides, ...props }) => {
 };
 
 export default HeroBanner;
-
