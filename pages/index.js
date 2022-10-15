@@ -1,12 +1,15 @@
 import Head from "next/head";
-
+import dynamic from "next/dynamic";
 import QandA from "../components/QandA";
 import ValueSection from "../components/home/ValueSection";
 import Teachers from "../components/common/teachers/Teachers";
 import About from "../components/home/About";
 import Seo from "./../components/SEO";
 import Container from "./../components/Container";
-import HeroBanner from "../components/home/HeroBanner";
+
+const HeroBanner = dynamic(() => import("../components/home/HeroBanner"), {
+  loading: () => <div>Loading...</div>,
+});
 
 export default function Home({ slides, questions }) {
   const seo = {
