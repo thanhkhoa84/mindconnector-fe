@@ -6,10 +6,7 @@ import Teachers from "../components/common/teachers/Teachers";
 import About from "../components/home/About";
 import Seo from "./../components/SEO";
 import Container from "./../components/Container";
-
-const HeroBanner = dynamic(() => import("../components/home/HeroBanner"), {
-  loading: () => <div>Loading...</div>,
-});
+import HeroBanner from "../components/home/HeroBanner";
 
 export default function Home({ slides, questions }) {
   const seo = {
