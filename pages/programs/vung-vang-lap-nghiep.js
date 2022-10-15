@@ -85,55 +85,66 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
       </Head>
       <Seo seo={seo} />
       <>
-        <div className="bg-[#f9f5e9] bg-[url(/img/bg-head-section.png)] bg-cover py-[3em] text-center md:py-[4em] md:pb-[0]">
-          <Container>
-            <h4 className="font-bold text-gray">Chương trình</h4>
-            <h1 className="leading-0 text-3xl font-black uppercase md:text-6xl">
-              VỮNG VÀNG LẬP NGHIỆP
-            </h1>
-            <p className="mt-4">
-              &quot;Kỹ năng thiết thực, dẫn lối thành công&quot;
-            </p>
-            <CourseTeachers teachers={mentors} />
-            <div className="mt-8 flex flex-col rounded-xl text-left md:relative md:top-[35px] md:mt-0 md:h-[70px] md:flex-row md:justify-between md:bg-white md:shadow-lg">
-              <div className=" flex flex-row flex-nowrap items-start justify-start gap-4 rounded-2xl border-2 border-solid border-[#d2d2d2] border-white bg-[#FFF2EB] bg-opacity-75 py-[1em] px-6 xs:flex-row sm:flex-row sm:gap-8 md:items-center md:bg-transparent">
-                <div className="text-black">
-                  <p className="text-[20px] font-bold">
-                    4.9{" "}
-                    <span className="mt-0 inline-block text-[12px]">
-                      <Image
-                        src="/img/star-rating-fill.svg"
-                        alt=""
-                        width={15}
-                        height={15}
-                      />
-                    </span>
-                  </p>
-                  <p className="text-[14px]">1988 Đánh giá</p>
+        <div className="relative bg-[#F7F3F4] py-[3em] text-center md:py-[4em] md:pb-[0]">
+          <div className="absolute inset-0">
+            <Image
+              alt=""
+              src="/img/bg-head-section.png"
+              width={1400}
+              height={600}
+              className="absolute inset-0 h-full w-full"
+            />
+          </div>
+          <div className="relative">
+            <Container>
+              <h4 className="font-bold text-gray">Chương trình</h4>
+              <h1 className="leading-0 text-3xl font-black uppercase md:text-6xl">
+                VỮNG VÀNG LẬP NGHIỆP
+              </h1>
+              <p className="mt-4">
+                &quot;Kỹ năng thiết thực, dẫn lối thành công&quot;
+              </p>
+              <CourseTeachers teachers={mentors} />
+              <div className="mt-8 flex flex-col rounded-xl text-left md:relative md:top-[35px] md:mt-0 md:h-[70px] md:flex-row md:justify-between md:bg-white md:shadow-lg">
+                <div className=" flex flex-row flex-nowrap items-start justify-start gap-4 rounded-2xl border-2 border-solid border-[#d2d2d2] border-white bg-[#FFF2EB] bg-opacity-75 py-[1em] px-6 xs:flex-row sm:flex-row sm:gap-8 md:items-center md:bg-transparent">
+                  <div className="text-black">
+                    <p className="text-[20px] font-bold">
+                      4.9{" "}
+                      <span className="mt-0 inline-block text-[12px]">
+                        <Image
+                          src="/img/star-rating-fill.svg"
+                          alt=""
+                          width={15}
+                          height={15}
+                        />
+                      </span>
+                    </p>
+                    <p className="text-[14px]">1988 Đánh giá</p>
+                  </div>
+                  <div className="text-black">
+                    <p className="text-[20px] font-bold">200</p>
+                    <p className="text-[14px]">Học viên</p>
+                  </div>
+                  <div className="text-black">
+                    <p className="text-[20px] font-bold">41</p>
+                    <p className="text-[14px]">Giờ học</p>
+                  </div>
                 </div>
-                <div className="text-black">
-                  <p className="text-[20px] font-bold">200</p>
-                  <p className="text-[14px]">Học viên</p>
-                </div>
-                <div className="text-black">
-                  <p className="text-[20px] font-bold">41</p>
-                  <p className="text-[14px]">Giờ học</p>
-                </div>
-              </div>
-              <div className="mt-6 flex flex-row flex-wrap items-center justify-between md:mt-0 md:gap-5 md:px-6">
-                {/* <p>
+                <div className="mt-6 flex flex-row flex-wrap items-center justify-between md:mt-0 md:gap-5 md:px-6">
+                  {/* <p>
                   Học phí <span className="text-[14px] font-bold">USD$</span>{" "}
                   <span className="text-[32px] font-bold">84</span>
                   <sup className="text-[18px] font-bold">99</sup>
                 </p> */}
-                <p>
-                  <button onClick={createModal} className="btn-primary">
-                    Đăng ký học ngay
-                  </button>
-                </p>
+                  <p>
+                    <button onClick={createModal} className="btn-primary">
+                      Đăng ký học ngay
+                    </button>
+                  </p>
+                </div>
               </div>
-            </div>
-          </Container>
+            </Container>
+          </div>
         </div>
 
         <div className="">
@@ -220,7 +231,9 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                     />
                   </div>
                   <div className="inline-flex flex-col items-start bg-purple p-8 md:min-w-[340px] md:rounded-tr-[20px] md:rounded-br-[20px] lg:justify-center">
-                  <h2 className="text-[28px] md:text-[34px] font-black">Về chương trình</h2>
+                    <h2 className="text-[28px] font-black md:text-[34px]">
+                      Về chương trình
+                    </h2>
                     <p className="mt-4 max-w-[300px] md:max-w-none">
                       <a
                         href="/docs/[Mind Connector] Vững Vàng Lập Nghiệp.pdf"

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from "next/link";
-
+import Image from "next/future/image";
 import Container from "./../components/Container";
 import Seo from "./../components/SEO";
 import LogoList from "./../components/LogoList";
@@ -39,18 +39,27 @@ const Student = ({ questions, logoslist, programs }) => {
       </Head>
       <>
         <Seo seo={seo} />
-        <header
-          className={`bg-[url('/img/bg-head-section.png')] bg-cover py-[3em]`}
-        >
-          <Container>
-            <h1 className="mx-auto mt-0 mb-4 text-center text-3xl font-black dark:text-white dark:text-white md:text-left md:text-6xl md:leading-[1.2]">
-              Học hỏi <br className="hidden md:inline" />
-              để thành công
-            </h1>
-            <p className="text-center md:text-left">
-              Cùng Mind Connector xây dựng nền tảng vững chắc để thành công.
-            </p>
-          </Container>
+        <header className={`relative bg-[#F9F1DD] py-[3em]`}>
+          <div className="absolute inset-0">
+            <Image
+              alt=""
+              src="/img/bg-head-section.png"
+              width={1400}
+              height={600}
+              className="absolute inset-0 h-full w-full"
+            />
+          </div>
+          <div className="relative">
+            <Container>
+              <h1 className="mx-auto mt-0 mb-4 text-center text-3xl font-black dark:text-white dark:text-white md:text-left md:text-6xl md:leading-[1.2]">
+                Học hỏi <br className="hidden md:inline" />
+                để thành công
+              </h1>
+              <p className="text-center md:text-left">
+                Cùng Mind Connector xây dựng nền tảng vững chắc để thành công.
+              </p>
+            </Container>
+          </div>
         </header>
         <Container>
           <LogoList
