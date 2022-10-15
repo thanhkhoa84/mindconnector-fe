@@ -22,7 +22,7 @@ const About = () => {
             height={880}
             blurDataURL="/img/home-about.png"
             placeholder="blur"
-            className="hidden md:block"
+            className="hidden md:inline-block"
           />
           <Image
             src="/img/home-about-mb.png"

@@ -38,7 +38,7 @@ const LogoList = ({ backgroundColor, title, list }) => {
                     priority={true}
                     width={200}
                     height={200}
-                    className="mx-auto block h-full max-h-8 max-w-full object-contain"
+                    className="mx-auto h-full max-h-8 w-full max-w-full object-contain"
                   />
                 </li>
               );

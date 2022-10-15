@@ -10,6 +10,7 @@ const nextConfig = {
     ],
     unoptimized: false,
     deviceSizes: [375, 640, 750, 992, 1140, 1920],
+    formats: ["image/avif", "image/webp"],
   },
   exportPathMap: async function (
     defaultPathMap,
