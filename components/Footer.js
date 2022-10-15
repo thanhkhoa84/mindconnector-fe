@@ -1,7 +1,6 @@
-import Image from "next/image";
 import { LogoMobile } from "./Logo";
 import Container from "./Container";
-import Link from "next/link";
+import Image from "next/future/image";
 import dynamic from "next/dynamic";
 
 let MobileNavFooter = dynamic(() => import("./MobileNavFooter"), {
@@ -10,9 +9,18 @@ let MobileNavFooter = dynamic(() => import("./MobileNavFooter"), {
 
 const Footer = ({ position, navlinks }) => {
   return (
-    <footer className="bg-[url('/img/bg-footer-mobile.png')] bg-cover px-0 pt-12 md:bg-[url('/img/bg-footer.png')]">
-      <Container>
-        <div className="px-0 pb-12">
+    <footer className="relative bg-[#F7F3F4] px-0">
+      <div className="absolute inset-0">
+        <Image
+          alt=""
+          src="/img/bg-footer.png"
+          width={1400}
+          height={320}
+          className="absolute inset-0 h-full w-full"
+        />
+      </div>
+      <div className="relative py-12">
+        <Container>
           <div className="flex flex-row justify-center lg:justify-start">
             <LogoMobile />
           </div>
@@ -69,10 +77,9 @@ const Footer = ({ position, navlinks }) => {
               </li>
             </ul>
           </div> */}
-        </div>
-      </Container>
-
-      <div className="h-16 bg-purple text-center leading-[4rem] text-white">
+        </Container>
+      </div>
+      <div className="relative h-16 bg-purple text-center leading-[4rem] text-white">
         <Container>&copy; Mind Connector, Inc. 2022</Container>
       </div>
     </footer>
