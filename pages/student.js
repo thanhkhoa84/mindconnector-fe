@@ -46,6 +46,7 @@ const Student = ({ questions, logoslist, programs }) => {
               src="/img/bg-head-section.png"
               width={1400}
               height={600}
+              priority={true}
               className="absolute inset-0 h-full w-full"
             />
           </div>
