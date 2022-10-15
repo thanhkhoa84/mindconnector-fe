@@ -56,7 +56,7 @@ const Slide = ({ index, ...props }) => {
           alt={props.headline}
           width={1920}
           height={957}
-          priority={true}
+          priority={index == 0}
           className="block w-full"
         />
       </div>

@@ -19,8 +19,8 @@ const TeacherCard = ({ entitled, name, imgUrl, title, socials }) => {
         <Image
           src={imgUrl}
           alt=""
-          width={248}
-          height={248}
+          width={208}
+          height={208}
           className="inline-block align-top"
         />
       </div>
