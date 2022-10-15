@@ -17,6 +17,8 @@ function NextArrow(props) {
         src="/img/btn-next.png"
         width={80}
         height={80}
+        blurDataURL="/img/btn-next.png"
+        placeholder="blur"
         alt=""
         className="absolute top-0 left-0"
       />
@@ -38,6 +40,8 @@ function PrevArrow(props) {
         src="/img/btn-prev.png"
         width={80}
         height={80}
+        blurDataURL="/img/btn-prev.png"
+        placeholder="blur"
         alt=""
         className="absolute top-0 right-0"
       />
