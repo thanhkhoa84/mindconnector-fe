@@ -29,7 +29,7 @@ export default function Home({ slides, questions }) {
 
       <Seo seo={seo} />
       <main className="overflow-hidden">
-        <section>
+        <section className="home-banner">
           <HeroBanner slides={slides} />
         </section>
 

@@ -120,8 +120,9 @@ a {
   width: 10px !important;
 }
 
-.slick-list {max-width: 1120px; margin: 0 auto !important; padding-bottom: 55px;}
-.course-card .slick-list {max-width: 1120px; margin: 0 auto !important; padding-bottom: 35px;}
+.business-card .slick-list {max-width: 1120px; margin: 0 auto !important; padding-bottom: 55px;}
+.center .slick-list {overflow: unset !important;}
+.course-card .slick-list {max-width: 1120px; margin: 0 auto !important; padding-bottom: 40px;}
 .business-card .slick-dots li.slick-active button:before {
   color: white !important;
   background: #fff;
@@ -132,8 +133,16 @@ a {
   background-color: #6b6b6b;
 }
 
+.dark .slick-dots li button:before {
+  background-color: #fff;
+}
+
 .slick-dots li.slick-active button:before {
   background-color: #000;
+}
+
+.dark .slick-dots li.slick-active button:before {
+  background-color: #fff;
 }
 
 .flex-slider .slick-slide {

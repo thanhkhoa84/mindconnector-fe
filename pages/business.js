@@ -177,45 +177,49 @@ const Card = () => {
 const ServicesSlider = () => {
   let settings = {
     dots: true,
-    infinite: true,
-    centerMode: true,
-    centerPadding: "10px",
+    // infinite: true,
+    className: "center",
+    centerMode: false,
+    // centerPadding: "60px",
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     speed: 500,
     slidesToShow: 3,
+    slidesToScroll: 3,
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1120,
         settings: {
           slidesToShow: 3,
+          slidesToScroll: 3,
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 992,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
       {
         breakpoint: 640,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
       {
         breakpoint: 374,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],
   };
   return (
     <Slider {...settings}>
-      <Card />
-      <Card />
       <Card />
       <Card />
       <Card />
