@@ -11,22 +11,14 @@ import HeroBanner from "../components/home/HeroBanner";
 export default function Home({ slides, questions }) {
   const seo = {
     metaTitle: "Trang chủ",
-    metaDescription: "Mind Connector",
+    metaDescription:
+      "Mind Connector là một mạng lưới của các nhà tư vấn kinh doanh cùng các giảng viên vốn là các lãnh đạo và chuyên gia hàng đầu trong nhiều lĩnh vực khác nhau. Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá nhân phát triển và tăng trưởng mạnh mẽ trong tương lai",
     // shareImage: article.attributes.image,
     // article: true,
   };
 
   return (
     <>
-      <Head>
-        <title>Mind Connector</title>
-        <meta
-          name="description"
-          content="Mind Connector là một mạng lưới của các nhà tư vấn kinh doanh cùng các giảng viên vốn là các lãnh đạo và chuyên gia hàng đầu trong nhiều lĩnh vực khác nhau. Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá nhân phát triển và tăng trưởng mạnh mẽ trong tương lai"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <Seo seo={seo} />
       <main className="overflow-hidden">
         <section className="home-banner">
@@ -43,6 +35,9 @@ export default function Home({ slides, questions }) {
 
         <section className={`relative bg-[#FFF7ED] py-12`}>
           <Container>
+            <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+              Đội ngũ giảng viên
+            </h1>
             <Teachers />
           </Container>
         </section>

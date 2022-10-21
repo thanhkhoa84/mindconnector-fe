@@ -11,7 +11,7 @@ const DropdownMenu = ({ items, dropdown, dropdId }) => {
     <ul
       id={dropdId}
       className={`
-        left-[-30px] m-0 flex flex-col rounded-b-2xl bg-white p-4  
+        left-[-30px] m-0 flex flex-col rounded-b-2xl bg-white p-4 backdrop-blur-xl  
         lg:absolute lg:top-full lg:w-[320px] lg:shadow-xl lg:shadow-2xl
         ${dropdown ? "block" : "hidden"}`}
     >

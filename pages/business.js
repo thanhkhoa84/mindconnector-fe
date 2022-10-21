@@ -248,26 +248,11 @@ const Business = ({}) => {
 
   return (
     <>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <>
         <Seo seo={seo} />
         <main className="dark overflow-hidden bg-black pb-12">
           <section className="dark relative flex origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-video.png)] bg-cover bg-center bg-no-repeat py-20 xl:py-36">
             <div className="relative py-12 text-center dark:text-white">
-              <button
-                className="inline-block cursor-pointer"
-                onClick={createModal}
-              >
-                <Image
-                  src="/img/btn-play-video.svg"
-                  width={80}
-                  height={80}
-                  alt=""
-                  className="block"
-                />
-              </button>
               <h2 className="mt-8 text-4xl font-black">
                 Kinh nghiệm thực chiến từ chuyên gia hàng đầu
               </h2>
@@ -321,8 +306,11 @@ const Business = ({}) => {
               <BusinessCardList courses={Array(25).fill(0)} />
             </div>
           </section>
-          <section className="dark:text-white">
+          <section className="py-12 dark:text-white">
             <Container>
+              <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+                Đội ngũ chuyên gia
+              </h1>
               <Teachers />
             </Container>
           </section>

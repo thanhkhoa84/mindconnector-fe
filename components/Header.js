@@ -29,8 +29,8 @@ const Header = ({ ...navlinks }) => {
   return (
     <header className="relative z-20 bg-purple lg:bg-white">
       <Container>
-        <div className="rounded2-b-xl flex h-[60px] items-center justify-between lg:h-[80px] lg:rounded-none ">
-          <div className="flex flex-wrap items-center">
+        <div className="rounded2-b-xl flex h-[60px] items-center justify-between gap-4 lg:h-[80px] lg:rounded-none ">
+          <div className="flex flex-col flex-wrap items-center justify-center">
             <Logo />
           </div>
           <div className="flex flex-row items-center gap-4">

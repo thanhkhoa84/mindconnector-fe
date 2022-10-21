@@ -8,8 +8,7 @@ const Title = React.forwardRef(({ onClick, href }, ref) => {
       href={href}
       onClick={onClick}
       ref={ref}
-      className="inline-block select-none text-sm font-black leading-[1] text-white lg:text-2xl lg:text-purple
-    "
+      className="inline-block leading-[0] transition-all"
     >
       <Image
         src="/img/logo.png"

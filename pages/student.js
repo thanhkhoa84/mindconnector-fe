@@ -34,9 +34,7 @@ const Student = ({ questions, logoslist, programs }) => {
 
   return (
     <>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Head></Head>
       <>
         <Seo seo={seo} />
         <main className="overflow-hidden">
@@ -146,6 +144,9 @@ const Student = ({ questions, logoslist, programs }) => {
           </section>
           <section>
             <Container>
+              <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+                Đội ngũ giảng viên
+              </h1>
               <Teachers />
             </Container>
           </section>
