@@ -1,5 +1,6 @@
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
+import Image from "next/future/image";
 
 const Title = React.forwardRef(({ onClick, href }, ref) => {
   return (
@@ -10,7 +11,20 @@ const Title = React.forwardRef(({ onClick, href }, ref) => {
       className="inline-block select-none text-sm font-black leading-[1] text-white lg:text-2xl lg:text-purple
     "
     >
-      Mind Connector
+      <Image
+        src="/img/logo.png"
+        alt="Mind Connector logo"
+        width={151}
+        height={14}
+        className="hidden lg:inline"
+      />
+      <Image
+        src="/img/logo-mb.png"
+        alt="Mind Connector logo"
+        width={151}
+        height={14}
+        className="lg:hidden"
+      />
     </a>
   );
 });
