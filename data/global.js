@@ -50,7 +50,7 @@ export const Navigation = [
   // },
   {
     name: "Dành cho doanh nghiệp",
-    path: "/",
+    path: "/business",
   },
   // {
   //   name: "Program",

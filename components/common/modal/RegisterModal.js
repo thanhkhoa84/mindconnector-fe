@@ -1,12 +1,18 @@
 import React, { useEffect, useRef } from "react";
 import { useGlobalModalContext } from "./GlobalModal";
 import axios from "axios";
+import { useForm } from "react-hook-form";
 
 const RegisterModal = () => {
   const { hideModal, store } = useGlobalModalContext();
   const { modalProps } = store || {};
   const { title, program, course } = modalProps || {};
   let ref = useRef(null);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
@@ -23,17 +29,8 @@ const RegisterModal = () => {
     event.preventDefault();
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    let data = {
-      data: {
-        name: e.target.name.value,
-        phone: e.target.phone.value,
-        email: e.target.email.value,
-        course,
-        program,
-      },
-    };
+  const handleSubmitForm = async (formData) => {
+    let data = { data: { ...formData, course, program } };
     let mailConfig = {
       method: "post",
       url: `${process.env.NEXT_PUBLIC_API}/api/register`,
@@ -43,19 +40,19 @@ const RegisterModal = () => {
       responseType: "json",
       data,
     };
-
+    console.log(data);
     const config = {
       method: "post",
-      url: `https://be.mindconnector.vn/api/student-contacts`,
+      url: `${process.env.NEXT_PUBLIC_STRAPI_API}/api/student-contacts`,
       headers: {
         "Content-Type": "application/json",
       },
       responseType: "json",
       data,
     };
+    // let mailRes = await axios(mailConfig);
     let response = await axios(config);
-    let mailRes = await axios(mailConfig);
-    if (mailRes.status === 200) {
+    if (response.status === 200) {
       hideModal();
     }
   };
@@ -76,7 +73,7 @@ const RegisterModal = () => {
         <p className="mt-4 text-[14px] leading-[18px]">
           Rất mong chờ được đón chào bạn ở lớp học lần này nhé
         </p>
-        <form action="/api/register" onSubmit={handleSubmit} className="mt-8">
+        <form onSubmit={handleSubmit(handleSubmitForm)} className="mt-8">
           <div className="mt-4">
             <label className="block hidden" htmlFor="name">
               Họ và tên
@@ -88,23 +85,24 @@ const RegisterModal = () => {
               id="name"
               name="name"
               placeholder="Họ và tên"
+              {...register("name")}
             />
           </div>
           <div className="mt-4">
-            <label className="block hidden" htmlFor="dob" name="dob">
-              Ngày sinh
+            <label className="block hidden" htmlFor="email">
+              Email
             </label>
             <input
               type="email"
-              required
               className="h-[50px] w-full rounded-full p-4"
               id="email"
               placeholder="Email"
               name="email"
+              {...register("email")}
             />
           </div>
           <div className="mt-4">
-            <label className="block hidden" htmlFor="name">
+            <label className="block hidden" htmlFor="phone">
               Số điện thoại
             </label>
             <input
@@ -114,6 +112,7 @@ const RegisterModal = () => {
               id="phone"
               placeholder="Số điện thoại"
               name="phone"
+              {...register("phone")}
             />
           </div>
 

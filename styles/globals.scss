@@ -108,16 +108,35 @@ a {
   }
 }
 
-.course-card .slick-list {max-width: 1120px; margin: 0 auto !important; padding-bottom: 55px;}
+.slick-dots li {
+  height: 10px !important;
+  width: 10px !important;
+}
+.slick-dots li button:before {
+  content: '' !important;
+  display: inline-block;
+  border-radius: 50%;
+  height: 10px !important;
+  width: 10px !important;
+}
+
+.slick-list {max-width: 1120px; margin: 0 auto !important; padding-bottom: 55px;}
+.course-card .slick-list {max-width: 1120px; margin: 0 auto !important; padding-bottom: 35px;}
 .business-card .slick-dots li.slick-active button:before {
   color: white !important;
+  background: #fff;
 }
 
-.business-card .slick-dots li button:before {
+.slick-dots li button:before {
   color: #6b6b6b !important;
+  background-color: #6b6b6b;
 }
 
-.slick-slide {
+.slick-dots li.slick-active button:before {
+  background-color: #000;
+}
+
+.flex-slider .slick-slide {
   display: flex !important;
   justify-content: center;
 }
@@ -130,7 +149,7 @@ a {
   font-size: 10px !important;
 }
 
-.slick-dots {bottom: 0 !important;}
+.flex-slider .slick-dots {bottom: 0 !important;}
 
 .slick-prev:before,
 .slick-next:before,

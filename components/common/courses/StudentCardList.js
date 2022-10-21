@@ -139,13 +139,13 @@ const StudentCardList = ({ courses }) => {
   };
 
   return (
-    <>
+    <div className="flex-slider">
       <Slider {...settings}>
         {courses.map((course, index) => {
           return <Slide course={course} key={index} />;
         })}
       </Slider>
-    </>
+    </div>
   );
 };
 

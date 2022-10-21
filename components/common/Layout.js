@@ -23,7 +23,7 @@ export default function Layout({ children }) {
       <GlobalModal>
         <MenuProvider value={Navigation}>
           <Header />
-          <main className="overflow-hidden">{children}</main>
+          {children}
           <Footer />
         </MenuProvider>
       </GlobalModal>

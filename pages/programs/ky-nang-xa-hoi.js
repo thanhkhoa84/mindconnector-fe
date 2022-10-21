@@ -89,7 +89,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Seo seo={seo} />
-      <>
+      <main className="overflow-hidden">
         <div className="relative bg-[#F7F3F4] py-[3em] text-center md:py-[4em] md:pb-[0]">
           <div className="absolute inset-0">
             <Image
@@ -367,7 +367,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
             </div>
           </Container>
         </div>
-      </>
+      </main>
     </>
   );
 };

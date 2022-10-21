@@ -105,7 +105,7 @@ const CoursePost = ({ questions, logoslist, programInfo, testimonial }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Seo seo={seo} />
-      <>
+      <main className="overflow-hidden">
         <div className="bg-[#f9f5e9] bg-[url(/img/bg-head-section.png)] bg-cover py-[3em] text-center md:py-[4em] md:pb-[0]">
           <Container>
             <h4 className="font-bold text-gray">Chương trình</h4>
@@ -379,7 +379,7 @@ const CoursePost = ({ questions, logoslist, programInfo, testimonial }) => {
             </div>
           </div>
         </Container>
-      </>
+      </main>
     </>
   );
 };

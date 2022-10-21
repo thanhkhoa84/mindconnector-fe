@@ -28,27 +28,31 @@ export default function Home({ slides, questions }) {
       </Head>
 
       <Seo seo={seo} />
-      <HeroBanner slides={slides} />
+      <main className="overflow-hidden">
+        <section>
+          <HeroBanner slides={slides} />
+        </section>
 
-      <section>
-        <ValueSection />
-      </section>
+        <section>
+          <ValueSection />
+        </section>
 
-      <section>
-        <About />
-      </section>
+        <section>
+          <About />
+        </section>
 
-      <section className={`relative bg-[#FFF7ED] py-12`}>
-        <Container>
-          <Teachers />
-        </Container>
-      </section>
+        <section className={`relative bg-[#FFF7ED] py-12`}>
+          <Container>
+            <Teachers />
+          </Container>
+        </section>
 
-      <section>
-        <Container>
-          <QandA questions={questions}></QandA>
-        </Container>
-      </section>
+        <section>
+          <Container>
+            <QandA questions={questions}></QandA>
+          </Container>
+        </section>
+      </main>
     </>
   );
 }
