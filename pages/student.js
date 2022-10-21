@@ -150,11 +150,6 @@ const Student = ({ questions, logoslist, programs }) => {
               <Teachers />
             </Container>
           </section>
-          {/* <section>
-          <Container>
-            <QandA questions={questions} />
-          </Container>
-        </section> */}
           <section className="pb-12">
             <Container>
               <div className="mt-8 mb-4 items-center overflow-hidden rounded-3xl bg-[#941C50] text-white md:flex md:flex-row">

@@ -3,14 +3,11 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import Image from "next/future/image";
 import { useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 import Container from "../components/Container";
 import QandA from "../components/QandA";
 import Seo from "../components/SEO";
-import BusinessCardList from "../components/common/courses/BusinessCardList";
+import ServicesCardList from "../components/business/ServicesCardList";
 import Teachers from "../components/common/teachers/Teachers";
 import {
   useGlobalModalContext,
@@ -52,184 +49,7 @@ const Tab = ({ tab, index, active, onClick }) => {
   );
 };
 
-const TabPanels = () => {
-  const [current, setCurrent] = useState(0);
-  let clickHandler = (index) => {
-    setCurrent(index);
-  };
-
-  return (
-    <ul className="flex w-full items-center justify-start gap-12 overflow-x-auto overflow-y-hidden whitespace-nowrap py-6 md:justify-center">
-      {tabs.map((tab, index) => {
-        return (
-          <Tab
-            onClick={() => {
-              clickHandler(index);
-            }}
-            key={tab.title}
-            tab={tab}
-            index={index}
-            active={current == index}
-          />
-        );
-      })}
-    </ul>
-  );
-};
-
-const BusinessCard = () => (
-  <div className="relative inline-flex h-[269px] w-[160px] overflow-hidden rounded-3xl border-4 border-gray-500">
-    <Image
-      src="/img/for-business-courses-article-card.png"
-      width={160}
-      height={269}
-      alt=""
-      className=""
-    />
-    <div className="absolute bottom-0 left-0 right-0 px-4 py-4 text-white">
-      <h4 className="mb-2 text-base font-black leading-tight">
-        Measure what customers want
-      </h4>
-      <Link href="">
-        <span className="link-arrow">Xem thêm</span>
-      </Link>
-    </div>
-  </div>
-);
-
-function NextArrow(props) {
-  const { className, onClick } = props;
-  return (
-    <div
-      className={`
-        absolute top-1/2 -right-[40px] z-10 -mt-[55px] hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:block
-      `}
-      onClick={onClick}
-      style={{}}
-    >
-      <Image
-        src="/img/btn-next.png"
-        width={80}
-        height={80}
-        blurDataURL="/img/btn-next.png"
-        placeholder="blur"
-        alt=""
-        className="absolute top-0 left-0"
-      />
-    </div>
-  );
-}
-
-function PrevArrow(props) {
-  const { className, onClick } = props;
-  return (
-    <div
-      className={`
-        absolute top-1/2 -left-[40px] z-10 -mt-[55px] hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:block
-      `}
-      onClick={onClick}
-      style={{}}
-    >
-      <Image
-        src="/img/btn-prev.png"
-        width={80}
-        height={80}
-        blurDataURL="/img/btn-prev.png"
-        placeholder="blur"
-        alt=""
-        className="absolute top-0 right-0"
-      />
-    </div>
-  );
-}
-
-const Card = () => {
-  return (
-    <div
-      className={`relative h-[215px] w-[336px] overflow-hidden rounded-[30px] border-[6px] border-[#414141] text-left text-white`}
-    >
-      <div
-        className={`overflow-hidden rounded-2xl after:absolute after:inset-0 after:block after:bg-gradient-to-b after:from-[rgba(43,43,43,0)] after:to-[#000] after:content-['']`}
-      >
-        <Image
-          src="/img/services-01.png"
-          alt={""}
-          width={326}
-          height={215}
-          className="block w-full"
-        />
-      </div>
-      <div
-        className={`after:bg-gradient-overlay absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-end px-4 pb-8 text-sm text-white text-white after:content-none md:p-4 md:pb-6`}
-      >
-        <h3 className="text-[18px] font-black">
-          TƯ VẤN CHIẾN LƯỢC THƯƠNG HIỆU
-        </h3>
-        <h4 className="mt-[8px] text-[14px]">
-          Phát triển chiến lược thương hiệu bền vững để doanh nghiệp tăng trưởng
-          bứt phá.
-        </h4>
-      </div>
-    </div>
-  );
-};
-
-const ServicesSlider = () => {
-  let settings = {
-    dots: true,
-    // infinite: true,
-    className: "center",
-    centerMode: false,
-    // centerPadding: "60px",
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1120,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 374,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-  return (
-    <Slider {...settings}>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-    </Slider>
-  );
-};
-
-const Business = ({}) => {
+const Business = ({ services }) => {
   const { showModal } = useGlobalModalContext();
   const createModal = () => {
     showModal(MODAL_TYPES.BUSINESS_VIDEO_MODAL, {
@@ -262,36 +82,31 @@ const Business = ({}) => {
               </p>
               <p className="mt-8">
                 <Link href="contact">
-                  <span className="btn-primary">
+                  <span className="btn-pink">
                     Trò chuyện ngay với chuyên gia
                   </span>
                 </Link>
               </p>
             </div>
           </section>
-          <section className="py-12">
+
+          <section className="overflow-hidden py-12">
             <Container>
               <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
                 Dịch vụ của chúng tôi
               </h1>
-            </Container>
-            <div className="relative mt-12 pb-12">
-              <ServicesSlider />
-            </div>
-          </section>
-          <section className="py-12">
-            <Container>
-              <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
-                What makes us different
-              </h1>
+              <div className="mt-12">
+                <ServicesCardList services={services} />
+              </div>
             </Container>
           </section>
-          <section className="text-center text-white">
+
+          <section className="py-12 text-center text-white">
             <Container>
-              <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+              <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
                 Điều gì giúp chúng tôi khác biệt?
               </h1>
-              <h2 className="mt-8 text-4xl font-black">
+              <h2 className="mt-8 text-4xl font-black text-[#F5B0C5]">
                 THIẾT KẾ GIẢI PHÁP CHIẾN LƯỢC CHUYÊN BIỆT DÀNH CHO DOANH NGHIỆP
               </h2>
               <p className="mt-4">
@@ -302,9 +117,6 @@ const Business = ({}) => {
                 cùng bạn đi tìm con đường phát triển của riêng mình.
               </p>
             </Container>
-            <div className="course-card business-card relative mt-8 block py-8">
-              <BusinessCardList courses={Array(25).fill(0)} />
-            </div>
           </section>
           <section className="py-12 dark:text-white">
             <Container>
@@ -324,8 +136,32 @@ export default Business;
 
 export async function getStaticProps() {
   /** TODO: get real QaA from backend */
+  let services = [
+    {
+      name: `Tư vấn Chiến lược Thương hiệu`,
+      body: `Phát triển chiến lược thương hiệu bền vững để doanh nghiệp tăng trưởng bứt phá.`,
+    },
+    {
+      name: `Tư vấn Chiến lược phát triển chuỗi F&B `,
+      body: `Hỗ doanh nghiệp phát triển, thành công và tăng trưởng trong lĩnh vực F&B.`,
+    },
+    {
+      name: `Tư vấn Quản Trị Sự thay đổi`,
+      body: `Giúp doanh nghiệp có thể linh hoạt, điều chỉnh và thích ứng với sự thay đổi mới.`,
+    },
+    {
+      name: `Tư vấn và Thực thi Sales & Marketing (MSO)`,
+      body: `Thảo luận, trao đổi, định hướng và thực thi chiến lược Sales và Marketing dài hạn cho doanh nghiệp.`,
+    },
+    {
+      name: `Đào tạo nội bộ`,
+      body: `Đào tạo đội ngũ nhân viên xuất sắc để đưa doanh nghiệp phát triển nhanh chóng.`,
+    },
+  ];
 
   return {
-    props: {},
+    props: {
+      services,
+    },
   };
 }
