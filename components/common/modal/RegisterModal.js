@@ -1,17 +1,16 @@
 import React, { useEffect, useRef } from "react";
 import { useGlobalModalContext } from "./GlobalModal";
 import axios from "axios";
+import { useForm } from "react-hook-form";
+import { Clock } from "react-svg-spinners";
 
 const RegisterModal = () => {
   const { hideModal, store } = useGlobalModalContext();
   const { modalProps } = store || {};
   const { title, program, course } = modalProps || {};
   let ref = useRef(null);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, formState } = useForm();
+  const { isSubmitting } = formState;
 
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
@@ -136,9 +135,15 @@ const RegisterModal = () => {
           <div className="mt-4 text-center">
             <button
               type="submit"
-              className="btn-primary inline-block w-full md:w-auto"
+              disabled={isSubmitting}
+              className="btn-primary inline-block inline-flex w-full min-w-[160px] items-center justify-center leading-[48px] disabled:opacity-80 md:w-auto"
             >
-              Đăng Ký Ngay
+              {isSubmitting && (
+                <span className="inline-block">
+                  <Clock color="white" width={30} height={30} />
+                </span>
+              )}
+              {!isSubmitting && <span>Đăng Ký Ngay</span>}
             </button>
           </div>
         </form>

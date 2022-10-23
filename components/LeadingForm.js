@@ -9,7 +9,6 @@ const LeadingForm = () => {
 
   const handleSubmitForm = async (formData) => {
     let data = { data: { ...formData } };
-    console.log(data);
     const config = {
       method: "post",
       url: `${process.env.NEXT_PUBLIC_STRAPI_API}/api/leading-forms`,
@@ -33,7 +32,7 @@ const LeadingForm = () => {
   };
 
   return (
-    <div className="overflow-hidden rounded-[15px] bg-[#D0278A] lg:flex">
+    <div className="overflow-hidden rounded-[15px] bg-[#D0278A] bg-gradient-to-br from-[#E75C9D] via-[#DE4695] to-[#A71876] lg:flex">
       <div className="p-4 py-12 md:p-8">
         <h4 className="text-[24px] font-black leading-none text-white">
           Liên hệ ngay với chuyên gia
@@ -178,7 +177,7 @@ const LeadingForm = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="btn-primary block inline-flex w-full items-center justify-center align-middle text-[14px] leading-[48px] disabled:opacity-80 xs:text-base"
+              className="btn-leading block inline-flex w-full items-center justify-center align-middle text-[14px] leading-[48px] disabled:opacity-80 xs:text-base"
             >
               {isSubmitting && (
                 <span className="inline-block">
