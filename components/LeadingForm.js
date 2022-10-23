@@ -9,7 +9,7 @@ const LeadingForm = () => {
 
   const handleSubmitForm = async (formData) => {
     let data = { data: { ...formData } };
-
+    console.log(data);
     const config = {
       method: "post",
       url: `${process.env.NEXT_PUBLIC_STRAPI_API}/api/leading-forms`,
@@ -19,6 +19,16 @@ const LeadingForm = () => {
       responseType: "json",
       data,
     };
+    let mailConfig = {
+      method: "post",
+      url: `${process.env.NEXT_PUBLIC_API}/api/leading`,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      responseType: "json",
+      data,
+    };
+    let mailRes = await axios(mailConfig);
     let response = await axios(config);
   };
 
