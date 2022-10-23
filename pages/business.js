@@ -89,7 +89,7 @@ const Business = ({ services, teachers, testimonial }) => {
             </div>
           </section>
 
-          <section className="overflow-hidden py-12">
+          <section className="mt-8 overflow-hidden py-16">
             <Container>
               <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
                 Dịch vụ của chúng tôi
@@ -100,7 +100,7 @@ const Business = ({ services, teachers, testimonial }) => {
             </Container>
           </section>
 
-          <section className="dark relative flex origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-difference.png)] bg-cover bg-center bg-no-repeat py-[80px] text-center text-white xl:py-36">
+          <section className="dark relative mt-12 flex origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-difference.png)] bg-cover bg-center bg-no-repeat py-[100px] text-center text-white xl:py-36">
             <Container>
               <div className="mx-auto max-w-[850px]">
                 <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">

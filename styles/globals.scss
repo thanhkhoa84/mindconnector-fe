@@ -190,7 +190,7 @@ a {
   }
   
   .bg-gradient-leading {
-    @apply bg-gradient-to-b from-[#FDF2F2] to-[#F5B0C5] text-purple hover:text-orange-dark hover:from-orange-lightest hover:to-orange-light
+    @apply bg-gradient-to-b from-[#FDF2F2] to-[#F5B0C5] text-purple hover:text-white hover:from-[#FB8CAD] hover:to-[#A71876]
   }
 
   .bg-gradient-overlay {
@@ -199,14 +199,14 @@ a {
 
   .btn {
     @apply rounded-full text-center border-2 outline-none transition h-12 leading-10 px-4 lg:px-6 text-base font-bold inline-block transition-all;
-    text-shadow: 0 1px 0px rgba(0,0,0,0.65);
-    &:hover {
-      text-shadow: 0 1px 0px rgba(225, 225, 225, 0.65);
-    }
   }
 
   .btn-primary {
     @apply btn bg-gradient cursor-pointer border-[#F6D0BE];
+    text-shadow: 0 1px 0px rgba(0,0,0,0.65);
+    &:hover {
+      text-shadow: 0 1px 0px rgba(225, 225, 225, 0.65);
+    }
   }
 
   .btn-pink {
@@ -215,7 +215,6 @@ a {
 
   .btn-leading {
     @apply btn bg-gradient-leading cursor-pointer border-[#D0278A];
-    text-shadow: none;
   }
 
   .btn-invert {
