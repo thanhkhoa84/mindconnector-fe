@@ -1,4 +1,3 @@
-import { useState, useEffect, memo } from "react";
 import Image from "next/future/image";
 import { allTeachers } from "../../../data/global";
 
@@ -64,22 +63,23 @@ const TeacherCard = ({ entitled, name, imgUrl, title, socials }) => {
   );
 };
 
-const TeacherList = () => {
+const TeacherList = ({ data }) => {
+  let teachers = data || allTeachers;
   return (
     <div className="-mx-4 flex flex-col flex-wrap items-center justify-center pt-12 text-center xs:flex-row xs:items-start md:mx-0 md:justify-around lg:justify-evenly">
-      {allTeachers.map((teacher, index) => {
+      {teachers.map((teacher, index) => {
         return <TeacherCard {...teacher} key={teacher.name} />;
       })}
     </div>
   );
 };
 
-const Teachers = () => {
+const Teachers = ({ data }) => {
   return (
     <div className={``}>
-      <TeacherList />
+      <TeacherList data={data} />
     </div>
   );
 };
 
-export default memo(Teachers);
+export default Teachers;

@@ -48,7 +48,7 @@ const Tab = ({ tab, index, active, onClick }) => {
   );
 };
 
-const Business = ({ services, testimonial }) => {
+const Business = ({ services, teachers, testimonial }) => {
   const { showModal } = useGlobalModalContext();
   const createModal = () => {
     showModal(MODAL_TYPES.BUSINESS_VIDEO_MODAL, {
@@ -147,7 +147,7 @@ const Business = ({ services, testimonial }) => {
               <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
                 Đội ngũ chuyên gia
               </h1>
-              <Teachers />
+              <Teachers data={teachers} />
             </Container>
           </section>
 
@@ -214,10 +214,38 @@ export async function getStaticProps() {
     },
   };
 
+  let teachers = [
+    {
+      entitled: "Bà",
+      name: "Nina Trần",
+      imgUrl: "/img/mentors/nina-tran-02.png",
+      title: "Chuyên gia <br/>Tư vấn Thương hiệu",
+    },
+    {
+      entitled: "Bà",
+      name: "Mandy Nguyễn",
+      imgUrl: "/img/mentors/mandy-nguyen-02.png",
+      title: "Chuyên gia <br/>Sales - Marketing",
+    },
+    {
+      entitled: "Bà",
+      name: "Vinkai AR Bhatia",
+      imgUrl: "/img/mentors/vinkai-bhatia.png",
+      title: "Chuyên gia <br/>chiến lược",
+    },
+    {
+      entitled: "Bà",
+      name: "Đặng Thảo Quyên",
+      imgUrl: "/img/mentors/dang-thao-quyen.png",
+      title: "Chuyên gia <br/>Nhân sự",
+    },
+  ];
+
   return {
     props: {
       services,
       testimonial,
+      teachers,
     },
   };
 }

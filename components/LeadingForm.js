@@ -32,7 +32,7 @@ const LeadingForm = () => {
           Để lại thông tin nếu bạn cần đào tạo nhân viên hoặc tư vấn chiến lược
           kinh doanh.
         </p>
-        <form onSubmit={handleSubmit(handleSubmitForm)} className="mt-8">
+        <form onSubmit={handleSubmit(handleSubmitForm)} className="mt-8 pb-6">
           <div className="mt-4">
             <label className="block hidden" htmlFor="industry">
               Doanh nghiệp của bạn thuộc lĩnh vực nào?
