@@ -81,7 +81,10 @@ const Slide = ({ index, ...props }) => {
           <h2 className="mb-[0.5em] text-[28px] font-black leading-none md:text-3xl">
             {props.Title}
           </h2>
-          <p className="line-clamp-12 leading-6">{props.Body}</p>
+          <p
+            className="line-clamp-12 leading-6"
+            dangerouslySetInnerHTML={{ __html: props.Body }}
+          />
         </div>
       </div>
     </div>

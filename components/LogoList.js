@@ -35,7 +35,6 @@ const LogoList = ({ backgroundColor, title, list }) => {
                     alt=""
                     blurDataURL={imgSrc}
                     placeholder="blur"
-                    priority={true}
                     width={200}
                     height={200}
                     className="mx-auto h-full max-h-8 w-full max-w-full object-contain"

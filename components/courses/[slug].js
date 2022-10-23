@@ -384,15 +384,15 @@ const CoursePost = ({ questions, logoslist, programInfo, testimonial }) => {
   );
 };
 
-export async function getStaticPaths() {
-  let paths = Paths.courses.map((p) => {
-    return `/courses/${p}`;
-  });
-  return {
-    paths,
-    fallback: false,
-  };
-}
+// export async function getStaticPaths() {
+//   let paths = Paths.courses.map((p) => {
+//     return `/courses/${p}`;
+//   });
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }
 
 export async function getStaticProps() {
   /** TODO: get real QaA from backend */
