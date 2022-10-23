@@ -3,20 +3,19 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import Image from "next/future/image";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 
+import {
+  useGlobalModalContext,
+  MODAL_TYPES,
+} from "../components/common/modal/GlobalModal";
 import Container from "../components/Container";
 import QandA from "../components/QandA";
 import Seo from "../components/SEO";
 import ServicesCardList from "../components/business/ServicesCardList";
 import Teachers from "../components/common/teachers/Teachers";
-import {
-  useGlobalModalContext,
-  MODAL_TYPES,
-} from "../components/common/modal/GlobalModal";
-
-const LogoList = dynamic(() => import("../components/LogoList"), {
-  ssr: false,
-});
+import Testimonial from "../components/Testimonial";
+import LeadingForm from "../components/LeadingForm";
 
 const tabs = [
   {
@@ -49,7 +48,7 @@ const Tab = ({ tab, index, active, onClick }) => {
   );
 };
 
-const Business = ({ services }) => {
+const Business = ({ services, testimonial }) => {
   const { showModal } = useGlobalModalContext();
   const createModal = () => {
     showModal(MODAL_TYPES.BUSINESS_VIDEO_MODAL, {
@@ -72,7 +71,7 @@ const Business = ({ services }) => {
         <Seo seo={seo} />
         <main className="dark overflow-hidden bg-black pb-12">
           <section className="dark relative flex origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-video.png)] bg-cover bg-center bg-no-repeat py-20 xl:py-36">
-            <div className="relative py-12 text-center dark:text-white">
+            <div className="relative px-8 py-12 text-center dark:text-white">
               <h2 className="mt-8 text-4xl font-black">
                 Kinh nghiệm thực chiến từ chuyên gia hàng đầu
               </h2>
@@ -101,29 +100,60 @@ const Business = ({ services }) => {
             </Container>
           </section>
 
-          <section className="py-12 text-center text-white">
+          <section className="dark relative flex origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-difference.png)] bg-cover bg-center bg-no-repeat py-[80px] text-center text-white xl:py-36">
             <Container>
-              <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
-                Điều gì giúp chúng tôi khác biệt?
-              </h1>
-              <h2 className="mt-8 text-4xl font-black text-[#F5B0C5]">
-                THIẾT KẾ GIẢI PHÁP CHIẾN LƯỢC CHUYÊN BIỆT DÀNH CHO DOANH NGHIỆP
-              </h2>
-              <p className="mt-4">
-                Dựa vào từng nhu cầu, mong muốn riêng biệt của từng nhà lãnh đạo
-                doanh nghiệp và tổ chức, Mind Connector với đội ngũ chuyên gia
-                hàng đầu trong các lĩnh vực, với kinh nghiệm dày dặn trong việc
-                nghiên cứu, vận hành và tư vấn chiến lược, sẵn sàng sát cánh
-                cùng bạn đi tìm con đường phát triển của riêng mình.
-              </p>
+              <div className="mx-auto max-w-[850px]">
+                <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
+                  Điều gì giúp chúng tôi khác biệt?
+                </h1>
+                <Image
+                  src="/img/icon-difference.svg"
+                  alt=""
+                  width={116}
+                  height={120}
+                  className="mt-8 inline-block"
+                />
+                <h2 className="mt-8 text-[30px] font-black text-[#F5B0C5] md:text-4xl">
+                  THIẾT KẾ GIẢI PHÁP CHIẾN LƯỢC CHUYÊN BIỆT DÀNH CHO DOANH
+                  NGHIỆP
+                </h2>
+                <p className="mt-4">
+                  Dựa vào từng nhu cầu, mong muốn riêng biệt của từng nhà lãnh
+                  đạo doanh nghiệp và tổ chức, Mind Connector với đội ngũ chuyên
+                  gia hàng đầu trong các lĩnh vực, với kinh nghiệm dày dặn trong
+                  việc nghiên cứu, vận hành và tư vấn chiến lược, sẵn sàng sát
+                  cánh cùng bạn đi tìm con đường phát triển của riêng mình.
+                </p>
+              </div>
             </Container>
           </section>
+
+          <section className="invisible hidden py-12">
+            <Container>
+              <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
+                Cảm nhận của khách hàng
+              </h1>
+              <p className="mt-4">
+                Hơn 200 doanh nghiệp đang đồng hành cùng Mind Connector
+              </p>
+              <div className="mt-8">
+                <Testimonial data={testimonial} />
+              </div>
+            </Container>
+          </section>
+
           <section className="py-12 dark:text-white">
             <Container>
               <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
                 Đội ngũ chuyên gia
               </h1>
               <Teachers />
+            </Container>
+          </section>
+
+          <section className="py-12">
+            <Container>
+              <LeadingForm />
             </Container>
           </section>
         </main>
@@ -159,9 +189,35 @@ export async function getStaticProps() {
     },
   ];
 
+  let testimonial = {
+    headline: `Tôi có một khoảng thời gian được trải nghiệm thật sự cảm giác
+    lăn xả vào dự án khi tham gia khóa đào tạo này.`,
+    body: `Tôi có một khoảng thời gian được trải nghiệm thật sự cảm giác lăn xả
+    vào dự án khi tham gia khóa đào tạo này. Trước đây tôi cũng biết được
+    rằng khởi nghiệp không hề đơn giản, từ lúc ấp ủ ý tưởng đến lúc quyết
+    tâm thực thi tôi rất lo lắng vì bản thân còn loay hoay, nhiều vấn đề
+    chưa sáng tỏ. Khi tôi lên kế hoạch được 80% thì gặp được chương trình
+    này. Phải nói rằng những thông tin trong khóa học rất thiết thực, các
+    giảng viên là những người đã làm start up, đang thành công theo mô
+    hình tự thân, tôi thấy vô cùng phù hợp với hoàn cảnh hiện tại của
+    mình. Ban đầu tôi hơi lấn cấn về chi phí khóa học, tuy nhiên khi vào
+    học thì không phải chỉ được học và tôi được các chuyên gia tư vấn thực
+    sự trên kế hoạch kinh doanh của chính tôi. Học xong, tôi thấy tự tin
+    hơn và biết rõ mình muốn gì hơn trong tương lai.`,
+    peep: {
+      name: `Chị Phạm Thị Hải An`,
+      title: `
+        Học viên Chương trình nâng cao <br/>
+        <b>“Thành công trong khởi sự kinh doanh”</b> 
+      `,
+      image: `/img/testimonial.png`,
+    },
+  };
+
   return {
     props: {
       services,
+      testimonial,
     },
   };
 }

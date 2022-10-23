@@ -192,22 +192,17 @@ a {
   .btn {
     @apply rounded-full text-center border-2 outline-none transition h-12 leading-10 px-4 lg:px-6 text-base font-bold inline-block transition-all;
     text-shadow: 0 1px 0px rgba(0,0,0,0.65);
-  }
-
-  .btn-primary {
-    @apply btn bg-gradient cursor-pointer;
-    text-shadow: 0 1px 0px rgba(0,0,0,0.65);
     &:hover {
       text-shadow: 0 1px 0px rgba(225, 225, 225, 0.65);
     }
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient cursor-pointer border-[#F6D0BE];
   }
 
   .btn-pink {
     @apply btn bg-gradient-pink cursor-pointer border-[#D0278A];
-    text-shadow: 0 1px 0px rgba(0,0,0,0.65);
-    &:hover {
-      text-shadow: 0 1px 0px rgba(225, 225, 225, 0.65);
-    }
   }
 
   .btn-invert {

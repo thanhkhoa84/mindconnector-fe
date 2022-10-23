@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useGlobalModalContext } from "./GlobalModal";
 import axios from "axios";
-import { useForm } from "react-hook-form";
 
 const RegisterModal = () => {
   const { hideModal, store } = useGlobalModalContext();
@@ -40,7 +39,6 @@ const RegisterModal = () => {
       responseType: "json",
       data,
     };
-    console.log(data);
     const config = {
       method: "post",
       url: `${process.env.NEXT_PUBLIC_STRAPI_API}/api/student-contacts`,
