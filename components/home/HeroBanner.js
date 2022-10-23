@@ -3,6 +3,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import { getStrapiMedia } from "../../lib/media";
+
 function NextArrow(props) {
   const { className, onClick } = props;
   return (
@@ -50,14 +52,18 @@ function PrevArrow(props) {
 }
 
 const Slide = ({ index, ...props }) => {
+  // let ImageUrl = getStrapiMedia(props.Image);
+  let ImageUrl = props.Image.data.attributes.url;
   return (
     <div className="relative mx-auto my-0">
       <div className="leading-[1]">
         <Image
-          src={props.image}
-          blurDataURL={props.image}
+          // src={props.Image.data.attributes.url}
+          // blurDataURL={props.Image.data.attributes.url}
+          src={ImageUrl}
+          blurDataURL={ImageUrl}
           placeholder="blur"
-          alt={props.headline}
+          alt={props.Title}
           width={1920}
           height={957}
           priority={index == 0}
@@ -73,9 +79,9 @@ const Slide = ({ index, ...props }) => {
           className={` z-10 rounded-xl bg-white bg-opacity-80 px-[1em] pt-[2em] pb-[2em] lg:px-8 lg:py-8 lg:shadow-xl`}
         >
           <h2 className="mb-[0.5em] text-[28px] font-black leading-none md:text-3xl">
-            {props.headline}
+            {props.Title}
           </h2>
-          <p className="line-clamp-12 leading-6">{props.body}</p>
+          <p className="line-clamp-12 leading-6">{props.Body}</p>
         </div>
       </div>
     </div>

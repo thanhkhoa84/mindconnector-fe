@@ -376,12 +376,12 @@ export async function getStaticProps() {
   /** TODO: get real QaA from backend */
   const questions = [
     {
-      question: `Tại sao sinh viên nên theo học chương trình này?`,
-      answer: `Theo nghiên cứu của Harvard, kỹ năng xã hội quyết định 75% sự thành công. Vì thế, ngoài những kiến thức nền tảng được học ở trường, các bạn sinh viên nên trang bị cho mình những kỹ năng cần thiết khác. Chương trình Kỹ Năng Xã Hội của Mind Connector sẽ tạo điều kiện cho bạn học tập và thực hành những kỹ năng xã hội quan trọng. Với những kỹ năng này, bạn không những có thể dùng để phục vụ cho việc học, mà còn có thể thay đổi tư duy, tạo lập những thói quen tích cực, xây dựng thương hiệu cá nhân,… từ đó hướng về sự thành công trong tương lai. `,
+      Question: `Tại sao sinh viên nên theo học chương trình này?`,
+      Answer: `Theo nghiên cứu của Harvard, kỹ năng xã hội quyết định 75% sự thành công. Vì thế, ngoài những kiến thức nền tảng được học ở trường, các bạn sinh viên nên trang bị cho mình những kỹ năng cần thiết khác. Chương trình Kỹ Năng Xã Hội của Mind Connector sẽ tạo điều kiện cho bạn học tập và thực hành những kỹ năng xã hội quan trọng. Với những kỹ năng này, bạn không những có thể dùng để phục vụ cho việc học, mà còn có thể thay đổi tư duy, tạo lập những thói quen tích cực, xây dựng thương hiệu cá nhân,… từ đó hướng về sự thành công trong tương lai. `,
     },
     {
-      question: `Sau chương trình này, em có nên theo học chương trình nào khác để hoàn thiện bản thân hơn hay không?      `,
-      answer: `Sau chương trình Kỹ Năng Xã Hội, bạn có thể tham khảo chương trình Vững Vàng Lập Nghiệp. Điểm đặc biệt của chương trình Vững Vàng Lập Nghiệp là bạn sẽ có cơ hội giới thiệu vào những tập đoàn lớn sau kết thúc chương trình, từ đó tăng cơ hội làm việc tại những doanh nghiệp và công ty mà bạn yêu thích.`,
+      Question: `Sau chương trình này, em có nên theo học chương trình nào khác để hoàn thiện bản thân hơn hay không?      `,
+      Answer: `Sau chương trình Kỹ Năng Xã Hội, bạn có thể tham khảo chương trình Vững Vàng Lập Nghiệp. Điểm đặc biệt của chương trình Vững Vàng Lập Nghiệp là bạn sẽ có cơ hội giới thiệu vào những tập đoàn lớn sau kết thúc chương trình, từ đó tăng cơ hội làm việc tại những doanh nghiệp và công ty mà bạn yêu thích.`,
     },
   ];
   const courses = programs.soCap;

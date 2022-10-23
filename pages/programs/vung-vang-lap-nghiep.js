@@ -369,16 +369,16 @@ export async function getStaticProps() {
   /** TODO: get real QaA from backend */
   const questions = [
     {
-      question: `Chương trình Vững Vàng Lập Nghiệp dành cho ai?`,
-      answer: `Các bạn sinh viên đại học, cao đẳng từ năm nhất đến năm cuối; các bạn mới đi làm hoặc các doanh nghiệp có nhu cầu đào tạo thế hệ mới đều có thể tham gia chương trình Vững Vàng Lập Nghiệp.`,
+      Question: `Chương trình Vững Vàng Lập Nghiệp dành cho ai?`,
+      Answer: `Các bạn sinh viên đại học, cao đẳng từ năm nhất đến năm cuối; các bạn mới đi làm hoặc các doanh nghiệp có nhu cầu đào tạo thế hệ mới đều có thể tham gia chương trình Vững Vàng Lập Nghiệp.`,
     },
     {
-      question: `Khoá học Vững Vàng Lập Nghiệp của Mind Connector có các điểm khác biệt như thế nào?`,
-      answer: `Khoá học giúp các bạn định hình tư duy và kiến thức dựa trên những nguyên lý cốt lõi, thay vì đóng khung vào một số ngành nghề nhất định. Từ đó, dù thị trường lao động có thay đổi thế nào, từng cá nhân vẫn vững bước và thích nghi, dựa trên những nguyên lý sẵn có. Các bạn sẽ hiểu thêm về những yêu cầu mà các doanh nghiệp đang đề ra trong việc tuyển chọn tài năng trẻ vào làm việc tại công ty.`,
+      Question: `Khoá học Vững Vàng Lập Nghiệp của Mind Connector có các điểm khác biệt như thế nào?`,
+      Answer: `Khoá học giúp các bạn định hình tư duy và kiến thức dựa trên những nguyên lý cốt lõi, thay vì đóng khung vào một số ngành nghề nhất định. Từ đó, dù thị trường lao động có thay đổi thế nào, từng cá nhân vẫn vững bước và thích nghi, dựa trên những nguyên lý sẵn có. Các bạn sẽ hiểu thêm về những yêu cầu mà các doanh nghiệp đang đề ra trong việc tuyển chọn tài năng trẻ vào làm việc tại công ty.`,
     },
     {
-      question: `Sau chương trình, học viên sẽ nhận được gì?`,
-      answer: `Sau chương trình, bạn sẽ có cơ hội được giới thiệu vào các doanh nghiệp; làm chủ sự nghiệp của mình; đóng góp vào sự phát triển doanh nghiệp; điều chỉnh thái độ tác phong phù hợp với nơi làm việc; xây dựng network và nhân hiệu của mình, tạo đà thành công chắc chắn tại doanh nghiệp.`,
+      Question: `Sau chương trình, học viên sẽ nhận được gì?`,
+      Answer: `Sau chương trình, bạn sẽ có cơ hội được giới thiệu vào các doanh nghiệp; làm chủ sự nghiệp của mình; đóng góp vào sự phát triển doanh nghiệp; điều chỉnh thái độ tác phong phù hợp với nơi làm việc; xây dựng network và nhân hiệu của mình, tạo đà thành công chắc chắn tại doanh nghiệp.`,
     },
   ];
   const courses = programs.trungCap;
