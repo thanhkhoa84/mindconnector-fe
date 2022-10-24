@@ -33,13 +33,14 @@ const LeadingForm = () => {
 
   return (
     <div className="overflow-hidden rounded-[15px] bg-[#D0278A] bg-gradient-to-br from-[#E75C9D] via-[#DE4695] to-[#A71876] lg:flex">
-      <div className="p-4 py-12 md:p-8">
+      <div className=" flex-1 p-4 py-12 md:p-8">
         <h4 className="text-[24px] font-black leading-none text-white">
           Liên hệ ngay với chuyên gia
         </h4>
         <p className="mt-4 text-white">
-          Để lại thông tin nếu bạn cần đào tạo nhân viên hoặc tư vấn chiến lược
-          kinh doanh.
+          Để lại thông tin nếu bạn cần đào tạo nhân viên{" "}
+          <br className="hidden md:inline" />
+          hoặc tư vấn chiến lược kinh doanh.
         </p>
         <form onSubmit={handleSubmit(handleSubmitForm)} className="mt-8 pb-6">
           <div className="mt-4">
@@ -189,13 +190,13 @@ const LeadingForm = () => {
           </div>
         </form>
       </div>
-      <div className="invisible hidden lg:visible lg:flex">
+      <div className="invisible relative flex hidden flex-1 items-center justify-center overflow-hidden object-cover lg:visible lg:flex">
         <Image
           src="/img/bg-leading-form.png"
           alt=""
           width={512}
           height={680}
-          className="object-cover"
+          className="h-full w-full object-cover"
         />
       </div>
     </div>

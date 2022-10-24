@@ -24,40 +24,16 @@ const TeacherCard = ({ entitled, name, imgUrl, title, socials }) => {
         />
       </div>
       <div className="mt-4 flex w-full flex-col text-center">
-        <h4 className="m-0 text-xs leading-none text-purple">{entitled}</h4>
-        <h3 className="m-0 text-sm font-black leading-none text-purple md:text-base">
+        <h4 className="m-0 text-xs leading-none text-purple dark:text-white">
+          {entitled}
+        </h4>
+        <h3 className="m-0 text-sm font-black leading-none text-purple dark:text-white md:text-base">
           {name}
         </h3>
         <p
           dangerouslySetInnerHTML={{ __html: title }}
-          className="m-0 min-h-[calc(2*1.25*1em)] text-sm leading-none dark:text-white sm:text-xs lg:text-base lg:text-sm"
-        >
-          {/* {title} */}
-        </p>
-        {/* {socials && (
-          <div className={`mt-4 inline-flex flex-row justify-center gap-2`}>
-            {socials.map((s, i) => {
-              return (
-                <a
-                  href={s.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-block h-[30px] w-[30px] overflow-hidden rounded-full"
-                  style={{
-                    WebkitMask: `url(${
-                      socialImages[s.name]
-                    }) no-repeat 50% 50%`,
-                    mask: `url(${socialImages[s.name]}) no-repeat 50% 50%`,
-                    WebkitMaskSize: "cover",
-                    maskSize: "cover",
-                    backgroundColor: "#ffaf43",
-                  }}
-                  key={s.name}
-                ></a>
-              );
-            })}
-          </div>
-        )} */}
+          className="mt-2 min-h-[calc(2*1.25*1em)] text-sm leading-none dark:text-white sm:text-xs lg:text-base lg:text-sm"
+        />
       </div>
     </div>
   );

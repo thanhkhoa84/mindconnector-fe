@@ -102,7 +102,7 @@ const Business = ({ services, teachers, testimonial }) => {
 
           <section className="dark relative mt-12 flex origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-difference.png)] bg-cover bg-center bg-no-repeat py-[100px] text-center text-white xl:py-36">
             <Container>
-              <div className="mx-auto max-w-[850px]">
+              <div className="mx-auto md:max-w-[75%]">
                 <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
                   Điều gì giúp chúng tôi khác biệt?
                 </h1>
