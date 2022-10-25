@@ -31,7 +31,7 @@ const register = async (req, res) => {
         <p><b>Email:</b> ${email}</p>
         <p><b>Số điện thoại:</b> ${phone}</p>
         <p><b>Chương trình:</b> ${program}</p>
-        <p><b>Khóa học:</b> ${course}</p>
+        <p><b>Môn học:</b> ${course}</p>
       `,
     });
   } catch (err) {

@@ -1,5 +1,5 @@
-// import { gql } from "@apollo/client";
-// import client from "../lib/apolloClient";
+import { gql } from "@apollo/client";
+import client from "../lib/apolloClient";
 
 import QandA from "../components/QandA";
 import ValueSection from "../components/home/ValueSection";
@@ -9,7 +9,7 @@ import Seo from "./../components/SEO";
 import Container from "./../components/Container";
 import HeroBanner from "../components/home/HeroBanner";
 
-export default function Home({ slides, questions }) {
+export default function Home({ slides, questions, teachers }) {
   const seo = {
     metaTitle: "Trang chủ",
     metaDescription:
@@ -112,41 +112,67 @@ export async function getServerSideProps() {
     },
   ];
 
-  // let query = gql`
-  //   query GetHomepage {
-  //     homepage {
-  //       data {
-  //         attributes {
-  //           BannerCarousel {
-  //             Title
-  //             Body
-  //             Image {
-  //               data {
-  //                 attributes {
-  //                   url
-  //                 }
-  //               }
-  //             }
-  //           }
-  //           QandA {
-  //             Question
-  //             Answer
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `;
-  // const { data } = await client.query({
-  //   query,
+  let query = gql`
+    query GetHomepage {
+      homepage {
+        data {
+          attributes {
+            BannerCarousel {
+              Title
+              Body
+              Image {
+                data {
+                  attributes {
+                    url
+                    width
+                    height
+                  }
+                }
+              }
+            }
+            QAs {
+              Question
+              Answer
+            }
+          }
+        }
+      }
+      teachers {
+        data {
+          attributes {
+            entitled
+            name
+            title
+            image {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+  const { data } = await client.query({
+    query,
+  });
+
+  let { BannerCarousel, QAs } = data.homepage.data.attributes;
+  // let { teachers } = data.teachers.data;
+
+  // let teachersList = teachers.filter((t) => {
+  //   return t.attributes.featured == true;
   // });
 
-  // let { BannerCarousel, QandA } = data.homepage.data.attributes;
+  let teachers = data.teachers.data;
 
   return {
     props: {
       slides,
       questions,
+      teachers,
     },
   };
 }

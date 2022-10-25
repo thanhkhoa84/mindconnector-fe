@@ -101,7 +101,6 @@ const HeroBanner = ({ slides, ...props }) => {
     autoplay: true,
     autoplaySpeed: 10000,
     fade: false,
-    // adaptiveHeight: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
@@ -113,7 +112,9 @@ const HeroBanner = ({ slides, ...props }) => {
       <h4 className="sr-only">Tin tức mới nhất</h4>
       <Slider {...settings}>
         {slides.map(({ ...props }, index) => {
-          return <Slide {...props} index={index} key={index} />;
+          return (
+            <Slide {...props} index={index} key={`hero-banner-${index}`} />
+          );
         })}
       </Slider>
     </section>

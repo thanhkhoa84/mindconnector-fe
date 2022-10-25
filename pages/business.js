@@ -80,11 +80,15 @@ const Business = ({ services, teachers, testimonial }) => {
                 sắc và chiến lược kinh doanh hiệu quả.
               </p>
               <p className="mt-8">
-                <Link href="contact">
+                <button
+                  onClick={() => {
+                    document.getElementById("contact").scrollIntoView();
+                  }}
+                >
                   <span className="btn-pink">
                     Trò chuyện ngay với chuyên gia
                   </span>
-                </Link>
+                </button>
               </p>
             </div>
           </section>
@@ -151,7 +155,7 @@ const Business = ({ services, teachers, testimonial }) => {
             </Container>
           </section>
 
-          <section className="py-12">
+          <section className="py-12" id="contact">
             <Container>
               <LeadingForm />
             </Container>
