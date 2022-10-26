@@ -111,9 +111,9 @@ const NavItem = ({ link, index }) => {
           />
         </>
       ) : (
-        <Link href={link.path}>
+        <ActiveLink href={link.path} activeClassName="text-purple">
           <a className="hover:text-purple">{link.name}</a>
-        </Link>
+        </ActiveLink>
         // <ActiveLink
         //   href={link.path}
         //   activeClassName="text-purple"

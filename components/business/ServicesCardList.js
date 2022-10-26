@@ -59,7 +59,7 @@ const ServiceCard = ({ index, service, ...props }) => {
         className={`overflow-hidden rounded-2xl after:absolute after:inset-0 after:block after:bg-gradient-to-b after:from-[rgba(43,43,43,0)] after:to-[#000] after:content-['']`}
       >
         <Image
-          src="/img/services-01.png"
+          src={service.img}
           alt={""}
           width={326}
           height={215}

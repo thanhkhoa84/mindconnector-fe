@@ -155,24 +155,28 @@ export async function getServerSideProps() {
       }
     }
   `;
-  const { data } = await client.query({
-    query,
-  });
 
-  let { BannerCarousel, QAs } = data.homepage.data.attributes;
+  try {
+    const { data } = await client.query({
+      query,
+    });
+
+    let { BannerCarousel, QAs } = data.homepage.data.attributes;
+    let teachers = data.teachers.data;
+  } catch (error) {
+    console.log(error);
+  }
+
   // let { teachers } = data.teachers.data;
 
   // let teachersList = teachers.filter((t) => {
   //   return t.attributes.featured == true;
   // });
 
-  let teachers = data.teachers.data;
-
   return {
     props: {
       slides,
       questions,
-      teachers,
     },
   };
 }

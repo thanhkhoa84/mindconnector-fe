@@ -77,13 +77,19 @@ const Business = ({ services, teachers, testimonial }) => {
               </h2>
               <p className="mt-4">
                 Cùng doanh nghiệp bứt phá thành công với đội ngũ nhân viên xuất
-                sắc và chiến lược kinh doanh hiệu quả.
+                sắc và{" "}
+                <span className="xs:inline-block">
+                  chiến lược kinh doanh hiệu quả
+                </span>
+                .
               </p>
               <p className="mt-8">
                 <button
                   onClick={() => {
                     document.getElementById("contact").scrollIntoView();
                   }}
+                  type="button"
+                  className="min-w-[280px]"
                 >
                   <span className="btn-pink">
                     Trò chuyện ngay với chuyên gia
@@ -106,7 +112,7 @@ const Business = ({ services, teachers, testimonial }) => {
 
           <section className="dark relative mt-12 flex origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-difference.png)] bg-cover bg-center bg-no-repeat py-[100px] text-center text-white xl:py-36">
             <Container>
-              <div className="mx-auto md:max-w-[75%]">
+              <div className="mx-auto lg:max-w-[75%]">
                 <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
                   Điều gì giúp chúng tôi khác biệt?
                 </h1>
@@ -117,9 +123,9 @@ const Business = ({ services, teachers, testimonial }) => {
                   height={120}
                   className="mt-8 inline-block"
                 />
-                <h2 className="mt-8 text-[30px] font-black text-[#F5B0C5] md:text-4xl">
-                  THIẾT KẾ GIẢI PHÁP CHIẾN LƯỢC CHUYÊN BIỆT DÀNH CHO DOANH
-                  NGHIỆP
+                <h2 className="mt-8 text-[25px] font-black text-[#F5B0C5] md:text-4xl">
+                  THIẾT KẾ GIẢI PHÁP CHIẾN LƯỢC CHUYÊN BIỆT{" "}
+                  <span className="xs:inline-block">DÀNH CHO DOANH NGHIỆP</span>
                 </h2>
                 <p className="mt-4">
                   Dựa vào từng nhu cầu, mong muốn riêng biệt của từng nhà lãnh
@@ -155,7 +161,7 @@ const Business = ({ services, teachers, testimonial }) => {
             </Container>
           </section>
 
-          <section className="py-12" id="contact">
+          <section className="py-8 pb-12" id="contact">
             <Container>
               <LeadingForm />
             </Container>
@@ -174,22 +180,27 @@ export async function getStaticProps() {
     {
       name: `Tư vấn Chiến lược Thương hiệu`,
       body: `Phát triển chiến lược thương hiệu bền vững để doanh nghiệp tăng trưởng bứt phá.`,
+      img: `/img/business-tu-van-chien-luoc-thuong-hieu.png`,
     },
     {
       name: `Tư vấn Chiến lược phát triển chuỗi F&B `,
-      body: `Hỗ doanh nghiệp phát triển, thành công và tăng trưởng trong lĩnh vực F&B.`,
+      body: `Hỗ trợ doanh nghiệp phát triển, thành công và tăng trưởng trong lĩnh vực F&B.`,
+      img: `/img/business-tu-van-chien-luoc-fb.png`,
     },
     {
       name: `Tư vấn Quản Trị Sự thay đổi`,
       body: `Giúp doanh nghiệp có thể linh hoạt, điều chỉnh và thích ứng với sự thay đổi mới.`,
+      img: `/img/business-tu-van-quan-tri-su-thay-doi.png`,
     },
     {
       name: `Tư vấn và Thực thi Sales & Marketing (MSO)`,
       body: `Thảo luận, trao đổi, định hướng và thực thi chiến lược Sales và Marketing dài hạn cho doanh nghiệp.`,
+      img: `/img/business-tu-van-sale.png`,
     },
     {
       name: `Đào tạo nội bộ`,
       body: `Đào tạo đội ngũ nhân viên xuất sắc để đưa doanh nghiệp phát triển nhanh chóng.`,
+      img: `/img/business-dao-tao-noi-bo.png`,
     },
   ];
 
@@ -235,7 +246,7 @@ export async function getStaticProps() {
       entitled: "Bà",
       name: "Vinkai AR Bhatia",
       imgUrl: "/img/mentors/vinkai-bhatia.png",
-      title: "Chuyên gia <br/>chiến lược",
+      title: "Chuyên gia <br/>Chiến lược",
     },
     {
       entitled: "Bà",

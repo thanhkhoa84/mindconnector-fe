@@ -1,9 +1,14 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import Image from "next/future/image";
 import { Clock } from "react-svg-spinners";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const LeadingForm = () => {
+  const schema = yup.object({
+    email: yup.string().email().required(),
+  });
+
   const { register, handleSubmit, formState } = useForm();
   const { isSubmitting } = formState;
 
@@ -33,7 +38,7 @@ const LeadingForm = () => {
 
   return (
     <div className="overflow-hidden rounded-[15px] bg-[#D0278A] bg-gradient-to-br from-[#E75C9D] via-[#DE4695] to-[#A71876] lg:flex">
-      <div className=" flex-1 p-4 py-12 md:p-8">
+      <div className=" flex-[5] p-4 py-12 md:p-8">
         <h4 className="text-[24px] font-black leading-none text-white">
           Liên hệ ngay với chuyên gia
         </h4>
@@ -69,6 +74,9 @@ const LeadingForm = () => {
               placeholder="Bạn cần hỗ trợ về mặt nào?"
               {...register("field")}
             >
+              <option value="Tư vấn Chiến lược Thương hiệu">
+                Tư vấn Chiến lược Thương hiệu
+              </option>
               <option value="Tư vấn Chiến lược phát triển chuỗi F&B ">
                 Tư vấn Chiến lược phát triển chuỗi F&B
               </option>
@@ -87,12 +95,16 @@ const LeadingForm = () => {
             </label>
             <input
               type="text"
-              required
+              // required
               className="h-[50px] w-full overflow-hidden text-ellipsis whitespace-nowrap rounded-full p-4"
               id="email"
               name="email"
               placeholder="Email"
-              {...register("email")}
+              {...register("email", {
+                required: true,
+                pattern:
+                  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+              })}
             />
           </div>
           <div className="mt-4">
@@ -106,6 +118,7 @@ const LeadingForm = () => {
               id="phone"
               name="phone"
               placeholder="Số điện thoại"
+              pattern="/^[(]\\d{2}+[)]-[(]0+\\d{9}[)]$/"
               {...register("phone")}
             />
           </div>
@@ -146,7 +159,7 @@ const LeadingForm = () => {
                 <input
                   type="radio"
                   required
-                  className="form-check-input form-radio mr-2 h-[30px] w-[30px] rounded-[4px] bg-white"
+                  className="form-check-input form-radio mr-2 h-[30px] w-[30px] appearance-none rounded-[4px] border-0 bg-white"
                   id="medium1"
                   name="medium"
                   value="Email"
@@ -161,7 +174,7 @@ const LeadingForm = () => {
                 <input
                   type="radio"
                   required
-                  className="form-check-input form-radio mr-2 h-[30px] w-[30px] appearance-none rounded-[4px] bg-white outline-none"
+                  className="form-check-input form-radio mr-2 h-[30px] w-[30px] appearance-none appearance-none rounded-[4px] border-0 bg-white outline-none"
                   id="medium2"
                   name="medium"
                   value="Số điện thoại"
@@ -190,15 +203,7 @@ const LeadingForm = () => {
           </div>
         </form>
       </div>
-      <div className="invisible relative flex hidden flex-1 items-center justify-center overflow-hidden object-cover lg:visible lg:flex">
-        <Image
-          src="/img/bg-leading-form.png"
-          alt=""
-          width={512}
-          height={680}
-          className="h-full w-full object-cover"
-        />
-      </div>
+      <div className="invisible relative flex hidden flex-[4] flex-1 items-center justify-center overflow-hidden bg-[url(/img/bg-leading-form.png)] bg-cover object-cover lg:visible lg:flex" />
     </div>
   );
 };
