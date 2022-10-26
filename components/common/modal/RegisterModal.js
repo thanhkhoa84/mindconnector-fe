@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { useGlobalModalContext } from "./GlobalModal";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { Clock } from "react-svg-spinners";
 
 const RegisterModal = () => {
@@ -9,8 +11,30 @@ const RegisterModal = () => {
   const { modalProps } = store || {};
   const { title, program, course } = modalProps || {};
   let ref = useRef(null);
-  const { register, handleSubmit, formState } = useForm();
-  const { isSubmitting } = formState;
+  const schema = yup.object({
+    email: yup
+      .string()
+      .email("Email không hợp lệ")
+      .required("Mời bạn nhập thông tin"),
+    phone: yup
+      .string()
+      .required("Mời bạn nhập thông tin")
+      .matches(
+        /((09|03|07|08|05)+([0-9]{8})\b)/,
+        "Mời nhập số điện thoại chính xác"
+      ),
+    name: yup.string().required("Mời bạn nhập thông tin"),
+  });
+  const { register, handleSubmit, formState, reset } = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+    },
+    shouldUseNativeValidation: true,
+    resolver: yupResolver(schema),
+  });
+  const { isSubmitting, isSubmitSuccessful } = formState;
 
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
@@ -63,6 +87,14 @@ const RegisterModal = () => {
     };
   });
 
+  useEffect(() => {
+    reset({
+      name: "",
+      email: "",
+      phone: "",
+    });
+  }, [isSubmitSuccessful]);
+
   return (
     <div className="fixed inset-0 z-50 flex h-full w-full items-center justify-center bg-gray-400 bg-opacity-90">
       <div ref={ref} className="m-4 w-[512px] rounded-2xl bg-[#DADADA] p-8">
@@ -77,7 +109,6 @@ const RegisterModal = () => {
             </label>
             <input
               type="text"
-              required
               className="h-[50px] w-full rounded-full p-4"
               id="name"
               name="name"
@@ -104,7 +135,6 @@ const RegisterModal = () => {
             </label>
             <input
               type="text"
-              required
               className="h-[50px] w-full rounded-full p-4"
               id="phone"
               placeholder="Số điện thoại"
@@ -118,6 +148,7 @@ const RegisterModal = () => {
               type="checkbox"
               id="term"
               required
+              checked
               className="form-checkbox mr-2 h-[25px] w-[25px] rounded-md"
             />
             <label htmlFor="term" className="align-middle">

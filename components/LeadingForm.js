@@ -1,16 +1,44 @@
 import axios from "axios";
-import { useForm } from "react-hook-form";
+import { useForm, reset } from "react-hook-form";
 import { Clock } from "react-svg-spinners";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useEffect } from "react";
 
 const LeadingForm = () => {
   const schema = yup.object({
-    email: yup.string().email().required(),
+    industry: yup.string().required("Mời bạn nhập thông tin"),
+    field: yup.string().required("Mời bạn nhập thông tin"),
+    email: yup
+      .string()
+      .email("Email không hợp lệ")
+      .required("Mời bạn nhập thông tin"),
+    phone: yup
+      .string()
+      .required("Mời bạn nhập thông tin")
+      .matches(
+        /((09|03|07|08|05)+([0-9]{8})\b)/,
+        "Mời nhập số điện thoại chính xác"
+      ),
+    name: yup.string().required("Mời bạn nhập thông tin"),
+    title: yup.string().required("Mời bạn nhập thông tin"),
+    medium: yup.string().required("Mời bạn nhập thông tin"),
   });
 
-  const { register, handleSubmit, formState } = useForm();
-  const { isSubmitting } = formState;
+  const { register, handleSubmit, formState, reset } = useForm({
+    defaultValues: {
+      industry: "",
+      field: "Tư vấn Chiến lược Thương hiệu fsdfdf",
+      email: "",
+      phone: "",
+      name: "",
+      title: "",
+      medium: "",
+    },
+    shouldUseNativeValidation: true,
+    resolver: yupResolver(schema),
+  });
+  const { isSubmitting, isSubmitSuccessful } = formState;
 
   const handleSubmitForm = async (formData) => {
     let data = { data: { ...formData } };
@@ -36,6 +64,18 @@ const LeadingForm = () => {
     let response = await axios(config);
   };
 
+  useEffect(() => {
+    reset({
+      industry: "",
+      field: "Tư vấn Chiến lược Thương hiệu",
+      email: "",
+      phone: "",
+      name: "",
+      title: "",
+      medium: "",
+    });
+  }, [isSubmitSuccessful]);
+
   return (
     <div className="overflow-hidden rounded-[15px] bg-[#D0278A] bg-gradient-to-br from-[#E75C9D] via-[#DE4695] to-[#A71876] lg:flex">
       <div className=" flex-[5] p-4 py-12 md:p-8">
@@ -53,11 +93,10 @@ const LeadingForm = () => {
               Doanh nghiệp của bạn thuộc lĩnh vực nào?
             </label>
             <input
-              type="text"
-              required
               className="h-[50px] w-full overflow-hidden text-ellipsis whitespace-nowrap rounded-full px-4"
               id="industry"
               name="industry"
+              type="text"
               placeholder="Doanh nghiệp của bạn thuộc lĩnh vực nào?"
               {...register("industry")}
             />
@@ -67,7 +106,6 @@ const LeadingForm = () => {
               Bạn cần hỗ trợ về mặt nào?
             </label>
             <select
-              required
               className="h-[50px] w-full appearance-none overflow-hidden text-ellipsis whitespace-nowrap rounded-full"
               id="field"
               name="field"
@@ -94,17 +132,12 @@ const LeadingForm = () => {
               Email
             </label>
             <input
-              type="text"
-              // required
               className="h-[50px] w-full overflow-hidden text-ellipsis whitespace-nowrap rounded-full p-4"
+              type="email"
               id="email"
               name="email"
               placeholder="Email"
-              {...register("email", {
-                required: true,
-                pattern:
-                  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-              })}
+              {...register("email")}
             />
           </div>
           <div className="mt-4">
@@ -112,13 +145,10 @@ const LeadingForm = () => {
               Số điện thoại
             </label>
             <input
-              type="text"
-              required
               className="h-[50px] w-full overflow-hidden text-ellipsis whitespace-nowrap rounded-full p-4"
               id="phone"
               name="phone"
               placeholder="Số điện thoại"
-              pattern="/^[(]\\d{2}+[)]-[(]0+\\d{9}[)]$/"
               {...register("phone")}
             />
           </div>
@@ -127,8 +157,6 @@ const LeadingForm = () => {
               Họ và tên
             </label>
             <input
-              type="text"
-              required
               className="h-[50px] w-full overflow-hidden text-ellipsis whitespace-nowrap rounded-full p-4"
               id="name"
               name="name"
@@ -158,12 +186,12 @@ const LeadingForm = () => {
               <div className="inline-block">
                 <input
                   type="radio"
-                  required
                   className="form-check-input form-radio mr-2 h-[30px] w-[30px] appearance-none rounded-[4px] border-0 bg-white"
                   id="medium1"
                   name="medium"
                   value="Email"
                   {...register("medium")}
+                  checked
                 />
                 <label className="inline-block align-middle" htmlFor="medium1">
                   Email
@@ -173,7 +201,6 @@ const LeadingForm = () => {
               <div className="ml-8 inline-block">
                 <input
                   type="radio"
-                  required
                   className="form-check-input form-radio mr-2 h-[30px] w-[30px] appearance-none appearance-none rounded-[4px] border-0 bg-white outline-none"
                   id="medium2"
                   name="medium"
