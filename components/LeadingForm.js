@@ -28,7 +28,7 @@ const LeadingForm = () => {
   const { register, handleSubmit, formState, reset } = useForm({
     defaultValues: {
       industry: "",
-      field: "Tư vấn Chiến lược Thương hiệu fsdfdf",
+      field: "Tư vấn Chiến lược Thương hiệu",
       email: "",
       phone: "",
       name: "",
