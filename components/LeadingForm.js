@@ -230,7 +230,7 @@ const LeadingForm = () => {
           </div>
         </form>
       </div>
-      <div className="invisible relative flex hidden flex-[4] flex-1 items-center justify-center overflow-hidden bg-[url(/img/bg-leading-form.png)] bg-cover object-cover lg:visible lg:flex" />
+      <div className="invisible relative flex hidden flex-[4] items-center justify-center overflow-hidden bg-[url(/img/bg-leading-form.png)] bg-cover object-cover lg:visible lg:flex" />
     </div>
   );
 };
