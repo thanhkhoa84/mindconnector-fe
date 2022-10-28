@@ -6,6 +6,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Clock } from "react-svg-spinners";
 
+
 const RegisterModal = () => {
   const { hideModal, store } = useGlobalModalContext();
   const { modalProps } = store || {};
