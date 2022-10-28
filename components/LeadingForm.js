@@ -4,6 +4,7 @@ import { Clock } from "react-svg-spinners";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect } from "react";
+import { useGlobalModalContext, MODAL_TYPES } from "./common/modal/GlobalModal";
 
 const LeadingForm = () => {
   const schema = yup.object({
@@ -40,6 +41,13 @@ const LeadingForm = () => {
   });
   const { isSubmitting, isSubmitSuccessful } = formState;
 
+  const { showModal } = useGlobalModalContext();
+  const createModal = () => {
+    showModal(MODAL_TYPES.THANKYOU_MODAL, {
+      title: "form submit successfully",
+    });
+  };
+
   const handleSubmitForm = async (formData) => {
     let data = { data: { ...formData } };
     const config = {
@@ -74,6 +82,9 @@ const LeadingForm = () => {
       title: "",
       medium: "",
     });
+    if (isSubmitSuccessful) {
+      createModal();
+    }
   }, [isSubmitSuccessful]);
 
   return (

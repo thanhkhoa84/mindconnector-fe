@@ -1,15 +1,18 @@
 import React, { useState, createContext, useContext } from "react";
 import RegisterModal from "./RegisterModal";
 import BusinessVideoModal from "./BusinessVideoModal";
+import ThankYouModal from "./ThankYouModal";
 
 export const MODAL_TYPES = {
   REGISTER_MODAL: "REGISTER_MODAL",
   BUSINESS_VIDEO_MODAL: "BUSINESS_VIDEO_MODAL",
+  THANKYOU_MODAL: "THANKYOU_MODAL",
 };
 
 const MODAL_COMPONENTS = {
   [MODAL_TYPES.REGISTER_MODAL]: RegisterModal,
   [MODAL_TYPES.BUSINESS_VIDEO_MODAL]: BusinessVideoModal,
+  [MODAL_TYPES.THANKYOU_MODAL]: ThankYouModal,
 };
 
 const initalState = {
