@@ -73,8 +73,8 @@ const RegisterModal = () => {
       data,
     };
     let mailRes = await axios(mailConfig);
-    let response = await axios(config);
-    if (response.status === 200) {
+    // let response = await axios(config);
+    if (mailRes.status === 200) {
       hideModal();
     }
   };
