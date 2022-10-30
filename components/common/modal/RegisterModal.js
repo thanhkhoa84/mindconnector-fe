@@ -21,7 +21,7 @@ const RegisterModal = () => {
       .string()
       .required("Mời bạn nhập thông tin")
       .matches(
-        /((09|03|07|08|05)+([0-9]{8})\b)/,
+        /((09|03|07|08|05|012)+([0-9]{8})\b)/,
         "Mời nhập số điện thoại chính xác"
       ),
     name: yup.string().required("Mời bạn nhập thông tin"),
@@ -46,10 +46,6 @@ const RegisterModal = () => {
     if (event.key === "Escape") {
       hideModal();
     }
-  };
-
-  const preventScroll = (event) => {
-    event.preventDefault();
   };
 
   const handleSubmitForm = async (formData) => {

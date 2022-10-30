@@ -1,13 +1,13 @@
 import { gql } from "@apollo/client";
-import client from "../lib/apolloClient";
+import client from "@/lib/apolloClient";
 
-import QandA from "../components/QandA";
-import ValueSection from "../components/home/ValueSection";
-import Teachers from "../components/common/teachers/Teachers";
-import About from "../components/home/About";
-import Seo from "./../components/SEO";
-import Container from "./../components/Container";
-import HeroBanner from "../components/home/HeroBanner";
+import QandA from "@/components/QandA";
+import ValueSection from "@/components/home/ValueSection";
+import Teachers from "@/components/common/teachers/Teachers";
+import About from "@/components/home/About";
+import Seo from "@/components/SEO";
+import Container from "@/components/Container";
+import HeroBanner from "@/components/home/HeroBanner";
 
 export default function Home({ slides, questions, teachers }) {
   const seo = {

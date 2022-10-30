@@ -18,7 +18,7 @@ const LeadingForm = () => {
       .string()
       .required("Mời bạn nhập thông tin")
       .matches(
-        /((09|03|07|08|05)+([0-9]{8})\b)/,
+        /((09|03|07|08|05|012)+([0-9]{8})\b)/,
         "Mời nhập số điện thoại chính xác"
       ),
     name: yup.string().required("Mời bạn nhập thông tin"),
@@ -73,17 +73,17 @@ const LeadingForm = () => {
   };
 
   useEffect(() => {
-    reset({
-      industry: "",
-      field: "Tư vấn Chiến lược Thương hiệu",
-      email: "",
-      phone: "",
-      name: "",
-      title: "",
-      medium: "",
-    });
     if (isSubmitSuccessful) {
       createModal();
+      reset({
+        industry: "",
+        field: "Tư vấn Chiến lược Thương hiệu",
+        email: "",
+        phone: "",
+        name: "",
+        title: "",
+        medium: "",
+      });
     }
   }, [isSubmitSuccessful]);
 

@@ -8,14 +8,14 @@ import { useForm } from "react-hook-form";
 import {
   useGlobalModalContext,
   MODAL_TYPES,
-} from "../components/common/modal/GlobalModal";
-import Container from "../components/Container";
-import QandA from "../components/QandA";
-import Seo from "../components/SEO";
-import ServicesCardList from "../components/business/ServicesCardList";
-import Teachers from "../components/common/teachers/Teachers";
-import Testimonial from "../components/Testimonial";
-import LeadingForm from "../components/LeadingForm";
+} from "@/components/common/modal/GlobalModal";
+import Container from "@/components/Container";
+import QandA from "@/components/QandA";
+import Seo from "@/components/SEO";
+import ServicesCardList from "@/components/business/ServicesCardList";
+import Teachers from "@/components/common/teachers/Teachers";
+import Testimonial from "@/components/Testimonial";
+import LeadingForm from "@/components/LeadingForm";
 
 const tabs = [
   {

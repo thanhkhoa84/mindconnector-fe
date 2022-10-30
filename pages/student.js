@@ -1,17 +1,17 @@
 import Head from 'next/head';
 import Link from "next/link";
 import Image from "next/future/image";
-import Container from "./../components/Container";
-import Seo from "./../components/SEO";
-import LogoList from "./../components/LogoList";
-import Teachers from "./../components/common/teachers/Teachers";
-import StudentCardList from "./../components/common/courses/StudentCardList";
-import { programs } from "../data/global";
+import Container from "@/components/Container";
+import Seo from "@/components/SEO";
+import LogoList from "@/components/LogoList";
+import Teachers from "@/components/common/teachers/Teachers";
+import StudentCardList from "@/components/common/courses/StudentCardList";
+import { programs } from "@/data/global";
 
 import {
   useGlobalModalContext,
   MODAL_TYPES,
-} from "./../components/common/modal/GlobalModal";
+} from "@/components/common/modal/GlobalModal";
 
 const Student = ({ questions, logoslist, programs }) => {
   const seo = {
