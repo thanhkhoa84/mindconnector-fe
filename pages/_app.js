@@ -1,12 +1,7 @@
-import App from 'next/app';
-import Head from 'next/head';
+import App from "next/app";
 import { createContext } from "react";
 
-import { fetchAPI } from "../lib/api";
-import { getStrapiMedia } from "../lib/media";
-
 import "../styles/globals.scss";
-
 import Layout from "./../components/common/Layout";
 
 export const GlobalContext = createContext({});

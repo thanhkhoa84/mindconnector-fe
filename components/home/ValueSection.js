@@ -90,7 +90,7 @@ const ValueSection = () => {
               <p className="mt-4 lg:hidden">
                 Đào tạo nguồn nhân lực chất lượng để giúp công ty thêm lớn mạnh.
               </p>
-              <Link href="/">
+              <Link href="/business">
                 <span className="link-arrow mt-4 font-black leading-none lg:mt-12">
                   Khám phá
                 </span>
