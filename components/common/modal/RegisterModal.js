@@ -70,7 +70,7 @@ const RegisterModal = () => {
     };
     let mailRes = await axios(mailConfig);
     let response = await axios(config);
-    if (mailRes.status === 200) {
+    if (response.status === 200) {
       hideModal();
     }
   };
@@ -90,7 +90,7 @@ const RegisterModal = () => {
       email: "",
       phone: "",
     });
-  }, [isSubmitSuccessful]);
+  }, [isSubmitSuccessful, reset]);
 
   return (
     <div className="fixed inset-0 z-50 flex h-full w-full items-center justify-center bg-gray-400 bg-opacity-90">

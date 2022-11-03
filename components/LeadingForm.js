@@ -40,13 +40,7 @@ const LeadingForm = () => {
     resolver: yupResolver(schema),
   });
   const { isSubmitting, isSubmitSuccessful } = formState;
-
   const { showModal } = useGlobalModalContext();
-  const createModal = () => {
-    showModal(MODAL_TYPES.THANKYOU_MODAL, {
-      title: "form submit successfully",
-    });
-  };
 
   const handleSubmitForm = async (formData) => {
     let data = { data: { ...formData } };
@@ -73,6 +67,12 @@ const LeadingForm = () => {
   };
 
   useEffect(() => {
+    const createModal = () => {
+      showModal(MODAL_TYPES.THANKYOU_MODAL, {
+        title: "form submit successfully",
+      });
+    };
+
     if (isSubmitSuccessful) {
       createModal();
       reset({
@@ -85,7 +85,7 @@ const LeadingForm = () => {
         medium: "",
       });
     }
-  }, [isSubmitSuccessful]);
+  }, [isSubmitSuccessful, reset, showModal]);
 
   return (
     <div className="overflow-hidden rounded-[15px] bg-[#D0278A] bg-gradient-to-br from-[#E75C9D] via-[#DE4695] to-[#A71876] lg:flex">

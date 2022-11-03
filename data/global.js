@@ -89,6 +89,13 @@ export const allTeachers = [
   },
   {
     entitled: "Bà",
+    name: "Nina Trần",
+    imgUrl: "/img/mentors/nina-tran-02.png",
+    title: "Chuyên gia <br/>Tư vấn Thương hiệu",
+    socials: [{ name: "linkedin", url: "https://linkedin.com" }],
+  },
+  {
+    entitled: "Bà",
     name: "Mandy Nguyễn",
     imgUrl: "/img/mentors/mandy-nguyen-02.png",
     title: "Chuyên gia <br/>Sales - Marketing",
