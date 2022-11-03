@@ -353,7 +353,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                 <p className="flex items-center">
                   <button
                     onClick={createModal}
-                    className="btn-primary block w-full overflow-hidden text-[13px] sm:text-[16px] lg:min-w-[296px]"
+                    className="btn-primary block w-full overflow-hidden text-[13px] sm:text-[16px]"
                   >
                     Đừng bỏ lỡ, đăng ký ngay!
                   </button>
