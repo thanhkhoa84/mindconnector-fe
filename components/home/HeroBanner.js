@@ -72,7 +72,7 @@ const Slide = ({ index, ...props }) => {
       </div>
       <div
         className={`
-        delay-0 lg:w-1/3} static bottom-[2em] transition-all delay-500 duration-[650ms] lg:absolute lg:left-[calc((100vw-1024px)/2)] lg:max-w-[420px] xl:left-[calc((100vw-1120px)/2)]
+        delay-0 static bottom-[2em] transition-all delay-500 duration-[650ms] lg:absolute lg:left-[calc((100vw-1024px)/2)] lg:w-1/3 lg:max-w-[420px] xl:left-[calc((100vw-1120px)/2)]
       `}
       >
         <div

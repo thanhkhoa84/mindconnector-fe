@@ -145,7 +145,7 @@ const RegisterModal = () => {
               type="checkbox"
               id="term"
               required
-              checked
+              defaultChecked={true}
               className="form-checkbox mr-2 h-[25px] w-[25px] rounded-md"
             />
             <label htmlFor="term" className="align-middle">
