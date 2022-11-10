@@ -82,7 +82,7 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
                       {a.title}
                     </h4>
                     <p
-                      className="leading-5"
+                      className="leading-8"
                       dangerouslySetInnerHTML={{ __html: a.body }}
                     />
                   </div>

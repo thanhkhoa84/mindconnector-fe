@@ -17,7 +17,7 @@ const MobileDropdown = ({ items, dropdown, dropdId }) => {
           <li
             key={index}
             className={`
-            w-full text-[14px] font-normal leading-none
+            w-full text-[14px] font-normal leading-6
             ${index == 0 ? "" : "mt-6"}
           `}
           >
@@ -54,18 +54,6 @@ const MobileNavItem = ({ link, index }) => {
     }
   };
 
-  // useEffect(() => {
-  //   if (window.innerWidth >= 1024) {
-  //     setMobile(false);
-  //   } else {
-  //     setMobile(true);
-  //   }
-  //   window.addEventListener("resize", handleResize);
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // }, [mobile]);
-
   useEffect(() => {
     if (window.innerWidth >= 1024) setDropdown(true);
     router.events.on("hashChangeStart", handleRouteChange);
@@ -80,7 +68,7 @@ const MobileNavItem = ({ link, index }) => {
   return (
     <li
       className={`
-        inline-flex flex-col items-center font-bold md:items-start
+        inline-flex flex-col items-center font-bold leading-6 md:items-start
         ${link.submenus ? "p-0" : ""}
         ${link.submenus ? "group relative" : ""} 
       `}

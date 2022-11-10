@@ -17,7 +17,7 @@ const DropdownMenu = ({ items, dropdown, dropdId }) => {
     >
       {items.map((item, index) => {
         return (
-          <li key={index} className="group mb-4 w-full font-normal leading-8">
+          <li key={index} className="group mb-6 w-full font-normal leading-6">
             <ActiveLink
               href={item.path}
               activeClassName="text-purple"

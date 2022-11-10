@@ -9,16 +9,16 @@ function NextArrow(props) {
   return (
     <div
       className={`
-        absolute top-1/2 -right-[40px] z-10 -mt-[55px] hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:block
+        absolute top-1/2 right-[calc((100%-100vw)/2-30px)] z-10 mt-[5px] -mt-[20px] hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md sm:block
       `}
       onClick={onClick}
       style={{}}
     >
       <Image
-        src="/img/btn-next.png"
+        src="/img/btn-grey-next.png"
         width={80}
         height={80}
-        blurDataURL="/img/btn-next.png"
+        blurDataURL="/img/btn-grey-next.png"
         placeholder="blur"
         alt=""
         className="absolute top-0 left-0"
@@ -32,16 +32,16 @@ function PrevArrow(props) {
   return (
     <div
       className={`
-        absolute top-1/2 -left-[40px] z-10 -mt-[55px] hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:block
+        absolute left-[calc((100%-100vw)/2-30px)] top-1/2 z-10 mt-[5px] -mt-[20px] hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md sm:block
       `}
       onClick={onClick}
       style={{}}
     >
       <Image
-        src="/img/btn-prev.png"
+        src="/img/btn-grey-prev.png"
         width={80}
         height={80}
-        blurDataURL="/img/btn-prev.png"
+        blurDataURL="/img/btn-grey-prev.png"
         placeholder="blur"
         alt=""
         className="absolute top-0 right-0"
@@ -72,6 +72,13 @@ const ServiceCard = ({ index, service, ...props }) => {
         <h3 className="text-[18px] font-black uppercase">{service.name}</h3>
         <h4 className="mt-[8px] text-[14px]">{service.body}</h4>
       </div>
+      <Image
+        src="/img/arrow-purple.png"
+        width={55}
+        height={55}
+        alt=""
+        className="absolute bottom-0 right-0"
+      />
       <Link href={service.url}>
         <span className="content-[' '] absolute inset-0 block cursor-pointer" />
       </Link>
@@ -83,9 +90,10 @@ const ServicesCardList = ({ services }) => {
   let settings = {
     dots: true,
     // infinite: true,
+    draggable: false,
     arrows: true,
     centerPadding: "0px",
-    centerMode: true,
+    // centerMode: true,
     className: "center",
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,

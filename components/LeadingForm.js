@@ -229,14 +229,18 @@ const LeadingForm = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="btn-leading block inline-flex w-full items-center justify-center align-middle text-[14px] leading-[48px] disabled:opacity-80 xs:text-base"
+              className="btn-leading block inline-flex w-full min-w-[220px] items-center justify-center align-middle text-[14px] leading-[48px] disabled:opacity-80 xs:text-base"
             >
               {isSubmitting && (
                 <span className="inline-block">
                   <Clock color="white" width={30} height={30} />
                 </span>
               )}
-              {!isSubmitting && <span>Trò Chuyện Ngay Với Chuyên Gia</span>}
+              {!isSubmitting && (
+                <span className="inline-block overflow-hidden overflow-ellipsis whitespace-nowrap leading-none">
+                  Trò Chuyện Ngay Với Chuyên Gia
+                </span>
+              )}
             </button>
           </div>
         </form>
