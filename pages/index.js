@@ -112,60 +112,41 @@ export async function getServerSideProps() {
     },
   ];
 
-  let query = gql`
-    query GetHomepage {
-      homepage {
-        data {
-          attributes {
-            BannerCarousel {
-              Title
-              Body
-              Image {
-                data {
-                  attributes {
-                    url
-                    width
-                    height
-                  }
-                }
-              }
-            }
-            QAs {
-              Question
-              Answer
-            }
-          }
-        }
-      }
-      teachers {
-        data {
-          attributes {
-            entitled
-            name
-            title
-            image {
-              data {
-                attributes {
-                  url
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `;
+  // let query = gql`
+  //   query GetHomepage {
+  //     homepage {
+  //       data {
+  //         attributes {
+  //           Content {
+  //             __typename
+  //             ... on ComponentSectionHeroSlider {
+  //               HeroSlider {
+  //                 Image {
+  //                   data {
+  //                     attributes {
+  //                       url
+  //                     }
+  //                   }
+  //                 }
+  //                 Title
+  //                 Body
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `;
 
-  try {
-    const { data } = await client.query({
-      query,
-    });
-
-    let { BannerCarousel, QAs } = data.homepage.data.attributes;
-    let teachers = data.teachers.data;
-  } catch (error) {
-    console.log(error);
-  }
+  // try {
+  //   const { data } = await client.query({
+  //     query,
+  //   });
+  //   console.log(data);
+  // } catch (error) {
+  //   console.log(error);
+  // }
 
   // let { teachers } = data.teachers.data;
 

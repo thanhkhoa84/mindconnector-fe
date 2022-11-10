@@ -26,31 +26,31 @@ export const Navigation = [
       },
     ],
   },
-  // {
-  //   name: "Dành cho doanh nghiệp",
-  //   path: "/business",
-  //   submenus: [
-  //     {
-  //       name: "Thành Công Trong Học Tập",
-  //       path: "/student#thanh-cong-trong-hoc-tap",
-  //     },
-  //     {
-  //       name: "Thành Công Trong Ứng Tuyển",
-  //       path: "/student#thanh-cong-trong-ung-tuyen",
-  //     },
-  //     {
-  //       name: "Thành Công Trong Khởi Sự Kinh Doanh",
-  //       path: "/student#thanh-cong-trong-khoi-su-kinh-doanh",
-  //     },
-  //     {
-  //       name: "Experience Tour",
-  //       path: "/business",
-  //     },
-  //   ],
-  // },
   {
     name: "Dành cho doanh nghiệp",
     path: "/business",
+    submenus: [
+      {
+        name: "Tư vấn chiến lược thương hiệu",
+        path: "/services/tu-van-chien-luoc-thuong-hieu",
+      },
+      {
+        name: "Tư vấn chiến lược phát triển chuỗi F&B",
+        path: "/services/tu-van-chien-luoc-phat-trien-chuoi-fb",
+      },
+      {
+        name: "Tư vấn quản trị sự thay đổi",
+        path: "/services/tu-van-quan-tri-su-thay-doi",
+      },
+      {
+        name: "Tư vấn và thực thi marketing & sales outsourcing (MSO)",
+        path: "/services/tu-van-va-thuc-thi-mso",
+      },
+      {
+        name: "Đào tạo nội bộ",
+        path: "/services/dao-tao-noi-bo",
+      },
+    ],
   },
   // {
   //   name: "Program",

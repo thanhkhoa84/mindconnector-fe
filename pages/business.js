@@ -61,113 +61,107 @@ const Business = ({ services, teachers, testimonial }) => {
     metaTitle: "Dành cho doanh nghiệp",
     metaDescription:
       "Mind Connector là một mạng lưới của các nhà tư vấn kinh doanh cùng các giảng viên vốn là các lãnh đạo và chuyên gia hàng đầu trong nhiều lĩnh vực khác nhau. Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá nhân phát triển và tăng trưởng mạnh mẽ trong tương lai",
-    // shareImage: article.attributes.image,
-    // article: true,
   };
 
   return (
     <>
-      <>
-        <Seo seo={seo} />
-        <main className="dark overflow-hidden bg-black pb-12">
-          <section className="dark relative flex origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-video.png)] bg-cover bg-center bg-no-repeat py-20 xl:py-36">
-            <div className="relative px-8 py-12 text-center dark:text-white">
-              <h2 className="mt-8 text-4xl font-black">
-                Kinh nghiệm thực chiến từ chuyên gia hàng đầu
+      <Seo seo={seo} />
+      <main className="dark overflow-hidden bg-black pb-12">
+        <section className="dark relative flex origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-video.png)] bg-cover bg-center bg-no-repeat py-20 xl:py-36">
+          <div className="relative px-8 py-12 text-center dark:text-white">
+            <h2 className="mt-8 text-4xl font-black">
+              Kinh nghiệm thực chiến từ chuyên gia hàng đầu
+            </h2>
+            <p className="mt-4">
+              Cùng doanh nghiệp bứt phá thành công với đội ngũ nhân viên xuất
+              sắc và{" "}
+              <span className="xs:inline-block">
+                chiến lược kinh doanh hiệu quả
+              </span>
+              .
+            </p>
+            <p className="mt-8">
+              <button
+                onClick={() => {
+                  document.getElementById("contact").scrollIntoView();
+                }}
+                type="button"
+                className="min-w-[280px]"
+              >
+                <span className="btn-pink">Trò chuyện ngay với chuyên gia</span>
+              </button>
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-8 overflow-hidden py-16">
+          <Container>
+            <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+              Dịch vụ của chúng tôi
+            </h1>
+            <div className="mt-12">
+              <ServicesCardList services={services} />
+            </div>
+          </Container>
+        </section>
+
+        <section className="dark relative mt-12 flex origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-difference.png)] bg-cover bg-center bg-no-repeat py-[100px] text-center text-white xl:py-36">
+          <Container>
+            <div className="mx-auto lg:max-w-[67%]">
+              <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
+                Điều gì giúp chúng tôi khác biệt?
+              </h1>
+              <Image
+                src="/img/icon-difference.svg"
+                alt=""
+                width={116}
+                height={120}
+                className="mt-8 inline-block"
+              />
+              <h2 className="mt-8 text-[25px] font-black text-[#F5B0C5] md:text-4xl">
+                THIẾT KẾ GIẢI PHÁP CHIẾN LƯỢC CHUYÊN BIỆT{" "}
+                <span className="xs:inline-block">DÀNH CHO DOANH NGHIỆP</span>
               </h2>
               <p className="mt-4">
-                Cùng doanh nghiệp bứt phá thành công với đội ngũ nhân viên xuất
-                sắc và{" "}
-                <span className="xs:inline-block">
-                  chiến lược kinh doanh hiệu quả
-                </span>
-                .
-              </p>
-              <p className="mt-8">
-                <button
-                  onClick={() => {
-                    document.getElementById("contact").scrollIntoView();
-                  }}
-                  type="button"
-                  className="min-w-[280px]"
-                >
-                  <span className="btn-pink">
-                    Trò chuyện ngay với chuyên gia
-                  </span>
-                </button>
+                Dựa vào từng nhu cầu, mong muốn riêng biệt của từng nhà lãnh đạo
+                doanh nghiệp và tổ chức, Mind Connector với đội ngũ chuyên gia
+                hàng đầu trong các lĩnh vực, với kinh nghiệm dày dặn trong việc
+                nghiên cứu, vận hành và tư vấn chiến lược, sẵn sàng sát cánh
+                cùng bạn đi tìm con đường phát triển của riêng mình.
               </p>
             </div>
-          </section>
+          </Container>
+        </section>
 
-          <section className="mt-8 overflow-hidden py-16">
-            <Container>
-              <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
-                Dịch vụ của chúng tôi
-              </h1>
-              <div className="mt-12">
-                <ServicesCardList services={services} />
-              </div>
-            </Container>
-          </section>
+        <section className="invisible hidden py-12">
+          <Container>
+            <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
+              Cảm nhận của khách hàng
+            </h1>
+            <p className="mt-4">
+              Hơn 200 doanh nghiệp đang đồng hành cùng Mind Connector
+            </p>
+            <div className="mt-8">
+              <Testimonial data={testimonial} />
+            </div>
+          </Container>
+        </section>
 
-          <section className="dark relative mt-12 flex origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-difference.png)] bg-cover bg-center bg-no-repeat py-[100px] text-center text-white xl:py-36">
-            <Container>
-              <div className="mx-auto lg:max-w-[67%]">
-                <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
-                  Điều gì giúp chúng tôi khác biệt?
-                </h1>
-                <Image
-                  src="/img/icon-difference.svg"
-                  alt=""
-                  width={116}
-                  height={120}
-                  className="mt-8 inline-block"
-                />
-                <h2 className="mt-8 text-[25px] font-black text-[#F5B0C5] md:text-4xl">
-                  THIẾT KẾ GIẢI PHÁP CHIẾN LƯỢC CHUYÊN BIỆT{" "}
-                  <span className="xs:inline-block">DÀNH CHO DOANH NGHIỆP</span>
-                </h2>
-                <p className="mt-4">
-                  Dựa vào từng nhu cầu, mong muốn riêng biệt của từng nhà lãnh
-                  đạo doanh nghiệp và tổ chức, Mind Connector với đội ngũ chuyên
-                  gia hàng đầu trong các lĩnh vực, với kinh nghiệm dày dặn trong
-                  việc nghiên cứu, vận hành và tư vấn chiến lược, sẵn sàng sát
-                  cánh cùng bạn đi tìm con đường phát triển của riêng mình.
-                </p>
-              </div>
-            </Container>
-          </section>
+        <section className="py-12 dark:text-white">
+          <Container>
+            <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+              Đội ngũ chuyên gia
+            </h1>
+            <Teachers data={teachers} />
+          </Container>
+        </section>
 
-          <section className="invisible hidden py-12">
-            <Container>
-              <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
-                Cảm nhận của khách hàng
-              </h1>
-              <p className="mt-4">
-                Hơn 200 doanh nghiệp đang đồng hành cùng Mind Connector
-              </p>
-              <div className="mt-8">
-                <Testimonial data={testimonial} />
-              </div>
-            </Container>
-          </section>
-
-          <section className="py-12 dark:text-white">
-            <Container>
-              <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
-                Đội ngũ chuyên gia
-              </h1>
-              <Teachers data={teachers} />
-            </Container>
-          </section>
-
-          <section className="py-8 pb-12" id="contact">
-            <Container>
-              <LeadingForm />
-            </Container>
-          </section>
-        </main>
-      </>
+        <section className="py-8 pb-12" id="contact">
+          <Container>
+            <LeadingForm />
+          </Container>
+        </section>
+      </main>
     </>
   );
 };
@@ -181,26 +175,31 @@ export async function getStaticProps() {
       name: `Tư vấn Chiến lược Thương hiệu`,
       body: `Phát triển chiến lược thương hiệu bền vững để doanh nghiệp tăng trưởng bứt phá.`,
       img: `/img/business-tu-van-chien-luoc-thuong-hieu.png`,
+      url: `/services/tu-van-chien-luoc-thuong-hieu`,
     },
     {
       name: `Tư vấn Chiến lược phát triển chuỗi F&B `,
       body: `Hỗ trợ doanh nghiệp phát triển, thành công và tăng trưởng trong lĩnh vực F&B.`,
       img: `/img/business-tu-van-chien-luoc-fb.png`,
+      url: `/services/tu-van-chien-luoc-phat-trien-chuoi-fb`,
     },
     {
       name: `Tư vấn Quản Trị Sự thay đổi`,
       body: `Giúp doanh nghiệp có thể linh hoạt, điều chỉnh và thích ứng với sự thay đổi mới.`,
       img: `/img/business-tu-van-quan-tri-su-thay-doi.png`,
+      url: `/services/tu-van-quan-tri-su-thay-doi`,
     },
     {
       name: `Tư vấn và Thực thi Sales & Marketing (MSO)`,
       body: `Thảo luận, trao đổi, định hướng và thực thi chiến lược Sales và Marketing dài hạn cho doanh nghiệp.`,
       img: `/img/business-tu-van-sale.png`,
+      url: `/services/tu-van-va-thuc-thi-mso`,
     },
     {
       name: `Đào tạo nội bộ`,
       body: `Đào tạo đội ngũ nhân viên xuất sắc để đưa doanh nghiệp phát triển nhanh chóng.`,
       img: `/img/business-dao-tao-noi-bo.png`,
+      url: `/services/dao-tao-noi-bo`,
     },
   ];
 

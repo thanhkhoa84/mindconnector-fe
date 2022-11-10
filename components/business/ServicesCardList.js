@@ -53,7 +53,7 @@ function PrevArrow(props) {
 const ServiceCard = ({ index, service, ...props }) => {
   return (
     <div
-      className={`relative mx-auto mt-[20px] h-[215px] w-full max-w-[365px] overflow-hidden rounded-[30px] border-[6px] border-[#414141] text-left text-white md:mt-0 md:w-[336px]`}
+      className={`relative mx-auto mt-[20px] h-[215px] w-full max-w-[365px] overflow-hidden rounded-[30px] rounded-2xl border-[6px] border-[#414141] text-left text-white md:mt-0 md:w-[336px]`}
     >
       <div
         className={`overflow-hidden rounded-2xl after:absolute after:inset-0 after:block after:bg-gradient-to-b after:from-[rgba(43,43,43,0)] after:to-[#000] after:content-['']`}
@@ -72,6 +72,9 @@ const ServiceCard = ({ index, service, ...props }) => {
         <h3 className="text-[18px] font-black uppercase">{service.name}</h3>
         <h4 className="mt-[8px] text-[14px]">{service.body}</h4>
       </div>
+      <Link href={service.url}>
+        <span className="content-[' '] absolute inset-0 block cursor-pointer" />
+      </Link>
     </div>
   );
 };
@@ -80,12 +83,12 @@ const ServicesCardList = ({ services }) => {
   let settings = {
     dots: true,
     // infinite: true,
-    arrows: false,
+    arrows: true,
     centerPadding: "0px",
     centerMode: true,
     className: "center",
-    // nextArrow: <NextArrow />,
-    // prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     speed: 500,
     slidesToShow: 3,
     initialSlide: 0,

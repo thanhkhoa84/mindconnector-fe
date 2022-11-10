@@ -15,6 +15,7 @@ const nextConfig = {
     return {
       "/": { page: "/" },
       "/student": { page: "/student" },
+      "/business": { page: "/business" },
     };
   },
 };

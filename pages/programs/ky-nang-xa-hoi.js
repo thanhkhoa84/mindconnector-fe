@@ -338,7 +338,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
             <div className="mt-8 mb-4 flex flex-col overflow-hidden rounded-3xl bg-[#941C50] text-white md:flex-row md:p-0">
               <header className="bg-[#B22F66] p-6 md:p-8">
                 <h3 className="text-[30px] font-black leading-none md:text-[34px] md:leading-none">
-                  Đăng ký toàn bộ chương trình,{" "}
+                  Đăng ký toàn bộ chương trình,
                   <br className="hidden lg:inline" />
                   nhận ngay ưu đãi
                 </h3>
