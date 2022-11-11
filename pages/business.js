@@ -69,7 +69,7 @@ const Business = ({ services, teachers, testimonial }) => {
       <main className="dark overflow-hidden bg-black pb-12">
         <section className="dark relative flex origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-video.png)] bg-cover bg-center bg-no-repeat py-20 xl:py-36">
           <div className="relative px-8 py-12 text-center dark:text-white">
-            <h2 className="mt-8 text-4xl font-black">
+            <h2 className="mt-8 text-3xl font-black md:text-5xl">
               Kinh nghiệm thực chiến từ chuyên gia hàng đầu
             </h2>
             <p className="mt-4">

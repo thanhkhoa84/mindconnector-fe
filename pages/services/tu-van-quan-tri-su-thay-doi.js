@@ -18,8 +18,8 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
       <main className="dark overflow-hidden bg-black">
         <section className="dark relative flex aspect-2 origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-service.png)] bg-cover bg-center bg-no-repeat py-20 xl:py-36">
           <div className="relative px-8 py-12 text-center dark:text-white">
-            <h2 className="mt-8 text-4xl font-black">
-              Tư vấn chiến lược thương hiệu
+            <h2 className="mt-8 text-3xl font-black md:text-5xl">
+              Tư vấn quản trị sự thay đổi (Change Management)
             </h2>
             <p className="mt-8">
               <button
