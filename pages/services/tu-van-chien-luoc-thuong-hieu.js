@@ -94,7 +94,7 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
           </Container>
         </section>
 
-        <section className="py-12 dark:text-white">
+        <section className="invisible hidden py-12 dark:text-white">
           <Container>
             <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
               Cảm nhận của khách hàng
