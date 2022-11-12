@@ -16,7 +16,7 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
     <>
       <Seo seo={seo} />
       <main className="dark overflow-hidden bg-black">
-        <section className="dark relative flex aspect-2 origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-service.png)] bg-cover bg-center bg-no-repeat py-20 xl:py-36">
+        <section className="dark relative flex aspect-[3/1] origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-service.png)] bg-cover bg-center bg-no-repeat py-20 xl:py-36">
           <div className="relative px-8 py-12 text-center dark:text-white">
             <h2 className="mt-8 text-3xl font-black md:text-5xl">
               Đào tạo nội bộ
@@ -154,12 +154,12 @@ export async function getStaticProps() {
     {
       title: `Thực hiện đào tạo `,
       body: `
-        <ul>  
-          <li>Thiết kế chuyên biệt cho doanh nghiệp </li>
-          <li>Kiểm tra tính áp dụng của khoá học </li>
-          <li>Đánh giá sau từng lớp học và điều chỉnh </li>
+        <ul>
+          <li>Thiết kế chuyên biệt cho doanh nghiệp <li/>
+          <li>Kiểm tra tính áp dụng của khoá học <li/>
+          <li>Đánh giá sau từng lớp học và điều chỉnh <li/>
           <li>Tư vấn nâng cao One-on-one
-        </ul>
+        </ul>  
       `,
     },
   ];
