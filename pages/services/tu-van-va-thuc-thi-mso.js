@@ -98,7 +98,10 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
               Cảm nhận của khách hàng
             </h1>
             <p className="mt-4 text-center">
-              Hơn 200 doanh nghiệp đang đồng hành cùng Mind Connector
+              Hơn 200 doanh nghiệp đang đồng hành cùng{" "}
+              <span className="inline-block whitespace-nowrap">
+                Mind Connector
+              </span>
             </p>
             <div className="mt-8">
               <Testimonial data={testimonial} />
