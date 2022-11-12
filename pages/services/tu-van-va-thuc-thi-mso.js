@@ -81,8 +81,8 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
                     <h4 className="mb-4 inline-block rounded-lg bg-purple p-3 py-1 text-sm font-bold text-white">
                       {a.title}
                     </h4>
-                    <p
-                      className="leading-8"
+                    <div
+                      className="leading-6 [&>ul>li]:list-outside [&>ul>li+li]:mt-2 [&>ul]:list-disc [&>ul]:pl-4"
                       dangerouslySetInnerHTML={{ __html: a.body }}
                     />
                   </div>
@@ -134,25 +134,31 @@ export async function getStaticProps() {
     {
       title: `Phân tích`,
       body: `
-        - Hoạt động và tình hình bộ phận kinh doanh <br/>
-        - Các sản phẩm và hình thức kinh doanh <br/>
-        - Tầm nhìn doanh nghiệp <br/>
-        - Thị trường hiện tại và tiềm năng
+        <ul>
+          <li>Hoạt động và tình hình bộ phận kinh doanh </li>
+          <li>Các sản phẩm và hình thức kinh doanh </li>
+          <li>Tầm nhìn doanh nghiệp </li>
+          <li>Thị trường hiện tại và tiềm năng</li>
+        </ul>
       `,
     },
     {
       title: `Đề xuất`,
       body: `
-        - Gói MSO tại thị trường doanh nghiệp cần <br/>
-        - Lộ trình thực thi        
+        <ul>
+          <li>Gói MSO tại thị trường doanh nghiệp cần </li>
+          <li>Lộ trình thực thi      </li>
+        </ul>  
       `,
     },
     {
       title: `Đồng hành thực thi`,
       body: `
-        - Đảm nhiệm vai trò giám đốc S&M <br/>
-        - Cam kết chỉ tiêu kinh doanh <br/>
-        - Giám sát và nâng tầm đội ngũ kinh doanh
+        <ul>
+          <li>Đảm nhiệm vai trò giám đốc S&M </li>
+          <li>Cam kết chỉ tiêu kinh doanh </li>
+          <li>Giám sát và nâng tầm đội ngũ kinh doanh</li>
+        </ul>
       `,
     },
   ];

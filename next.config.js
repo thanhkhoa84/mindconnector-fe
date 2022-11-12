@@ -1,15 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  locales: ["en-US", "vi"],
-  // This is the default locale you want to be used when visiting
-  // a non-locale prefixed path e.g. `/hello`
-  defaultLocale: "vi",
-  domains: [
-    {
-      domain: "mindconnector.com.vn",
-      defaultLocale: "vi",
-    },
-  ],
   reactStrictMode: true,
   swcMinify: true,
   images: {

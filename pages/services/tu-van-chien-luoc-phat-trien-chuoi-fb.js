@@ -84,8 +84,8 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
                     <h4 className="mb-4 inline-block rounded-lg bg-purple p-3 py-1 text-sm font-bold text-white">
                       {a.title}
                     </h4>
-                    <p
-                      className="leading-8"
+                    <div
+                      className="leading-6 [&>ul>li]:list-outside [&>ul>li+li]:mt-2 [&>ul]:list-disc [&>ul]:pl-4"
                       dangerouslySetInnerHTML={{ __html: a.body }}
                     />
                   </div>
@@ -137,27 +137,32 @@ export async function getStaticProps() {
     {
       title: `Phân tích`,
       body: `
-        - Hiện trạng chuỗi (mô hình kinh doanh, vận hành, nhân sự, giá) <br/>
-        - Người tiêu dùng <br/>
-        - Thị trường <br/>
-        - Đối thủ
-        
+        <ul>
+          <li>Hiện trạng chuỗi (mô hình kinh doanh, vận hành, nhân sự, giá)</li>
+          <li>Người tiêu dùng</li>
+          <li>Thị trường</li>
+          <li>Đối thủ</li>
+        </ul>  
       `,
     },
     {
       title: `Đề xuất`,
       body: `
-        - Gói tư vấn hay chiến lược 7 bước phù hợp với hiện trạng và tầm nhìn <br/>
-        - Lộ trình thực thi
+        <ul>
+          <li>Gói tư vấn hay chiến lược 7 bước phù hợp với hiện trạng và tầm nhìn</li>
+          <li>Lộ trình thực thi</li>
+        </ul>
       `,
     },
     {
       title: `Đồng hành thực thi`,
       body: `
-        - Đào tạo phát triển nhân lực <br/>
-        - Ý tưởng Marketing <br/>
-        - Xây dựng hệ thống chuyển nhượng (shop, quán) <br/>
-        - Phát triển thị trường mới
+        <ul>
+          <li>Đào tạo phát triển nhân lực</li>
+          <li>Ý tưởng Marketing</li>
+          <li>Xây dựng hệ thống chuyển nhượng (shop, quán)</li>
+          <li>Phát triển thị trường mới</li>
+        </ul>
       `,
     },
   ];

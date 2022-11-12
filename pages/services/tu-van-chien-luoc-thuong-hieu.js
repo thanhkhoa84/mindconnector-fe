@@ -83,8 +83,8 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
                     <h4 className="mb-4 inline-block rounded-lg bg-purple p-3 py-1 text-sm font-bold text-white">
                       {a.title}
                     </h4>
-                    <p
-                      className="leading-8"
+                    <div
+                      className="leading-6 [&>ul>li]:list-outside [&>ul>li+li]:mt-2 [&>ul]:list-disc [&>ul]:pl-4"
                       dangerouslySetInnerHTML={{ __html: a.body }}
                     />
                   </div>
@@ -136,26 +136,32 @@ export async function getStaticProps() {
     {
       title: `Phân tích`,
       body: `
-        - Hoạt động thương hiệu hiện tại<br/>
-        - Đối thủ<br/>
-        - Mô hình kinh doanh<br/>
-        - Tầm nhìn doanh nghiệp
+        <ul>
+          <li>Hoạt động thương hiệu hiện tại</li>
+          <li>Đối thủ</li>
+          <li>Mô hình kinh doanh</li>
+          <li>Tầm nhìn doanh nghiệp</li>
+        </ul>
       `,
     },
     {
       title: `Đề xuất`,
       body: `
-        - Gói xây dựng thương hiệu phù hợp<br/>
-        - Lộ trình thực thi
+        <ul>
+          <li>Gói xây dựng thương hiệu phù hợp</li>
+          <li>Lộ trình thực thi</li>
+        </ul>
       `,
     },
     {
       title: `Đồng hành thực thi`,
       body: `
-        - Thực hiện giám sát sản xuất<br/>
-        - Lên kế hoạch truyền thông<br/>
-        - Triển khai cùng các đối tác sáng tạo<br/>
-        - Lập khung kiểm soát chỉ tiêu truyền thông        
+        <ul>
+          <li>Thực hiện giám sát sản xuất</li>
+          <li>Lên kế hoạch truyền thông</li>
+          <li>Triển khai cùng các đối tác sáng tạo</li>
+          <li>Lập khung kiểm soát chỉ tiêu truyền thông </li>  
+        </ul>     
       `,
     },
   ];

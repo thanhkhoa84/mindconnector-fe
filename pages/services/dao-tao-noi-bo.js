@@ -83,8 +83,8 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
                     <h4 className="mb-4 inline-block rounded-lg bg-purple p-3 py-1 text-sm font-bold text-white">
                       {a.title}
                     </h4>
-                    <p
-                      className="leading-8"
+                    <div
+                      className="leading-6 [&>ul>li]:list-outside [&>ul>li+li]:mt-2 [&>ul]:list-disc [&>ul]:pl-4"
                       dangerouslySetInnerHTML={{ __html: a.body }}
                     />
                   </div>
@@ -136,24 +136,30 @@ export async function getStaticProps() {
     {
       title: `Quan sát và đánh giá`,
       body: `
-        - Tìm hiểu nhu cầu doanh nghiệp <br/>
-        - Đánh giá kỹ năng bộ phận cần đào tạo
+        <ul>
+          <li>Tìm hiểu nhu cầu doanh nghiệp</li>
+          <li>Đánh giá kỹ năng bộ phận cần đào tạo</li>
+        </ul>
       `,
     },
     {
       title: `Đề xuất`,
       body: `
-        - Các khoá học cần thiết <br/>
-        - Mô hình đào tạo
+        <ul>
+          <li>Các khoá học cần thiết </li>
+          <li>Mô hình đào tạo</li>
+        <ul/>
       `,
     },
     {
       title: `Thực hiện đào tạo `,
       body: `
-        - Thiết kế chuyên biệt cho doanh nghiệp <br/>
-        - Kiểm tra tính áp dụng của khoá học <br/>
-        - Đánh giá sau từng lớp học và điều chỉnh <br/>
-        - Tư vấn nâng cao One-on-one
+        <ul>  
+          <li>Thiết kế chuyên biệt cho doanh nghiệp </li>
+          <li>Kiểm tra tính áp dụng của khoá học </li>
+          <li>Đánh giá sau từng lớp học và điều chỉnh </li>
+          <li>Tư vấn nâng cao One-on-one
+        </ul>
       `,
     },
   ];

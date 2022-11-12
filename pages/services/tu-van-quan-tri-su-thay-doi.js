@@ -83,8 +83,8 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
                     <h4 className="mb-4 inline-block rounded-lg bg-purple p-3 py-1 text-sm font-bold text-white">
                       {a.title}
                     </h4>
-                    <p
-                      className="leading-8"
+                    <div
+                      className="leading-6 [&>ul>li]:list-outside [&>ul>li+li]:mt-2 [&>ul]:list-disc [&>ul]:pl-4"
                       dangerouslySetInnerHTML={{ __html: a.body }}
                     />
                   </div>
@@ -136,24 +136,30 @@ export async function getStaticProps() {
     {
       title: `Phân tích`,
       body: `
-        - Xác nhận mục tiêu thay đổi <br/>
-        - Cơ hội và thách thức <br/>
-        - Đánh giá sự sẵn sàng của nhân lực và tài lực
+        <ul>
+          <li>Xác nhận mục tiêu thay đổi </li>
+          <li>Cơ hội và thách thức </li>
+          <li>Đánh giá sự sẵn sàng của nhân lực và tài lực</li>
+        </ul>
       `,
     },
     {
       title: `Đề xuất`,
       body: `
-        - Mô hình quản trị sự thay đổi <br/>
-        - Lộ trình thực thi
+        <ul>
+          <li>Mô hình quản trị sự thay đổi </li>
+          <li>Lộ trình thực thi</li>
+        </ul>
       `,
     },
     {
       title: `Đồng hành thực thi`,
       body: `
-        - Thực thi với vai trò cố vấn hay trưởng dự án <br/>
-        - Triển khai đào tạo mảng cần thiết <br/>
-        - Chuyển giao công nghệ
+        <ul>
+          <li>Thực thi với vai trò cố vấn hay trưởng dự án </li>
+          <li>Triển khai đào tạo mảng cần thiết </li>
+          <li>Chuyển giao công nghệ</li>
+        </ul>
       `,
     },
   ];
