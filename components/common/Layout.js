@@ -5,7 +5,7 @@ import Router from "next/router";
 import { useState } from "react";
 import { MenuProvider } from "./MenuProvider";
 import { GlobalModal } from "./modal/GlobalModal";
-import { Navigation } from "../../data/global";
+import { Navigation } from "@/data/global";
 
 Router.onRouteChangeComplete = () => {
   window.scroll({

@@ -1,7 +1,7 @@
 import Image from "next/future/image";
-import Container from "../../components/Container";
-import Seo from "../../components/SEO";
-import Testimonial from "../../components/Testimonial";
+import Container from "@/components/Container";
+import Seo from "@/components/SEO";
+import Testimonial from "@/components/Testimonial";
 import Teachers from "@/components/common/teachers/Teachers";
 import LeadingForm from "@/components/LeadingForm";
 

@@ -1,5 +1,5 @@
 import Image from "next/future/image";
-import Container from "../../components/Container";
+import Container from "@/components/Container";
 
 const About = () => {
   return (

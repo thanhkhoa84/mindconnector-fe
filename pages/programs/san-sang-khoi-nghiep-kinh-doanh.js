@@ -2,19 +2,19 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import Image from "next/future/image";
 
-import Container from "../../components/Container";
-import Seo from "../../components/SEO";
-import QandA from "../../components/QandA";
-import CoursesCardList from "../../components/common/courses/CoursesCardList";
-import Testimonial from "../../components/Testimonial";
-import TabPanels from "../../components/TabPanels";
-import { programs } from "../../data/global";
-import CourseTeachers from "../../components/common/teachers/CourseTeachers";
+import Container from "@/components/Container";
+import Seo from "@/components/SEO";
+import QandA from "@/components/QandA";
+import CoursesCardList from "@/components/common/courses/CoursesCardList";
+import Testimonial from "@/components/Testimonial";
+import TabPanels from "@/components/TabPanels";
+import { programs } from "@/data/global";
+import CourseTeachers from "@/components/common/teachers/CourseTeachers";
 
 import {
   useGlobalModalContext,
   MODAL_TYPES,
-} from "../../components/common/modal/GlobalModal";
+} from "@/components/common/modal/GlobalModal";
 
 const seo = {
   metaTitle: "Sẵn sàng khởi nghiệp kinh doanh",

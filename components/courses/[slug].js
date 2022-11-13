@@ -1,16 +1,16 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import Image from "next/future/image";
-import Container from "../../components/Container";
-import Seo from "../../components/SEO";
-import Testimonial from "../../components/Testimonial";
-import { QandAProgram } from "../../components/QandA";
+import Container from "@/components/Container";
+import Seo from "@/components/SEO";
+import Testimonial from "@/components/Testimonial";
+import { QandAProgram } from "@/components/QandA";
 import { useEffect, useState, useRef } from "react";
 import {
   useGlobalModalContext,
   MODAL_TYPES,
-} from "../../components/common/modal/GlobalModal";
-import { Paths } from "../../data/global";
+} from "@/components/common/modal/GlobalModal";
+import { Paths } from "@/data/global";
 
 const seo = {
   metaTitle: "Mind Connector",
