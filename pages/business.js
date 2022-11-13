@@ -67,8 +67,15 @@ const Business = ({ services, teachers, testimonial }) => {
     <>
       <Seo seo={seo} />
       <main className="dark overflow-hidden bg-black pb-12">
-        <section className="dark relative flex aspect-[3/1] origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-video.png)] bg-cover bg-center bg-no-repeat py-20 xl:py-36">
-          <div className="relative px-8 py-12 text-center dark:text-white">
+        <section className="dark relative flex aspect-[1/2] aspect-[3/4] origin-center flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat sm:aspect-[2/1] lg:aspect-[3/1]">
+          <Image
+            src={`/img/bg-video.png`}
+            alt=""
+            width={1400}
+            height={698}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="relative p-8 px-8 text-center dark:text-white md:py-12">
             <h2 className="mt-8 text-3xl font-black md:text-5xl">
               Kinh nghiệm thực chiến từ chuyên gia hàng đầu
             </h2>

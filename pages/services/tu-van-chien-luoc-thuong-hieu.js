@@ -16,7 +16,14 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
     <>
       <Seo seo={seo} />
       <main className="dark overflow-hidden bg-black">
-        <section className="dark relative flex aspect-[3/1] origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-service.png)] bg-cover bg-center bg-no-repeat py-20 xl:py-36">
+        <section className="dark relative flex aspect-[1/2] aspect-[3/4] origin-center flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat sm:aspect-[2/1] lg:aspect-[3/1]">
+          <Image
+            src={`/img/bg-service.png`}
+            alt=""
+            width={1400}
+            height={698}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
           <div className="relative px-8 py-12 text-center dark:text-white">
             <h2 className="mt-8 text-3xl font-black md:text-5xl">
               Tư vấn Chiến lược Thương hiệu
