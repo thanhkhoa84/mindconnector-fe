@@ -112,9 +112,16 @@ const Business = ({ services, teachers, testimonial }) => {
           </Container>
         </section>
 
-        <section className="dark relative mt-12 flex origin-center flex-col items-center justify-center bg-black bg-[url(/img/bg-difference.png)] bg-cover bg-center bg-no-repeat py-[100px] text-center text-white xl:py-36">
-          <Container>
-            <div className="mx-auto lg:max-w-[67%]">
+        <section className="dark relative mt-12 flex origin-center flex-col items-center justify-center py-[100px] text-center text-white xl:py-36">
+          <Image
+            src={`/img/bg-difference.png`}
+            alt=""
+            width={1400}
+            height={698}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="relative">
+            <div className="mx-auto px-4 lg:max-w-[750px]">
               <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
                 Điều gì giúp chúng tôi khác biệt?
               </h1>
@@ -137,7 +144,7 @@ const Business = ({ services, teachers, testimonial }) => {
                 cùng bạn đi tìm con đường phát triển của riêng mình.
               </p>
             </div>
-          </Container>
+          </div>
         </section>
 
         <section className="invisible hidden py-12">

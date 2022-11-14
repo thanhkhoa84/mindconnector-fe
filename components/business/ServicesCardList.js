@@ -9,7 +9,7 @@ function NextArrow(props) {
   return (
     <div
       className={`
-        absolute top-1/2 right-[calc((100%-100vw)/2-30px)] z-10 mt-[5px] -mt-[20px] hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md sm:block
+        absolute top-1/2 right-[calc((100%-100vw)/2-30px)] z-10 hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md sm:block
       `}
       onClick={onClick}
       style={{}}
@@ -32,7 +32,7 @@ function PrevArrow(props) {
   return (
     <div
       className={`
-        absolute left-[calc((100%-100vw)/2-30px)] top-1/2 z-10 mt-[5px] -mt-[20px] hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md sm:block
+        absolute left-[calc((100%-100vw)/2-30px)] top-1/2 z-10 hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md sm:block
       `}
       onClick={onClick}
       style={{}}
@@ -93,7 +93,7 @@ const ServicesCardList = ({ services }) => {
     draggable: false,
     arrows: true,
     centerPadding: "0px",
-    // centerMode: true,
+    centerMode: true,
     className: "center",
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
