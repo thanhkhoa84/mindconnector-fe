@@ -16,7 +16,7 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
     <>
       <Seo seo={seo} />
       <main className="dark overflow-hidden bg-black">
-        <section className="dark relative flex aspect-[3/4] origin-center flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat sm:aspect-[2/1] lg:aspect-[3/1.2]">
+        <section className="dark relative flex aspect-[375/461] origin-center flex-col items-center justify-end overflow-hidden bg-cover bg-center bg-no-repeat sm:aspect-[2/1] sm:justify-center lg:aspect-[3/1.2]">
           <Image
             src={`/img/bg-services-thuong-hieu.png`}
             blurDataURL={`/img/bg-services-thuong-hieu.png`}
@@ -24,7 +24,16 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
             alt=""
             width={1400}
             height={698}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 hidden h-full w-full object-cover sm:block"
+          />
+          <Image
+            src={`/img/bg-services-thuong-hieu-mb.png`}
+            blurDataURL={`/img/bg-services-thuong-hieu-mb.png`}
+            placeholder="blur"
+            alt=""
+            width={375}
+            height={461}
+            className="absolute inset-0 h-full w-full object-cover sm:hidden"
           />
           <div className="relative px-8 py-12 text-center dark:text-white">
             <h2 className="mt-8 text-3xl font-black md:text-5xl">
