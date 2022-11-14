@@ -84,7 +84,7 @@ const Business = ({ services, teachers, testimonial }) => {
             height={461}
             className="absolute inset-0 h-full w-full object-cover sm:hidden"
           />
-          <div className="relative max-w-[800px] px-8 py-12 text-center dark:text-white">
+          <div className="relative max-w-[800px] px-4 py-12 text-center dark:text-white sm:px-8">
             <h2 className="[&>span:inline-block] mt-8 text-3xl font-black md:text-5xl [&>span]:whitespace-nowrap">
               Kinh nghiệm thực chiến từ <span>chuyên gia hàng đầu</span>
             </h2>
