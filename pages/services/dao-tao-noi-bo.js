@@ -18,7 +18,9 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
       <main className="dark overflow-hidden bg-black">
         <section className="dark relative flex aspect-[1/2] aspect-[3/4] origin-center flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat sm:aspect-[2/1] lg:aspect-[3/1]">
           <Image
-            src={`/img/bg-service.png`}
+            src={`/img/bg-services-dao-tao-noi-bo.png`}
+            blurDataURL={`/img/bg-services-dao-tao-noi-bo.png`}
+            placeholder="blur"
             alt=""
             width={1400}
             height={698}
@@ -31,13 +33,11 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
             <p className="mt-8">
               <button
                 onClick={() => {
-                  document
-                    .getElementById("contact")
-                    .scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                      inline: "nearest",
-                    });
+                  document.getElementById("contact").scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                    inline: "nearest",
+                  });
                 }}
                 type="button"
                 className="min-w-[280px]"
