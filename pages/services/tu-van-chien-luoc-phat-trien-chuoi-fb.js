@@ -18,8 +18,8 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
       <main className="dark overflow-hidden bg-black">
         <section className="dark relative flex aspect-[1/2] aspect-[3/4] origin-center flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat sm:aspect-[2/1] lg:aspect-[3/1]">
           <Image
-            src={`/img/bg-services-thuong-hieu.png`}
-            blurDataURL={`/img/bg-services-thuong-hieu.png`}
+            src={`/img/bg-services-fb.png`}
+            blurDataURL={`/img/bg-services-fb.png`}
             placeholder="blur"
             alt=""
             width={1400}
