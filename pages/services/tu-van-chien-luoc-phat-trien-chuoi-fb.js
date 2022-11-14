@@ -16,7 +16,7 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
     <>
       <Seo seo={seo} />
       <main className="dark overflow-hidden bg-black">
-        <section className="dark relative flex aspect-[1/2] aspect-[3/4] origin-center flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat sm:aspect-[2/1] lg:aspect-[3/1]">
+        <section className="dark relative flex aspect-[3/4] origin-center flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat sm:aspect-[2/1] lg:aspect-[3/1.2]">
           <Image
             src={`/img/bg-services-fb.png`}
             blurDataURL={`/img/bg-services-fb.png`}

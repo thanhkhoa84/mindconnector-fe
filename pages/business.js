@@ -67,7 +67,7 @@ const Business = ({ services, teachers, testimonial }) => {
     <>
       <Seo seo={seo} />
       <main className="dark overflow-hidden bg-black pb-12">
-        <section className="dark relative flex aspect-[1/2] aspect-[3/4] origin-center flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat sm:aspect-[2/1] lg:aspect-[3/1]">
+        <section className="dark relative flex aspect-[3/4] origin-center flex-col items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat sm:aspect-[2/1] lg:aspect-[3/1.2]">
           <Image
             src={`/img/bg-video.png`}
             alt=""
@@ -90,13 +90,11 @@ const Business = ({ services, teachers, testimonial }) => {
             <p className="mt-8">
               <button
                 onClick={() => {
-                  document
-                    .getElementById("contact")
-                    .scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                      inline: "nearest",
-                    });
+                  document.getElementById("contact").scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                    inline: "nearest",
+                  });
                 }}
                 type="button"
                 className="min-w-[280px]"
