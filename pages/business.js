@@ -90,7 +90,13 @@ const Business = ({ services, teachers, testimonial }) => {
             <p className="mt-8">
               <button
                 onClick={() => {
-                  document.getElementById("contact").scrollIntoView();
+                  document
+                    .getElementById("contact")
+                    .scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                      inline: "nearest",
+                    });
                 }}
                 type="button"
                 className="min-w-[280px]"
