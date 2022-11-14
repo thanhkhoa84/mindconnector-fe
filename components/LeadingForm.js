@@ -1,3 +1,4 @@
+import Image from "next/future/image";
 import axios from "axios";
 import { useForm, reset } from "react-hook-form";
 import { Clock } from "react-svg-spinners";
@@ -245,7 +246,15 @@ const LeadingForm = () => {
           </div>
         </form>
       </div>
-      <div className="invisible relative flex hidden flex-[4] items-center justify-center overflow-hidden bg-[url(/img/bg-leading-form.png)] bg-cover object-cover lg:visible lg:flex" />
+      <div className="invisible relative flex hidden aspect-[512/680] flex-[4] items-center justify-center overflow-hidden lg:visible lg:flex">
+        <Image
+          src={`/img/bg-leading-form.png`}
+          alt=""
+          width={512}
+          height={680}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </div>
     </div>
   );
 };
