@@ -167,19 +167,19 @@ export async function getStaticProps() {
     {
       title: `Đề xuất`,
       body: `
-        <ul>
+        <ul> 
           <li>Các khoá học cần thiết </li>
           <li>Mô hình đào tạo</li>
-        <ul/>
+        </ul>
       `,
     },
     {
       title: `Thực hiện đào tạo `,
       body: `
         <ul>
-          <li>Thiết kế chuyên biệt cho doanh nghiệp <li/>
-          <li>Kiểm tra tính áp dụng của khoá học <li/>
-          <li>Đánh giá sau từng lớp học và điều chỉnh <li/>
+          <li>Thiết kế chuyên biệt cho doanh nghiệp </li>
+          <li>Kiểm tra tính áp dụng của khoá học </li>
+          <li>Đánh giá sau từng lớp học và điều chỉnh </li>
           <li>Tư vấn nâng cao One-on-one
         </ul>  
       `,
