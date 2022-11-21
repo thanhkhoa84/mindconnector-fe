@@ -95,7 +95,7 @@ const MobileNavFooter = () => {
   const navlinks = useMenuContext();
   return (
     <ul
-      className={`mt-8 flex flex-col flex-wrap gap-8 md:gap-7 lg:flex-row lg:gap-x-16`}
+      className={`mt-8 flex flex-col flex-wrap gap-8 md:flex-row md:gap-12 lg:gap-8 lg:gap-x-16`}
     >
       {navlinks.map((link, index) => {
         return <MobileNavItem link={link} index={index} key={index} />;

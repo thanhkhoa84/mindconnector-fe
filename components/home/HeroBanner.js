@@ -52,8 +52,8 @@ function PrevArrow(props) {
 }
 
 const Slide = ({ index, ...props }) => {
-  // let ImageUrl = getStrapiMedia(props.Image);
-  let ImageUrl = props.Image.data.attributes.url;
+  let ImageUrl = getStrapiMedia(props.Image);
+  // let ImageUrl = props.Image.data.attributes.url;
   return (
     <div className="relative mx-auto my-0">
       <div className="leading-[1]">
@@ -107,7 +107,7 @@ const HeroBanner = ({ slides, ...props }) => {
 
   return (
     <section
-      className={`max-auto relative mx-auto overflow-hidden bg-[#FFF7ED]`}
+      className={`max-auto home-banner home-banner relative mx-auto overflow-hidden bg-[#FFF7ED]`}
     >
       <h4 className="sr-only">Tin tức mới nhất</h4>
       <Slider {...settings}>

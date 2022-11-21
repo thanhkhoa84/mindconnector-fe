@@ -21,7 +21,7 @@ const Footer = ({ position, navlinks }) => {
       </div>
       <div className="relative py-12">
         <Container>
-          <div className="flex flex-row justify-center lg:justify-start">
+          <div className="flex flex-row justify-center md:justify-start">
             <LogoMobile />
           </div>
 

@@ -8,8 +8,9 @@ import About from "@/components/home/About";
 import Seo from "@/components/SEO";
 import Container from "@/components/Container";
 import HeroBanner from "@/components/home/HeroBanner";
+import DynamicZone from "@/components/DynamicZone";
 
-export default function Home({ slides, questions, teachers }) {
+export default function Home({ slides, questions, teachers, content }) {
   const seo = {
     metaTitle: "Trang chủ",
     metaDescription:
@@ -22,7 +23,8 @@ export default function Home({ slides, questions, teachers }) {
     <>
       <Seo seo={seo} />
       <main className="overflow-hidden">
-        <section className="home-banner">
+        <DynamicZone slices={content} />
+        {/* <section className="home-banner">
           <HeroBanner slides={slides} />
         </section>
 
@@ -41,13 +43,13 @@ export default function Home({ slides, questions, teachers }) {
             </h1>
             <Teachers />
           </Container>
-        </section>
+        </section> */}
 
-        <section>
+        {/* <section>
           <Container>
-            <QandA questions={questions}></QandA>
+            <QandA questions={questions} />
           </Container>
-        </section>
+        </section> */}
       </main>
     </>
   );
@@ -112,52 +114,57 @@ export async function getServerSideProps() {
     },
   ];
 
-  // let query = gql`
-  //   query GetHomepage {
-  //     homepage {
-  //       data {
-  //         attributes {
-  //           Content {
-  //             __typename
-  //             ... on ComponentSectionHeroSlider {
-  //               HeroSlider {
-  //                 Image {
-  //                   data {
-  //                     attributes {
-  //                       url
-  //                     }
-  //                   }
-  //                 }
-  //                 Title
-  //                 Body
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `;
+  let query = gql`
+    query GetHomepage {
+      homepage {
+        data {
+          attributes {
+            Content {
+              ... on ComponentSectionHeroSlider {
+                HeroSlider {
+                  Title
+                  Body
+                  Image {
+                    data {
+                      attributes {
+                        url
+                      }
+                    }
+                  }
+                }
+              }
+              ... on ComponentSectionQa {
+                QA {
+                  Question
+                  Answer
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
 
-  // try {
-  //   const { data } = await client.query({
-  //     query,
-  //   });
-  //   console.log(data);
-  // } catch (error) {
-  //   console.log(error);
-  // }
+  try {
+    const { data } = await client.query({
+      query,
+    });
+    console.log(data.homepage.data.attributes.Content);
+    return {
+      props: {
+        content: data.homepage.data.attributes.Content,
+        slides,
+        questions,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+  }
 
   // let { teachers } = data.teachers.data;
 
   // let teachersList = teachers.filter((t) => {
   //   return t.attributes.featured == true;
   // });
-
-  return {
-    props: {
-      slides,
-      questions,
-    },
-  };
 }
