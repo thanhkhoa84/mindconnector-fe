@@ -1,4 +1,15 @@
+const siteUrl = process.env.SITE_URL || "https://mindconnector.com.vn";
+
 module.exports = {
-  siteUrl: process.env.SITE_URL || "https://mindconnector.com.vn",
+  siteUrl,
   generateRobotsTxt: true,
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: "*",
+        allow: "/",
+      },
+    ],
+    exclude: [],
+  },
 };
