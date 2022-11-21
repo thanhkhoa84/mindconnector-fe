@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://mindconnector.com.vn
+
+# Sitemaps
+Sitemap: https://mindconnector.com.vn/sitemap.xml
