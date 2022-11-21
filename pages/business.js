@@ -60,7 +60,7 @@ const Business = ({ services, teachers, testimonial }) => {
   const seo = {
     metaTitle: "Dành cho doanh nghiệp",
     metaDescription:
-      "Mind Connector là một mạng lưới của các nhà tư vấn kinh doanh cùng các giảng viên vốn là các lãnh đạo và chuyên gia hàng đầu trong nhiều lĩnh vực khác nhau. Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá nhân phát triển và tăng trưởng mạnh mẽ trong tương lai",
+      "Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá nhân phát triển và tăng trưởng mạnh mẽ trong tương lai",
     keywords: [
       "mind connector",
       "mindconnector",
