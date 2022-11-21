@@ -9,6 +9,7 @@ const Title = React.forwardRef(({ onClick, href }, ref) => {
       onClick={onClick}
       ref={ref}
       className="inline-block leading-[0] transition-all"
+      title="Mind Connector"
     >
       <Image
         src="/img/logo.png"

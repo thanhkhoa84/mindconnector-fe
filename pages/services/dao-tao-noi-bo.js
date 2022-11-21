@@ -9,6 +9,15 @@ const seo = {
   metaTitle: "Đào tạo nội bộ (Corporate Training)",
   metaDescription:
     "Mind Connector là một mạng lưới của các nhà tư vấn kinh doanh cùng các giảng viên vốn là các lãnh đạo và chuyên gia hàng đầu trong nhiều lĩnh vực khác nhau. Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá nhân phát triển và tăng trưởng mạnh mẽ trong tương lai",
+  keywords: [
+    "mind connector",
+    "kết nối",
+    "tầm nhìn",
+    "training",
+    "mạng lưới",
+    "doanh nghiệp",
+    "cá nhân",
+  ],
 };
 
 const CoursePost = ({ approachs, teachers, testimonial }) => {

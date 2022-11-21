@@ -23,7 +23,9 @@ const DropdownMenu = ({ items, dropdown, dropdId }) => {
               activeClassName="text-purple"
               scroll={false}
             >
-              <a className="hover:text-purple">{item.name}</a>
+              <a className="hover:text-purple" title={item.name}>
+                {item.name}
+              </a>
             </ActiveLink>
           </li>
         );
@@ -86,7 +88,11 @@ const NavItem = ({ link, index }) => {
       {link.submenus ? (
         <>
           <ActiveLink href={link.path} activeClassName="text-purple">
-            <a onClick={onClickHandler} className="hover:text-purple">
+            <a
+              onClick={onClickHandler}
+              className="hover:text-purple"
+              title={link.name}
+            >
               {link.name}{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"

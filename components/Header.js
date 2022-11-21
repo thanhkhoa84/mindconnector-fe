@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { NavBar, MobileNav } from "./HeaderNavigation";
-import Container from "./Container";
-import { Logo } from "./Logo";
+import { NavBar, MobileNav } from "@/components/HeaderNavigation";
+import Container from "@/components/Container";
+import { Logo } from "@/components/Logo";
 
 const Header = ({ ...navlinks }) => {
   let [toggle, setToggle] = useState(false);
