@@ -14,9 +14,11 @@ const Footer = ({ position, navlinks }) => {
         <Image
           alt=""
           src="/img/bg-footer.png"
+          blurDataURL={"/img/bg-footer.png"}
+          placeholder="blur"
           width={1400}
           height={320}
-          className="absolute inset-0 h-full w-full"
+          className="absolute inset-0 h-full w-full object-cover"
         />
       </div>
       <div className="relative py-12">
