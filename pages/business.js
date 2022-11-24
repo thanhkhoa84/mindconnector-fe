@@ -128,9 +128,9 @@ const Business = ({ services, teachers, testimonial }) => {
 
         <section className="mt-8 overflow-hidden py-16">
           <Container>
-            <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+            <h2 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
               Dịch vụ của chúng tôi
-            </h1>
+            </h2>
             <div className="mt-12">
               <ServicesCardList services={services} />
             </div>
@@ -147,9 +147,9 @@ const Business = ({ services, teachers, testimonial }) => {
           />
           <div className="relative">
             <div className="mx-auto px-4 lg:max-w-[750px]">
-              <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
+              <h2 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
                 Điều gì giúp chúng tôi khác biệt?
-              </h1>
+              </h2>
               <Image
                 src="/img/icon-difference.svg"
                 alt=""
@@ -157,10 +157,10 @@ const Business = ({ services, teachers, testimonial }) => {
                 height={120}
                 className="mt-8 inline-block"
               />
-              <h2 className="mt-8 text-[25px] font-black text-[#F5B0C5] md:text-4xl">
+              <h3 className="mt-8 text-[25px] font-black text-[#F5B0C5] md:text-4xl">
                 THIẾT KẾ GIẢI PHÁP CHIẾN LƯỢC CHUYÊN BIỆT{" "}
                 <span className="xs:inline-block">DÀNH CHO DOANH NGHIỆP</span>
-              </h2>
+              </h3>
               <p className="mt-4">
                 Dựa vào từng nhu cầu, mong muốn riêng biệt của từng nhà lãnh đạo
                 doanh nghiệp và tổ chức, Mind Connector với đội ngũ chuyên gia
@@ -174,9 +174,9 @@ const Business = ({ services, teachers, testimonial }) => {
 
         <section className="invisible hidden py-12">
           <Container>
-            <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
+            <h2 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
               Cảm nhận của khách hàng
-            </h1>
+            </h2>
             <p className="mt-4">
               Hơn 200 doanh nghiệp đang đồng hành cùng Mind Connector
             </p>
@@ -188,9 +188,9 @@ const Business = ({ services, teachers, testimonial }) => {
 
         <section className="py-12 dark:text-white">
           <Container>
-            <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+            <h2 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
               Đội ngũ chuyên gia
-            </h1>
+            </h2>
             <Teachers data={teachers} />
           </Container>
         </section>

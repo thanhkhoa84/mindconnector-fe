@@ -7,12 +7,12 @@ const ValueSection = () => {
   return (
     <section className="bg-[#FFF7ED] pt-[4em]">
       <Container>
-        <h1
+        <h2
           className={`mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white md:max-w-[80%]`}
         >
           Mind Connector cung cấp các chương trình đào tạo cho sinh viên và
           doanh nghiệp
-        </h1>
+        </h2>
         <div
           className={`mt-[3em] mb-[4em] flex flex-col justify-between gap-6 self-stretch pb-[1em] xs:flex-row xs:gap-4 lg:items-center lg:gap-12 lg:self-auto`}
         >

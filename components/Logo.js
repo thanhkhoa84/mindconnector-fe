@@ -41,9 +41,9 @@ Logo.displayName = "Logo";
 
 const LogoMobile = React.forwardRef(({ onClick, href }, ref) => {
   return (
-    <h1 className="block select-none text-center text-xl font-black leading-none text-purple md:text-2xl">
+    <h2 className="block select-none text-center text-xl font-black leading-none text-purple md:text-2xl">
       Mind Connector
-    </h1>
+    </h2>
   );
 });
 LogoMobile.displayName = "LogoMobile";

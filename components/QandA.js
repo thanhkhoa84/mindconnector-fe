@@ -2,10 +2,10 @@ const QandA = ({ questions }) => {
   return (
     <section className="overflow-hidden bg-white py-14 px-0">
       <header className="text-center lg:float-left lg:w-3/12 lg:pt-4 lg:text-left">
-        <h1 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">
+        <h2 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">
           Câu hỏi <br className="hidden lg:inline" />
           thường gặp
-        </h1>
+        </h2>
       </header>
       <div className="lg:float-right lg:w-8/12">
         {questions &&
@@ -33,9 +33,9 @@ const QandAProgram = ({ questions }) => {
   return (
     <section className="overflow-hidden bg-white py-14 px-0">
       <header className="text-center md:text-left">
-        <h1 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">
+        <h2 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">
           Câu hỏi thường gặp
-        </h1>
+        </h2>
       </header>
       <div className="">
         {questions &&

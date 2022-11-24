@@ -46,9 +46,9 @@ export default function Home({ slides, questions, teachers }) {
 
         <section className={`relative bg-[#FFF7ED] py-12`}>
           <Container>
-            <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+            <h2 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
               Đội ngũ giảng viên
-            </h1>
+            </h2>
             <Teachers />
           </Container>
         </section>

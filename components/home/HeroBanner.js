@@ -58,8 +58,6 @@ const Slide = ({ index, ...props }) => {
     <div className="relative mx-auto my-0">
       <div className="leading-[1]">
         <Image
-          // src={props.Image.data.attributes.url}
-          // blurDataURL={props.Image.data.attributes.url}
           src={ImageUrl}
           blurDataURL={ImageUrl}
           placeholder="blur"
@@ -78,9 +76,9 @@ const Slide = ({ index, ...props }) => {
         <div
           className={` z-10 rounded-xl bg-white bg-opacity-80 px-[1em] pt-[2em] pb-[2em] lg:px-8 lg:py-8 lg:shadow-xl`}
         >
-          <h2 className="mb-[0.5em] text-[28px] font-black leading-none md:text-3xl">
+          <h3 className="mb-[0.5em] text-[28px] font-black leading-none md:text-3xl">
             {props.Title}
-          </h2>
+          </h3>
           <p
             className="line-clamp-12 leading-6"
             dangerouslySetInnerHTML={{ __html: props.Body }}
@@ -109,7 +107,7 @@ const HeroBanner = ({ slides, ...props }) => {
     <section
       className={`max-auto relative mx-auto overflow-hidden bg-[#FFF7ED]`}
     >
-      <h4 className="sr-only">Tin tức mới nhất</h4>
+      <h2 className="sr-only">Tin tức mới nhất</h2>
       <Slider {...settings}>
         {slides.map(({ ...props }, index) => {
           return (
