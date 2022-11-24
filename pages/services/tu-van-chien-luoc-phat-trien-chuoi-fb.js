@@ -129,9 +129,9 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
 
         <section className="invisible hidden py-12 dark:text-white">
           <Container>
-            <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
+            <h2 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
               Cảm nhận của khách hàng
-            </h1>
+            </h2>
             <p className="mt-4 text-center">
               Hơn 200 doanh nghiệp đang đồng hành cùng{" "}
               <span className="inline-block whitespace-nowrap">
@@ -146,9 +146,9 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
 
         <section className="py-12 dark:text-white">
           <Container>
-            <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+            <h2 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
               Đội ngũ chuyên gia
-            </h1>
+            </h2>
             <Teachers data={teachers} />
           </Container>
         </section>
