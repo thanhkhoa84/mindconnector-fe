@@ -18,6 +18,9 @@ const nextConfig = {
       "/business": { page: "/business" },
     };
   },
+  env: {
+    SITE_URL: process.env.SITE_URL,
+  },
 };
 
 module.exports = nextConfig
