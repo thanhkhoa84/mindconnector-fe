@@ -1,12 +1,20 @@
 import Head from 'next/head';
 import Link from "next/link";
 import Image from "next/future/image";
+import dynamic from "next/dynamic";
 import Container from "@/components/Container";
 import Seo from "@/components/SEO";
 import LogoList from "@/components/LogoList";
-import Teachers from "@/components/common/teachers/Teachers";
+// import Teachers from "@/components/common/teachers/Teachers";
 import StudentCardList from "@/components/common/courses/StudentCardList";
 import { programs } from "@/data/global";
+
+const Teachers = dynamic(
+  () => import("@/components/common/teachers/Teachers"),
+  {
+    suspense: true,
+  }
+);
 
 import {
   useGlobalModalContext,

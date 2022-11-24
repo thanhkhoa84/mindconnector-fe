@@ -10,12 +10,22 @@ import {
   MODAL_TYPES,
 } from "@/components/common/modal/GlobalModal";
 import Container from "@/components/Container";
-import QandA from "@/components/QandA";
+// import QandA from "@/components/QandA";
 import Seo from "@/components/SEO";
 import ServicesCardList from "@/components/business/ServicesCardList";
-import Teachers from "@/components/common/teachers/Teachers";
+// import Teachers from "@/components/common/teachers/Teachers";
 import Testimonial from "@/components/Testimonial";
 import LeadingForm from "@/components/LeadingForm";
+
+const QandA = dynamic(() => import("@/components/QandA"), {
+  suspense: true,
+});
+const Teachers = dynamic(
+  () => import("@/components/common/teachers/Teachers"),
+  {
+    suspense: true,
+  }
+);
 
 const tabs = [
   {

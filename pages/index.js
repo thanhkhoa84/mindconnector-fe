@@ -1,13 +1,33 @@
 import { gql } from "@apollo/client";
 import client from "@/lib/apolloClient";
+import dynamic from "next/dynamic";
 
-import QandA from "@/components/QandA";
-import ValueSection from "@/components/home/ValueSection";
-import Teachers from "@/components/common/teachers/Teachers";
-import About from "@/components/home/About";
 import Seo from "@/components/SEO";
+// import HeroBanner from "@/components/home/HeroBanner";
+// import About from "@/components/home/About";
+// import ValueSection from "@/components/home/ValueSection";
+// import Teachers from "@/components/common/teachers/Teachers";
+// import QandA from "@/components/QandA";
 import Container from "@/components/Container";
-import HeroBanner from "@/components/home/HeroBanner";
+
+const HeroBanner = dynamic(() => import("@/components/home/HeroBanner"), {
+  suspense: true,
+});
+const About = dynamic(() => import("@/components/home/About"), {
+  suspense: true,
+});
+const ValueSection = dynamic(() => import("@/components/home/ValueSection"), {
+  suspense: true,
+});
+const Teachers = dynamic(
+  () => import("@/components/common/teachers/Teachers"),
+  {
+    suspense: true,
+  }
+);
+const QandA = dynamic(() => import("@/components/QandA"), {
+  suspense: true,
+});
 
 export default function Home({ slides, questions, teachers }) {
   const seo = {
@@ -63,7 +83,7 @@ export default function Home({ slides, questions, teachers }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   /** TODO: get real QaA from backend */
   const questions = [
     {

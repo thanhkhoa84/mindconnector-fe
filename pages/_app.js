@@ -33,7 +33,6 @@ MyApp.getInitialProps = async (ctx) => {
   // Pass the data to our page via props
   // return { ...appProps, pageProps: { global: globalRes.data } };
   const { locale, defaultLocale, asPath } = ctx;
-  console.log(locale);
   return {
     ...appProps,
     pageProps: {

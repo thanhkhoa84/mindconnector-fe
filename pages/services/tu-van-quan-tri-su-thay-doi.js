@@ -1,9 +1,17 @@
 import Image from "next/future/image";
+import dynamic from "next/dynamic";
 import Container from "@/components/Container";
 import Seo from "@/components/SEO";
 import Testimonial from "@/components/Testimonial";
-import Teachers from "@/components/common/teachers/Teachers";
+// import Teachers from "@/components/common/teachers/Teachers";
 import LeadingForm from "@/components/LeadingForm";
+
+const Teachers = dynamic(
+  () => import("@/components/common/teachers/Teachers"),
+  {
+    suspense: true,
+  }
+);
 
 const seo = {
   metaTitle: "Tư vấn quản trị sự thay đổi (Change Management)",

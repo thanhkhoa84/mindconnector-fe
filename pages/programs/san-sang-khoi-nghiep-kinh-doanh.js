@@ -4,12 +4,16 @@ import Image from "next/future/image";
 
 import Container from "@/components/Container";
 import Seo from "@/components/SEO";
-import QandA from "@/components/QandA";
+// import QandA from "@/components/QandA";
 import CoursesCardList from "@/components/common/courses/CoursesCardList";
 import Testimonial from "@/components/Testimonial";
 import TabPanels from "@/components/TabPanels";
 import { programs } from "@/data/global";
 import CourseTeachers from "@/components/common/teachers/CourseTeachers";
+
+const QandA = dynamic(() => import("@/components/QandA"), {
+  suspense: true,
+});
 
 import {
   useGlobalModalContext,
