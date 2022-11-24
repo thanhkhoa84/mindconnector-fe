@@ -14,7 +14,7 @@ const Teachers = dynamic(
 );
 
 const seo = {
-  metaTitle: "Tư vấn quản trị sự thay đổi (Change Management)",
+  metaTitle: "Dịch vụ Tư vấn quản trị sự thay đổi (Change Management)",
   metaDescription:
     "Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá nhân phát triển và tăng trưởng mạnh mẽ trong tương lai",
   keywords: [

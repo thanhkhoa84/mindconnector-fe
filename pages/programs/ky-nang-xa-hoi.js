@@ -21,7 +21,7 @@ import {
 } from "@/components/common/modal/GlobalModal";
 
 const seo = {
-  metaTitle: "Kỹ năng xã hội",
+  metaTitle: "Chương trình Kỹ năng xã hội",
   metaDescription:
     "Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá nhân phát triển và tăng trưởng mạnh mẽ trong tương lai",
   keywords: [

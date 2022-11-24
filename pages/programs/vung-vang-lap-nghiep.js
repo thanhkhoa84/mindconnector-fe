@@ -21,7 +21,7 @@ import {
 } from "@/components/common/modal/GlobalModal";
 
 const seo = {
-  metaTitle: "Vững vàng lập nghiệp",
+  metaTitle: "Chương trình Vững vàng lập nghiệp",
   metaDescription:
     "Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá nhân phát triển và tăng trưởng mạnh mẽ trong tương lai",
   keywords: [
