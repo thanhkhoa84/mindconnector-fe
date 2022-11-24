@@ -34,6 +34,11 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
     <>
       <Seo seo={seo} />
       <main className="dark overflow-hidden bg-black">
+        <div className="sr-only">
+          <h1>
+            Mind Connector - Dịch vụ Tư vấn và Thực thi Sales & Marketing (MSO)
+          </h1>
+        </div>
         <section className="dark relative flex aspect-[375/461] origin-center flex-col items-center justify-end overflow-hidden bg-cover bg-center bg-no-repeat sm:aspect-[2/1] sm:justify-center lg:aspect-[3/1.2]">
           <Image
             src={`/img/bg-services-mso.png`}

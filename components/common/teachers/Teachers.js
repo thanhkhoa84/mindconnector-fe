@@ -24,9 +24,9 @@ const TeacherCard = ({ entitled, name, imgUrl, title, socials }) => {
         />
       </div>
       <div className="mt-4 flex w-full flex-col text-center">
-        <h4 className="m-0 text-xs leading-none text-purple dark:text-white">
+        <div className="m-0 text-xs leading-none text-purple dark:text-white">
           {entitled}
-        </h4>
+        </div>
         <h3 className="m-0 text-sm font-black leading-none text-purple dark:text-white md:text-base">
           {name}
         </h3>

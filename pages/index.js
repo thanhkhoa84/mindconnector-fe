@@ -52,6 +52,9 @@ export default function Home({ slides, questions, teachers }) {
     <>
       <Seo seo={seo} />
       <main className="overflow-hidden">
+        <div className="sr-only">
+          <h1>Mind Connector - Trang chủ</h1>
+        </div>
         <section className="home-banner">
           <HeroBanner slides={slides} />
         </section>

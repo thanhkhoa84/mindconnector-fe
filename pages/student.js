@@ -56,6 +56,9 @@ const Student = ({ questions, logoslist, programs }) => {
       <>
         <Seo seo={seo} />
         <main className="overflow-hidden">
+          <div className="sr-only">
+            <h1>Mind Connector - Dành cho sinh viên</h1>
+          </div>
           <section>
             <header className={`relative bg-[#F9F1DD] py-[3em]`}>
               <div className="absolute inset-0">

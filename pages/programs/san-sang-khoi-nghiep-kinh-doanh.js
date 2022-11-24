@@ -91,13 +91,11 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
 
   return (
     <>
-      <Head>
-        <title>Mind Connector</title>
-        <meta name="description" content="Mind Connector" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Seo seo={seo} />
       <main className="overflow-hidden">
+        <div className="sr-only">
+          <h1>Mind Connector - Chương trình Sẵn sàng khởi nghiệp kinh doanh</h1>
+        </div>
         <div className="relative bg-[#F7F3F4] py-[3em] text-center md:py-[4em] md:pb-[0]">
           <div className="absolute inset-0">
             <Image
@@ -111,10 +109,10 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
           </div>
           <div className="relative">
             <Container>
-              <h4 className="font-bold text-gray">Chương trình</h4>
-              <h1 className="leading-0 text-3xl font-black uppercase md:text-6xl">
+              <div className="font-bold text-gray">Chương trình</div>
+              <h2 className="leading-0 text-3xl font-black uppercase md:text-6xl">
                 Sẵn sàng khởi nghiệp kinh doanh
-              </h1>
+              </h2>
               <p className="mt-4">
                 “Khởi nghiệp thuận lợi, chạm đỉnh vinh quang”
               </p>
