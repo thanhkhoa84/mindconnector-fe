@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useMenuContext } from "../components/common/MenuProvider";
 
 // Footer navigation
-const MobileDropdown = ({ items, dropdown, dropdId }) => {
+const MobileDropdown = ({ items, dropdId }) => {
   return (
     <ul
       id={`mobile-${dropdId}`}
@@ -32,38 +32,7 @@ const MobileDropdown = ({ items, dropdown, dropdId }) => {
 };
 
 const MobileNavItem = ({ link, index }) => {
-  const [dropdown, setDropdown] = useState(false);
-  const [mobile, setMobile] = useState(false);
-  const router = useRouter();
   let ref = useRef();
-
-  const handleRouteChange = (url, { shallow }) => {
-    setDropdown((prev) => !prev);
-  };
-
-  const onClickHandler = (e) => {
-    if (window.innerWidth >= 1024) return;
-    setDropdown((dropdown) => !dropdown);
-  };
-
-  const handleResize = () => {
-    if (window.innerWidth >= 1024) {
-      setMobile(false);
-    } else {
-      setMobile(true);
-    }
-  };
-
-  useEffect(() => {
-    if (window.innerWidth >= 1024) setDropdown(true);
-    router.events.on("hashChangeStart", handleRouteChange);
-    router.events.on("routeChangeStart", handleRouteChange);
-
-    return () => {
-      router.events.off("routeChangeStart", handleRouteChange);
-      router.events.off("hashChangeStart", handleRouteChange);
-    };
-  }, [dropdown, router.events]);
 
   return (
     <li
@@ -78,11 +47,7 @@ const MobileNavItem = ({ link, index }) => {
       {link.submenus ? (
         <>
           <Link href={link.path}>{link.name}</Link>
-          <MobileDropdown
-            dropdId={`dropdown-${index}`}
-            items={link.submenus}
-            dropdown={dropdown}
-          />
+          <MobileDropdown dropdId={`dropdown-${index}`} items={link.submenus} />
         </>
       ) : (
         <Link href={link.path}>{link.name}</Link>

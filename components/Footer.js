@@ -7,7 +7,7 @@ let MobileNavFooter = dynamic(() => import("./MobileNavFooter"), {
   ssr: false,
 });
 
-const Footer = ({ position, navlinks }) => {
+const Footer = () => {
   return (
     <footer className="relative bg-[#F7F3F4] px-0">
       <div className="absolute inset-0">
@@ -28,7 +28,7 @@ const Footer = ({ position, navlinks }) => {
           </div>
 
           <div>
-            <MobileNavFooter navlinks={navlinks} position="footer" />
+            <MobileNavFooter />
           </div>
 
           {/* <div className="mt-8 md:-mt-[40px]">
