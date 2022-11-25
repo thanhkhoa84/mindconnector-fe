@@ -14,7 +14,7 @@ const Teachers = dynamic(
 );
 
 const seo = {
-  metaTitle: "Dịch vụ Tư vấn chiến lược phát triển chuỗi F&B",
+  metaTitle: "Tư vấn chiến lược phát triển chuỗi F&B",
   metaDescription:
     "Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá nhân phát triển và tăng trưởng mạnh mẽ trong tương lai",
   keywords: [
