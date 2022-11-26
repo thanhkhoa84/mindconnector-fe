@@ -23,6 +23,7 @@ function NextArrow(props) {
         placeholder="blur"
         alt=""
         className="absolute top-0 left-0"
+        aria-hidden={true}
       />
     </div>
   );
@@ -36,7 +37,6 @@ function PrevArrow(props) {
         absolute top-[calc(100%*1396/2800/2)] -left-[40px] z-10 h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:top-1/2 lg:block
       `}
       onClick={onClick}
-      style={{}}
     >
       <Image
         src="/img/btn-prev.png"
@@ -46,6 +46,7 @@ function PrevArrow(props) {
         placeholder="blur"
         alt=""
         className="absolute top-0 right-0"
+        aria-hidden={true}
       />
     </div>
   );

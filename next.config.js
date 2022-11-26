@@ -8,16 +8,6 @@ const nextConfig = {
     deviceSizes: [375, 640, 750, 992, 1140, 1920],
     formats: ["image/avif", "image/webp"],
   },
-  exportPathMap: async function (
-    defaultPathMap,
-    { dev, dir, outDir, distDir, buildId }
-  ) {
-    return {
-      "/": { page: "/" },
-      "/student": { page: "/student" },
-      "/business": { page: "/business" },
-    };
-  },
   env: {
     SITE_URL: process.env.SITE_URL,
   },

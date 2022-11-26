@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
-import { useMenuContext } from "../components/common/MenuProvider";
+import { useRef } from "react";
+import { useMenuContext } from "@/context/MenuProvider";
 
 // Footer navigation
 const MobileDropdown = ({ items, dropdId }) => {

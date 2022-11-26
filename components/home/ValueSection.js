@@ -22,7 +22,10 @@ const ValueSection = () => {
               relative mt-[1.5em] ml-0 -mr-[2em] flex max-w-full flex-col justify-between rounded-2xl border-4 border-white bg-gradient-to-br from-[#FFF4EB] via-[#FFE4D5] to-[#FDD2D3] px-4 pt-[2.5em] pb-4 shadow-lg lg:my-[1.5em] lg:w-[55%] lg:pr-[2em]
             `}
             >
-              <span className="absolute -top-[30px] block w-[66px]">
+              <span
+                className="absolute -top-[30px] block w-[66px]"
+                aria-hidden={true}
+              >
                 <Image
                   src="/img/icon-value-for-student.png"
                   className="block"
@@ -33,10 +36,10 @@ const ValueSection = () => {
                   alt=""
                 />
               </span>
-              <h2 className="text-[19px] font-black leading-6 md:text-[22px]">
+              <h3 className="text-[19px] font-black leading-6 md:text-[22px]">
                 Dành cho <br className="md:hidden lg:inline" />
                 sinh viên
-              </h2>
+              </h3>
               <p className="mt-4 hidden lg:block">
                 Xây dựng nền móng vững chắc với các kỹ năng quan trọng để sẵn
                 sàng theo đuổi và thành công trong công việc hằng mong muốn.
@@ -68,7 +71,10 @@ const ValueSection = () => {
               relative mt-[1.5em] ml-0 -mr-[2em] flex max-w-full flex-col justify-between rounded-2xl border-4 border-white bg-gradient-to-br from-[#FFF4EB] via-[#FFE4D5] to-[#FDD2D3] px-4 pt-[2.5em] pb-4 shadow-lg lg:my-[1.5em] lg:w-[55%] lg:pr-[2em]
             `}
             >
-              <span className="absolute -top-[30px] block w-[66px]">
+              <span
+                className="absolute -top-[30px] block w-[66px]"
+                aria-hidden={true}
+              >
                 <Image
                   src="/img/icon-value-for-business.png"
                   className="block"
@@ -79,10 +85,10 @@ const ValueSection = () => {
                   alt=""
                 />
               </span>
-              <h2 className="text-[19px] font-black leading-6 md:text-[22px]">
+              <h3 className="text-[19px] font-black leading-6 md:text-[22px]">
                 Dành cho <br className="md:hidden lg:inline" />
                 doanh nghiệp
-              </h2>
+              </h3>
               <p className="mt-4 hidden lg:block">
                 Đào tạo năng lực của nhân viên để doanh nghiệp không chỉ có một
                 nguồn nhân lực chất lượng, mà còn có thể lớn mạnh hơn từng ngày.

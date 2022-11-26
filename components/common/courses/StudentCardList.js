@@ -68,6 +68,7 @@ function NextArrow(props) {
         placeholder="blur"
         alt=""
         className="absolute top-0 left-0"
+        aria-hidden={true}
       />
     </div>
   );
@@ -91,6 +92,7 @@ function PrevArrow(props) {
         placeholder="blur"
         alt=""
         className="absolute top-0 right-0"
+        aria-hidden={true}
       />
     </div>
   );

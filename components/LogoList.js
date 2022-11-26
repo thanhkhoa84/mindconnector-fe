@@ -3,11 +3,11 @@ import Image from "next/future/image";
 
 const LogoList = ({ backgroundColor, title, list }) => {
   let images = [
-    "/img/logo-valoma.png",
-    "/img/logo-v.png",
-    "/img/logo-gdnn.png",
-    "/img/logo-vilas.png",
-    "/img/logo-gli.png",
+    { url: "/img/logo-valoma.png", alt: "Valoma" },
+    { url: "/img/logo-v.png", alt: "Valocen" },
+    { url: "/img/logo-gdnn.png", alt: "GDNN" },
+    { url: "/img/logo-vilas.png", alt: "Vilas" },
+    { url: "/img/logo-gli.png", alt: "GLI" },
   ];
   return (
     <div
@@ -24,20 +24,19 @@ const LogoList = ({ backgroundColor, title, list }) => {
           </header>
           <ul className="flex flex-row flex-wrap justify-between">
             {images.map((li, index) => {
-              let imgSrc = images[index];
               return (
                 <li
                   key={`logolist-${index}`}
-                  className="lg:px-[10px]] relative flex w-1/2 items-center justify-center px-4 py-8 duration-500 sm:w-1/6 lg:py-[20px]"
+                  className="flex w-1/2 items-center justify-center p-20 duration-500 md:w-1/5 lg:p-[30px]"
                 >
                   <Image
-                    src={imgSrc}
-                    alt=""
-                    blurDataURL={imgSrc}
+                    src={images[index].url}
+                    alt={images[index].alt}
+                    blurDataURL={images[index].url}
                     placeholder="blur"
                     width={200}
                     height={200}
-                    className="mx-auto h-full max-h-8 w-full max-w-full object-contain"
+                    className="mx-auto h-full max-h-10 w-full max-w-full object-contain"
                   />
                 </li>
               );

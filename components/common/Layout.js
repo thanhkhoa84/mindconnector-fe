@@ -2,8 +2,8 @@ import Header from "../Header";
 import Footer from "../Footer";
 import Head from "next/head";
 import Router from "next/router";
-import { MenuProvider } from "./MenuProvider";
-import { GlobalModal } from "./modal/GlobalModal";
+import { MenuProvider } from "@/context/MenuProvider";
+import { GlobalModal } from "@/components/common/modal/GlobalModal";
 import { Navigation } from "@/data/global";
 
 Router.onRouteChangeComplete = () => {

@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import Image from "next/future/image";
 import ActiveLink from "./ActiveLink";
-import { useMenuContext } from "@/components/common/MenuProvider";
+import { useMenuContext } from "@/context/MenuProvider";
 
 // Desktop Navigation
 const DropdownMenu = ({ items, dropdown, dropdId }) => {
