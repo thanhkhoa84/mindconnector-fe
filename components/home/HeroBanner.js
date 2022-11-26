@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { getStrapiMedia } from "../../lib/media";
 
 function NextArrow(props) {
-  const { className, onClick } = props;
+  const { onClick } = props;
   return (
     <div
       className={`
@@ -30,7 +30,7 @@ function NextArrow(props) {
 }
 
 function PrevArrow(props) {
-  const { className, onClick } = props;
+  const { onClick } = props;
   return (
     <div
       className={`
@@ -94,6 +94,7 @@ const HeroBanner = ({ slides, ...props }) => {
   const settings = {
     dots: false,
     infinite: true,
+    adaptiveHeight: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,

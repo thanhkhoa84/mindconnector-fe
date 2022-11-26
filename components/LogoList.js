@@ -27,7 +27,7 @@ const LogoList = ({ backgroundColor, title, list }) => {
               return (
                 <li
                   key={`logolist-${index}`}
-                  className="flex w-1/2 items-center justify-center p-20 duration-500 md:w-1/5 lg:p-[30px]"
+                  className="flex w-1/2 items-center justify-center p-5 duration-500 md:w-1/5 lg:p-8"
                 >
                   <Image
                     src={images[index].url}
