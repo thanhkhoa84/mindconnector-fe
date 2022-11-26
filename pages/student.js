@@ -73,10 +73,10 @@ const Student = ({ questions, logoslist, programs }) => {
               </div>
               <div className="relative">
                 <Container>
-                  <h1 className="mx-auto mt-0 mb-4 text-center text-3xl font-black dark:text-white dark:text-white md:text-left md:text-6xl md:leading-[1.2]">
+                  <h2 className="mx-auto mt-0 mb-4 text-center text-3xl font-black dark:text-white dark:text-white md:text-left md:text-6xl md:leading-[1.2]">
                     Học hỏi <br className="hidden md:inline" />
                     để thành công
-                  </h1>
+                  </h2>
                   <p className="text-center md:text-left">
                     Cùng Mind Connector xây dựng nền tảng vững chắc để thành
                     công.
@@ -93,12 +93,12 @@ const Student = ({ questions, logoslist, programs }) => {
           </section>
           <section className={`py-[3em] `}>
             <Container>
-              <h2 className="my-0 mx-auto text-base font-bold leading-[1] text-gray dark:text-white">
+              <div className="my-0 mx-auto text-base font-bold leading-[1] text-gray dark:text-white">
                 Chương trình cơ bản
-              </h2>
-              <h1 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">
+              </div>
+              <h2 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">
                 Kỹ Năng Xã Hội
-              </h1>
+              </h2>
               <p>
                 <b>“Nền tảng vững chắc, tương lai khởi sắc”</b> <br />
                 Trang bị những kỹ năng cần thiết ngay từ khi ngồi trên giảng
@@ -116,12 +116,12 @@ const Student = ({ questions, logoslist, programs }) => {
           </section>
           <section className={`bg-[#FFEFDB]  py-[3em]`}>
             <Container>
-              <h2 className="my-0 mx-auto text-base font-bold leading-[1] text-gray dark:text-white">
+              <div className="my-0 mx-auto text-base font-bold leading-[1] text-gray dark:text-white">
                 Chương trình trung cấp
-              </h2>
-              <h1 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">
+              </div>
+              <h2 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">
                 Vững Vàng Lập Nghiệp
-              </h1>
+              </h2>
               <p>
                 <b>“Kỹ năng thiết thực, dẫn lối thành công”</b> <br />
                 Chuẩn bị một phong cách làm việc chuyên nghiệp cùng với những kỹ
@@ -141,12 +141,12 @@ const Student = ({ questions, logoslist, programs }) => {
           </section>
           <section className={`py-[3em]`}>
             <Container>
-              <h2 className="my-0 mx-auto text-base font-bold leading-[1] text-gray dark:text-white">
+              <div className="my-0 mx-auto text-base font-bold leading-[1] text-gray dark:text-white">
                 Chương trình nâng cao
-              </h2>
-              <h1 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">
+              </div>
+              <h2 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">
                 Sẵn Sàng Khởi Nghiệp Kinh Doanh
-              </h1>
+              </h2>
               <p>
                 <b>“Khởi nghiệp thuận lợi, chạm đỉnh vinh quang”</b> <br />
                 Vững vàng kiến thức và kỹ năng để khởi sự kinh doanh thuận lợi.
@@ -165,9 +165,9 @@ const Student = ({ questions, logoslist, programs }) => {
           </section>
           <section>
             <Container>
-              <h1 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+              <h2 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
                 Đội ngũ giảng viên
-              </h1>
+              </h2>
               <Teachers />
             </Container>
           </section>
