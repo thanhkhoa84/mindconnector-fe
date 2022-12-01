@@ -184,11 +184,11 @@ const MobileDropdown = ({ items, dropdown, dropdId }) => {
             key={index}
             className={`
             w-full text-[14px] font-normal leading-none
-            ${index == 0 ? "" : "mt-6"}
+            ${index == 0 ? "" : "mt-2"}
           `}
           >
             <Link href={item.path} className={``} scroll={false}>
-              {item.name}
+              <a className="block py-3">{item.name}</a>
             </Link>
           </li>
         );
