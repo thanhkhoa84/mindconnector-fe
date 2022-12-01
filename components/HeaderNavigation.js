@@ -17,13 +17,13 @@ const DropdownMenu = ({ items, dropdown, dropdId }) => {
     >
       {items.map((item, index) => {
         return (
-          <li key={index} className="group mb-6 w-full font-normal leading-6">
+          <li key={index} className="group mb-2 w-full font-normal leading-6">
             <ActiveLink
               href={item.path}
               activeClassName="text-purple"
               scroll={false}
             >
-              <a className="hover:text-purple" title={item.name}>
+              <a className="block py-2 hover:text-purple" title={item.name}>
                 {item.name}
               </a>
             </ActiveLink>
@@ -90,7 +90,7 @@ const NavItem = ({ link, index }) => {
           <ActiveLink href={link.path} activeClassName="text-purple">
             <a
               onClick={onClickHandler}
-              className="hover:text-purple"
+              className="inline-block py-4 hover:text-purple"
               title={link.name}
             >
               {link.name}{" "}

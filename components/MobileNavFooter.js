@@ -8,7 +8,7 @@ const MobileDropdown = ({ items, dropdId }) => {
     <ul
       id={`mobile-${dropdId}`}
       className={`
-        mt-4 flex flex-col items-center text-center font-normal md:text-left lg:items-start
+        flex flex-col items-center text-center font-normal md:text-left lg:items-start
       `}
     >
       {items.map((item, index) => {
@@ -17,11 +17,11 @@ const MobileDropdown = ({ items, dropdId }) => {
             key={index}
             className={`
             w-full text-[14px] font-normal leading-6
-            ${index == 0 ? "" : "mt-6"}
+            ${index == 0 ? "" : "mt-2"}
           `}
           >
             <Link href={item.path} className={``} scroll={false}>
-              {item.name}
+              <a className="block py-2">{item.name}</a>
             </Link>
           </li>
         );
@@ -45,11 +45,15 @@ const MobileNavItem = ({ link, index }) => {
     >
       {link.submenus ? (
         <>
-          <Link href={link.path}>{link.name}</Link>
+          <Link href={link.path}>
+            <a className="block py-2">{link.name}</a>
+          </Link>
           <MobileDropdown dropdId={`dropdown-${index}`} items={link.submenus} />
         </>
       ) : (
-        <Link href={link.path}>{link.name}</Link>
+        <Link href={link.path}>
+          <a className="block py-2">{link.name}</a>
+        </Link>
       )}
     </li>
   );
@@ -59,7 +63,7 @@ const MobileNavFooter = () => {
   const navlinks = useMenuContext();
   return (
     <ul
-      className={`mt-8 flex flex-col flex-wrap gap-8 md:gap-7 lg:flex-row lg:gap-x-16`}
+      className={`mt-4 flex flex-col flex-wrap gap-8 md:gap-7 lg:flex-row lg:gap-x-16`}
     >
       {navlinks.map((link, index) => {
         return <MobileNavItem link={link} index={index} key={index} />;
