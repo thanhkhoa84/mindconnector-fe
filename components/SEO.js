@@ -46,7 +46,6 @@ const Seo = ({ seo }) => {
           </>
         )}
         {fullSeo.article && <meta property="og:type" content="article" />}
-        <meta name="twitter:card" content="summary_large_image" />
         {fullSeo.keywords && (
           <meta
             name="keywords"
@@ -55,6 +54,17 @@ const Seo = ({ seo }) => {
             })}
           />
         )}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="og:image"
+          content={`/img/mind-connector-social-share.png`}
+        />
+        <meta
+          name="twitter:image"
+          content={`/img/mind-connector-social-share.png`}
+        />
+        <meta name="image" content={`/img/mind-connector-social-share.png`} />
+        <meta property="og:type" content="website" />
       </Head>
       <CanonicalURL />
     </>
