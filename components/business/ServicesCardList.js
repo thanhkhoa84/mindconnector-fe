@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/future/image";
+import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,7 +9,7 @@ function NextArrow(props) {
   return (
     <div
       className={`
-        absolute top-1/2 right-[calc((100%-100vw)/2-30px)] z-10 -mt-[8px] hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md sm:block
+        absolute right-[calc((100%-100vw)/2-30px)] top-1/2 z-10 -mt-[8px] hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md sm:block
       `}
       onClick={onClick}
       style={{}}
@@ -21,7 +21,7 @@ function NextArrow(props) {
         blurDataURL="/img/btn-grey-next.png"
         placeholder="blur"
         alt=""
-        className="absolute top-0 left-0"
+        className="absolute left-0 top-0"
         aria-hidden={true}
       />
     </div>
@@ -45,7 +45,7 @@ function PrevArrow(props) {
         blurDataURL="/img/btn-grey-prev.png"
         placeholder="blur"
         alt=""
-        className="absolute top-0 right-0"
+        className="absolute right-0 top-0"
         aria-hidden={true}
       />
     </div>
@@ -55,7 +55,7 @@ function PrevArrow(props) {
 const ServiceCard = ({ index, service, ...props }) => {
   return (
     <div
-      className={`relative mx-auto mt-[20px] h-[215px] w-full max-w-[365px] overflow-hidden rounded-[30px] rounded-2xl border-[6px] border-[#414141] text-left text-white md:mt-0 md:w-[336px]`}
+      className={`relative mx-auto mt-[20px] h-[215px] w-full max-w-[365px] overflow-hidden rounded-2xl rounded-[30px] border-[6px] border-[#414141] text-left text-white md:mt-0 md:w-[336px]`}
     >
       <div
         className={`overflow-hidden rounded-2xl after:absolute after:inset-0 after:block after:bg-gradient-to-b after:from-[rgba(43,43,43,0)] after:to-[#000] after:content-['']`}
@@ -69,7 +69,7 @@ const ServiceCard = ({ index, service, ...props }) => {
         />
       </div>
       <div
-        className={`after:bg-gradient-overlay absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-end px-4 pb-8 text-sm text-white text-white after:content-none md:p-4 md:pb-6`}
+        className={`after:bg-gradient-overlay absolute bottom-0 left-0 right-0 top-0 flex flex-col justify-end px-4 pb-8 text-sm text-white text-white after:content-none md:p-4 md:pb-6`}
       >
         <h3 className="text-[18px] font-black uppercase">{service.name}</h3>
         <h4 className="mt-[8px] text-[14px]">{service.body}</h4>
@@ -81,7 +81,7 @@ const ServiceCard = ({ index, service, ...props }) => {
         alt=""
         className="absolute bottom-0 right-0"
       />
-      <Link href={service.url}>
+      <Link legacyBehavior href={service.url}>
         <span className="content-[' '] absolute inset-0 block cursor-pointer" />
       </Link>
     </div>

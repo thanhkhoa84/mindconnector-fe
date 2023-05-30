@@ -1,4 +1,4 @@
-import Image from "next/future/image";
+import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -10,7 +10,7 @@ function NextArrow(props) {
   return (
     <div
       className={`
-        absolute top-[calc(100%*1396/2800/2)] -right-[40px] z-10 h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:top-1/2 lg:block
+        absolute -right-[40px] top-[calc(100%*1396/2800/2)] z-10 h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:top-1/2 lg:block
       `}
       onClick={onClick}
       style={{}}
@@ -22,7 +22,7 @@ function NextArrow(props) {
         blurDataURL="/img/btn-next.png"
         placeholder="blur"
         alt=""
-        className="absolute top-0 left-0"
+        className="absolute left-0 top-0"
         aria-hidden={true}
       />
     </div>
@@ -34,7 +34,7 @@ function PrevArrow(props) {
   return (
     <div
       className={`
-        absolute top-[calc(100%*1396/2800/2)] -left-[40px] z-10 h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:top-1/2 lg:block
+        absolute -left-[40px] top-[calc(100%*1396/2800/2)] z-10 h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:top-1/2 lg:block
       `}
       onClick={onClick}
     >
@@ -45,7 +45,7 @@ function PrevArrow(props) {
         blurDataURL="/img/btn-prev.png"
         placeholder="blur"
         alt=""
-        className="absolute top-0 right-0"
+        className="absolute right-0 top-0"
         aria-hidden={true}
       />
     </div>
@@ -71,11 +71,11 @@ const Slide = ({ index, ...props }) => {
       </div>
       <div
         className={`
-        delay-0 static bottom-[2em] transition-all delay-500 duration-[650ms] lg:absolute lg:left-[calc((100vw-1024px)/2)] lg:w-1/3 lg:max-w-[420px] xl:left-[calc((100vw-1120px)/2)]
+        static bottom-[2em] transition-all delay-0 delay-500 duration-[650ms] lg:absolute lg:left-[calc((100vw-1024px)/2)] lg:w-1/3 lg:max-w-[420px] xl:left-[calc((100vw-1120px)/2)]
       `}
       >
         <div
-          className={` z-10 rounded-xl bg-white bg-opacity-80 px-[1em] pt-[2em] pb-[2em] lg:px-8 lg:py-8 lg:shadow-xl`}
+          className={` z-10 rounded-xl bg-white bg-opacity-80 px-[1em] pb-[2em] pt-[2em] lg:px-8 lg:py-8 lg:shadow-xl`}
         >
           <h3 className="mb-[0.5em] text-[28px] font-black leading-none md:text-3xl">
             {props.Title}

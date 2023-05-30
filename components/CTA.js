@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 
 const Button = React.forwardRef(({ href, onClick, ...props }, ref) => {
   return (
@@ -8,11 +8,11 @@ const Button = React.forwardRef(({ href, onClick, ...props }, ref) => {
     </a>
   );
 });
-Button.displayName = 'Button';
+Button.displayName = "Button";
 
 const CTA = ({ href, name, children }) => {
   return (
-    <Link href={href} passHref>
+    <Link legacyBehavior href={href} passHref>
       <Button name={name}>{children}</Button>
     </Link>
   );

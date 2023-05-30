@@ -1,4 +1,4 @@
-import Image from "next/future/image";
+import Image from "next/image";
 import axios from "axios";
 import { useForm, reset } from "react-hook-form";
 import { Clock } from "react-svg-spinners";

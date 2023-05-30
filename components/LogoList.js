@@ -1,5 +1,5 @@
 import Container from "./Container";
-import Image from "next/future/image";
+import Image from "next/image";
 
 const LogoList = ({ backgroundColor, title, list }) => {
   let images = [
@@ -18,7 +18,7 @@ const LogoList = ({ backgroundColor, title, list }) => {
       <Container>
         <div className="flex flex-col">
           <header>
-            <h2 className="my-4 mx-0 text-center text-base font-bold leading-4">
+            <h2 className="mx-0 my-4 text-center text-base font-bold leading-4">
               {title}
             </h2>
           </header>

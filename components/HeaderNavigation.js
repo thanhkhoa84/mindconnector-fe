@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
-import Image from "next/future/image";
+import Image from "next/image";
 import ActiveLink from "./ActiveLink";
 import { useMenuContext } from "@/context/MenuProvider";
 
@@ -12,7 +12,7 @@ const DropdownMenu = ({ items, dropdown, dropdId }) => {
       id={dropdId}
       className={`
         left-[-30px] m-0 flex flex-col rounded-b-2xl bg-white p-4 backdrop-blur-xl  
-        lg:absolute lg:top-full lg:w-[320px] lg:shadow-xl lg:shadow-2xl
+        lg:absolute lg:top-full lg:w-[320px] lg:shadow-2xl lg:shadow-xl
         ${dropdown ? "block" : "hidden"}`}
     >
       {items.map((item, index) => {
@@ -187,7 +187,7 @@ const MobileDropdown = ({ items, dropdown, dropdId }) => {
             ${index == 0 ? "" : "mt-2"}
           `}
           >
-            <Link href={item.path} className={``} scroll={false}>
+            <Link legacyBehavior href={item.path} className={``} scroll={false}>
               <a className="block py-3">{item.name}</a>
             </Link>
           </li>
@@ -262,7 +262,11 @@ const MobileNavItem = ({ link, index }) => {
           />
         </>
       ) : (
-        <Link href={link.path} className="block hover:text-purple">
+        <Link
+          legacyBehavior
+          href={link.path}
+          className="block hover:text-purple"
+        >
           {link.name}
         </Link>
       )}

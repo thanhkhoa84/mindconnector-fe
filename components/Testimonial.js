@@ -1,5 +1,5 @@
 import Container from "./Container";
-import Image from "next/future/image";
+import Image from "next/image";
 
 const Testimonial = ({ data }) => {
   let { headline, body, peep } = data;

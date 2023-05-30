@@ -20,7 +20,7 @@ const MobileDropdown = ({ items, dropdId }) => {
             ${index == 0 ? "" : "mt-2"}
           `}
           >
-            <Link href={item.path} className={``} scroll={false}>
+            <Link legacyBehavior href={item.path} className={``} scroll={false}>
               <a className="block py-2">{item.name}</a>
             </Link>
           </li>
@@ -45,13 +45,13 @@ const MobileNavItem = ({ link, index }) => {
     >
       {link.submenus ? (
         <>
-          <Link href={link.path}>
+          <Link legacyBehavior href={link.path}>
             <a className="block py-2">{link.name}</a>
           </Link>
           <MobileDropdown dropdId={`dropdown-${index}`} items={link.submenus} />
         </>
       ) : (
-        <Link href={link.path}>
+        <Link legacyBehavior href={link.path}>
           <a className="block py-2">{link.name}</a>
         </Link>
       )}

@@ -1,12 +1,12 @@
-import { useRouter } from 'next/router';
-import Link, { LinkProps } from 'next/link';
-import React, { useState, useEffect, Children } from 'react';
+import { useRouter } from "next/router";
+import Link, { LinkProps } from "next/link";
+import React, { useState, useEffect, Children } from "react";
 
 const ActiveLink = ({ children, activeClassName, ...props }) => {
   const { asPath, isReady } = useRouter();
 
   const child = Children.only(children);
-  const childClassName = child.props.className || '';
+  const childClassName = child.props.className || "";
   const [className, setClassName] = useState(childClassName);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const ActiveLink = ({ children, activeClassName, ...props }) => {
   ]);
 
   return (
-    <Link {...props}>
+    <Link legacyBehavior {...props}>
       {React.cloneElement(child, {
         className: className || null,
       })}

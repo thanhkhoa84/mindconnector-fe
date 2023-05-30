@@ -1,6 +1,6 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import Image from "next/future/image";
+import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -27,7 +27,7 @@ const Slide = ({ index, course, ...props }) => {
         />
       </div>
       <div
-        className={`after:bg-gradient-overlay absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-end px-4 pb-8 text-sm text-white after:content-none md:p-4 md:pb-8`}
+        className={`after:bg-gradient-overlay absolute bottom-0 left-0 right-0 top-0 flex flex-col justify-end px-4 pb-8 text-sm text-white after:content-none md:p-4 md:pb-8`}
       >
         {feature && (
           <div className="overflow-hidden">
@@ -55,7 +55,7 @@ function NextArrow(props) {
   return (
     <div
       className={`
-        absolute top-1/2 -right-[40px] z-10 -mt-[55px] hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:block
+        absolute -right-[40px] top-1/2 z-10 -mt-[55px] hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:block
       `}
       onClick={onClick}
       style={{}}
@@ -67,7 +67,7 @@ function NextArrow(props) {
         blurDataURL="/img/btn-next.png"
         placeholder="blur"
         alt=""
-        className="absolute top-0 left-0"
+        className="absolute left-0 top-0"
         aria-hidden={true}
       />
     </div>
@@ -79,7 +79,7 @@ function PrevArrow(props) {
   return (
     <div
       className={`
-        absolute top-1/2 -left-[40px] z-10 -mt-[55px] hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:block
+        absolute -left-[40px] top-1/2 z-10 -mt-[55px] hidden h-[80px] w-[80px] -translate-y-1/2 cursor-pointer overflow-hidden rounded-full shadow-md lg:block
       `}
       onClick={onClick}
       style={{}}
@@ -91,7 +91,7 @@ function PrevArrow(props) {
         blurDataURL="/img/btn-prev.png"
         placeholder="blur"
         alt=""
-        className="absolute top-0 right-0"
+        className="absolute right-0 top-0"
         aria-hidden={true}
       />
     </div>

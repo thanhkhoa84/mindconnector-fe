@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/future/image";
+import Image from "next/image";
 import Container from "@/components/Container";
 import LogoList from "./../LogoList";
 
@@ -8,18 +8,18 @@ const ValueSection = () => {
     <section className="bg-[#FFF7ED] pt-[4em]">
       <Container>
         <h2
-          className={`mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white md:max-w-[80%]`}
+          className={`mx-auto mb-4 mt-0 text-center text-4xl font-black leading-[1.3] dark:text-white md:max-w-[80%]`}
         >
           Mind Connector cung cấp các chương trình đào tạo cho sinh viên và
           doanh nghiệp
         </h2>
         <div
-          className={`mt-[3em] mb-[4em] flex flex-col justify-between gap-6 self-stretch pb-[1em] xs:flex-row xs:gap-4 lg:items-center lg:gap-12 lg:self-auto`}
+          className={`mb-[4em] mt-[3em] flex flex-col justify-between gap-6 self-stretch pb-[1em] xs:flex-row xs:gap-4 lg:items-center lg:gap-12 lg:self-auto`}
         >
           <div className="relative flex flex-row  justify-between">
             <div
               className={`
-              relative mt-[1.5em] ml-0 -mr-[2em] flex max-w-full flex-col justify-between rounded-2xl border-4 border-white bg-gradient-to-br from-[#FFF4EB] via-[#FFE4D5] to-[#FDD2D3] px-4 pt-[2.5em] pb-4 shadow-lg lg:my-[1.5em] lg:w-[55%] lg:pr-[2em]
+              relative -mr-[2em] ml-0 mt-[1.5em] flex max-w-full flex-col justify-between rounded-2xl border-4 border-white bg-gradient-to-br from-[#FFF4EB] via-[#FFE4D5] to-[#FDD2D3] px-4 pb-4 pt-[2.5em] shadow-lg lg:my-[1.5em] lg:w-[55%] lg:pr-[2em]
             `}
             >
               <span
@@ -47,7 +47,7 @@ const ValueSection = () => {
               <p className="mt-4 lg:hidden">
                 Xây dựng nền móng vững chắc để sẵn sàng theo đuổi thành công.
               </p>
-              <Link href="student">
+              <Link legacyBehavior href="student">
                 <span className="link-arrow mt-4 font-black leading-none lg:mt-12">
                   Khám phá
                 </span>
@@ -68,7 +68,7 @@ const ValueSection = () => {
           <div className="relative flex flex-row  justify-between">
             <div
               className={`
-              relative mt-[1.5em] ml-0 -mr-[2em] flex max-w-full flex-col justify-between rounded-2xl border-4 border-white bg-gradient-to-br from-[#FFF4EB] via-[#FFE4D5] to-[#FDD2D3] px-4 pt-[2.5em] pb-4 shadow-lg lg:my-[1.5em] lg:w-[55%] lg:pr-[2em]
+              relative -mr-[2em] ml-0 mt-[1.5em] flex max-w-full flex-col justify-between rounded-2xl border-4 border-white bg-gradient-to-br from-[#FFF4EB] via-[#FFE4D5] to-[#FDD2D3] px-4 pb-4 pt-[2.5em] shadow-lg lg:my-[1.5em] lg:w-[55%] lg:pr-[2em]
             `}
             >
               <span
@@ -96,7 +96,7 @@ const ValueSection = () => {
               <p className="mt-4 lg:hidden">
                 Đào tạo nguồn nhân lực chất lượng để giúp công ty thêm lớn mạnh.
               </p>
-              <Link href="/business">
+              <Link legacyBehavior href="/business">
                 <span className="link-arrow mt-4 font-black leading-none lg:mt-12">
                   Khám phá
                 </span>

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
-import Image from "next/future/image";
+import Image from "next/image";
 
 import Container from "@/components/Container";
 import Seo from "@/components/SEO";
@@ -128,7 +128,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
               </p>
               <CourseTeachers teachers={mentors} />
               <div className="mt-8 flex flex-col rounded-xl text-left md:relative md:top-[35px] md:mt-0 md:h-[70px] md:flex-row md:justify-between md:bg-white md:shadow-lg">
-                <div className=" flex flex-row flex-nowrap items-start justify-start gap-4 rounded-2xl border-2 border-solid border-[#d2d2d2] border-white bg-[#FFF2EB] bg-opacity-75 py-[1em] px-6 xs:flex-row sm:flex-row sm:gap-8 md:items-center md:bg-transparent">
+                <div className=" flex flex-row flex-nowrap items-start justify-start gap-4 rounded-2xl border-2 border-solid border-[#d2d2d2] border-white bg-[#FFF2EB] bg-opacity-75 px-6 py-[1em] xs:flex-row sm:flex-row sm:gap-8 md:items-center md:bg-transparent">
                   <div className="text-black">
                     <p className="text-[20px] font-bold">
                       4.9{" "}
@@ -175,13 +175,13 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
               <div className="flex flex-col justify-between md:flex-row">
                 <div className="w-full">
                   <div className="flex flex-col justify-evenly pt-16 md:flex-row">
-                    <div className="relative flex-shrink flex-grow basis-full border-l border-[#F5CBCC] pl-8 pb-12 md:border-l-0 md:border-t md:pl-0 md:pt-12 md:pr-6">
+                    <div className="relative flex-shrink flex-grow basis-full border-l border-[#F5CBCC] pb-12 pl-8 md:border-l-0 md:border-t md:pl-0 md:pr-6 md:pt-12">
                       <Image
                         src="/img/icon-steps.svg"
                         alt=""
                         width={24}
                         height={24}
-                        className="absolute top-[-5px] left-[-12px] w-[24px] md:top-[-12px] md:left-[-5px]"
+                        className="absolute left-[-12px] top-[-5px] w-[24px] md:left-[-5px] md:top-[-12px]"
                       />
                       <h4 className="mb-4 inline-block rounded-lg bg-purple p-3 py-1 text-sm font-bold text-white">
                         Mục tiêu
@@ -196,13 +196,13 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                         thay đổi tư duy.
                       </p>
                     </div>
-                    <div className="relative flex-shrink flex-grow basis-full border-l border-[#F5CBCC] pl-8 pb-12 md:border-l-0 md:border-t md:pl-0 md:pt-12 md:pr-6">
+                    <div className="relative flex-shrink flex-grow basis-full border-l border-[#F5CBCC] pb-12 pl-8 md:border-l-0 md:border-t md:pl-0 md:pr-6 md:pt-12">
                       <Image
                         src="/img/icon-steps.svg"
                         alt=""
                         width={24}
                         height={24}
-                        className="absolute top-[-5px] left-[-12px] w-[24px] md:top-[-12px] md:left-[-5px]"
+                        className="absolute left-[-12px] top-[-5px] w-[24px] md:left-[-5px] md:top-[-12px]"
                       />
                       <h4 className="mb-4 inline-block rounded-lg bg-purple p-3 py-1 text-sm font-bold text-white">
                         Cấu trúc
@@ -216,13 +216,13 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                         gian của mình.
                       </p>
                     </div>
-                    <div className="relative flex-shrink flex-grow basis-full pl-8 pb-12 md:pl-0 md:pt-12 md:pr-6">
+                    <div className="relative flex-shrink flex-grow basis-full pb-12 pl-8 md:pl-0 md:pr-6 md:pt-12">
                       <Image
                         src="/img/icon-steps.svg"
                         alt=""
                         width={24}
                         height={24}
-                        className="absolute top-[-5px] left-[-12px] w-[24px] md:top-[-12px] md:left-[-5px]"
+                        className="absolute left-[-12px] top-[-5px] w-[24px] md:left-[-5px] md:top-[-12px]"
                       />
                       <h4 className="mb-4 inline-block rounded-lg bg-purple p-3 py-1 text-sm font-bold text-white">
                         Kết quả
@@ -253,7 +253,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
                       alt=""
                     />
                   </div>
-                  <div className="inline-flex flex-col items-start bg-purple p-8 md:min-w-[340px] md:rounded-tr-[20px] md:rounded-br-[20px] lg:justify-center">
+                  <div className="inline-flex flex-col items-start bg-purple p-8 md:min-w-[340px] md:rounded-br-[20px] md:rounded-tr-[20px] lg:justify-center">
                     <h2 className="text-[28px] font-black md:text-[34px]">
                       Về chương trình
                     </h2>
@@ -351,7 +351,7 @@ const ProgramPost = ({ questions, courses, testimonial }) => {
 
         <div id="register" className="pb-12">
           <Container>
-            <div className="mt-8 mb-4 flex flex-col overflow-hidden rounded-3xl bg-[#941C50] text-white md:flex-row md:p-0">
+            <div className="mb-4 mt-8 flex flex-col overflow-hidden rounded-3xl bg-[#941C50] text-white md:flex-row md:p-0">
               <header className="bg-[#B22F66] p-6 md:p-8">
                 <h3 className="text-[30px] font-black leading-none md:text-[34px] md:leading-none">
                   Đăng ký toàn bộ chương trình,

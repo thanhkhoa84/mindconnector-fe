@@ -1,4 +1,4 @@
-import Image from "next/future/image";
+import Image from "next/image";
 import dynamic from "next/dynamic";
 import Container from "@/components/Container";
 import Seo from "@/components/SEO";
@@ -107,8 +107,8 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
                   <div
                     key={`approach-${idx}`}
                     className={`
-                      relative flex-shrink flex-grow basis-full border-l border-[#F5CBCC] pl-8 pb-12 
-                      md:border-l-0  md:pl-0 md:pt-12 md:pr-2
+                      relative flex-shrink flex-grow basis-full border-l border-[#F5CBCC] pb-12 pl-8 
+                      md:border-l-0  md:pl-0 md:pr-2 md:pt-12
                       ${
                         idx === approachs.length - 1
                           ? "border-l-0 md:border-t-0"
@@ -121,13 +121,13 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
                       alt=""
                       width={24}
                       height={24}
-                      className="absolute top-[-5px] left-[-12px] w-[24px] md:top-[-12px] md:left-[-5px]"
+                      className="absolute left-[-12px] top-[-5px] w-[24px] md:left-[-5px] md:top-[-12px]"
                     />
                     <h4 className="mb-4 inline-block rounded-lg bg-purple p-3 py-1 text-sm font-bold text-white">
                       {a.title}
                     </h4>
                     <div
-                      className="leading-6 [&>ul>li]:list-outside [&>ul>li+li]:mt-2 [&>ul]:list-disc [&>ul]:pl-4"
+                      className="leading-6 [&>ul>li+li]:mt-2 [&>ul>li]:list-outside [&>ul]:list-disc [&>ul]:pl-4"
                       dangerouslySetInnerHTML={{ __html: a.body }}
                     />
                   </div>
@@ -139,7 +139,7 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
 
         <section className="invisible hidden py-12 dark:text-white">
           <Container>
-            <h2 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
+            <h2 className="mx-auto mb-4 mt-0 text-center text-4xl font-black leading-[1.3]">
               Cảm nhận của khách hàng
             </h2>
             <p className="mt-4 text-center">
@@ -156,7 +156,7 @@ const CoursePost = ({ approachs, teachers, testimonial }) => {
 
         <section className="py-12 dark:text-white">
           <Container>
-            <h2 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+            <h2 className="mx-auto mb-4 mt-0 text-center text-4xl font-black leading-[1.3] dark:text-white">
               Đội ngũ chuyên gia
             </h2>
             <Teachers data={teachers} />

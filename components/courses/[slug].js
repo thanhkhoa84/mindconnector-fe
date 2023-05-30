@@ -1,6 +1,6 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
-import Image from "next/future/image";
+import Image from "next/image";
 import Container from "@/components/Container";
 import Seo from "@/components/SEO";
 import Testimonial from "@/components/Testimonial";
@@ -51,7 +51,7 @@ const Tab = ({ tab, index, active, onClick }) => {
     <li
       className={`
     ${active ? "font-bold text-black" : "text-[#9A9A9A]"}
-    inline-block py-0 px-4 pl-0 align-middle hover:font-bold hover:text-black md:pl-6
+    inline-block px-4 py-0 pl-0 align-middle hover:font-bold hover:text-black md:pl-6
     `}
       key={index}
       onClick={() => onClick(index)}
@@ -129,7 +129,7 @@ const CoursePost = ({ questions, logoslist, programInfo, testimonial }) => {
               <p className="text-xs">CEO Alphabet</p>
             </div>
             <div className="mt-8 flex flex-col rounded-xl text-left md:relative md:top-[35px] md:mt-0 md:h-[70px] md:flex-row md:justify-between md:bg-white md:shadow-lg">
-              <div className=" flex flex-row flex-nowrap items-start justify-start gap-4 rounded-2xl border-2 border-solid border-[#d2d2d2] border-white bg-[#FFF2EB] bg-opacity-75 py-[1em] px-6 xs:flex-row sm:flex-row sm:gap-8 md:items-center md:bg-transparent">
+              <div className=" flex flex-row flex-nowrap items-start justify-start gap-4 rounded-2xl border-2 border-solid border-[#d2d2d2] border-white bg-[#FFF2EB] bg-opacity-75 px-6 py-[1em] xs:flex-row sm:flex-row sm:gap-8 md:items-center md:bg-transparent">
                 <div className="text-black">
                   <p className="text-[20px] font-bold">
                     4.9{" "}
@@ -177,7 +177,7 @@ const CoursePost = ({ questions, logoslist, programInfo, testimonial }) => {
                   <TabPanels />
                 </div>
                 <div className="mt-12" id="about">
-                  <h2 className="mb-3 text-[34px] font-black leading-[1] leading-[1.2]">
+                  <h2 className="mb-3 text-[34px] font-black leading-[1.2] leading-[1]">
                     Tổng quan về khoá học
                   </h2>
                   <p>
@@ -205,13 +205,13 @@ const CoursePost = ({ questions, logoslist, programInfo, testimonial }) => {
                     Kỹ năng bạn có được
                   </h4>
                   <ul className="mt-2">
-                    <li className="mr-2 mb-2 inline-block rounded-full bg-purple px-4 py-2 font-bold text-white">
+                    <li className="mb-2 mr-2 inline-block rounded-full bg-purple px-4 py-2 font-bold text-white">
                       Logistic regressive for classification
                     </li>
-                    <li className="mr-2 mb-2 inline-block rounded-full bg-purple px-4 py-2 font-bold text-white">
+                    <li className="mb-2 mr-2 inline-block rounded-full bg-purple px-4 py-2 font-bold text-white">
                       Linear regression
                     </li>
-                    <li className="mr-2 mb-2 inline-block rounded-full bg-purple px-4 py-2 font-bold text-white">
+                    <li className="mb-2 mr-2 inline-block rounded-full bg-purple px-4 py-2 font-bold text-white">
                       Supervised learning
                     </li>
                   </ul>
@@ -280,9 +280,9 @@ const CoursePost = ({ questions, logoslist, programInfo, testimonial }) => {
                   </p>
                 </div>
 
-                <div className="w-ful mt-12 mb-12" id="rating">
+                <div className="w-ful mb-12 mt-12" id="rating">
                   <div>
-                    <h2 className="mb-3 text-[34px] font-black leading-[1] leading-[1.2]">
+                    <h2 className="mb-3 text-[34px] font-black leading-[1.2] leading-[1]">
                       Chia sẻ từ học viên <br />
                       Mind Connector
                     </h2>
@@ -301,8 +301,8 @@ const CoursePost = ({ questions, logoslist, programInfo, testimonial }) => {
                   <div id="register">
                     <h2 className="text-[34px] font-black">Đăng ký khoá học</h2>
                     <p>Đăng ký ngay để phát triển kỹ năng của bạn. </p>
-                    <div className="mt-8 mb-4 flex flex-col overflow-hidden rounded-3xl bg-[#941C50] text-white lg:flex-row lg:justify-between">
-                      <header className="flex items-center justify-center bg-[#B22F66] py-4 px-6 lg:bg-[#941C50]">
+                    <div className="mb-4 mt-8 flex flex-col overflow-hidden rounded-3xl bg-[#941C50] text-white lg:flex-row lg:justify-between">
+                      <header className="flex items-center justify-center bg-[#B22F66] px-6 py-4 lg:bg-[#941C50]">
                         <h3 className="text-[24px] font-black">
                           Đăng ký khoá lẻ
                         </h3>
@@ -320,7 +320,7 @@ const CoursePost = ({ questions, logoslist, programInfo, testimonial }) => {
                     </div>
                     <p className="text-center sm:text-left">Hoặc</p>
                     <div className="mt-4 overflow-hidden rounded-3xl bg-[#FF8348] text-white">
-                      <header className="py-4 px-6">
+                      <header className="px-6 py-4">
                         <h3 className="text-[24px] font-black">
                           Đăng ký toàn bộ chương trình, nhận ngay ưu đãi
                         </h3>
@@ -347,7 +347,7 @@ const CoursePost = ({ questions, logoslist, programInfo, testimonial }) => {
               <aside className="hidden w-full md:block md:w-2/5 lg:w-[336px]">
                 <div className="rounded-2xl p-6 px-5 shadow-asideboxLight">
                   <div className="">
-                    <h2 className="my-0 mx-auto text-base font-bold leading-[1] text-gray dark:text-white">
+                    <h2 className="mx-auto my-0 text-base font-bold leading-[1] text-gray dark:text-white">
                       Chương trình Thành công trong học tập
                     </h2>
                     <h3 className="mt-2 text-[24px] font-black leading-8">

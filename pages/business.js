@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import Image from "next/future/image";
+import Image from "next/image";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -141,7 +141,7 @@ const Business = ({ services, teachers, testimonial }) => {
 
         <section className="mt-8 overflow-hidden py-16">
           <Container>
-            <h2 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+            <h2 className="mx-auto mb-4 mt-0 text-center text-4xl font-black leading-[1.3] dark:text-white">
               Dịch vụ của chúng tôi
             </h2>
             <div className="mt-12">
@@ -160,7 +160,7 @@ const Business = ({ services, teachers, testimonial }) => {
           />
           <div className="relative">
             <div className="mx-auto px-4 lg:max-w-[750px]">
-              <h2 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
+              <h2 className="mx-auto mb-4 mt-0 text-center text-4xl font-black leading-[1.3]">
                 Điều gì giúp chúng tôi khác biệt?
               </h2>
               <Image
@@ -187,7 +187,7 @@ const Business = ({ services, teachers, testimonial }) => {
 
         <section className="invisible hidden py-12">
           <Container>
-            <h2 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3]">
+            <h2 className="mx-auto mb-4 mt-0 text-center text-4xl font-black leading-[1.3]">
               Cảm nhận của khách hàng
             </h2>
             <p className="mt-4">
@@ -201,7 +201,7 @@ const Business = ({ services, teachers, testimonial }) => {
 
         <section className="py-12 dark:text-white">
           <Container>
-            <h2 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+            <h2 className="mx-auto mb-4 mt-0 text-center text-4xl font-black leading-[1.3] dark:text-white">
               Đội ngũ chuyên gia
             </h2>
             <Teachers data={teachers} />

@@ -1,6 +1,6 @@
-import Head from 'next/head';
+import Head from "next/head";
 import Link from "next/link";
-import Image from "next/future/image";
+import Image from "next/image";
 import dynamic from "next/dynamic";
 import Container from "@/components/Container";
 import Seo from "@/components/SEO";
@@ -73,7 +73,7 @@ const Student = ({ questions, logoslist, programs }) => {
               </div>
               <div className="relative">
                 <Container>
-                  <h2 className="mx-auto mt-0 mb-4 text-center text-3xl font-black dark:text-white dark:text-white md:text-left md:text-6xl md:leading-[1.2]">
+                  <h2 className="mx-auto mb-4 mt-0 text-center text-3xl font-black dark:text-white dark:text-white md:text-left md:text-6xl md:leading-[1.2]">
                     Học hỏi <br className="hidden md:inline" />
                     để thành công
                   </h2>
@@ -93,10 +93,10 @@ const Student = ({ questions, logoslist, programs }) => {
           </section>
           <section className={`py-[3em] `}>
             <Container>
-              <div className="my-0 mx-auto text-base font-bold leading-[1] text-gray dark:text-white">
+              <div className="mx-auto my-0 text-base font-bold leading-[1] text-gray dark:text-white">
                 Chương trình cơ bản
               </div>
-              <h2 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">
+              <h2 className="mx-auto mb-4 mt-0 text-4xl font-black leading-[1.3] dark:text-white">
                 Kỹ Năng Xã Hội
               </h2>
               <p>
@@ -105,7 +105,7 @@ const Student = ({ questions, logoslist, programs }) => {
                 đường để bạn có một hành trang vững chắc cho tương lai.
               </p>
               <p>
-                <Link href="/programs/ky-nang-xa-hoi">
+                <Link legacyBehavior href="/programs/ky-nang-xa-hoi">
                   <span className="link-arrow">Tìm hiểu thêm</span>
                 </Link>
               </p>
@@ -116,10 +116,10 @@ const Student = ({ questions, logoslist, programs }) => {
           </section>
           <section className={`bg-[#FFEFDB]  py-[3em]`}>
             <Container>
-              <div className="my-0 mx-auto text-base font-bold leading-[1] text-gray dark:text-white">
+              <div className="mx-auto my-0 text-base font-bold leading-[1] text-gray dark:text-white">
                 Chương trình trung cấp
               </div>
-              <h2 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">
+              <h2 className="mx-auto mb-4 mt-0 text-4xl font-black leading-[1.3] dark:text-white">
                 Vững Vàng Lập Nghiệp
               </h2>
               <p>
@@ -128,7 +128,7 @@ const Student = ({ questions, logoslist, programs }) => {
                 năng quan trọng chính là chìa khoá để thành công.
               </p>
               <p>
-                <Link href="/programs/vung-vang-lap-nghiep">
+                <Link legacyBehavior href="/programs/vung-vang-lap-nghiep">
                   <span className="link-arrow">Tìm hiểu thêm</span>
                 </Link>
               </p>
@@ -141,10 +141,10 @@ const Student = ({ questions, logoslist, programs }) => {
           </section>
           <section className={`py-[3em]`}>
             <Container>
-              <div className="my-0 mx-auto text-base font-bold leading-[1] text-gray dark:text-white">
+              <div className="mx-auto my-0 text-base font-bold leading-[1] text-gray dark:text-white">
                 Chương trình nâng cao
               </div>
-              <h2 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">
+              <h2 className="mx-auto mb-4 mt-0 text-4xl font-black leading-[1.3] dark:text-white">
                 Sẵn Sàng Khởi Nghiệp Kinh Doanh
               </h2>
               <p>
@@ -152,7 +152,10 @@ const Student = ({ questions, logoslist, programs }) => {
                 Vững vàng kiến thức và kỹ năng để khởi sự kinh doanh thuận lợi.
               </p>
               <p>
-                <Link href="/programs/san-sang-khoi-nghiep-kinh-doanh">
+                <Link
+                  legacyBehavior
+                  href="/programs/san-sang-khoi-nghiep-kinh-doanh"
+                >
                   <span className="link-arrow">Tìm hiểu thêm</span>
                 </Link>
               </p>
@@ -165,7 +168,7 @@ const Student = ({ questions, logoslist, programs }) => {
           </section>
           <section>
             <Container>
-              <h2 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+              <h2 className="mx-auto mb-4 mt-0 text-center text-4xl font-black leading-[1.3] dark:text-white">
                 Đội ngũ giảng viên
               </h2>
               <Teachers />
@@ -173,8 +176,8 @@ const Student = ({ questions, logoslist, programs }) => {
           </section>
           <section className="pb-12">
             <Container>
-              <div className="mt-8 mb-4 items-center overflow-hidden rounded-3xl bg-[#941C50] text-white md:flex md:flex-row">
-                <header className="bg-[#B22F66] py-8 px-6">
+              <div className="mb-4 mt-8 items-center overflow-hidden rounded-3xl bg-[#941C50] text-white md:flex md:flex-row">
+                <header className="bg-[#B22F66] px-6 py-8">
                   <h3 className="text-[24px] font-black">Học thử miễn phí</h3>
                   <p className="mt-2 font-medium">
                     Nhập thông tin để có cơ hội trải nghiệm miễn phí các chương
@@ -247,4 +250,3 @@ export async function getStaticProps() {
     },
   };
 }
-

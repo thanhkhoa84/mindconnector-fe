@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/future/image";
+import Image from "next/image";
 
 const Title = React.forwardRef(({ onClick, href }, ref) => {
   return (
@@ -32,7 +32,7 @@ Title.displayName = "Title";
 
 const Logo = React.forwardRef(() => {
   return (
-    <Link href="/" passHref>
+    <Link legacyBehavior href="/" passHref>
       <Title />
     </Link>
   );
