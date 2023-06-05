@@ -6,7 +6,6 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Clock } from "react-svg-spinners";
 
-
 const RegisterModal = () => {
   const { hideModal, store } = useGlobalModalContext();
   const { modalProps } = store || {};
@@ -69,7 +68,7 @@ const RegisterModal = () => {
       data,
     };
     let mailRes = await axios(mailConfig);
-    let response = await axios(config);
+    // let response = await axios(config);
     if (response.status === 200) {
       hideModal();
     }
@@ -178,6 +177,6 @@ const RegisterModal = () => {
       </div>
     </div>
   );
-};;;;
+};
 
 export default RegisterModal;

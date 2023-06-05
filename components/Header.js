@@ -38,8 +38,8 @@ const Header = ({ ...navlinks }) => {
               <NavBar {...navlinks} />
             </div>
 
-            <Link legacyBehavior href="/student">
-              <span className="header-cta">Khám phá ngay</span>
+            <Link href="/student" className="header-cta">
+              Khám phá ngay
             </Link>
 
             <button
