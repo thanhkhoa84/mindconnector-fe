@@ -27,6 +27,8 @@ const LeadingForm = () => {
     medium: yup.string().required("Mời bạn nhập thông tin"),
   });
 
+  const token = process.env.NEXT_PUBLIC_STRAPI_FORM_SUBMISSION_TOKEN;
+
   const { register, handleSubmit, formState, reset } = useForm({
     defaultValues: {
       industry: "",
@@ -50,6 +52,7 @@ const LeadingForm = () => {
       url: `${process.env.NEXT_PUBLIC_STRAPI_API}/api/leading-forms`,
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
       responseType: "json",
       data,
@@ -59,12 +62,13 @@ const LeadingForm = () => {
       url: `${process.env.NEXT_PUBLIC_API}/api/leading`,
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
       responseType: "json",
       data,
     };
     let mailRes = await axios(mailConfig);
-    // let response = await axios(config);
+    let response = await axios(config);
   };
 
   useEffect(() => {

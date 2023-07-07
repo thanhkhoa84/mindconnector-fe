@@ -11,6 +11,7 @@ const RegisterModal = () => {
   const { modalProps } = store || {};
   const { title, program, course } = modalProps || {};
   let ref = useRef(null);
+  const token = process.env.NEXT_PUBLIC_STRAPI_FORM_SUBMISSION_TOKEN;
   const schema = yup.object({
     email: yup
       .string()
@@ -54,6 +55,7 @@ const RegisterModal = () => {
       url: `${process.env.NEXT_PUBLIC_API}/api/register`,
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
       responseType: "json",
       data,
@@ -63,12 +65,13 @@ const RegisterModal = () => {
       url: `${process.env.NEXT_PUBLIC_STRAPI_API}/api/student-contacts`,
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
       responseType: "json",
       data,
     };
     let mailRes = await axios(mailConfig);
-    // let response = await axios(config);
+    let response = await axios(config);
     if (response.status === 200) {
       hideModal();
     }
