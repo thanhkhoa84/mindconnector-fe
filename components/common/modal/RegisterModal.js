@@ -70,7 +70,6 @@ const RegisterModal = () => {
       responseType: "json",
       data,
     };
-    let mailRes = await axios(mailConfig);
     let response = await axios(config);
     if (response.status === 200) {
       hideModal();
