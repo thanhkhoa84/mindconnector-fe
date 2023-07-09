@@ -4,7 +4,7 @@ import { createContext } from "react";
 import "../styles/globals.scss";
 import Layout from "./../components/common/Layout";
 
-import { fetchAPI } from "../lib/api.js";
+import { fetchAPI } from "@/lib/api.js";
 
 export const GlobalContext = createContext({});
 

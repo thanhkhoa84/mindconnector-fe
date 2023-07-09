@@ -3,12 +3,10 @@ import client from "@/lib/apolloClient";
 import dynamic from "next/dynamic";
 
 import Seo from "@/components/SEO";
-// import HeroBanner from "@/components/home/HeroBanner";
-// import About from "@/components/home/About";
-// import ValueSection from "@/components/home/ValueSection";
-// import Teachers from "@/components/common/teachers/Teachers";
-// import QandA from "@/components/QandA";
 import Container from "@/components/Container";
+import { fetchAPI } from "@/lib/api.js";
+
+import SectionManager from "@/components/SectionManager";
 
 const HeroBanner = dynamic(() => import("@/components/home/HeroBanner"), {
   suspense: true,
@@ -23,31 +21,13 @@ const Teachers = dynamic(
   () => import("@/components/common/teachers/Teachers"),
   {
     suspense: true,
-  }
+  },
 );
 const QandA = dynamic(() => import("@/components/QandA"), {
   suspense: true,
 });
 
-export default function Home({ slides, questions, teachers }) {
-  const seo = {
-    metaTitle: "Trang chủ",
-    metaDescription:
-      "Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá nhân phát triển và tăng trưởng mạnh mẽ trong tương lai",
-    keywords: [
-      "mind connector",
-      "mindconnector",
-      "kết nối",
-      "tầm nhìn",
-      "training",
-      "mạng lưới",
-      "doanh nghiệp",
-      "cá nhân",
-    ],
-    // shareImage: article.attributes.image,
-    // article: true,
-  };
-
+export default function Home({ seo, slides, questions, sections }) {
   return (
     <>
       <Seo seo={seo} />
@@ -59,13 +39,9 @@ export default function Home({ slides, questions, teachers }) {
           <HeroBanner slides={slides} />
         </section>
 
-        <section>
-          <ValueSection />
-        </section>
+        <ValueSection />
 
-        <section>
-          <About />
-        </section>
+        <About />
 
         <section className={`relative bg-[#FFF7ED] py-12`}>
           <Container>
@@ -76,17 +52,34 @@ export default function Home({ slides, questions, teachers }) {
           </Container>
         </section>
 
-        <section>
+        <SectionManager sections={sections} />
+
+        {/* <section>
           <Container>
             <QandA questions={questions}></QandA>
           </Container>
-        </section>
+        </section> */}
       </main>
     </>
   );
 }
 
 export async function getStaticProps() {
+  const params = {
+    nested: true,
+    populate: {
+      seo: {
+        populate: "*",
+      },
+      Content: {
+        populate: "*",
+      },
+    },
+  };
+  const page = await fetchAPI(`/homepage`, params);
+  const seo = page.data.attributes.seo;
+  const sections = page.data.attributes.Content;
+
   /** TODO: get real QaA from backend */
   const questions = [
     {
@@ -145,52 +138,11 @@ export async function getStaticProps() {
     },
   ];
 
-  // let query = gql`
-  //   query GetHomepage {
-  //     homepage {
-  //       data {
-  //         attributes {
-  //           Content {
-  //             __typename
-  //             ... on ComponentSectionHeroSlider {
-  //               HeroSlider {
-  //                 Image {
-  //                   data {
-  //                     attributes {
-  //                       url
-  //                     }
-  //                   }
-  //                 }
-  //                 Title
-  //                 Body
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `;
-
-  // try {
-  //   const { data } = await client.query({
-  //     query,
-  //   });
-  //   console.log(data);
-  // } catch (error) {
-  //   console.log(error);
-  // }
-
-  // let { teachers } = data.teachers.data;
-
-  // let teachersList = teachers.filter((t) => {
-  //   return t.attributes.featured == true;
-  // });
-
   return {
     props: {
+      seo,
       slides,
-      questions,
+      sections,
     },
   };
 }

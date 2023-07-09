@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import { useContext } from 'react';
-import { GlobalContext } from '../pages/_app';
+import Head from "next/head";
+import { useContext } from "react";
+import { GlobalContext } from "../pages/_app";
 import CanonicalURL from "./CanonicalURL";
-// import { getStrapiMedia } from '../lib/media';
+import { getStrapiMedia } from "@/lib/media";
 
 const Seo = ({ seo }) => {
   const { defaultSeo, siteName } = useContext(GlobalContext);
@@ -10,12 +10,13 @@ const Seo = ({ seo }) => {
     ...defaultSeo,
     ...seo,
   };
+
   const fullSeo = {
     ...seoWithDefaults,
     // Add title suffix
     metaTitle: `${seoWithDefaults.metaTitle} | ${siteName}`,
     // Get full image URL
-    // shareImage: getStrapiMedia(seoWithDefaults.shareImage),
+    shareImage: getStrapiMedia(seoWithDefaults.metaImage),
   };
 
   return (
@@ -38,32 +39,34 @@ const Seo = ({ seo }) => {
             />
           </>
         )}
-        {fullSeo.shareImage && (
+        {fullSeo.shareImage ? (
           <>
             <meta property="og:image" content={fullSeo.shareImage} />
             <meta name="twitter:image" content={fullSeo.shareImage} />
             <meta name="image" content={fullSeo.shareImage} />
           </>
+        ) : (
+          <>
+            <meta
+              property="og:image"
+              content={`/img/mind-connector-social-share.png`}
+            />
+            <meta
+              name="twitter:image"
+              content={`/img/mind-connector-social-share.png`}
+            />
+            <meta
+              name="image"
+              content={`/img/mind-connector-social-share.png`}
+            />
+          </>
         )}
         {fullSeo.article && <meta property="og:type" content="article" />}
         {fullSeo.keywords && (
-          <meta
-            name="keywords"
-            content={fullSeo.keywords.map((k) => {
-              return k;
-            })}
-          />
+          <meta name="keywords" content={fullSeo.keywords} />
         )}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          property="og:image"
-          content={`/img/mind-connector-social-share.png`}
-        />
-        <meta
-          name="twitter:image"
-          content={`/img/mind-connector-social-share.png`}
-        />
-        <meta name="image" content={`/img/mind-connector-social-share.png`} />
+
         <meta property="og:type" content="website" />
       </Head>
       <CanonicalURL />
