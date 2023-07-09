@@ -120,13 +120,6 @@ const NavItem = ({ link, index }) => {
         <ActiveLink href={link.path} activeClassName="text-purple">
           <a className="hover:text-purple">{link.name}</a>
         </ActiveLink>
-        // <ActiveLink
-        //   href={link.path}
-        //   activeClassName="text-purple"
-        //   className="hover:text-purple"
-        // >
-        //   <a className="hover:text-purple">{link.name}</a>
-        // </ActiveLink>
       )}
     </li>
   );
@@ -136,9 +129,9 @@ const NavBar = () => {
   const navlinks = useMenuContext();
   return (
     <ul
-      className="relative z-10 m-0 h-full w-full flex-col items-center items-center justify-center
+      className="relative z-10 m-0 h-full w-full flex-col items-center justify-center
       p-0 font-bold md:space-x-2 
-      lg:mr-2 lg:block lg:flex lg:flex-row lg:space-x-3 lg:bg-transparent xl:space-x-8"
+      lg:mr-2 lg:flex lg:flex-row lg:space-x-3 lg:bg-transparent xl:space-x-8"
     >
       <li>
         <ActiveLink href="/" activeClassName="[&>svg>path]:fill-purple">
