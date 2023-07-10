@@ -1,22 +1,15 @@
 import Image from "next/image";
-import { allTeachers } from "../../../data/global";
+import Container from "@/components/Container";
+import { getStrapiMedia } from "@/lib/media";
 
-let socialImages = {
-  linkedin: "/img/linkedin.svg",
-  instagram: "/img/linkedin.svg",
-  twitter: "/img/twitter.svg",
-  youtube: "/img/youtube.svg",
-  instagram: "/img/instagram.svg",
-};
-
-const TeacherCard = ({ entitled, name, imgUrl, title, socials }) => {
+const TeacherCard = ({ entitled, name, image, title }) => {
   return (
     <div
       className={`relative mb-12 inline-block w-[160px] max-w-[228px] px-[10px] align-top xs:w-[49%] sm:w-[25%] md:mb-0 lg:w-[228px]`}
     >
       <div className={`relative text-center`}>
         <Image
-          src={imgUrl}
+          src={getStrapiMedia(image)}
           alt=""
           width={208}
           height={208}
@@ -31,30 +24,37 @@ const TeacherCard = ({ entitled, name, imgUrl, title, socials }) => {
           {name}
         </h3>
         <p
-          dangerouslySetInnerHTML={{ __html: title }}
-          className="mt-2 min-h-[calc(2*1.25*1em)] text-sm leading-none dark:text-white sm:text-xs lg:text-base lg:text-sm"
+          dangerouslySetInnerHTML={{
+            __html: title.replace(new RegExp("\r?\n", "g"), "<br />"),
+          }}
+          className="mt-2 min-h-[calc(2*1.25*1em)] text-sm leading-none dark:text-white sm:text-xs lg:text-sm"
         />
       </div>
     </div>
   );
 };
 
-const TeacherList = ({ data }) => {
-  let teachers = data || allTeachers;
+const TeacherList = (mentors) => {
+  let teachers = mentors.data;
   return (
     <div className="-mx-4 flex flex-col flex-wrap items-center justify-center pt-12 text-center xs:flex-row xs:items-start md:mx-0 md:justify-around lg:justify-evenly">
       {teachers.map((teacher, index) => {
-        return <TeacherCard {...teacher} key={teacher.name} />;
+        return <TeacherCard {...teacher.attributes} key={`teacher-${index}`} />;
       })}
     </div>
   );
 };
 
-const Teachers = ({ data }) => {
+const Teachers = ({ title, mentors }) => {
   return (
-    <div className={``}>
-      <TeacherList data={data} />
-    </div>
+    <section className={`relative bg-[#FFF7ED] py-12`}>
+      <Container>
+        <h2 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
+          {title}
+        </h2>
+        <TeacherList data={mentors.data} />
+      </Container>
+    </section>
   );
 };
 

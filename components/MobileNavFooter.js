@@ -6,7 +6,7 @@ import { useMenuContext } from "@/context/MenuProvider";
 const MobileDropdown = ({ items, dropdId }) => {
   return (
     <ul
-      id={`mobile-${dropdId}`}
+      id={`footer-mobile-${dropdId}`}
       className={`
         flex flex-col items-center text-center font-normal md:text-left lg:items-start
       `}
