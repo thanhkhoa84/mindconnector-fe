@@ -2,7 +2,7 @@ import App from "next/app";
 import { createContext } from "react";
 
 import "../styles/globals.scss";
-import Layout from "./../components/common/Layout";
+import Layout from "@/components/common/Layout";
 
 import { fetchAPI } from "@/lib/api.js";
 

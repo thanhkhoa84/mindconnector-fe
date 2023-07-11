@@ -3,6 +3,9 @@ import ValueSection from "@/components/home/ValueSection";
 import Teachers from "@/components/common/teachers/Teachers";
 import HeroBanner from "@/components/home/HeroBanner";
 import LogoList from "@/components/LogoList";
+import CtaBlock from "@/components/CtaBlock";
+import StudentHeading from "@/components/StudentHeading";
+import StudentProgramIntro from "@/components/StudentProgramIntro";
 
 const getSliceComponent = ({ __component, ...rest }, index) => {
   switch (__component) {
@@ -33,6 +36,32 @@ const getSliceComponent = ({ __component, ...rest }, index) => {
           title={rest.heading}
           mentors={rest.mentors}
           key={`mentors-${index}`}
+        />
+      );
+    case "section.student-heading":
+      return (
+        <StudentHeading
+          heading={rest.heading}
+          text={rest.text}
+          image={rest.backgroundImage.imageDesktop}
+          key={`student-heading-${index}`}
+        />
+      );
+    case "shared.cta-block":
+      return (
+        <CtaBlock
+          heading={rest.heading}
+          text={rest.text}
+          ctaText={rest.button.Link.title}
+          key={`cta-${index}`}
+        />
+      );
+    case "section.student-programs":
+      return (
+        <StudentProgramIntro
+          programs={rest.programs}
+          tilte={"programs"}
+          key={`programs-${index}`}
         />
       );
   }
