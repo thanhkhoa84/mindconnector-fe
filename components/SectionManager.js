@@ -31,9 +31,11 @@ const getSliceComponent = ({ __component, ...rest }, index) => {
     case "section.qa":
       return <QandA questions={rest.QA} key={`QandA-${index}`} />;
     case "section.mentors":
+      console.log(rest);
       return (
         <Teachers
           title={rest.heading}
+          theme={rest.theme}
           mentors={rest.mentors}
           key={`mentors-${index}`}
         />

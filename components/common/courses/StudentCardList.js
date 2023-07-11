@@ -1,50 +1,45 @@
-import Link from "next/link";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-const Rating = dynamic(() => import("../../Rating"), {
-  ssr: false,
-});
+import { getStrapiMedia } from "@/lib/media";
 
 const Slide = ({ index, course, ...props }) => {
-  let { title, lessons, time, img, level, feature } = course;
+  let { name, description, image, feature, featureText } = course;
   return (
     <div
       className={`relative overflow-hidden rounded-[30px] border-[6px] border-[#FFF7EC] text-left xs:w-[174px]`}
     >
-      <div
-        className={`overflow-hidden rounded-2xl after:absolute after:inset-0 after:block after:bg-gradient-to-b after:from-[rgba(43,43,43,0)] after:to-[#000] after:content-['']`}
-      >
-        <Image
-          src={img}
-          alt={title}
-          width={360}
-          height={540}
-          className="block w-full"
-        />
-      </div>
+      {image && (
+        <div
+          className={`overflow-hidden rounded-2xl after:absolute after:inset-0 after:block after:bg-gradient-to-b after:from-[rgba(43,43,43,0)] after:to-[#000] after:content-['']`}
+        >
+          <Image
+            src={getStrapiMedia(image)}
+            alt={name}
+            width={360}
+            height={540}
+            className="block w-full"
+          />
+        </div>
+      )}
       <div
         className={`after:bg-gradient-overlay absolute bottom-0 left-0 right-0 top-0 flex flex-col justify-end px-4 pb-8 text-sm text-white after:content-none md:p-4 md:pb-8`}
       >
-        {feature && (
+        {featureText && (
           <div className="overflow-hidden">
             <h5 className="float-left inline-block h-6 rounded-sm bg-purple px-2 text-[10px] font-bold leading-6">
-              {feature}
+              {featureText}
             </h5>
           </div>
         )}
         <h3
           className="mt-2 text-lg font-black uppercase leading-[1.35]"
-          dangerouslySetInnerHTML={{ __html: title }}
+          dangerouslySetInnerHTML={{
+            __html: name.replace(new RegExp("\r?\n", "g"), "<br />"),
+          }}
         />
-        <p className="mt-2 leading-4">
-          {level && <span>{level} &#x2022; </span>}
-          {lessons && <span>{lessons} bài học &#x2022; </span>}
-          <span>{time} giờ</span>
-        </p>
+        <p className="mt-2 leading-4">{description}</p>
       </div>
     </div>
   );
@@ -144,7 +139,7 @@ const StudentCardList = ({ courses }) => {
     <div className="flex-slider">
       <Slider {...settings}>
         {courses.map((course, index) => {
-          return <Slide course={course} key={index} />;
+          return <Slide course={course.attributes.thumbnailInfo} key={index} />;
         })}
       </Slider>
     </div>

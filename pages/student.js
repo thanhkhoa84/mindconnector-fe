@@ -141,6 +141,8 @@ export async function getServerSideProps() {
       "Content.backgroundImage.imageDesktop",
       "Content.backgroundImage, imageMobile",
       "Content.programs.mon_hocs",
+      "Content.programs.mon_hocs.thumbnailInfo",
+      "Content.programs.mon_hocs.thumbnailInfo.image",
       "Content.link",
     ],
   };

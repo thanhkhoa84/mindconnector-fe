@@ -1,13 +1,17 @@
 import Link from "next/link";
-// import StudentCardList from "@/components/common/courses/StudentCardList";
+import StudentCardList from "@/components/common/courses/StudentCardList";
 import Container from "@/components/Container";
+
+import { RichText } from "@/lib/typo";
 
 export default function StudentProgramIntro(props) {
   const { programs } = props;
   return (
     <>
       {programs.data.map((p, index) => {
-        console.log(p.attributes);
+        const textWithHtmlLineBreak = p.attributes.body
+          ? p.attributes.body.replace(/\n/g, "<br/>")
+          : "";
         return (
           <section
             className={`py-[3em] ${index % 2 ? "bg-[#FFEFDB]" : ""}`}
@@ -20,22 +24,15 @@ export default function StudentProgramIntro(props) {
               <h2 className="mx-auto mb-4 mt-0 text-4xl font-black leading-[1.3] dark:text-white">
                 {p.attributes.title}
               </h2>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: p.attributes.body.replace(
-                    new RegExp("\r?\n", "g"),
-                    "<br />",
-                  ),
-                }}
-              ></p>
+              {RichText(p.attributes.body)}
               <p>
-                <Link legacyBehavior href="/programs/ky-nang-xa-hoi">
+                <Link href={`/programs/${p.attributes.permalink}`}>
                   <span className="link-arrow">Tìm hiểu thêm</span>
                 </Link>
               </p>
             </Container>
             <div className="course-card relative mt-8 block py-8">
-              {/* <StudentCardList courses={p.mon_hocs.data} /> */}
+              <StudentCardList courses={p.attributes.mon_hocs.data} />
             </div>
           </section>
         );

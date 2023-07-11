@@ -34,8 +34,8 @@ const TeacherCard = ({ entitled, name, image, title }) => {
   );
 };
 
-const TeacherList = (mentors) => {
-  let teachers = mentors.data;
+const TeacherList = ({ theme, mentors }) => {
+  let teachers = mentors;
   return (
     <div className="-mx-4 flex flex-col flex-wrap items-center justify-center pt-12 text-center xs:flex-row xs:items-start md:mx-0 md:justify-around lg:justify-evenly">
       {teachers.map((teacher, index) => {
@@ -45,14 +45,19 @@ const TeacherList = (mentors) => {
   );
 };
 
-const Teachers = ({ title, mentors }) => {
+const Teachers = ({ title, theme, mentors }) => {
   return (
-    <section className={`relative bg-[#FFF7ED] py-12`}>
+    <section
+      className={`
+        py-12 relative 
+        ${theme == "light" ? "bg-[#FFF7ED] " : "dark bg-black dark:text-white"}
+      `}
+    >
       <Container>
         <h2 className="mx-auto mt-0 mb-4 text-center text-4xl font-black leading-[1.3] dark:text-white">
           {title}
         </h2>
-        <TeacherList data={mentors.data} />
+        <TeacherList theme={theme} mentors={mentors.data} />
       </Container>
     </section>
   );
