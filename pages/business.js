@@ -4,28 +4,15 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-
 import {
   useGlobalModalContext,
   MODAL_TYPES,
 } from "@/components/common/modal/GlobalModal";
-import Container from "@/components/Container";
-// import QandA from "@/components/QandA";
 import Seo from "@/components/SEO";
-import ServicesCardList from "@/components/business/ServicesCardList";
-// import Teachers from "@/components/common/teachers/Teachers";
-import Testimonial from "@/components/Testimonial";
+import { fetchAPI } from "@/lib/api.js";
+import SectionManager from "@/components/SectionManager";
 import LeadingForm from "@/components/LeadingForm";
-
-const QandA = dynamic(() => import("@/components/QandA"), {
-  suspense: true,
-});
-const Teachers = dynamic(
-  () => import("@/components/common/teachers/Teachers"),
-  {
-    suspense: true,
-  }
-);
+import Container from "@/components/Container";
 
 const tabs = [
   {
@@ -42,23 +29,23 @@ const tabs = [
   },
 ];
 
-const Tab = ({ tab, index, active, onClick }) => {
-  return (
-    <li
-      className={`
-      font-bold
-      ${active ? "text-orange-dark" : "text-[#9A9A9A]"}
-      inline-block py-0 align-middle hover:font-bold hover:text-orange-dark 
-      `}
-      key={index}
-      onClick={() => onClick(index)}
-    >
-      <button className="block">{tab.title}</button>
-    </li>
-  );
-};
+// const Tab = ({ tab, index, active, onClick }) => {
+//   return (
+//     <li
+//       className={`
+//       font-bold
+//       ${active ? "text-orange-dark" : "text-[#9A9A9A]"}
+//       inline-block py-0 align-middle hover:font-bold hover:text-orange-dark
+//       `}
+//       key={index}
+//       onClick={() => onClick(index)}
+//     >
+//       <button className="block">{tab.title}</button>
+//     </li>
+//   );
+// };
 
-const Business = ({ services, teachers, testimonial }) => {
+const Business = ({ seo, sections }) => {
   const { showModal } = useGlobalModalContext();
   const createModal = () => {
     showModal(MODAL_TYPES.BUSINESS_VIDEO_MODAL, {
@@ -67,32 +54,17 @@ const Business = ({ services, teachers, testimonial }) => {
     });
   };
 
-  const seo = {
-    metaTitle: "Dành cho doanh nghiệp",
-    metaDescription:
-      "Mind Connector kết nối tầm nhìn và tri thức để giúp doanh nghiệp, cá nhân phát triển và tăng trưởng mạnh mẽ trong tương lai",
-    keywords: [
-      "mind connector",
-      "mindconnector",
-      "kết nối",
-      "tầm nhìn",
-      "training",
-      "mạng lưới",
-      "doanh nghiệp",
-      "cá nhân",
-    ],
-    // shareImage: article.attributes.image,
-    // article: true,
-  };
-
   return (
     <>
       <Seo seo={seo} />
       <main className="dark overflow-hidden bg-black pb-12">
         <div className="sr-only">
-          <h1>Mind Connector - Dành cho doanh nghiệp</h1>
+          <h1>{seo.metaTitle} | Mind Connector</h1>
         </div>
-        <section className="dark relative flex aspect-[375/461] origin-center flex-col items-center justify-end overflow-hidden bg-cover bg-center bg-no-repeat sm:aspect-[2/1] sm:justify-center lg:aspect-[3/1.2]">
+
+        <SectionManager sections={sections} />
+
+        {/*<section className="dark relative flex aspect-[375/461] origin-center flex-col items-center justify-end overflow-hidden bg-cover bg-center bg-no-repeat sm:aspect-[2/1] sm:justify-center lg:aspect-[3/1.2]">
           <Image
             src={`/img/bg-video.png`}
             alt=""
@@ -197,16 +169,7 @@ const Business = ({ services, teachers, testimonial }) => {
               <Testimonial data={testimonial} />
             </div>
           </Container>
-        </section>
-
-        <section className="py-12 dark:text-white">
-          <Container>
-            <h2 className="mx-auto mb-4 mt-0 text-center text-4xl font-black leading-[1.3] dark:text-white">
-              Đội ngũ chuyên gia
-            </h2>
-            <Teachers data={teachers} />
-          </Container>
-        </section>
+        </section>*/}
 
         <section className="py-8 pb-12" id="contact">
           <Container>
@@ -220,98 +183,28 @@ const Business = ({ services, teachers, testimonial }) => {
 
 export default Business;
 
-export async function getStaticProps() {
-  /** TODO: get real QaA from backend */
-  let services = [
-    {
-      name: `Tư vấn Chiến lược Thương hiệu`,
-      body: `Phát triển chiến lược thương hiệu bền vững để doanh nghiệp tăng trưởng bứt phá.`,
-      img: `/img/business-tu-van-chien-luoc-thuong-hieu.png`,
-      url: `/services/tu-van-chien-luoc-thuong-hieu`,
-    },
-    {
-      name: `Tư vấn Chiến lược phát triển chuỗi F&B `,
-      body: `Hỗ trợ doanh nghiệp phát triển, thành công và tăng trưởng trong lĩnh vực F&B.`,
-      img: `/img/business-tu-van-chien-luoc-fb.png`,
-      url: `/services/tu-van-chien-luoc-phat-trien-chuoi-fb`,
-    },
-    {
-      name: `Tư vấn Quản Trị Sự thay đổi`,
-      body: `Giúp doanh nghiệp có thể linh hoạt, điều chỉnh và thích ứng với sự thay đổi mới.`,
-      img: `/img/business-tu-van-quan-tri-su-thay-doi.png`,
-      url: `/services/tu-van-quan-tri-su-thay-doi`,
-    },
-    {
-      name: `Tư vấn và Thực thi Sales & Marketing (MSO)`,
-      body: `Thảo luận, trao đổi, định hướng và thực thi chiến lược Sales và Marketing dài hạn cho doanh nghiệp.`,
-      img: `/img/business-tu-van-sale.png`,
-      url: `/services/tu-van-va-thuc-thi-mso`,
-    },
-    {
-      name: `Đào tạo nội bộ`,
-      body: `Đào tạo đội ngũ nhân viên xuất sắc để đưa doanh nghiệp phát triển nhanh chóng.`,
-      img: `/img/business-dao-tao-noi-bo.png`,
-      url: `/services/dao-tao-noi-bo`,
-    },
-  ];
-
-  let testimonial = {
-    headline: `Tôi có một khoảng thời gian được trải nghiệm thật sự cảm giác
-    lăn xả vào dự án khi tham gia khóa đào tạo này.`,
-    body: `Tôi có một khoảng thời gian được trải nghiệm thật sự cảm giác lăn xả
-    vào dự án khi tham gia khóa đào tạo này. Trước đây tôi cũng biết được
-    rằng khởi nghiệp không hề đơn giản, từ lúc ấp ủ ý tưởng đến lúc quyết
-    tâm thực thi tôi rất lo lắng vì bản thân còn loay hoay, nhiều vấn đề
-    chưa sáng tỏ. Khi tôi lên kế hoạch được 80% thì gặp được chương trình
-    này. Phải nói rằng những thông tin trong khóa học rất thiết thực, các
-    giảng viên là những người đã làm start up, đang thành công theo mô
-    hình tự thân, tôi thấy vô cùng phù hợp với hoàn cảnh hiện tại của
-    mình. Ban đầu tôi hơi lấn cấn về chi phí khóa học, tuy nhiên khi vào
-    học thì không phải chỉ được học và tôi được các chuyên gia tư vấn thực
-    sự trên kế hoạch kinh doanh của chính tôi. Học xong, tôi thấy tự tin
-    hơn và biết rõ mình muốn gì hơn trong tương lai.`,
-    peep: {
-      name: `Chị Phạm Thị Hải An`,
-      title: `
-        Học viên Chương trình nâng cao <br/>
-        <b>“Thành công trong khởi sự kinh doanh”</b> 
-      `,
-      image: `/img/testimonial.png`,
-    },
+export async function getServerSideProps() {
+  const params = {
+    nested: true,
+    populate: [
+      "seo",
+      "content",
+      "content.button.Link",
+      "content.backgroundImage",
+      "content.backgroundImage.imageDesktop",
+      "content.backgroundImage.imageMobile",
+      "content.mentors",
+      "content.mentors.image",
+    ],
   };
-
-  let teachers = [
-    {
-      entitled: "Bà",
-      name: "Nina Trần",
-      imgUrl: "/img/mentors/nina-tran-02.png",
-      title: "Chuyên gia <br/>Tư vấn Thương hiệu",
-    },
-    {
-      entitled: "Bà",
-      name: "Mandy Nguyễn",
-      imgUrl: "/img/mentors/mandy-nguyen-02.png",
-      title: "Chuyên gia <br/>Sales - Marketing",
-    },
-    {
-      entitled: "Bà",
-      name: "Vinkai AR Bhatia",
-      imgUrl: "/img/mentors/vinkai-bhatia.png",
-      title: "Chuyên gia <br/>Chiến lược",
-    },
-    {
-      entitled: "Bà",
-      name: "Duy Trần",
-      imgUrl: "/img/mentors/duy-tran.png",
-      title: "Chuyên gia <br/>Vận hành và HR",
-    },
-  ];
+  const page = await fetchAPI(`/business`, params);
+  const seo = page.data.attributes.seo;
+  const sections = page.data.attributes.content;
 
   return {
     props: {
-      services,
-      testimonial,
-      teachers,
+      seo,
+      sections,
     },
   };
 }

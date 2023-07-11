@@ -6,6 +6,7 @@ import LogoList from "@/components/LogoList";
 import CtaBlock from "@/components/CtaBlock";
 import StudentHeading from "@/components/StudentHeading";
 import StudentProgramIntro from "@/components/StudentProgramIntro";
+import BusinessHeading from "./BusinessHeading";
 
 const getSliceComponent = ({ __component, ...rest }, index) => {
   switch (__component) {
@@ -31,7 +32,6 @@ const getSliceComponent = ({ __component, ...rest }, index) => {
     case "section.qa":
       return <QandA questions={rest.QA} key={`QandA-${index}`} />;
     case "section.mentors":
-      console.log(rest);
       return (
         <Teachers
           title={rest.heading}
@@ -66,6 +66,9 @@ const getSliceComponent = ({ __component, ...rest }, index) => {
           key={`programs-${index}`}
         />
       );
+
+    case "section.business-intro":
+      return <BusinessHeading {...rest} key={`business-intro-${index}`} />;
   }
 };
 

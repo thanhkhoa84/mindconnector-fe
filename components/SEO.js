@@ -26,6 +26,14 @@ const Seo = ({ seo }) => {
   return (
     <>
       <Head>
+        {fullSeo.metaViewport ? (
+          <meta name="viewport" content={fullSeo.metaViewport} />
+        ) : (
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+        )}
         {fullSeo.metaTitle && (
           <>
             <title>{fullSeo.metaTitle}</title>
