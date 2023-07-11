@@ -6,7 +6,9 @@ import LogoList from "@/components/LogoList";
 import CtaBlock from "@/components/CtaBlock";
 import StudentHeading from "@/components/StudentHeading";
 import StudentProgramIntro from "@/components/StudentProgramIntro";
-import BusinessHeading from "./BusinessHeading";
+import BusinessHeading from "@/components/BusinessHeading";
+import BusinessServices from "@/components/BusinessServices";
+import BusinessDifference from "@/components/BusinessDifference";
 
 const getSliceComponent = ({ __component, ...rest }, index) => {
   switch (__component) {
@@ -69,6 +71,14 @@ const getSliceComponent = ({ __component, ...rest }, index) => {
 
     case "section.business-intro":
       return <BusinessHeading {...rest} key={`business-intro-${index}`} />;
+
+    case "section.services":
+      return <BusinessServices {...rest} key={`business-services-${index}`} />;
+
+    case "section.business-difference":
+      return (
+        <BusinessDifference {...rest} key={`business-difference-${index}`} />
+      );
   }
 };
 

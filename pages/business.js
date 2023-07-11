@@ -64,52 +64,7 @@ const Business = ({ seo, sections }) => {
 
         <SectionManager sections={sections} />
 
-        {/*<section className="dark relative flex aspect-[375/461] origin-center flex-col items-center justify-end overflow-hidden bg-cover bg-center bg-no-repeat sm:aspect-[2/1] sm:justify-center lg:aspect-[3/1.2]">
-          <Image
-            src={`/img/bg-video.png`}
-            alt=""
-            width={1400}
-            height={698}
-            className="absolute inset-0 hidden h-full w-full object-cover sm:block"
-          />
-          <Image
-            src={`/img/bg-video-mb.png`}
-            blurDataURL={`/img/bg-video-mb.png`}
-            placeholder="blur"
-            alt=""
-            width={375}
-            height={461}
-            className="absolute inset-0 h-full w-full object-cover sm:hidden"
-          />
-          <div className="relative max-w-[800px] px-4 py-12 text-center dark:text-white sm:px-8">
-            <h2 className="[&>span:inline-block] mt-8 text-3xl font-black md:text-5xl [&>span]:whitespace-nowrap">
-              Kinh nghiệm thực chiến từ <span>chuyên gia hàng đầu</span>
-            </h2>
-            <p className="mt-4">
-              Cùng doanh nghiệp bứt phá thành công với đội ngũ nhân viên xuất
-              sắc và{" "}
-              <span className="xs:inline-block">
-                chiến lược kinh doanh hiệu quả
-              </span>
-              .
-            </p>
-            <p className="mt-8">
-              <button
-                onClick={() => {
-                  document.getElementById("contact").scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                    inline: "nearest",
-                  });
-                }}
-                type="button"
-                className="min-w-[280px]"
-              >
-                <span className="btn-pink">Trò chuyện ngay với chuyên gia</span>
-              </button>
-            </p>
-          </div>
-        </section>
+        {/*
 
         <section className="mt-8 overflow-hidden py-16">
           <Container>
@@ -120,41 +75,6 @@ const Business = ({ seo, sections }) => {
               <ServicesCardList services={services} />
             </div>
           </Container>
-        </section>
-
-        <section className="dark relative mt-12 flex origin-center flex-col items-center justify-center py-[100px] text-center text-white xl:py-36">
-          <Image
-            src={`/img/bg-difference.png`}
-            alt=""
-            width={1400}
-            height={698}
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <div className="relative">
-            <div className="mx-auto px-4 lg:max-w-[750px]">
-              <h2 className="mx-auto mb-4 mt-0 text-center text-4xl font-black leading-[1.3]">
-                Điều gì giúp chúng tôi khác biệt?
-              </h2>
-              <Image
-                src="/img/icon-difference.svg"
-                alt=""
-                width={116}
-                height={120}
-                className="mt-8 inline-block"
-              />
-              <h3 className="mt-8 text-[25px] font-black text-[#F5B0C5] md:text-4xl">
-                THIẾT KẾ GIẢI PHÁP CHIẾN LƯỢC CHUYÊN BIỆT{" "}
-                <span className="xs:inline-block">DÀNH CHO DOANH NGHIỆP</span>
-              </h3>
-              <p className="mt-4">
-                Dựa vào từng nhu cầu, mong muốn riêng biệt của từng nhà lãnh đạo
-                doanh nghiệp và tổ chức, Mind Connector với đội ngũ chuyên gia
-                hàng đầu trong các lĩnh vực, với kinh nghiệm dày dặn trong việc
-                nghiên cứu, vận hành và tư vấn chiến lược, sẵn sàng sát cánh
-                cùng bạn đi tìm con đường phát triển của riêng mình.
-              </p>
-            </div>
-          </div>
         </section>
 
         <section className="invisible hidden py-12">
@@ -195,6 +115,11 @@ export async function getServerSideProps() {
       "content.backgroundImage.imageMobile",
       "content.mentors",
       "content.mentors.image",
+      "content.icon",
+      "content.image.imageDesktop",
+      "content.services",
+      "content.services.thumbnailInfo",
+      "content.services.thumbnailInfo.image",
     ],
   };
   const page = await fetchAPI(`/business`, params);

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { getStrapiMedia } from "@/lib/media";
 
 function NextArrow(props) {
   const { className, onClick } = props;
@@ -52,16 +53,17 @@ function PrevArrow(props) {
   );
 }
 
-const ServiceCard = ({ index, service, ...props }) => {
+const ServiceCard = ({ service }) => {
+  const { name, thumbnailInfo } = service.attributes;
   return (
     <div
-      className={`relative mx-auto mt-[20px] h-[215px] w-full max-w-[365px] overflow-hidden rounded-2xl rounded-[30px] border-[6px] border-[#414141] text-left text-white md:mt-0 md:w-[336px]`}
+      className={`relative mx-auto mt-[20px] h-[215px] w-full max-w-[365px] overflow-hidden rounded-[30px] border-[6px] border-[#414141] text-left text-white md:mt-0 md:w-[336px]`}
     >
       <div
         className={`overflow-hidden rounded-2xl after:absolute after:inset-0 after:block after:bg-gradient-to-b after:from-[rgba(43,43,43,0)] after:to-[#000] after:content-['']`}
       >
         <Image
-          src={service.img}
+          src={getStrapiMedia(thumbnailInfo.image)}
           alt={""}
           width={326}
           height={215}
@@ -69,10 +71,10 @@ const ServiceCard = ({ index, service, ...props }) => {
         />
       </div>
       <div
-        className={`after:bg-gradient-overlay absolute bottom-0 left-0 right-0 top-0 flex flex-col justify-end px-4 pb-8 text-sm text-white text-white after:content-none md:p-4 md:pb-6`}
+        className={`after:bg-gradient-overlay absolute bottom-0 left-0 right-0 top-0 flex flex-col justify-end px-4 pb-8 text-sm text-white after:content-none md:p-4 md:pb-6`}
       >
-        <h3 className="text-[18px] font-black uppercase">{service.name}</h3>
-        <h4 className="mt-[8px] text-[14px]">{service.body}</h4>
+        <h3 className="text-[18px] font-black uppercase">{name}</h3>
+        <h4 className="mt-[8px] text-[14px]">{thumbnailInfo.description}</h4>
       </div>
       <Image
         src="/img/arrow-purple.png"
@@ -81,7 +83,7 @@ const ServiceCard = ({ index, service, ...props }) => {
         alt=""
         className="absolute bottom-0 right-0"
       />
-      <Link legacyBehavior href={service.url}>
+      <Link href={`/services/${thumbnailInfo.slug}`}>
         <span className="content-[' '] absolute inset-0 block cursor-pointer" />
       </Link>
     </div>
@@ -91,7 +93,6 @@ const ServiceCard = ({ index, service, ...props }) => {
 const ServicesCardList = ({ services }) => {
   let settings = {
     dots: true,
-    // infinite: true,
     draggable: false,
     arrows: true,
     centerPadding: "0px",
