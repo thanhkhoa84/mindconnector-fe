@@ -48,7 +48,7 @@ export async function getServerSideProps() {
       "Content.partners.image",
       "Content.button.Link",
       "Content.backgroundImage.imageDesktop",
-      "Content.backgroundImage, imageMobile",
+      "Content.backgroundImage.imageMobile",
       "Content.programs.mon_hocs",
       "Content.programs.mon_hocs.thumbnailInfo",
       "Content.programs.mon_hocs.thumbnailInfo.image",

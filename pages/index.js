@@ -17,7 +17,7 @@ export default function Home({ seo, slides, questions, sections }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const params = {
     nested: true,
     populate: [

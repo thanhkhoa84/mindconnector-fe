@@ -9,6 +9,8 @@ import StudentProgramIntro from "@/components/StudentProgramIntro";
 import BusinessHeading from "@/components/BusinessHeading";
 import BusinessServices from "@/components/BusinessServices";
 import BusinessDifference from "@/components/BusinessDifference";
+import ServiceAbout from "@/components/ServiceAbout";
+import ServiceApproach from "@/components/ServiceApproach";
 
 const getSliceComponent = ({ __component, ...rest }, index) => {
   switch (__component) {
@@ -79,6 +81,13 @@ const getSliceComponent = ({ __component, ...rest }, index) => {
       return (
         <BusinessDifference {...rest} key={`business-difference-${index}`} />
       );
+
+    case "section.service-about":
+      return <ServiceAbout {...rest} key={`service-about-${index}`} />;
+
+    case "section.service-approach":
+      console.log(rest);
+      return <ServiceApproach {...rest} key={`service-approach-${index}`} />;
   }
 };
 
