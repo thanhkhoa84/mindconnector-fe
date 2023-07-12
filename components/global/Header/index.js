@@ -4,10 +4,14 @@ import Link from "next/link";
 import { NavBar, MobileNav } from "@/components/HeaderNavigation";
 import Container from "@/components/Container";
 import { Logo } from "@/components/Logo";
+import { useMenuContext } from "@/context/MenuProvider";
 
-const Header = ({ ...navlinks }) => {
+const Header = () => {
   let [toggle, setToggle] = useState(false);
   const router = useRouter();
+
+  let context = useMenuContext();
+  let navlinks = context.navlinks;
 
   let toggleMenu = () => {
     setToggle((prev) => !prev);

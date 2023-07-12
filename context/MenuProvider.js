@@ -5,9 +5,12 @@ const MenuContext = createContext();
 
 // Export Provider.
 export function MenuProvider(props) {
-  const { value, children } = props;
-
-  return <MenuContext.Provider value={value}>{children}</MenuContext.Provider>;
+  const { logo, nav, children } = props;
+  return (
+    <MenuContext.Provider value={{ logo, nav }}>
+      {children}
+    </MenuContext.Provider>
+  );
 }
 
 // Export useContext Hook.

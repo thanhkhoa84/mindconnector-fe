@@ -32,12 +32,17 @@ MyApp.getInitialProps = async (ctx) => {
   };
   const navData = await fetchAPI(`/menus/1`, params);
   let menus = navData.data.attributes.items.data;
+  const logo = await fetchAPI(`/global`, {
+    nested: true,
+    populate: ["logoLight, logoDark"],
+  });
   return {
     ...appProps,
     pageProps: {
       global: {
         siteName: "Mind Connector",
         menus,
+        logo,
       },
     },
   };
