@@ -63,7 +63,7 @@ const mentors = [
   },
 ];
 
-const Decoration = dynamic(() => import("../../components/Decoration"), {
+const Decoration = dynamic(() => import("../../../components/Decoration"), {
   ssr: false,
 });
 

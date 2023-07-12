@@ -65,7 +65,7 @@ const getSliceComponent = ({ __component, ...rest }, index) => {
     case "section.student-programs":
       return (
         <StudentProgramIntro
-          programs={rest.programs}
+          programs={rest.programs.data}
           tilte={"programs"}
           key={`programs-${index}`}
         />
@@ -86,7 +86,6 @@ const getSliceComponent = ({ __component, ...rest }, index) => {
       return <ServiceAbout {...rest} key={`service-about-${index}`} />;
 
     case "section.service-approach":
-      console.log(rest);
       return <ServiceApproach {...rest} key={`service-approach-${index}`} />;
   }
 };

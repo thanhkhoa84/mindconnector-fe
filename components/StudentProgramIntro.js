@@ -8,7 +8,7 @@ export default function StudentProgramIntro(props) {
   const { programs } = props;
   return (
     <>
-      {programs.data.map((p, index) => {
+      {programs.map((p, index) => {
         const textWithHtmlLineBreak = p.attributes.body
           ? p.attributes.body.replace(/\n/g, "<br/>")
           : "";

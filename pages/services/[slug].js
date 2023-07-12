@@ -160,7 +160,7 @@ export async function getServerSideProps({ params }) {
   const seo = page.data.attributes.seo;
   const sections = page.data.attributes.Content;
 
-  console.log(sections);
+  console.log(seo);
 
   return {
     props: {
