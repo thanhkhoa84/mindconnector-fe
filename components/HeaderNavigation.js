@@ -126,7 +126,8 @@ const NavItem = ({ link, index }) => {
 };
 
 const NavBar = () => {
-  const navlinks = useMenuContext();
+  const context = useMenuContext();
+  const navlinks = context.nav;
   return (
     <ul
       className="relative z-10 m-0 h-full w-full flex-col items-center justify-center
@@ -268,7 +269,8 @@ const MobileNavItem = ({ link, index }) => {
 };
 
 const MobileNav = () => {
-  const navlinks = useMenuContext();
+  const context = useMenuContext();
+  const navlinks = context.nav;
   return (
     <ul className="flex flex-col rounded-b-2xl bg-[#E0E0E0] p-4 pb-8 text-left shadow-asidebox">
       {navlinks.map((link, index) => {

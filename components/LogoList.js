@@ -1,19 +1,13 @@
 import Container from "./Container";
 import Image from "next/image";
+import { getStrapiMedia } from "@/lib/media";
 
 const LogoList = ({ backgroundColor, title, list }) => {
-  let images = [
-    { url: "/img/logo-valoma.png", alt: "Valoma" },
-    { url: "/img/logo-v.png", alt: "Valocen" },
-    { url: "/img/logo-gdnn.png", alt: "GDNN" },
-    { url: "/img/logo-vilas.png", alt: "Vilas" },
-    { url: "/img/logo-gli.png", alt: "GLI" },
-  ];
   return (
-    <div
+    <section
       className={`
-        p-4
-        ${backgroundColor ? "bg-['" + backgroundColor + "']" : "bg-white"}`}
+        p-4 ${backgroundColor ? "bg-['" + backgroundColor + "']" : "bg-white"}
+        `}
     >
       <Container>
         <div className="flex flex-col">
@@ -23,16 +17,17 @@ const LogoList = ({ backgroundColor, title, list }) => {
             </h2>
           </header>
           <ul className="flex flex-row flex-wrap justify-between">
-            {images.map((li, index) => {
+            {list.data.map((li, index) => {
+              const { name, image } = li.attributes;
               return (
                 <li
                   key={`logolist-${index}`}
                   className="flex w-1/2 items-center justify-center p-5 duration-500 md:w-1/5 lg:p-8"
                 >
                   <Image
-                    src={images[index].url}
-                    alt={images[index].alt}
-                    blurDataURL={images[index].url}
+                    src={getStrapiMedia(image)}
+                    alt={name}
+                    blurDataURL={getStrapiMedia(image)}
                     placeholder="blur"
                     width={200}
                     height={200}
@@ -44,7 +39,7 @@ const LogoList = ({ backgroundColor, title, list }) => {
           </ul>
         </div>
       </Container>
-    </div>
+    </section>
   );
 };
 

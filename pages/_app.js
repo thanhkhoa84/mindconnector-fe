@@ -2,7 +2,7 @@ import App from "next/app";
 import { createContext } from "react";
 
 import "../styles/globals.scss";
-import Layout from "./../components/common/Layout";
+import Layout from "@/components/common/Layout";
 
 import { fetchAPI } from "@/lib/api.js";
 
@@ -32,12 +32,17 @@ MyApp.getInitialProps = async (ctx) => {
   };
   const navData = await fetchAPI(`/menus/1`, params);
   let menus = navData.data.attributes.items.data;
+  const logo = await fetchAPI(`/global`, {
+    nested: true,
+    populate: ["logoLight, logoDark"],
+  });
   return {
     ...appProps,
     pageProps: {
       global: {
         siteName: "Mind Connector",
         menus,
+        logo,
       },
     },
   };

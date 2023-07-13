@@ -6,7 +6,7 @@ import { useMenuContext } from "@/context/MenuProvider";
 const MobileDropdown = ({ items, dropdId }) => {
   return (
     <ul
-      id={`mobile-${dropdId}`}
+      id={`footer-mobile-${dropdId}`}
       className={`
         flex flex-col items-center text-center font-normal md:text-left lg:items-start
       `}
@@ -60,7 +60,8 @@ const MobileNavItem = ({ link, index }) => {
 };
 
 const MobileNavFooter = () => {
-  const navlinks = useMenuContext();
+  const context = useMenuContext();
+  const navlinks = context.nav;
   return (
     <ul
       className={`mt-4 flex flex-col flex-wrap gap-8 md:gap-7 lg:flex-row lg:gap-x-16`}

@@ -2,7 +2,10 @@ import Container from "@/components/Container";
 
 const QandA = ({ questions }) => {
   return (
-    <section className="overflow-hidden bg-white py-14 px-0">
+    <section
+      className="overflow-hidden bg-white py-14 px-0 section-with-id"
+      id="qa"
+    >
       <Container>
         <header className="text-center lg:float-left lg:w-3/12 lg:pt-4 lg:text-left">
           <h2 className="mx-auto mt-0 mb-4 text-4xl font-black leading-[1.3] dark:text-white">

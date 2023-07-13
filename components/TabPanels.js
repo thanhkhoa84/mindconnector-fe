@@ -1,29 +1,17 @@
-import { useState } from "react";
-
-const tabs = [
-  {
-    title: "Về chương trình",
-    href: "#about",
-  },
-  {
-    title: "Lịch học",
-    href: "#schedule",
-  },
-  {
-    title: "Cảm nhận",
-    href: "#testimonial",
-  },
-  {
-    title: "Hỏi đáp",
-    href: "#qa",
-  },
-  {
-    title: "Cách đăng ký",
-    href: "#register",
-  },
-];
+import { useEffect, useState } from "react";
 
 const Tab = ({ tab, index, active, onClick }) => {
+  const scrollIntoTheView = (id) => {
+    let element = document.getElementById(id);
+    if (!element) return;
+
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+  };
+
   return (
     <li
       className={`
@@ -31,11 +19,18 @@ const Tab = ({ tab, index, active, onClick }) => {
       inline-block py-0 px-4 pl-0 align-middle hover:font-bold hover:text-black md:pl-6
       `}
       key={index}
-      onClick={() => onClick(index)}
     >
-      <a href={tab.href} className="block" type="button">
+      <button
+        className="block"
+        type="button"
+        onClick={(e) => {
+          e.preventDefault();
+          onClick(index);
+          scrollIntoTheView(tab.href.replace("#", ""));
+        }}
+      >
         {tab.title}
-      </a>
+      </button>
     </li>
   );
 };
@@ -46,8 +41,31 @@ const TabPanels = () => {
     setCurrent(index);
   };
 
+  const tabs = [
+    {
+      title: "Về chương trình",
+      href: "#about",
+    },
+    {
+      title: "Lịch học",
+      href: "#schedule",
+    },
+    {
+      title: "Cảm nhận",
+      href: "#testimonial",
+    },
+    {
+      title: "Hỏi đáp",
+      href: "#qa",
+    },
+    {
+      title: "Cách đăng ký",
+      href: "#register",
+    },
+  ];
+
   return (
-    <ul className="block flex w-full overflow-x-auto overflow-y-hidden whitespace-nowrap py-6 pr-4 md:justify-evenly">
+    <ul className="flex w-full overflow-x-auto overflow-y-hidden whitespace-nowrap py-6 pr-4 md:justify-evenly">
       {tabs.map((tab, index) => {
         return (
           <Tab

@@ -1,10 +1,10 @@
 import Image from "next/image";
-
+import { getStrapiMedia } from "@/lib/media";
 const CourseTeachers = ({ teachers }) => {
   return (
     <div className="mt-8 text-center">
       {teachers.map((m, index) => {
-        const { entitled, name, title, image } = m;
+        const { entitled, name, title, image } = m.attributes;
         return (
           <div
             className="mb-8 inline-block w-[140px] align-top xs:w-[48%] sm:w-[24%] md:mb-0 lg:w-[190px]"
@@ -12,13 +12,12 @@ const CourseTeachers = ({ teachers }) => {
           >
             <div className="inline-block w-[90px] overflow-hidden rounded-full md:w-[100px]">
               <Image
-                src={image}
+                src={getStrapiMedia(image)}
                 alt="Avatar"
                 width={100}
                 height={100}
-                blurDataURL={image}
+                blurDataURL={getStrapiMedia(image)}
                 placeholder="blur"
-                priority={true}
                 className="w-full object-cover transition-all hover:scale-[1.]"
               />
             </div>

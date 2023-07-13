@@ -22,7 +22,7 @@ const RegisterModal = () => {
       .required("Mời bạn nhập thông tin")
       .matches(
         /((09|03|07|08|05|012)+([0-9]{8})\b)/,
-        "Mời nhập số điện thoại chính xác"
+        "Mời nhập số điện thoại chính xác",
       ),
     name: yup.string().required("Mời bạn nhập thông tin"),
   });
@@ -72,6 +72,7 @@ const RegisterModal = () => {
     };
     let mailRes = await axios(mailConfig);
     let response = await axios(config);
+    let mailRes = await axios(mailConfig);
     if (response.status === 200) {
       hideModal();
     }

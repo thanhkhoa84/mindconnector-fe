@@ -4,7 +4,6 @@ import Head from "next/head";
 import Router from "next/router";
 import { MenuProvider } from "@/context/MenuProvider";
 import { GlobalModal } from "@/components/common/modal/GlobalModal";
-// import { Navigation } from "@/data/global";
 
 Router.onRouteChangeComplete = () => {
   window.scroll({
@@ -14,6 +13,7 @@ Router.onRouteChangeComplete = () => {
 };
 
 export default function Layout({ children }) {
+  let logo = children.props.global.logo.data.attributes;
   let Navigations = children.props.global.menus.map((panel) => {
     return {
       name: panel.attributes.title,
@@ -33,7 +33,7 @@ export default function Layout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <GlobalModal>
-        <MenuProvider value={Navigations}>
+        <MenuProvider logo={logo} nav={Navigations}>
           <Header />
           {children}
           <Footer />

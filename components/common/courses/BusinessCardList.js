@@ -1,13 +1,12 @@
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Rating = dynamic(() => import("../../Rating"), {
-  ssr: false,
-});
+// const Rating = dynamic(() => import("../../Rating"), {
+//   ssr: false,
+// });
 
 const BusinessCard = () => (
   <div className="relative inline-flex h-[269px] w-[160px] overflow-hidden rounded-3xl border-4 border-gray-500">

@@ -1,8 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { getStrapiMedia } from "@/lib/media";
+import { useMenuContext } from "@/context/MenuProvider";
 
 const Title = React.forwardRef(({ onClick, href }, ref) => {
+  let context = useMenuContext();
+  let logo = context.logo;
   return (
     <a
       href={href}
@@ -11,20 +15,41 @@ const Title = React.forwardRef(({ onClick, href }, ref) => {
       className="inline-block leading-[0] transition-all"
       title="Mind Connector"
     >
-      <Image
-        src="/img/logo.png"
-        alt="Mind Connector logo"
-        width={151}
-        height={14}
-        className="hidden lg:inline"
-      />
-      <Image
-        src="/img/logo-mb.png"
-        alt="Mind Connector logo"
-        width={151}
-        height={14}
-        className="lg:hidden"
-      />
+      {logo ? (
+        <>
+          <Image
+            src={getStrapiMedia(logo.logoLight)}
+            alt="Mind Connector logo"
+            width={151}
+            height={14}
+            className="hidden lg:inline"
+          />
+          <Image
+            src={getStrapiMedia(logo.logoDark)}
+            alt="Mind Connector logo"
+            width={151}
+            height={14}
+            className="lg:hidden"
+          />
+        </>
+      ) : (
+        <>
+          <Image
+            src={"/img/logo.png"}
+            alt="Mind Connector logo"
+            width={151}
+            height={14}
+            className="hidden lg:inline"
+          />
+          <Image
+            src="/img/logo-mb.png"
+            alt="Mind Connector logo"
+            width={151}
+            height={14}
+            className="lg:hidden"
+          />
+        </>
+      )}
     </a>
   );
 });

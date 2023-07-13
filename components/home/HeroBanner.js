@@ -53,14 +53,12 @@ function PrevArrow(props) {
 }
 
 const Slide = ({ index, ...props }) => {
-  // let ImageUrl = getStrapiMedia(props.Image);
-  let ImageUrl = props.Image.data.attributes.url;
   return (
     <div className="relative mx-auto my-0">
       <div className="leading-[1]">
         <Image
-          src={ImageUrl}
-          blurDataURL={ImageUrl}
+          src={getStrapiMedia(props.Image)}
+          blurDataURL={getStrapiMedia(props.Image)}
           placeholder="blur"
           alt={props.Title}
           width={1920}
@@ -71,7 +69,7 @@ const Slide = ({ index, ...props }) => {
       </div>
       <div
         className={`
-        static bottom-[2em] transition-all delay-0 delay-500 duration-[650ms] lg:absolute lg:left-[calc((100vw-1024px)/2)] lg:w-1/3 lg:max-w-[420px] xl:left-[calc((100vw-1120px)/2)]
+        static bottom-[2em] transition-all delay-500 duration-[650ms] lg:absolute lg:left-[calc((100vw-1024px)/2)] lg:w-1/3 lg:max-w-[420px] xl:left-[calc((100vw-1120px)/2)]
       `}
       >
         <div
@@ -90,7 +88,7 @@ const Slide = ({ index, ...props }) => {
   );
 };
 
-const HeroBanner = ({ slides, ...props }) => {
+const HeroBanner = ({ title, slides }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -109,7 +107,7 @@ const HeroBanner = ({ slides, ...props }) => {
     <section
       className={`max-auto relative mx-auto overflow-hidden bg-[#FFF7ED]`}
     >
-      <h2 className="sr-only">Tin tức mới nhất</h2>
+      <h2 className="sr-only">{title}</h2>
       <Slider {...settings}>
         {slides.map(({ ...props }, index) => {
           return (

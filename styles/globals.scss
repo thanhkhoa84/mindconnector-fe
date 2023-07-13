@@ -170,6 +170,10 @@ a {
   border: 0;
 }
 
+.text-balance {
+  text-wrap:balance;
+}
+
 
 @layer components {
   .nav {
