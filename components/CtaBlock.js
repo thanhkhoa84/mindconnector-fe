@@ -17,7 +17,7 @@ export default function CtaBlock({ theme, heading, text, ctaText }) {
   };
 
   return (
-    <section id="register" className="pb-12">
+    <section id="register" className="pb-12 section-with-id">
       <Container>
         <div className="mb-4 mt-8 flex flex-col overflow-hidden rounded-3xl bg-[#941C50] text-white md:flex-row md:p-0">
           <header className="bg-[#B22F66] p-6 md:p-8">

@@ -1,9 +1,7 @@
 import { fetchAPI } from "@/lib/api.js";
 import SectionManager from "@/components/SectionManager";
 import Seo from "@/components/SEO";
-import TabPanels from "@/components/TabPanels";
-import Container from "@/components/Container";
-import Image from "next/image";
+import { useEffect } from "react";
 
 const ProgramPost = ({ seo, sections }) => {
   return (

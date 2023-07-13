@@ -5,7 +5,7 @@ import { getStrapiMedia } from "@/lib/media";
 
 export default function ProgramSchedule({ heading, text, icon, schedules }) {
   return (
-    <section className="mt-12" id="schedule">
+    <section className="mt-12 section-with-id" id="schedule">
       <Container>
         <h2 className="mb-3 text-center text-[34px] font-black md:text-left">
           {heading}

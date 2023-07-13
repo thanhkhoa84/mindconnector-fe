@@ -18,7 +18,6 @@ const CourseTeachers = ({ teachers }) => {
                 height={100}
                 blurDataURL={getStrapiMedia(image)}
                 placeholder="blur"
-                priority={true}
                 className="w-full object-cover transition-all hover:scale-[1.]"
               />
             </div>

@@ -8,7 +8,7 @@ const Decoration = dynamic(() => import("@/components/Decoration"), {
 
 export default function ProgramCourses({ heading, courses }) {
   return (
-    <div className="relative mt-[4em]">
+    <section className="relative mt-[4em] section-with-id">
       <Decoration />
       <Container>
         <h2 className="text-center text-[22px] font-black leading-none md:text-[34px] lg:block">
@@ -18,6 +18,6 @@ export default function ProgramCourses({ heading, courses }) {
       <div className="course-card relative mt-8 block py-8">
         <CoursesCardList courses={courses.data} />
       </div>
-    </div>
+    </section>
   );
 }

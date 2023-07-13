@@ -23,7 +23,7 @@ export default function StudentHeading({ heading, text, image }) {
               dangerouslySetInnerHTML={{
                 __html: heading.replace(new RegExp("\r?\n", "g"), "<br />"),
               }}
-              className="mx-auto mb-4 mt-0 text-center text-3xl font-black dark:text-white dark:text-white md:text-left md:text-6xl md:leading-[1.2]"
+              className="mx-auto mb-4 mt-0 text-center text-3xl font-black dark:text-white md:text-left md:text-6xl md:leading-[1.2]"
             ></h2>
             <p
               dangerouslySetInnerHTML={{

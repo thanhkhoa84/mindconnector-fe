@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Container from "@/components/Container";
+import TabPanels from "@/components/TabPanels";
 
 const Approach = ({ approach, last }) => {
   const { heading, text, label } = approach;
@@ -45,9 +46,9 @@ export default function ProgramApproach({ approachs }) {
                 );
               })}
             </div>
-            {/* <div className="mx-[-1em] flex items-center px-[1em] shadow-asideboxLight md:mx-0 md:h-[60px] md:rounded-xl">
-                <TabPanels />
-              </div> */}
+            <div className="mx-[-1em] flex items-center px-[1em] shadow-asideboxLight md:mx-0 md:h-[60px] md:rounded-xl">
+              <TabPanels />
+            </div>
           </div>
         </div>
       </Container>

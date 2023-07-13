@@ -24,7 +24,7 @@ export default function ProgramOverview({
   };
 
   return (
-    <section className="relative bg-[#F7F3F4] py-[3em] text-center md:py-[4em] md:pb-[0]">
+    <section className="relative bg-[#F7F3F4] py-[3em] text-center md:py-[4em] md:pb-[0] section-with-id">
       <div className="absolute inset-0">
         <Image
           alt=""

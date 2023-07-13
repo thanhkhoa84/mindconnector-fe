@@ -40,9 +40,9 @@ export default function ServiceApproach({ heading, approachs }) {
                       </h4>
                       <div className="leading-6 [&>ul>li+li]:mt-2 [&>ul>li]:list-outside [&>ul]:list-disc [&>ul]:pl-4">
                         <ul>
-                          {a.approach.map((i) => (
-                            <li key={`item-${i}`}>{i.item}</li>
-                          ))}
+                          {a.approach.map((a, i) => {
+                            return <li key={`item-${a}-${i}`}>{a.item}</li>;
+                          })}
                         </ul>
                       </div>
                     </>

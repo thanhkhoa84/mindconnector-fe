@@ -19,7 +19,7 @@ export default function ProgramCTABlock({ heading, text, image, cta }) {
   };
 
   return (
-    <section className="mt-12 py-12" id="about">
+    <section className="mt-12 py-12 section-with-id" id="about">
       <div className="mx-auto my-0 min-w-[290px] max-w-[1120px] px-[1em]">
         <div className="flex flex-col overflow-hidden rounded-[20px] text-white md:flex-row">
           <div className="overflow-hidden">
