@@ -9,7 +9,7 @@ const Decoration = () => (
         left: `${Math.floor(Math.random() * 100)}px`,
       }}
     >
-      <Image src="/img/deco-3.png" alt="" width={648} height={648} />
+      <Image src="/img/deco-3.png" alt="" width={648} height={648} priority />
     </div>
     <div
       className="pointer-events-none absolute h-[450px] w-[450px] origin-center animate-steam-one select-none bg-cover bg-center bg-no-repeat delay-1000 delay-200"

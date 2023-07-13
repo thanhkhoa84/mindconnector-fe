@@ -55,10 +55,10 @@ const Title = React.forwardRef(({ onClick, href }, ref) => {
 });
 Title.displayName = "Title";
 
-const Logo = React.forwardRef(({ logo }) => {
+const Logo = React.forwardRef(() => {
   return (
     <Link legacyBehavior href="/" passHref>
-      <Title {...logo} />
+      <Title />
     </Link>
   );
 });

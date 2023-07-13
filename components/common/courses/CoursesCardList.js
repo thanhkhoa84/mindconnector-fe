@@ -4,6 +4,7 @@ import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { getStrapiMedia } from "@/lib/media";
 
 const Rating = dynamic(() => import("../../Rating"), {
   ssr: false,
@@ -41,8 +42,8 @@ const ProgramCourseCard = ({ course }) => {
   );
 };
 
-const Slide = ({ index, course, ...props }) => {
-  let { title, lessons, time, img, level, feature } = course;
+const Slide = ({ course, ...props }) => {
+  let { name, image, description } = course;
   return (
     <div
       className={`relative overflow-hidden rounded-[30px] border-[6px] border-[#FFF7EC] text-left xs:w-[174px]`}
@@ -51,8 +52,8 @@ const Slide = ({ index, course, ...props }) => {
         className={`overflow-hidden rounded-2xl after:absolute after:inset-0 after:block after:bg-gradient-to-b after:from-[rgba(43,43,43,0)] after:to-[#000] after:content-['']`}
       >
         <Image
-          src={img}
-          alt={title}
+          src={getStrapiMedia(image)}
+          alt={name}
           width={360}
           height={540}
           className="block w-full"
@@ -70,13 +71,9 @@ const Slide = ({ index, course, ...props }) => {
         )} */}
         <h3
           className="mt-2 text-lg font-black uppercase leading-[1.35]"
-          dangerouslySetInnerHTML={{ __html: title }}
+          dangerouslySetInnerHTML={{ __html: name }}
         />
-        <p className="mt-2 leading-4">
-          {level && <span>{level} &#x2022; </span>}
-          {lessons && <span>{lessons} bài học &#x2022; </span>}
-          <span>{time} giờ</span>
-        </p>
+        <p className="mt-2 leading-4">{description}</p>
       </div>
     </div>
   );
@@ -130,7 +127,7 @@ function PrevArrow(props) {
   );
 }
 
-const CoursesList = ({ courses }) => {
+const CoursesCardList = ({ courses }) => {
   let settings = {
     dots: true,
     infinite: false,
@@ -176,11 +173,11 @@ const CoursesList = ({ courses }) => {
     <div className="flex-slider">
       <Slider {...settings}>
         {courses.map((course, index) => {
-          return <Slide course={course} key={index} />;
+          return <Slide course={course.attributes.thumbnailInfo} key={index} />;
         })}
       </Slider>
     </div>
   );
 };
 
-export default CoursesList;
+export default CoursesCardList;

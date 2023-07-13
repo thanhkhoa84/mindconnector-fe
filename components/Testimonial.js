@@ -1,8 +1,8 @@
-import Container from "./Container";
 import Image from "next/image";
+import { getStrapiMedia } from "@/lib/media";
 
-const Testimonial = ({ data }) => {
-  let { headline, body, peep } = data;
+const Testimonial = (props) => {
+  let { name, subtext, quote, testimonial, avatar } = props;
   return (
     <blockquote
       className={`
@@ -14,28 +14,25 @@ const Testimonial = ({ data }) => {
       `}
     >
       <h5 className="text-4xl font-black not-italic text-purple dark:text-white">
-        {headline}
+        {quote}
       </h5>
-      <p className="mt-8 text-justify italic dark:text-white">{body}</p>
+      <p className="mt-8 text-justify italic dark:text-white">{testimonial}</p>
       <div className="mt-4 flex flex-row items-center gap-6">
-        <div className="h-[60px] w-[60px] overflow-hidden rounded-full">
-          <Image
-            src={peep.image}
-            width={60}
-            height={60}
-            alt=""
-            className="block rounded-full"
-          />
-        </div>
+        {avatar && (
+          <div className="h-[60px] w-[60px] overflow-hidden rounded-full">
+            <Image
+              src={getStrapiMedia(avatar)}
+              width={60}
+              height={60}
+              alt=""
+              className="block rounded-full"
+            />
+          </div>
+        )}
         <div className="not-italic">
-          <h3 className="font-black text-purple dark:text-white">
-            {peep.name}
-          </h3>
+          <h3 className="font-black text-purple dark:text-white">{name}</h3>
           <div className="text-xs text-[#6C6C6C] dark:text-white lg:text-sm">
-            <p dangerouslySetInnerHTML={{ __html: peep.title }} />
-            {/* <p className="font-black">
-                    “Thành công trong khởi sự kinh doanh”
-                  </p> */}
+            <p dangerouslySetInnerHTML={{ __html: subtext }} />
           </div>
         </div>
       </div>

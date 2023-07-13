@@ -1,11 +1,7 @@
 import Container from "@/components/Container";
 import Image from "next/image";
-import dynamic from "next/dynamic";
-
-const LogoMobile = dynamic(() =>
-  import("@/components/Logo").then((mod) => mod.LogoMobile)
-);
-const MobileNavFooter = dynamic(() => import("@/components/MobileNavFooter"));
+import { LogoMobile } from "@/components/Logo";
+import MobileNavFooter from "@/components/MobileNavFooter";
 
 const Footer = () => {
   return (
