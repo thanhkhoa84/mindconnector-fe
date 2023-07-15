@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   reactStrictMode: true,
   swcMinify: true,
   images: {
@@ -15,8 +12,10 @@ const nextConfig = {
         pathname: "/uploads/**",
       },
       {
-        protocol: "https",
-        hostname: "images.pexels.com",
+        protocol: "http",
+        hostname: "be.mindconnector.vn",
+        port: "",
+        pathname: "/uploads/**",
       },
     ],
     domains: ["localhost", "mindconnector.com.vn", "www.mindconnector.com.vn"],

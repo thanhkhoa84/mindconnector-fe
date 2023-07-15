@@ -24,7 +24,7 @@ export default function ProgramSchedule({ heading, text, icon, schedules }) {
           <div className="flex-[5]">
             {schedules.map((s, index) => {
               return (
-                <div key={s.text} className={`${index} != 0 ? "mt-8": ""`}>
+                <div key={s.text} className={`${index != 0 ? "mt-8" : ""}`}>
                   <p className="font-bold">{s.text}</p>
                   <Image
                     src={getStrapiMedia(s.image)}
